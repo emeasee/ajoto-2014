@@ -2,7 +2,7 @@
         <div id="cart-bar" <?php body_class(); ?>>
             <div id="shopping_cart" class="widget woocommerce widget_shopping_cart">
                 <div class="widget_shopping_cart_content">
-                    <?php woocommerce_get_template( 'cart/mini-cart.php', $args ); ?>
+                    <?php woocommerce_get_template( 'cart/mini-cart.php' ); ?>
                 </div>
             </div>
         </div>
