@@ -1,0 +1,24 @@
+1.0.7
+* Fixed closing label tag
+
+1.0.6
+* Added option to have optin unchecked by default
+* add label tag 
+
+1.0.5
+* Added WPML support
+
+1.0.4
+* Stripeslashes on label output
+* Added MailChimp Group Support
+* Added Welcome Message Support
+
+1.0.3
+* Fixed an issue where stats were not being displayed.
+
+1.0.2
+* Namespaced Mailchimp to avoid conflicts
+
+1.0.0
+* Initial Release
+

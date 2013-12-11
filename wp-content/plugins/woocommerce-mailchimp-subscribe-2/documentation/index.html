@@ -1,0 +1,138 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>WooCommerce MailChimp Subscribe - WordPress Plugin</title>
+	
+	<meta name="description" content="Displays a Newsletter signup checkbox on checkout for WooCommerce integrated with MailChimp.">
+	<meta name="author" content="SeedProd">
+	<meta name="copyright" content="SeedProd">
+	<meta name="generator" content="Documenter v1.5 http://rxa.li/documenter">
+	<meta name="date" content="2011-12-06T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_10.png);}
+		a{color:#1CA800;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#installation">Installation</a>
+				<ol>
+					<li><a href="#installation_new_install_via_ftp">New Install via FTP</a>
+					<li><a href="#installation_new_install_via_the_wordpress_uploader">New Install via the WordPress uploader</a>
+					<li><a href="#installation_updating_via_the_ftp">Updating via the FTP</a>
+				    <li><a href="#installation_updating_via_the_wordpress_uploader">Updating via the WordPress uploader</a>
+				</ol>
+			</li>
+			<li><a href="#walkthrough">Video Walkthrough</a></li>
+			<li><a href="#support">Support</a></li>
+			<li><a href="#sources_credits">Sources & Credits</a></li>
+
+		</ol>
+		<div id="documenter_copyright">Copyright SeedProd 2011<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v1.5</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1>WooCommerce MailChimp Subscribe</h1><h2>WordPress Plugin</h2><hr><ul><li>Version: 1.0.0</li><li>Created: 01/15/2012</li><li>Latest Update: 01/15/2012</li><li>By: SeedProd</li><li><a href=""></a></li><li>Email: <a href="mailto:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#101;&#100;&#112;&#114;&#111;&#100;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#101;&#101;&#100;&#112;&#114;&#111;&#100;&#46;&#99;&#111;&#109;</a></li></ul><p>The SeedProd WooCommerce MailChimp Subscribe WordPress plugin displays a newsletter signup checkbox on checkout for WooCommerce integrated with MailChimp. Also includes a MailChimp List Health Dashboard Widget.
+</p></section><section id="installation">
+	<h3>Installation</h3><hr class="notop">
+<p>
+	There are several methods to install a WordPress plugin. Choose a method below.</p>
+<h4 id="installation_new_install_via_ftp">New Install via FTP</h4>
+<ol>
+	<li>
+		Unzip the package <strong>woocommerce-mailchimp-subscribe-x.x.zip</strong> on you computer.</li>
+	<li>
+		Upload the <strong>unzipped folder</strong> the /wp-content/plugins/ directory.</li>
+	<li>
+		Activate the plugin through the <strong>Plugins</strong> menu in WordPress.</li>
+	<li>
+		Goto&nbsp;<strong>WooCommerce &gt; Email Seetings</strong>&nbsp;to&nbsp;set your options.</li>
+</ol>
+<h4 id="installation_new_install_via_the_wordpress_uploader">New Install via the WordPress uploader</h4>
+<ol>
+	<li>
+		Click <strong>Plugins &gt; Add</strong> New inside of your WordPress install.</li>
+	<li>
+		Click <strong>Upload</strong> and select the package<strong>&nbsp;</strong><strong>woocommerce-mailchimp-subscribe-x.x.zip</strong></li>
+	<li>
+		Activate the plugin through the&nbsp;<strong>Plugins</strong>&nbsp;menu in WordPress.</li>
+	<li>
+		Goto&nbsp;<strong>WooCommerce &gt; Email Seetings</strong>&nbsp;to&nbsp;set your options.</li>
+</ol>
+<h4 id="installation_updating_via_the_ftp">Updating via the FTP</h4>
+<ol>
+	<li>
+		If you&#39;ve made any custom changes to the core you&#39;ll need to merge those changes into the new package.</li>
+	<li>
+		Unzip the package&nbsp;<strong>woocommerce-mailchimp-subscribe-x.x.zip</strong>&nbsp;on you computer.</li>
+	<li>
+		Replace the current folder in your plugins folder with the new unzipped folder from your computer.</li>
+</ol>
+<h4 id="installation_updating_via_the_wordpress_uploader">Updating via the WordPress uploader</h4>
+<ol>
+	<li>
+		Navigate to the <strong>Plugins</strong> page in WordPress and delete the current plugin.</li>
+	<li>
+		Now follow the <a href="#installation_new_install_via_the_wordpress_uploader">New Install via the WordPress uploader</a> instructions.</li>
+</ol>
+
+</section>
+<section id="walkthrough">
+	<h3>Video Walkthrough</h3><hr class="notop">
+	<iframe width="640" height="360" src="http://www.youtube.com/embed/SI3H5ovKihE" frameborder="0" allowfullscreen></iframe>
+
+</section>
+<section id="support">
+	<h3>Support</h3><hr class="notop">
+<p>
+	For priority support please visit <a href="http://seedprod.com/support">http://seedprod.com/support</a></p>
+</section>
+
+<section id="sources_credits">
+	<h3>Sources & Credits</h3><hr class="notop">
+<p>
+	The follow images, scripts or other files were used in the making of this product.</p>
+<ul>
+	<li>
+		<a href="http://apidocs.mailchimp.com/api/downloads/#php">MailChimp API</a></li>
+	
+</ul>
+</section>
+
+	</div>
+</body>
+</html>

@@ -5,10 +5,14 @@ node_modules
 # Ignore automatically generated cruft
 *.log
 .sass-cache
+.yeopress
 
 # Ignore config
 local-config.php
+dploy.yaml
 
+#Ignore current theme
+wp-content/themes/AJOTO_CURRENT/
 
 # Operating system files
 .Spotlight-V100
@@ -21,10 +25,15 @@ Thumbs.db
 # Vagrant
 .vagrant
 
+#Plugins ignore
+wp-content/plugins/query-monitor/
+wp-content/db.php
+
 # WordPress + popular plugin generated — adapted from:
 # https://github.com/github/gitignore/blob/master/WordPress.gitignore
 sitemap.xml
 sitemap.xml.gz
+readme.html
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
