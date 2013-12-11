@@ -1,0 +1,52 @@
+THIS VERSION IS NO LONGER SUPPORTED!
+PLEASE SEE THE UPDATED VERSION HERE:
+https://github.com/vimeo/player-api/tree/master/javascript
+
+
+Froogaloop Microframework.
+Copyright 2010 Vimeo, LLC.
+@author: Joseph Schmitt
+
+Froogaloop is a small Javascript utility framework to help with the complexities
+involved in dealing with using the Javascript API through window.postMessage
+for controlling Vimeo's Moogaloop video player. This framework provides a simple
+API to call functions and add event listeners to Moogaloop when it is embedded
+using an <iframe>.
+
+USAGE:
+The Froogaloop framework automatically searches the document for all iframes that
+are embeds of Vimeo videos. It then adds two new functions to the iframe HTMLElement:
+api and addEvent. To call a function that acts upon the player (such as play, pause,
+or seek), use the api method. To add an event listener that listens for player
+events, use the addEvent method.
+
+NOTES:
+1. To gain JavaScript api access to the Vimeo player, you must pass in a value of 1
+   for the js_api url parameter to the iframe.
+2. If you have more than one iframe per page, each iframe must have a unique id attribute
+   set and that id must be passed to the iframe via the js_swf_id query parameter.
+
+
+EXAMPLE:
+var iframe = document.getElementById("myIframe");
+iframe.api("api_play");
+iframe.api("api_seekTo", 30);
+iframe.api("api_setVolume", 80);
+
+iframe.get("api_getDuration", function(duration){
+   // Handles duration checking
+});
+
+iframe.addEvent("onPlay", function(player_id){
+   // Handle onPlay event
+});
+
+iframe.addEvent("onSeek", function(time, player_id){
+   // Handle onSeek event
+});
+
+
+If any iframe embed codes are added to the page via a script or AJAX call, then you will
+have to manually call Froogaloop.init so that they get the proper methods. Froogaloop.init
+takes an optional parameter that is a NodeList of iframe elements that should get the new
+methods. If none are specified, it will look for all iframes on the page.

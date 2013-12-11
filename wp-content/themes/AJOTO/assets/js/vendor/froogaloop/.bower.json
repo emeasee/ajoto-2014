@@ -1,0 +1,14 @@
+{
+  "name": "froogaloop",
+  "homepage": "https://github.com/vimeo/froogaloop",
+  "_release": "a63e66523d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a63e66523dd49464dc53f274349f60438e11e3bd"
+  },
+  "_source": "https://github.com/vimeo/froogaloop.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/vimeo/froogaloop.git",
+  "_direct": true
+}

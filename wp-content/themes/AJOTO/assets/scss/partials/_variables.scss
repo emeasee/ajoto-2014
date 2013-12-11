@@ -1,0 +1,23 @@
+// Font Face
+@include fontface('Futura', 'assets/fonts/', '2330B7_0_0');
+
+// Structure
+$pageWidth: 910px;
+
+// Text Selection
+$selectionColor: orange;
+
+// Links
+$linkColor: #c0974a;
+$linkHoverColor: #c0974a;
+
+// Font styles
+$sans-serif: "Futura","Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;
+
+.sans-serif{
+    font-family: $sans-serif;
+}
+.serif{
+    font-family: $serif;
+}
