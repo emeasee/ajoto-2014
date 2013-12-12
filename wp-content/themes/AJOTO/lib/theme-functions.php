@@ -275,7 +275,7 @@ function build_map( $product ){ ?>
  */
 
 function twitterFeed( $number ){
-    $tweets = getTweets($number);//change number up to 20 for number of tweets
+    $tweets = getTweets($number,'ajoto');//change number up to 20 for number of tweets
     
     echo "<div class='twitter_div'>
             <ul class='twitter_update_list'>"; 
@@ -360,11 +360,11 @@ if (strlen($from)==2 && strlen($to)==2) {//Operate using country code
     
         //Load live conversion rates and set as an array
         $theme_root = get_template_directory();
-        $XMLContent= file($theme_root . "/rates.xml");      
+        $XMLContent= file($theme_root . "/lib/rates.xml");      
         if(is_array($XMLContent)) {
             foreach ($XMLContent as $line) {
-                    if (ereg("currency='([[:alpha:]]+)'",$line,$currencyCode)) {
-                        if (ereg("rate='([[:graph:]]+)'",$line,$rate)) {
+                    if (preg_match("/currency='([[:alpha:]]+)'/",$line,$currencyCode)) {
+                        if (preg_match("/rate='([[:graph:]]+)'/",$line,$rate)) {
                                 $RATES[$currencyCode[1]]=$rate[1];
                         }
                     }

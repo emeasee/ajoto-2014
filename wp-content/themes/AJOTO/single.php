@@ -18,9 +18,9 @@
 							<fb:like layout="button_count" show_faces="false" width="450" action="recommend"></fb:like>
 							<div id="fake_facebook_button"></div>
 						</div>						
-						<a href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'><img src="<?php echo get_template_directory_uri(); ?>/library/images/pinterest_s.png"/></a>
-						<a onClick="MyWindow=window.open('http://twitter.com/home?status=Currently Reading <?php the_title(); ?> (<?php the_permalink(); ?>) @ajoto','MyWindow','width=600,height=400'); return false;" title="Share on Twitter" target="_blank" id="twitter-share"><img src="<?php echo get_template_directory_uri(); ?>/library/images/twitter_s.png"/></a>
-						<a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this post"><img src="<?php echo get_template_directory_uri(); ?>/library/images/email_s.png"/></a>
+						<a href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pinterest_s.png"/></a>
+						<a onClick="MyWindow=window.open('http://twitter.com/home?status=Currently Reading <?php the_title(); ?> (<?php the_permalink(); ?>) @ajoto','MyWindow','width=600,height=400'); return false;" title="Share on Twitter" target="_blank" id="twitter-share"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter_s.png"/></a>
+						<a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this post"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/email_s.png"/></a>
 					</div>
 				</section>
 				<section class="screen serif" style="height:auto;">
