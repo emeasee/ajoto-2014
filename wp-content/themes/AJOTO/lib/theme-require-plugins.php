@@ -14,13 +14,6 @@ function mb_register_required_plugins() {
 			'force_activation'	=> true
 		),
 
-		array(
-			'name' 				=> 'Use Google Libraries',
-			'slug' 				=> 'use-google-libraries',
-			'required' 			=> true,
-			'force_activation'	=> true
-		),
-
 	);
 
 	// Change this to your theme text domain, used for internationalising strings

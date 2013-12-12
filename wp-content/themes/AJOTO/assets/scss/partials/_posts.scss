@@ -17,7 +17,6 @@ ul, ol { }
     margin: 0 0 10px 0;
     @include bp(phone) {
         margin:0;
-        height: auto;
         width: 100%;
         max-height: 220px;
     }
@@ -79,12 +78,16 @@ ul, ol { }
                 letter-spacing: 2px;
                 p{
                     padding:20px;
+                    letter-spacing: normal;
                 }
                 .serif{
                     text-transform: none;
                     font-size: 0.7em;
                     .excerpt{
                         display:block;
+                        @include bp(phone){
+                            display: none!important;
+                        }
                     }
                     .readmore{
                         color:#612E59;

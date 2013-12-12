@@ -43,7 +43,8 @@ h2, .h2 {
     margin:0;
     text-transform: uppercase;
     text-align: left;
-    
+    font-family: $sans-serif;
+    font-weight:500;
 }
 
 h3, .h3 { 
@@ -52,6 +53,8 @@ h3, .h3 {
     margin-top:2.8em; 
     padding-bottom: 0.4em;
     color: #989898;
+    font-family: $sans-serif;
+    font-weight:500;
     @include bp(phone){
         font-size: 0.5em;
     }
@@ -65,6 +68,8 @@ h4, .h4 {
     margin: 0 auto;
     border-top: 2px #e4e4e4 solid;
     border-bottom: 2px #e4e4e4 solid;
+    font-family: $sans-serif;
+    font-weight: 500;
 }
 
 h5, .h5 { 
@@ -304,21 +309,21 @@ nav#page{
             }
             span{
                 opacity:0.6;
-                background: url(../images/arrows_sprite.png) no-repeat;
+                background: url(assets/images/arrows_sprite.png) no-repeat;
                 background-position: right 53%;
                 background-size: 12px;
             }
             a{
-                background: url(../images/arrows_sprite.png) no-repeat;
+                background: url(assets/images/arrows_sprite.png) no-repeat;
                 background-position: right 53%;
                 background-size: 12px;
             }
             a:first-child{
-                background: url(../images/arrows_sprite.png) no-repeat top left;
+                background: url(assets/images/arrows_sprite.png) no-repeat top left;
                 background-size: 12px;
             }
             span:first-child{
-                background: url(../images/arrows_sprite.png) no-repeat top left;
+                background: url(assets/images/arrows_sprite.png) no-repeat top left;
                 background-size: 12px;
             }
         }
@@ -697,7 +702,7 @@ nav#page{
                     font-size: 0.7em;
                 }
                 span.top{
-                    background-position: 50% 50%;
+                    background-position: 50% 50%!important;
                     background-repeat: no-repeat;
                 }
                 span.top.grey{
@@ -827,7 +832,7 @@ nav#page{
                 }
                 div.card.three{
                     background: #f9f9f9 url(assets/images/HeaderSmallGold@2x.png) no-repeat;
-                    background-size:420px 30px;
+                    background-size:205px 30px;
                     width: 635px;
                     background-position: 50% 90%;
                     @include bp(phone){
@@ -920,13 +925,13 @@ nav#page{
             max-width:850px;
             margin: 0 auto;
             margin-top: 10px;
-            background-position: middle;
+            background: url(assets/images/map_bg@2x.png) no-repeat;
+            background-size:850px 420px;
+            background-position: center;
             background-repeat: no-repeat;
             position: relative;
             @include bp(phone){
                 display: none;
-                background: url(assets/images/map_bg@2x.png) no-repeat;
-                background-size:850px 420px;
             }
             .key{
                 position: absolute;
@@ -1167,6 +1172,9 @@ nav#page{
             display:block;
             float:left;
             font-family: 'Merriweather', sans-serif;
+            @include bp(phone){
+                display: none;
+            }
             h4.widgettitle{
                 display:none;
             }
@@ -1179,8 +1187,7 @@ nav#page{
                     height:205px;
                     margin:0px 0px 10px 10px;
                     display:table;
-                    background:#f9f9f9;
-                    background: url(assets/images/twitter@2x.png) no-repeat;
+                    background: #f9f9f9 url(assets/images/twitter@2x.png) no-repeat;
                     background-size: 25px 21px;
                     background-position: 50% 10%;
                     background-repeat: no-repeat;
@@ -1299,7 +1306,7 @@ nav#page{
         }
 
         div.titles{
-            width:800px;
+            width:850px;
             margin:0 auto;
             padding: 0 30px 0 30px;
             @include bp(phone){
@@ -1322,11 +1329,11 @@ nav#page{
             p.icns{
                 background-repeat: no-repeat;
                 height: 100%;
-                padding-top:85px;
-                background-position: 50% -5%;
-                @include bp(phone){
-                    background-position: 50% -35%;
-                    padding-top:55px;
+                padding-top:50px;
+                background-position: 50% -55%!important;
+                @include bp(phone){ 
+                    background-position: 50% -5%!important;
+                    padding-top:85px;
                 }
             }
             p.studioicn{
@@ -1340,7 +1347,7 @@ nav#page{
                 }
             }
             p.penicn{
-                background: url(assets/images/PenTitle@2x.png) no-repeat;
+                background: url(assets/images/PenTitle@2x.png) no-repeat 50% -70%;
                 background-size: 165px 105px;
             }
             p.pouchicn{
@@ -1356,8 +1363,7 @@ nav#page{
             display:table-cell;
             vertical-align:middle;
             height: 205px;
-            background-color: #f9f9f9;
-            background: url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
+            background: #f9f9f9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
             background-size: 420px 30px;
             background-position: 50% 85%;
             @include bp(phone){
@@ -1379,7 +1385,9 @@ nav#page{
                 height: 20px;
                 font-size: 1.2em;
                 line-height: 23px;
-                background-color: #969696;
+                background-color: #969696!important;
+                background-image: none!important;
+                border-radius:0;
                 display: block;
                 float: none;
                 margin:0 auto;
@@ -1414,6 +1422,14 @@ nav#page{
         margin-top: 30px;
         @include bp(phone){
             width: 100%;
+        }
+        #main{
+            width: 635px;
+            float: left;
+            @include bp(phone){
+                width: 100%;
+                float:none;
+            }
         }
     }
 }
@@ -1469,7 +1485,7 @@ nav#page{
                     width:auto;
                 }
                 p.half{
-                    width:21%;
+                    width:25%;
                     padding:2%;
                     font-size: 0.8em;
                     margin: 40px 0;
@@ -1498,6 +1514,7 @@ nav#page{
 }
 
 #content.single{
+    padding-bottom: 80px;
     section.clearfix{
         img{
             @include bp(phone){
@@ -1614,6 +1631,7 @@ section#blogtop{
                         background-position: center;
                         font-size: 0.6em;
                         letter-spacing: normal;
+                        text-align: center;
                         @include bp(phone){
                             width:100%;
                         }
@@ -1663,6 +1681,7 @@ section#blogtop{
 .rsBullets{
     background: none!important;
     margin-top: -25px!important;
+    height: 20px!important;
 }
 
 .royalSlider{
@@ -1824,8 +1843,9 @@ p.demo_store{
 .woocommerce-message{
     position: absolute;
     width: 100%;
-    height:22px;
+    height:38px;
     left: 0;
+    bottom:10px;
     background-color: #94d8b9;
     color:white;
     font-size: 0.9em!important;
@@ -1835,7 +1855,7 @@ p.demo_store{
     margin-bottom:27px;
     text-transform: uppercase;
     @include bp(phone){
-        height: 38px;
+        height: 22px;
         padding: 9px 0;
     }
     a{
@@ -2019,7 +2039,7 @@ div.validation_error{
                         }
         }
         #quick-convert.loading{
-            background: url('../images/load-small.gif') 
+            background: url('assets/images/load-small.gif') 
             90% 0% 
             no-repeat;
         }   
@@ -2201,6 +2221,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             display: inline-block;
             width: 100%;
             margin-bottom: 40px;
+            padding:0;
             li{
                 list-style-type: none;
                 width:175px;
@@ -2213,54 +2234,10 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                     span{
                         font-size: 0.7em;
                     }
-                    @keyframes nodeInserted {  
-                        from {  
-                            clip: rect(1px, auto, auto, auto);  
-                        }
-                        to {  
-                            clip: rect(0px, auto, auto, auto);
-                        }  
-                    }
-
-                    @-moz-keyframes nodeInserted {  
-                        from {  
-                            clip: rect(1px, auto, auto, auto);  
-                        }
-                        to {  
-                            clip: rect(0px, auto, auto, auto);
-                        }  
-                    }
-
-                    @-webkit-keyframes nodeInserted {  
-                        from {  
-                            clip: rect(1px, auto, auto, auto);  
-                        }
-                        to {  
-                            clip: rect(0px, auto, auto, auto);
-                        }  
-                    }
-
-                    @-ms-keyframes nodeInserted {  
-                        from {  
-                            clip: rect(1px, auto, auto, auto);  
-                        }
-                        to {  
-                            clip: rect(0px, auto, auto, auto);
-                        }  
-                    }
-
-                    @-o-keyframes nodeInserted {  
-                        from {  
-                            clip: rect(1px, auto, auto, auto);  
-                        }
-                        to {  
-                            clip: rect(0px, auto, auto, auto);
-                        }  
-                    } 
                     a.added_to_cart{
                         position: fixed;
                         bottom:-40px;
-                        height: 22px;
+                        height: 40px;
                         left:0;
                         width: 100%;
                         background: #333;
@@ -2268,7 +2245,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                         cursor:pointer;
                         background-color: #94d8b9;
                         color:white;
-                        font-size: 1.1em!important;
+                        font-size: 1em!important;
                         padding:9px 0;
                         text-decoration: none;
                         text-transform: uppercase;

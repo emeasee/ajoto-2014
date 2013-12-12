@@ -3,7 +3,7 @@
 MBP.hideUrlBarOnLoad();
 
 //Globals
-var ipad = false, mobile = false, localhost,
+var ipad = false,
     latlng = new google.maps.LatLng(51.50130, -0.09100),
     currnow = 'GBP';
     
@@ -150,23 +150,6 @@ function initializeMap() {
     map.setMapTypeId('ajoto');
   }
 
-function detectBrowser() {
-  var useragent = navigator.userAgent;
-  var mapdiv = document.getElementById('map_canvas');
-    
-  if (useragent.indexOf('iPhone') != -1) {
-    moreless();
-    mobile = true;
-  } else if(useragent.indexOf('Android') != -1) {
-    mobile = true;
-  } else if(useragent.indexOf('iPad') != -1){
-    jQuery('#mc_embed_signup .email').css('height','17px');
-    jQuery('ul.sub-menu').remove();
-    ipad = true;
-  } else {
-  }
-}
-
 function cookieBar() {
     if(jQuery.cookie('cookies') == null){
         jQuery('#cookiebar').css('display','block');
@@ -298,18 +281,15 @@ function nodeAddedAnim(event){
         setTimeout(function() {
             setCurrency();
         }, 1);
-        detectBrowser();
         cookieBar();
-
-
     
         //Initialise Masonry
         if (($my.about_wrap.length) || ($my.page_wrap.length)) {
-            if(!mobile){
+            if(!jQuery.browser.mobile){
                 $('section.screen').masonry({
                     itemSelector : 'div.card, div.slideshow, div.video',
                     columnWidth: 205,
-                    gutterWidth: 10
+                    gutter: 10
                 });
             }
         }
@@ -472,7 +452,7 @@ function nodeAddedAnim(event){
 
     $('a.add_to_cart_button').on('click touchend', function(){
       if($('a.added_to_cart').length){
-        console.log('yep');
+        console.log('Notifing');
       }
     });
 
@@ -507,12 +487,12 @@ function nodeAddedAnim(event){
             facebookSetup();
         }
     });
-
-  document.addEventListener('animationstart', nodeAddedAnim);
-  document.addEventListener('MSAnimationStart', nodeAddedAnim);
-  document.addEventListener('webkitAnimationStart', nodeAddedAnim);
     
 })( jQuery, window );
+
+  document.addEventListener('animationstart', nodeAddedAnim, false);
+  document.addEventListener('MSAnimationStart', nodeAddedAnim, false);
+  document.addEventListener('webkitAnimationStart', nodeAddedAnim, false);
 
 // HTML5 Fallbacks for older browsers
 jQuery(function($) {

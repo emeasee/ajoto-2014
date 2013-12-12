@@ -51,7 +51,7 @@
 
 	<div class="map">
 		<div class="key"><p class="left">UK MANUFACTURERS</p><p class="right">EUROPEAN MANUFACTURERS</p></div>
-		<?php build_map('pen'); ?>
+		<?php //build_map('pen'); ?>
 	</div>
 
 	<div class="slideshow"><?php echo get_new_royalslider(17); ?></div>
@@ -99,9 +99,9 @@ Offered in a Liquid Ink Rollerball and a Fine Ballpoint, each refill is perfectl
 			<p class="with-images"><i>However you use your Pen we know you will enjoy every moment and we hope you share your story with us.</i></p>
 			<span>#AJOTOPEN</span>
 			<span class="share">
-				<a href="" class="fb"></a>
-				<a href="" class="pn"></a>
-				<a href="" class="tw"></a>
+				<a href="http://www.facebook.com/ajotostudio" class="fb"></a>
+				<a href="http://www.twitter.com/ajoto" class="tw"></a>
+				<a href="http://www.pinterest.com/ajoto" class="pn"></a>
 			</span>
 			<span class="bottom"></span>
 		</div>
