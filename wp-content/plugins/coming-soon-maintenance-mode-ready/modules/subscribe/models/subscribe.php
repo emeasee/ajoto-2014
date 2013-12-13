@@ -4,25 +4,51 @@ class subscribeModelCsp extends modelCsp {
 		if(isset($d['email']) && !empty($d['email'])) {
 			if(is_email($d['email'])) {
 				$d['email'] = trim($d['email']);
-				
-				if(!frameCsp::_()->getTable('subscribers')->exists($d['email'], 'email')) {
-					$withoutConfirm = isset($d['withoutConfirm']) ? $d['withoutConfirm'] : false;
-					if(frameCsp::_()->getTable('subscribers')->insert(array(
-						'email'		=> $d['email'],
-						'created'	=> dbCsp::timeToDate(),
-						'ip'		=> utilsCsp::getIP(),
-						'active'	=> $withoutConfirm ? 1 : 0,
-						'token'		=> md5($d['email']. AUTH_KEY),
-					))) {
-						if(!$withoutConfirm)
-							$this->sendConfirmEmail($d['email']);
-						return true;
-					} else
-						$this->pushError( langCsp::_('Error insert email to database') );
-				} else
-					$this->pushError (langCsp::_('You are already subscribed'));
-			} else
-				$this->pushError (langCsp::_('Invalid email'));
+					$params = array(
+								'email'		=> $d['email'],
+								'created'	=> dbCsp::timeToDate(),
+								'ip'		=> utilsCsp::getIP(),
+								'active'	=> $withoutConfirm ? 1 : 0,
+								'token'		=> md5($d['email']. AUTH_KEY),
+								);
+					if(isset($d['name']) && !empty($d['name'])){
+						$params['name']=$d['name'];
+					}
+
+					$defSystem =frameCsp::_()->getModule('options')->get('sub_synchronize_system') ;
+
+					switch($defSystem){
+						
+						case "aweber":
+							$listId = frameCsp::_()->getModule('options')->get('sub_aweber_selected_list');
+							$aweberModule =frameCsp::_()->getModule('aweber'); 
+							
+							$params['listId'] = $listId;
+							if($aweberModule->createNewAweberSubscriber($params)){
+								return true;
+							}else{
+								$this->pushError( langCsp::_($aweberModule->getErrors()) );
+								return false;
+							}
+						break;
+						default:
+							if(!frameCsp::_()->getTable('subscribers')->exists($d['email'], 'email')){
+								$withoutConfirm = isset($d['withoutConfirm']) ? $d['withoutConfirm'] : false;
+	
+								if(frameCsp::_()->getTable('subscribers')->insert($params)) {
+									if(!$withoutConfirm)
+										$this->sendConfirmEmail($d['email']);
+									return true;
+								} else
+									$this->pushError( langCsp::_('Error insert email to database') );
+							} else
+								$this->pushError (langCsp::_('You are already subscribed'));
+						break;
+						}
+					
+					} else{
+						$this->pushError (langCsp::_('Invalid email'));
+					}
 		} else
 			$this->pushError (langCsp::_('Please enter email'));
 		return false;
@@ -30,7 +56,7 @@ class subscribeModelCsp extends modelCsp {
 	public function sendConfirmEmail($email) {
 		return frameCsp::_()->getModule('messenger')->send(
 					$email, 
-					get_bloginfo('name'), 
+					get_bloginfo('admin_email'), 
 					get_bloginfo('name'), 
 					'subscribe', 
 					'sub_confirm', 
@@ -72,7 +98,7 @@ class subscribeModelCsp extends modelCsp {
 	public function sendAdminNotification($email) {
 		return frameCsp::_()->getModule('messenger')->send(
 					frameCsp::_()->getModule('options')->get('sub_admin_email'), 
-					get_bloginfo('name'), 
+					get_bloginfo('admin_email'), 
 					get_bloginfo('name'), 
 					'subscribe', 
 					'sub_admin_notify', 
@@ -141,7 +167,7 @@ class subscribeModelCsp extends modelCsp {
 		if(!empty($d['email'])) {
 			return frameCsp::_()->getModule('messenger')->send(
 					$d['email'], 
-					get_bloginfo('name'), 
+					get_bloginfo('admin_email'), 
 					get_bloginfo('name'), 
 					'subscribe', 
 					'sub_site_opened', 
@@ -167,7 +193,7 @@ class subscribeModelCsp extends modelCsp {
 		if(!empty($d['email'])) {
 			return frameCsp::_()->getModule('messenger')->send(
 					$d['email'], 
-					get_bloginfo('name'), 
+					get_bloginfo('admin_email'), 
 					get_bloginfo('name'), 
 					'subscribe', 
 					'sub_new_post', 

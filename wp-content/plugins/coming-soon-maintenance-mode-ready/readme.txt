@@ -2,8 +2,8 @@
 Contributors: coming soon
 Donate link: http://readyshoppingcart.com/coming-soon-plugin
 Tags: coming soon, coming soon page, construction, landing page, launch, launch page, maintenance, maintenance mode, newsletter, offline, unavailable, under construction, underconstruction, offline
-Tested up to: 3.6.1
-Stable tag: 0.2.2
+Tested up to: 3.7.1
+Stable tag: 0.2.3
 
 Coming Soon or Under Construction page for your Website while maintenance mode on. Get E-mails, Likes and tweets from the visitors. 
 
@@ -61,6 +61,10 @@ Please [contact us](http://readyshoppingcart.com/contact "Contact Coming Soon Te
 
 == Changelog ==
 
+= 0.2.3 =
+ * WordPress 3.7.1 compatibility
+ * Fixed CSS bug in the free coming soon template
+ 
 = 0.2.2 =
  * Normal admin plugin page alias
  * Added info to admin footer - more interactive for users

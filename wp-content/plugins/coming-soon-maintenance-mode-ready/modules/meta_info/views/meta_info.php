@@ -2,14 +2,9 @@
 class meta_infoViewCsp extends viewCsp {
 	public function getAdminOptions() {
 		$metaTags = $this->getModule()->getList();
-		// out($metaTags);exit;
-		
 		foreach($metaTags as $key => $icon) {
-			if(isset($icon['optsTplEngine']) && !empty($icon['optsTplEngine']))
-			{
+			if(isset($icon['optsTplEngine']) && !empty($icon['optsTplEngine'])) {
 				$metaTags[$key]['adminOptsContent'] = call_user_func($icon['optsTplEngine']);
-				
-				
 			}
 		}
 		$this->assign('metaTags', $metaTags);
@@ -21,11 +16,11 @@ class meta_infoViewCsp extends viewCsp {
 	}
 	public function getKeywordsOpts() {
 		$this->assign('optsModel', frameCsp::_()->getModule('options')->getController()->getModel());
-		return parent::getContent('metaDescOpts');
+		return parent::getContent('metaKeywordsOpts');
 	}
 	public function getDescOpts() {
 		$this->assign('optsModel', frameCsp::_()->getModule('options')->getController()->getModel());
-		return parent::getContent('metaKeywordsOpts');
+		return parent::getContent('metaDescOpts');
 	}
 	
 	public function getGoogleAnaliticsOpts(){

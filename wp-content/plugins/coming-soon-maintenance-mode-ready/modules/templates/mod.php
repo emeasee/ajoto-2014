@@ -39,7 +39,7 @@ class templatesCsp extends moduleCsp {
             'ajaxurl'					=> $ajaxurl,
             'animationSpeed'			=> frameCsp::_()->getModule('options')->get('js_animation_speed'),
 			'siteLang'					=> langCsp::getData(),
-			'options'					=> frameCsp::_()->getModule('options')->getByCode(),
+			'options'					=> frameCsp::_()->getModule('options')->getAllowedPublicOptions(),
 			'CSP_CODE'					=> CSP_CODE,
 			'ball_loader'				=> CSP_IMG_PATH. 'ajax-loader-ball.gif',
 			'ok_icon'					=> CSP_IMG_PATH. 'ok-icon.png',

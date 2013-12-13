@@ -3,7 +3,7 @@
  * Plugin Name: Coming Soon / Maintenance mode Ready!
  * Plugin URI: http://readyshoppingcart.com/coming-soon-plugin/
  * Description: Coming Soon or Under Construction page for your Website while maintenance mode on. Get E-mails, Likes and tweets from the visitors
- * Version: 0.2.2
+ * Version: 0.2.3
  * Author: coming soon
  * Author URI: http://readyshoppingcart.com
  **/

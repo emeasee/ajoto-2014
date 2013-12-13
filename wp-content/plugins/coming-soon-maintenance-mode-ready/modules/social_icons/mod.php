@@ -35,7 +35,7 @@ class social_iconsCsp extends moduleCsp {
 	public function addOptionsTab($tabs) {
 		frameCsp::_()->addScript('adminSocialOptions', $this->getModPath(). 'js/admin.social_icons.options.js');
 		$tabs['cspSocIcons'] = array(
-		   'title' => 'Social Buttons', 'content' => $this->getController()->getView()->getAdminOptions(),
+		   'title' => 'Social Buttons', 'content' => $this->getController()->getView()->getAdminOptions(), 'sort_order' => 80
 		);
 		return $tabs;
 	}

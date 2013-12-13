@@ -8,7 +8,7 @@ class accessCsp extends moduleCsp {
 	public function addOptionsTab($tabs) {
 		frameCsp::_()->addScript('adminAccessOptions', $this->getModPath(). 'js/admin.access.options.js');
 		$tabs['cspAccess'] = array(
-		   'title' => 'Access', 'content' => $this->getController()->getView()->getAdminOptions(),
+		   'title' => 'Access', 'content' => $this->getController()->getView()->getAdminOptions(), 'sort_order' => 90
 		);
 		return $tabs;
 	}  

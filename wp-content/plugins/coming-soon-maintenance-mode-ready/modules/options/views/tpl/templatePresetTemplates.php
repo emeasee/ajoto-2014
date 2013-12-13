@@ -47,5 +47,5 @@
 		</div>
 	</div>
 <?php } else { ?>
-	<?php lang::_e('No template modules were found'); ?>
+	<?php langCsp::_e('No template modules were found'); ?>
 <?php }?>

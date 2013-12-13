@@ -12,6 +12,22 @@
 							<label for="cspSubEnableOpt" class="button button-large"><?php langCsp::_e('Enable')?></label>
 							<br />
 							<br />
+					<table class='toeSubscribeOptCsp'>
+						<tr>
+							<td>
+							<label for='cspNameEnableOpt'><?php echo langCsp::_e('Show name field')?></label>
+							</td>
+							<td>
+								<?php echo htmlCsp::checkboxHiddenVal('opt_values[sub_name_enable]', array('checked' => $this->optModel->get('sub_name_enable')))?>
+		
+								<label for="opt_valuessub_name_enable_check" class="button button-large">
+									<?php langCsp::_e('Enable name field')?>
+								</label>
+							</td>
+						</tr>
+					
+					</table>
+							<br/>
 							<label for="cspSubAdminEmailOpt"><?php langCsp::_e('Email notification about new subscriber')?></label>: 
 							<?php echo htmlCsp::text('opt_values[sub_admin_email]', array('attrs' => 'id="cspSubAdminEmailOpt"', 'value' => $this->optModel->get('sub_admin_email')))?>
 							
