@@ -11,6 +11,24 @@ class promo_readyCsp extends moduleCsp {
 		if(is_admin() && !frameCsp::_()->getModule('license')) {
 			dispatcherCsp::addFilter('adminOptionsTabs', array($this, 'addPromoTabs'), 99);
 		}
+		dispatcherCsp::addFilter('adminMenuMainOption', array($this, 'addWelcomePageToMainMenu'), 99);
+		dispatcherCsp::addFilter('adminMenuMainSlug', array($this, 'modifyMainAdminSlug'), 99);
+	}
+	// We used such methods - _encodeSlug() and _decodeSlug() - as in slug wp don't understand urlencode() functions
+	private function _encodeSlug($slug) {
+		return str_replace($this->_specSymbols['from'], $this->_specSymbols['to'], $slug);
+	}
+	private function _decodeSlug($slug) {
+		return str_replace($this->_specSymbols['to'], $this->_specSymbols['from'], $slug);
+	}
+	public function decodeSlug($slug) {
+		return $this->_decodeSlug($slug);
+	}
+	public function modifyMainAdminSlug($mainSlug) {
+		$firstTimeLookedToPlugin = !installerCsp::isUsed();
+		if($firstTimeLookedToPlugin) {
+			$mainSlug = $this->_getNewAdminMenuSlug($mainSlug);
+		}
 		return $mainSlug;
 	}
 	private function _getWelcomMessageMenuData($option, $modifySlug = true) {

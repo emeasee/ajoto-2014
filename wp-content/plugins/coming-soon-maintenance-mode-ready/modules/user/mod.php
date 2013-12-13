@@ -9,11 +9,10 @@ class userCsp extends moduleCsp {
         //}
     }
     public function isAdmin() {
-        $currentUser = $this->getCurrent();
-        if(!empty($currentUser)) {
-            return (bool) $currentUser->isAdmin;
-        }
-        return false;
+		if(!function_exists('wp_get_current_user')) {
+			frameSub::_()->loadPlugins();
+		}
+        return current_user_can('administrator');
     }
 	public function getCurrentUserPosition() {
 		if($this->isAdmin())

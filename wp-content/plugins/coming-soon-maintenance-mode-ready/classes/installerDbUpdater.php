@@ -65,4 +65,9 @@ class installerDbUpdaterCsp {
 		dbCsp::query("INSERT INTO `". $wpPrefix.CSP_DB_PREF. "options` (`id`,`code`,`value`,`label`,`description`,`htmltype_id`,`params`,`cat_id`,`sort_order`) VALUES 
 					(NULL,'sub_checked_notify','1','Subscribe is checked by default','Subscribe is checked by default',1,'',3,0);");
 	}
+	static public function update_023() {
+		global $wpdb;
+		$wpPrefix = $wpdb->prefix;
+		dbCsp::query("UPDATE `". $wpPrefix.CSP_DB_PREF. "options` SET htmltype_id = 18 WHERE code = 'sub_notif_end_maint' LIMIT 1");
+	}
 }
