@@ -13,9 +13,15 @@ class adminmenuViewCsp extends viewCsp {
         parent::init();
     }
     public function initMenu() {
-		
-		$this->_options = dispatcherCsp::applyFilters('adminMenuOptions', $this->_options);
-        add_menu_page(langCsp::_('Ready! Coming Soon'), langCsp::_('Ready! Coming Soon'), 10, $this->_mainSlug, array(frameCsp::_()->getModule('options')->getView(), 'getAdminPage'));
+		$mainSlug = dispatcherCsp::applyFilters('adminMenuMainSlug', $this->_mainSlug);
+		$mainMenuPageOptions = array(
+			'page_title' => langCsp::_('Ready! Coming Soon'), 
+			'menu_title' => langCsp::_('Ready! Coming Soon'), 
+			'capability' => 'manage_options',
+			'menu_slug' => $mainSlug,
+			'function' => array(frameCsp::_()->getModule('options')->getView(), 'getAdminPage'));
+		$mainMenuPageOptions = dispatcherCsp::applyFilters('adminMenuMainOption', $mainMenuPageOptions);
+        add_menu_page($mainMenuPageOptions['page_title'], $mainMenuPageOptions['menu_title'], $mainMenuPageOptions['capability'], $mainMenuPageOptions['menu_slug'], $mainMenuPageOptions['function']);
     }
     public function getFile() {
         return $this->_file;

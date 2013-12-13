@@ -667,6 +667,12 @@ nav#page{
                     }
                 }
             }
+            div.video.small{
+                width: 635px!important;
+                @include bp(phone){
+                  width:94%!important;   
+                }
+            }
             div.slideshow{
                 margin-left:0;
                 margin-top: 10px;
@@ -678,7 +684,7 @@ nav#page{
                     margin-bottom: 0;
                 }
             }
-            .small{
+            div.slideshow.small{
                 width: 635px;
                 @include bp(phone){
                     width: auto;
@@ -698,6 +704,7 @@ nav#page{
                     padding: 40px 20px 0 20px;
                     @include bp(phone){
                         padding: 20px 20px 10px 20px;
+                        font-size: 0.7em;
                     }
                 }
                 span{
@@ -1357,9 +1364,10 @@ nav#page{
                 background-size: 22px 25px;
                 background-position: 50% 15%;
                 height: 100%;
-                padding-top:75px;
+                padding-top:60px;
                 @include bp(phone){
-                    padding-top:115px;
+                    padding: 70px 0;
+                    background-position: 50% 5%;
                 }
             }
             p.penicn{
@@ -1380,10 +1388,10 @@ nav#page{
             vertical-align:middle;
             height: 205px;
             background: #f9f9f9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
-            background-size: 210px 30px;
+            background-size: 205px 30px;
             background-position: 50% 85%;
             @include bp(phone){
-                background-position: 50 2085%;
+                background-position: 50% 95%;
                 height: auto;
             }
         }
@@ -2120,10 +2128,15 @@ section.items{
     width: 850px;
     @include bp(phone){
         border: none;
+        width: 100%;
         text-align: left!important;  
     }
     form.cart{
         width:850px;
+        font-family:$sans-serif;
+        @include bp(phone){
+          width:100%;   
+        }
         table.cart{
             thead{
                 display: block;
@@ -2136,6 +2149,9 @@ section.items{
                 }
             }
             tbody{
+                @include bp(phone){
+                  display: block;   
+                }
                 tr{
                     td{
                         display: table-cell;
@@ -2146,6 +2162,10 @@ section.items{
                     display: table;
                     td{
                         width:25%;
+                        @include bp(phone){
+                            display: block;  
+                            width: 100%; 
+                        }
                     }
                 }
                 tr.col{
@@ -2184,6 +2204,10 @@ section.items{
                 td.product-remove{
                     margin-top: 48px;
                     margin-left: -10px;
+                    @include bp(phone){
+                      margin-top: -254px;
+                      margin-left: 286px;    
+                    }
                 }
                 tr.totals{
                     td{
@@ -2192,10 +2216,10 @@ section.items{
                         width:95%!important;
                     }
                     td.total{
-                        width: 47%;
+                        width: 49%;
                     }
                     td.subtotal{
-                        width: 47%;
+                        width: 48%;
                     }
 
                 }
@@ -2722,8 +2746,13 @@ div.addresses.order{
         text-transform: uppercase;
         margin-bottom: 30px;
         width: 100%;
+        @include bp(phone){
+          display: block;  
+        }
         thead{
-            display: none;
+            @include bp(phone){
+              display: none!important;   
+            }
         }
         tbody{
             width:100%;
@@ -2847,10 +2876,16 @@ div.addresses.order{
                     .input-text{
                         width:75%;
                         margin:10px 10%;
+                        @include bp(phone){
+                          width: 50%!important;  
+                        }
                     }
                     .button{
                         margin: 5px 0;
                         padding: 0;
+                        @include bp(phone){
+                          float: none!important;   
+                        }
                     }
                 }
                 p.form-row{
@@ -2866,6 +2901,9 @@ div.addresses.order{
                     span{
                         float:right;
                         margin-right: 10px;
+                        @include bp(phone){
+                          margin-right: 0;   
+                        }
                     }
                     .button{
                         float: none;
@@ -2877,6 +2915,9 @@ div.addresses.order{
                     width: 422px!important;
                     margin-bottom: 10px;
                     line-height: 34px;
+                    @include bp(phone){
+                      width:100%!important;  
+                    }
                     td{
                         font-size: 1em;
                         background-color: #f9f9f9;
@@ -2892,6 +2933,9 @@ div.addresses.order{
                     line-height: 18px;
                     float:left;
                     margin-top:20px;
+                    @include bp(phone){
+                      margin-bottom: 20px;   
+                    }
                     td{
                         text-align: center!important;
                         background: transparent!important;
@@ -2917,14 +2961,19 @@ div.addresses.order{
 
                 tr.totals{
                     float:right;
+                    td{
+                        @include bp(phone){
+                          text-align:center!important;   
+                        }
+                    }
                     td.total{
-                        width: 45%;
+                        width: 49%;
                         color: white;
                         float: right;
                         background-color: rgb(50,50,50);
                     }
                     td.subtotal{
-                        width: 47%;
+                        width: 48%;
                         float: left;
                     }
             
@@ -2939,6 +2988,13 @@ div.addresses.order{
                         span.amount{
                             float: none;
                             padding: 0;
+                        }
+                    }
+                    span.amount{
+                        @include bp(phone){
+                          width: 100%;
+                          text-align: center;
+                          display: block;   
                         }
                     }
                 }

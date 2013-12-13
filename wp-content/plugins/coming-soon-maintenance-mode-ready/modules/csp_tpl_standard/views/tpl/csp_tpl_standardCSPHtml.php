@@ -35,7 +35,10 @@
                             echo '<img src="'.frameCsp::_()->getModule('options')->getBgImgFullPath().'" id="fullScreenBg" alt="" />';
                         break;
                         case 'center':
-                            echo '<style type="text/css">body {background:url('.frameCsp::_()->getModule('options')->getBgImgFullPath().') center center no-repeat;}</style>';
+                            echo '<style type="text/css">body {
+								background:url('.frameCsp::_()->getModule('options')->getBgImgFullPath().') center center no-repeat;
+								background-size: cover;
+							}</style>';
                         break;
                         case 'tile':
                             echo '<style type="text/css">body {background:url('.frameCsp::_()->getModule('options')->getBgImgFullPath().');}</style>';

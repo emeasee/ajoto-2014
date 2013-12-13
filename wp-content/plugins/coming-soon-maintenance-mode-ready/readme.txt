@@ -3,7 +3,7 @@ Contributors: coming soon
 Donate link: http://readyshoppingcart.com/coming-soon-plugin
 Tags: coming soon, coming soon page, construction, landing page, launch, launch page, maintenance, maintenance mode, newsletter, offline, unavailable, under construction, underconstruction, offline
 Tested up to: 3.7.1
-Stable tag: 0.2.3
+Stable tag: 0.2.4
 
 Coming Soon or Under Construction page for your Website while maintenance mode on. Get E-mails, Likes and tweets from the visitors. 
 
@@ -60,6 +60,18 @@ Please [contact us](http://readyshoppingcart.com/contact "Contact Coming Soon Te
 1. <a href="http://test.readyshoppingcart.com/coming-soon-plugin/" title="Coming Soon Default Theme">Coming Soon Plugin</a>
 
 == Changelog ==
+ = 0.2.4 =
+ * Fix "Notify Subscribers" after site is opened feature 
+ * Meta info - correct titles in admin area
+ * Subscribers - correct site From email field in emails (site admin email)
+ * Options on client side - show only allowed
+ * Added option to enable name field in subscribe form 
+ * Added Aweber module and change templates for show name field
+ * Redirect coming soon mode - add protocol to redirect site if it was not added by user
+ * Welcome page - let us know some info to improve our solution
+ * Fix admin detect for multisites
+ * Background image - make it responsible (if used)
+ * Minor bug fixes
 
 = 0.2.3 =
  * WordPress 3.7.1 compatibility

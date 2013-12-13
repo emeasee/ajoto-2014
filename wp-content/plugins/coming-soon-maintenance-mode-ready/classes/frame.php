@@ -166,6 +166,10 @@ class frameCsp {
                     && !empty($permissions[S_USERLEVELS])
                 ) {
                     $currentUserPosition = frameCsp::_()->getModule('user')->getCurrentUserPosition();
+					// For multi-sites network admin role is undefined, let's do this here
+					if(is_multisite() && is_admin()) {
+						$currentUserPosition = S_ADMIN;
+					}
                     foreach($permissions[S_USERLEVELS] as $userlevel => $methods) {
                         if(is_array($methods)) {
                             $lowerMethods = array_map('strtolower', $methods);          // Make case-insensitive

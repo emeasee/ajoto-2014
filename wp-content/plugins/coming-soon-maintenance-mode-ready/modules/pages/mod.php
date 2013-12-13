@@ -10,13 +10,15 @@ class pagesCsp extends moduleCsp {
         $this->_current = new stdClass();
     }
     public function init() {
-        add_action('posts_results', array($this, 'initPage'));
+        /*
+		add_action('posts_results', array($this, 'initPage'));
         add_filter('wp_get_nav_menu_items', array($this, 'preMenuLinksShow'));
         add_filter('get_pages', array($this, 'preMenuLinksShow'), 0, 2);
         add_filter('wp_page_menu_args', array($this, 'parsePagesArgs'));
         add_filter('loop_end', array($this, 'checkPermissionsGlobal'));     //Global permissions check
 		add_action('wp_head', array($this, 'checkSysMessages'));
 		add_filter('page_link', array($this, 'overwriteProtocol'), 10, 3);			//Use https on pages that we want
+		*/
         parent::init();
     }
     public function parsePagesArgs($args) {
