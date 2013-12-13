@@ -314,6 +314,7 @@ if(!function_exists('toeMultArrayMap')) {
         return $array;
     }
 }
+
 if(!function_exists('toeVarDump')) {
 	/**
 	 * Make var_dump(); with <pre> tag to display data more clear
@@ -322,6 +323,29 @@ if(!function_exists('toeVarDump')) {
 		echo '<pre>';
 		call_user_func_array('var_dump', func_get_args());
 		echo '</pre>';
+	}
+}
+if(!function_exists('outCsp')) {
+	/**
+	 * Make print_r(); with <pre> tag to display data more clear
+	 */
+	function outCsp() {
+		echo '<pre>';
+			call_user_func_array('print_r', func_get_args());
+		echo '</pre>';
+		// $debug = debug_backtrace();
+		// echo "called from file:".$debug[2]['file'].",at line:".$debug[2]['line'];
+		echo "<hr/>";
+	}
+}
+if(!function_exists('outeCsp')) {
+	/**
+	 * Make print_r() then exit; with <pre> tag to display data more clear and then exit
+	 */
+	function outeCsp() {
+			$args = func_get_args();
+			call_user_func_array('outCsp', $args);
+		exit;
 	}
 }
 ?>

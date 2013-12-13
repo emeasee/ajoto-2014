@@ -618,6 +618,9 @@ nav#page{
             p{
                 width:80%;
                 margin-left:10%;
+                @include bp(phone){
+                    margin:5%;   
+                }
             }
             h4{
                 letter-spacing: 2px;
@@ -635,8 +638,8 @@ nav#page{
                 position:relative;
                 min-height: 420px;
                 @include bp(phone){
-                    width: 100%;
-                    min-height: none;
+                    width: 94%!important;
+                    min-height: inherit;
                 }
                 img{
                     position: absolute;
@@ -668,16 +671,15 @@ nav#page{
                 margin-left:0;
                 margin-top: 10px;
                 min-height: 420px;
-                width: 100%;
                 @include bp(phone){
-                    min-height: none;
+                    min-height: inherit;
                 }
                 .royalSlider{
                     margin-bottom: 0;
                 }
             }
             .small{
-                width: 635px!important;
+                width: 635px;
                 @include bp(phone){
                     width: auto;
                 }
@@ -687,6 +689,9 @@ nav#page{
                 overflow:hidden;
                 width:95%;
                 margin-top: 10px;
+                @include bp(phone){
+                  font-size: 1.2em;  
+                }
                 h1{
                     font-size: 1em;
                     margin: 0;
@@ -742,7 +747,7 @@ nav#page{
                     background-position: 50% 50%;
                 }
                 span.bottom{
-                    background-position: 50% 50%;
+                    background-position: 50% 50%!important;
                     background-repeat: no-repeat;
                 }
                 span.grey.bottom{
@@ -818,7 +823,7 @@ nav#page{
                     height:150px;
                 }
                 p.no-images{
-                    height:375px;
+                    height:365px;
                 }
             }
             div.card.tall{
@@ -836,14 +841,14 @@ nav#page{
                     width: 635px;
                     background-position: 50% 90%;
                     @include bp(phone){
-                        width:auto;
+                        width:94%;
                         background-position: 50% 490%;
                     }
                 }
                 div.card.half{
                     width: 420px;
                     @include bp(phone){
-                        width: auto;
+                        width: 94%;
                     }
                     p{
                         height:300px;
@@ -852,7 +857,7 @@ nav#page{
                 div.card.quart{
                     width: 205px;
                     @include bp(phone){
-                        width: auto;
+                        width: 94%;
                     }
                     img{
                         width:165px;
@@ -864,7 +869,7 @@ nav#page{
                     height:205px;
                     width: 205px;
                     @include bp(phone){
-                        width: auto;
+                        width: 94%;
                     }
                 }
             .grey{
@@ -1272,6 +1277,10 @@ nav#page{
                 float:right;
                 display:block;
                 padding-bottom: 0;
+                @include bp(phone){
+                  width:auto;
+                  height:auto;   
+                }
                 h1{
                     font-size: 1.35em;
                     text-align: left;
@@ -1291,17 +1300,24 @@ nav#page{
         }
 
         .threecol{
-            width:580px;
+            width:580px!important;
             -moz-column-count: 2;
             -moz-column-gap: 20px;
             -webkit-column-count: 2;
             -webkit-column-gap: 20px;
-            padding:20px;
-            font-size: 0.83em;
+            padding:20px!important;
+            @include bp(phone){
+                width:94%!important;
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                text-align: center;
+            }
             h4{
                 text-align: left;
-                width: auto;
+                width: auto!important;
                 border: none!important;
+                font-size: 1em;
+                font-family: $serif;
             }
         }
 
@@ -1311,6 +1327,7 @@ nav#page{
             padding: 0 30px 0 30px;
             @include bp(phone){
                 padding:30px;
+                width:94%;
             }
             p{
                 font: 0.7em "Merriweather";
@@ -1332,8 +1349,7 @@ nav#page{
                 padding-top:50px;
                 background-position: 50% -55%!important;
                 @include bp(phone){ 
-                    background-position: 50% -5%!important;
-                    padding-top:85px;
+                    background-position: 50% -85%!important;
                 }
             }
             p.studioicn{
@@ -1364,10 +1380,11 @@ nav#page{
             vertical-align:middle;
             height: 205px;
             background: #f9f9f9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
-            background-size: 420px 30px;
+            background-size: 210px 30px;
             background-position: 50% 85%;
             @include bp(phone){
                 background-position: 50 2085%;
+                height: auto;
             }
         }
         div.titles.product{
@@ -1379,6 +1396,9 @@ nav#page{
                 bottom: 30px;
                 font-size: 0.7em;
                 color:#c0974a;
+                @include bp(phone){
+                    bottom:10px;   
+                }
             }
             .button{
                 width:150px;
@@ -1732,7 +1752,6 @@ section#blogtop{
 
 .slideshow{
     max-width: 850px;
-    width:100%;
     margin:0 auto;
     margin-top: 10px;
     @include bp(phone){
@@ -2298,6 +2317,9 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             ul{
                 li{
                     margin-left: 80px;
+                    @include bp(phone){
+                        margin-left: 67px;    
+                    }
                 }
             }
         }
@@ -2305,6 +2327,9 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             ul{
                 li{
                     margin-left:170px;
+                    @include bp(phone){
+                        margin-left: 67px;    
+                    }
                 }
             }
         }
@@ -2312,6 +2337,9 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             ul{
                 li{
                     margin-left:30px;
+                    @include bp(phone){
+                        margin-left: 67px;    
+                    }
                 }
             }
         }
@@ -2320,6 +2348,9 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                 li{
                     margin-left:50px;
                     width:350px;
+                    @include bp(phone){
+                        margin-left: -15px;    
+                    }
                 }
             }
         }

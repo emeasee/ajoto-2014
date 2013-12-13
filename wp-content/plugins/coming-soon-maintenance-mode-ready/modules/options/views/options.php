@@ -3,20 +3,29 @@ class optionsViewCsp extends viewCsp {
     public function getAdminPage() {
 		$presetTemplatesHtml = $this->getPresetTemplates();
 		$tabsData = array(
-			'cspMainOptions'		=> array('title' => 'Main',		'content' => $this->getMainOptionsTab()),
-			'cspTemplateOptions'	=> array('title' => 'Template', 'content' => $this->getTemplateOptionsTab()),
-			'cspPresetTemplates'	=> array('title' => 'Preset Templates', 'content' => $presetTemplatesHtml),
-
-			'cspStyleEditor'=>array('title'=>'Style Editor',"content"=>"",'visible'=>(bool)(bool)frameCsp::_()->getModule('license')),
-			'cspContactUsSetup'=>array('title'=>'Contact Form',"content"=>"","visible"=>(bool)frameCsp::_()->getModule('license')),
-			'cspGoogleMapsSetup'=>array('title'=>'Google Maps',"content"=>"",'visible'=>(bool)frameCsp::_()->getModule('license')),
-			'cspMailChimpSetup'=>array('title'=>'Mail Chimp',"content"=>"",'visible'=>(bool)frameCsp::_()->getModule('license')),
+			'cspMainOptions'		=> array('title' => 'Main',				'content' => $this->getMainOptionsTab(), 'sort_order' => 10),
+			'cspTemplateOptions'	=> array('title' => 'Template',			'content' => $this->getTemplateOptionsTab(), 'sort_order' => 20),
+			'cspPresetTemplates'	=> array('title' => 'Preset Templates', 'content' => $presetTemplatesHtml, 'sort_order' => 30),
 		);
 		$tabsData = dispatcherCsp::applyFilters('adminOptionsTabs', $tabsData);
+		
+		uasort($tabsData, array($this, 'sortTabsCallback'));
+		
 		$this->assign('presetTemplatesHtml', $presetTemplatesHtml);
 		$this->assign('tabsData', $tabsData);
         parent::display('optionsAdminPage');
     }
+	public function sortTabsCallback($a, $b) {
+		if(!isset($a['sort_order']))
+			return -1;
+		if(!isset($b['sort_order']))
+			return 1;
+		if($a['sort_order'] > $b['sort_order'])
+			return 1;
+		if($a['sort_order'] < $b['sort_order'])
+			return -1;
+		return 0;
+	}
 	public function getPresetTemplates() {
 		$this->assign('tplModules', frameCsp::_()->getModules(array('type' => 'template')));
 		$tplModulesPromo = array();

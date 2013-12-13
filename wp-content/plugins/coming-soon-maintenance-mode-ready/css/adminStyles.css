@@ -29,6 +29,7 @@
 	.cspStyleEditor a {background:url(img/editor-icon.png) 12px 9px no-repeat;}
 	.cspContactUsSetup a {background:url(img/contactus-icon.png) 12px 9px no-repeat;}
 	.cspGoogleMapsSetup a {background:url(img/google-map-icon.png) 12px 9px no-repeat;}
+	.cspAweberSetup a{ background: url(img/aweber.png) 12px 9px no-repeat;}	
 	.cspMailChimpSetup a {background:url(img/mailchimp.png) 12px 9px no-repeat;}
 /* Tabs content style */
 .cspNiceStyle { }

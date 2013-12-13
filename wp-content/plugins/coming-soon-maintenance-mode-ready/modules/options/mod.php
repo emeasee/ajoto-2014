@@ -81,7 +81,15 @@ class optionsCsp extends moduleCsp {
 	public function getFavicoFullPath(){
 		return utilsCsp::getUploadsPath(). '/'. $this->_uploadDir. '/'. $this->_favicoDir. '/'. $this->get('favico');		
 	}
-	
-	
+	public function getAllowedPublicOptions() {
+		$res = array();
+		$alowedForPublic = array('mode', 'template');
+		$allOptions = $this->getModel()->getByCode();
+		foreach($alowedForPublic as $code) {
+			if(isset($allOptions[ $code ]))
+				$res[ $code ] = $allOptions[ $code ];
+		}
+		return $res;
+	}	
 }
 

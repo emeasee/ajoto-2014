@@ -47,7 +47,7 @@
     
     
     define('CSP_PLUGIN_INSTALLED', true);
-    define('CSP_VERSION', '0.2.2');
+    define('CSP_VERSION', '0.2.3');
     define('CSP_USER', 'user');
     
     

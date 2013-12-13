@@ -27,7 +27,9 @@ class coming_soonCsp extends moduleCsp {
 					header('Retry-After: 300');
 					break;
 				case 'redirect':
-					$redirectUrl = frameCsp::_()->getModule('options')->get('redirect');
+					$redirectUrl = trim(frameCsp::_()->getModule('options')->get('redirect'));
+					if(strpos($redirectUrl, 'http://') !== 0 && strpos($redirectUrl, 'https://') !== 0) 
+						$redirectUrl = 'http://'. $redirectUrl;
 					redirect($redirectUrl);
 					break;
 			}

@@ -139,10 +139,9 @@ class installerCsp {
 			(NULL,'msg_text','". $msgText. "','Message Text','Message Text',1,'',2,0),
 			(NULL,'msg_text_color','#000000','Message Text Color','Message Text Color',1,'',2,0),
 			(NULL,'msg_text_font','','Message Text Font','Message Text Font',1,'',2,0),
-			
 			(NULL,'sub_enable','1','Enable Subscribe','Enable Subscribe',1,'',3,0),
+			(NULL,'sub_name_enable','1','Enable Subscriber Name Field','Enable Subscribe Name',1,'',3,0),
 			(NULL,'sub_admin_email','','New Subscribe notification email','New Subscribe notification email',1,'',3,0),
-			
 			(NULL,'soc_facebook_enable_share','','Facebook enable share','Facebook enable share',18,'',4,0),
 			(NULL,'soc_facebook_enable_like','','Facebook enable like','Facebook enable like',18,'',4,0),
 			(NULL,'soc_facebook_enable_send','1','Facebook enable send','Facebook enable send',18,'',4,0),
@@ -295,12 +294,20 @@ class installerCsp {
 	   }
 
 		installerDbUpdaterCsp::runUpdate();
-
+		if($current_version) {
+			self::setUsed();
+		}
 		update_option($wpPrefix. CSP_DB_PREF. 'db_version', CSP_VERSION);
 		add_option($wpPrefix. CSP_DB_PREF. 'db_installed', 1);
 		dbCsp::query("UPDATE `".$wpPrefix.CSP_DB_PREF."options` SET value = '". CSP_VERSION. "' WHERE code = 'version' LIMIT 1");
 
 		//$time = microtime(true) - $start;	// Speed debug info
+	}
+	static public function setUsed() {
+		update_option(CSP_DB_PREF. 'plug_was_used', 1);
+	}
+	static public function isUsed() {
+		return (int) get_option(CSP_DB_PREF. 'plug_was_used');
 	}
 	/**
 	 * Create pages for plugin usage
@@ -354,6 +361,7 @@ class installerCsp {
 		dbCsp::query("UPDATE `".$wpPrefix.CSP_DB_PREF."modules` SET params = '". json_encode($toePages). "' WHERE code = 'pagesCsp' LIMIT 1");
 		update_option($wpPrefix. 'pagesCsp', json_encode($toePages));
 	}
+	
 	/**
 	 * Return page data from given array, searched by title, used in self::createPages()
 	 * @return mixed page data object if success, else - false

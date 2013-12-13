@@ -20,7 +20,7 @@ class subscribeCsp extends moduleCsp {
    public function addOptionsTab($tabs) {
 	   frameCsp::_()->addScript('adminSubscribeOptions', $this->getModPath(). 'js/admin.subscribe.options.js');
 	   $tabs['cspSubscribeOptions'] = array(
-		   'title' => 'Subscribers', 'content' => $this->getController()->getView()->getAdminOptions(),
+		   'title' => 'Subscription', 'content' => $this->getController()->getView()->getAdminOptions(), 'sort_order' => 70
 	   );
 	   return $tabs;
    }

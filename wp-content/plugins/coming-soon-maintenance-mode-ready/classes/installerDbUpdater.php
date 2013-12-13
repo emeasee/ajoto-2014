@@ -5,8 +5,7 @@ class installerDbUpdaterCsp {
 		self::update_006();
 		self::update_013();
 		self::update_017();
-	}
-	
+        }
 	static public function update_004() {
 		global $wpdb;
 		$wpPrefix = $wpdb->prefix;

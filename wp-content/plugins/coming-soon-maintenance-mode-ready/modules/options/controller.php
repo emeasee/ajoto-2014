@@ -133,7 +133,7 @@ class optionsControllerCsp extends controllerCsp {
 	public function activatePlugin() {
 		$res = new responseCsp();
 		if($this->getModel('modules')->activatePlugin(reqCsp::get('post'))) {
-			$res->addMessage(lang::_('Plugin was activated'));
+			$res->addMessage(langCsp::_('Plugin was activated'));
 		} else {
 			$res->pushError($this->getModel('modules')->getErrors());
 		}
@@ -142,7 +142,7 @@ class optionsControllerCsp extends controllerCsp {
 	public function activateUpdate() {
 		$res = new responseCsp();
 		if($this->getModel('modules')->activateUpdate(reqCsp::get('post'))) {
-			$res->addMessage(lang::_('Very good! Now plugin will be updated.'));
+			$res->addMessage(langCsp::_('Very good! Now plugin will be updated.'));
 		} else {
 			$res->pushError($this->getModel('modules')->getErrors());
 		}
