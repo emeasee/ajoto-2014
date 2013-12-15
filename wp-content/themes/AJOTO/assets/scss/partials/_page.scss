@@ -2101,6 +2101,9 @@ div.validation_error{
             }
             a strong.am{
                 display: none;
+                @include bp(phone){
+                  display: inline;  
+                }
             }
             @include bp(phone){
                 float:none;
@@ -2410,6 +2413,8 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 }
 .woocommerce-account{
     .woocommerce{
+        max-width: 850px;
+        margin: 0 auto;
         label{
             display:block;
             text-align: left;
@@ -3041,7 +3046,7 @@ form.shipping_calculator{
 .create-account{
     display: block!important;
     float:right;
-    margin-top: -220px;
+    margin-top: -262px;
     width: 48%;
     @include bp(phone){
         float: left;
@@ -3083,6 +3088,9 @@ form.shipping_calculator{
         width: 100%;
         margin: 0;
         float: left;
+        @include bp(phone){
+          text-align: center;  
+        }
         label{
             display:none;
         }
@@ -3095,6 +3103,9 @@ form.shipping_calculator{
             display: none;
         }
     }
+    [class*='col-']{
+        padding:0;
+    }
     div.shipping_address{
         display: block!important;
     }
@@ -3104,13 +3115,13 @@ form.shipping_calculator{
         text-align: left;
     }
     p.disclaimer{
-        width:92%;
+        width:100%;
         height: 130px;
         background: #f1f1f1;
         padding: 4%;
     }
     #order_comments_field{
-        width:100%;
+        width:100%
     }
 
     .woocommerce-info{
@@ -3118,12 +3129,20 @@ form.shipping_calculator{
     }
     div.wooms{
         text-align: right;
-        margin-top: -36px!important;
+        margin-top: -62px!important;
         float:right!important;
         width:30%!important;
         margin-left:300px!important; 
+        font-family:$sans-serif;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         @include bp(phone){
-            width: 50%;
+            width: auto!important;
+            margin-top: 550px!important;
+            position: absolute;
+            margin-left: 73px!important;
+
         }
     }
     form.login{
@@ -3147,17 +3166,25 @@ form.shipping_calculator{
         float:left;
         font-family: "Futura";
         @include bp(phone){
-            width:93%;
             padding:2%;
+            width: 97%;
         }
         div.left{
             width:48%;
             margin-top: 0;
+            @include bp(phone){
+              width: 100%;   
+            }
         }
         div.right{
             width:48%;
             margin-left: 4%;
             margin-top: 0!important;
+            @include bp(phone){
+              width: 100%; 
+              margin-left: 0;
+              margin-top: 10%!important; 
+            }
         }
         table{
             font-size: 0.8em;
@@ -3165,7 +3192,7 @@ form.shipping_calculator{
             }
         input[type="text"],input[type="password"]{
             margin-bottom: 20px;
-            width:98%;
+            width:100%;
             height: 30px;
             padding:0;
             padding-left: 10px;
@@ -3236,7 +3263,6 @@ form.shipping_calculator{
     }
 }
 #order_review{
-    float:left;
     table.shop_table{
         width:100%;
         tfoot{
@@ -3301,8 +3327,11 @@ form.shipping_calculator{
                 padding: 0 20px;
             }
         }
-        .place-order{
-            width:100%;
+        #place-order{
+            @include bp(phone){
+              width:100%;    
+            }
+            
         }
     }
 }
