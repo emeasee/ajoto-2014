@@ -229,7 +229,6 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 			<?php $woocommerce->nonce_field('process_checkout')?>
 
-
 			<input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="<?php echo apply_filters('woocommerce_order_button_text', __( 'PLACE ORDER', 'woocommerce' )); ?>" />
 
 			<?php if (woocommerce_get_page_id('terms')>0) : ?>
