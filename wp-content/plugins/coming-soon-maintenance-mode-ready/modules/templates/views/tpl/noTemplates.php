@@ -1,1 +1,0 @@
-<?php langCsp::_e('No Templates were found')?>

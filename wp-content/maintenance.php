@@ -32,7 +32,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
               font-size: 1em;
               line-height: 1.5;
               color: #565656;
-              background: url('http://ajoto.com/maintenance/images/main_bg.gif') repeat;
+              background: url('http://ajoto.com/images/main_bg.gif') repeat;
               width: 100%;
               overflow: visible;
               -webkit-font-smoothing: antialiased;
@@ -213,7 +213,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
             #content section.title a.arrow {
               width: 35px;
               height: 70px;
-              background-image: url('http://ajoto.com/maintenance/images/controls-sprite-black.png');
+              background-image: url('http://ajoto.com/images/controls-sprite-black.png');
               top: 50%;
               margin-top: -37px;
               cursor: pointer;
@@ -316,7 +316,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
               position: relative;
               text-align: center;
               margin: 0 auto;
-              background: url('http://ajoto.com/maintenance/images/menu_bg.gif') repeat;
+              background: url('http://ajoto.com/images/menu_bg.gif') repeat;
               -moz-box-shadow: inset 0px 4px 10px 1px rgba(0, 0, 0, 0.3);
               -webkit-box-shadow: inset 0px 4px 10px 1px rgba(0, 0, 0, 0.3);
               box-shadow: inset 0px 4px 10px 1px rgba(0, 0, 0, 0.3);
@@ -348,7 +348,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
               font-size: 11px;
               padding: 2em 0;
               line-height: 3em;
-              background: url('http://ajoto.com/maintenance/images/arrows_sprite.png') no-repeat;
+              background: url('http://ajoto.com/images/arrows_sprite.png') no-repeat;
               background-position: 50% 354%;
             }
             .footer #footer-bar .nav-box ul.share {
@@ -380,13 +380,13 @@ header( 'Content-Type: text/html; charset=utf-8' );
               padding-left: 2px;
               height: 63px;
               letter-spacing: 2px;
-              background-image: url('http://ajoto.com/maintenance/images/mark-btm.png');
+              background-image: url('http://ajoto.com/images/mark-btm.png');
               background-repeat: no-repeat;
               background-position: bottom;
             }
             @media all and (-webkit-min-device-pixel-ratio: 1.5) {
               .footer #footer-bar .nav-box p {
-                background-image: url('http://ajoto.com/maintenance/images/mark-btm@2x.png');
+                background-image: url('http://ajoto.com/images/mark-btm@2x.png');
                 background-size: 60px 20px;
               }
             }
@@ -399,7 +399,7 @@ header( 'Content-Type: text/html; charset=utf-8' );
 
         <header role="banner" class="header">
             <div id="inner-header" class="wrap clearfix">           
-                <p id="logo" class="h1"><a href="http://www.ajoto.com" rel="external"><img src="http://ajoto.com/maintenance/images/ajoto-logo.png" alt=""></a></p>         
+                <p id="logo" class="h1"><a href="http://www.ajoto.com" rel="external"><img src="http://ajoto.com/images/ajoto-logo.png" alt=""></a></p>         
             </div> <!-- end #inner-header -->
             <nav class="menu">
 
@@ -428,10 +428,10 @@ header( 'Content-Type: text/html; charset=utf-8' );
         <div class="nav-box">               
                 <a class="top" href="">BACK TO TOP</a>
                 <ul class="share">
-                    <li><a href="http://www.facebook.com/ajotostudio" target="_blank"><img src="http://ajoto.com/maintenance/images/facebook_l.png" alt=""/></a></li>
-                    <li><a href="http://www.twitter.com/ajoto" target="_blank"><img src="http://ajoto.com/maintenance/images/twitter_l.png" alt=""/></a></li>
-                    <li><a href="http://www.pinterest.com/ajoto" target="_blank"><img src="http://ajoto.com/maintenance/images/pinterest_l.png" alt=""/></a></li>
-                    <li><a href="mailto:studio@ajoto.com" target="_blank"><img src="http://ajoto.com/maintenance/images/email_l.png" alt=""/></a></li>
+                    <li><a href="http://www.facebook.com/ajotostudio" target="_blank"><img src="http://ajoto.com/images/facebook_l.png" alt=""/></a></li>
+                    <li><a href="http://www.twitter.com/ajoto" target="_blank"><img src="http://ajoto.com/images/twitter_l.png" alt=""/></a></li>
+                    <li><a href="http://www.pinterest.com/ajoto" target="_blank"><img src="http://ajoto.com/images/pinterest_l.png" alt=""/></a></li>
+                    <li><a href="mailto:studio@ajoto.com" target="_blank"><img src="http://ajoto.com/images/email_l.png" alt=""/></a></li>
                 </ul>
                 
                 <ul class="meta">

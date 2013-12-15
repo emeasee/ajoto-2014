@@ -6,6 +6,7 @@ node_modules
 *.log
 .sass-cache
 .yeopress
+.rev
 
 # Ignore config
 local-config.php
