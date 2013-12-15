@@ -27,3 +27,5 @@ $info_message = apply_filters( 'woocommerce_checkout_login_message', __( 'Return
 	);
 ?>
 </div>
+
+            <?php do_action( 'woocommerce_review_order_before_submit' ); ?>
