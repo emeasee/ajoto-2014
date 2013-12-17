@@ -6,11 +6,10 @@
 	<title><?php bloginfo('name'); ?><?php wp_title('/'); ?></title>
 	<meta name="viewport" content="width=device-width">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">	
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-touch-icon.png">
 	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
-	<link href='//fonts.googleapis.com/css?family=Merriweather:400,300,700,900' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
 </head>
 

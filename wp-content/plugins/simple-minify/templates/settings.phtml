@@ -1,0 +1,131 @@
+<div class="wrap">
+    <div class="icon32" id="icon-options-general"><br></div>
+    <h2>AssetsMinify's configuration</h2>
+    <p>&nbsp;</p>
+    <form method="post" action="options.php">
+        <?php settings_fields('am_options_group'); ?>
+        <table class="form-table">
+            <tbody>
+                <tr valign="top">
+                    <th scope="row">
+                        <h3>Compass</h3>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_use_compass">Use Compass</label>
+                    </th>
+                    <td>
+                        <input name="am_use_compass" type="checkbox" id="am_use_compass" value="1" <?php checked(1, get_option('am_use_compass')); ?>>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_compass_path">Compass compiler's path</label>
+                    </th>
+                    <td>
+                        <input name="am_compass_path" type="text" id="am_compass_path" value="<?php echo get_option('am_compass_path', '/usr/bin/compass') ?>" class="regular-text">
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <h3>CoffeeScript</h3>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_coffeescript_path">CoffeeScript compiler's path</label>
+                    </th>
+                    <td>
+                        <input name="am_coffeescript_path" type="text" id="am_coffeescript_path" value="<?php echo get_option('am_coffeescript_path', '/usr/bin/coffee') ?>" class="regular-text">
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <h3>Styles</h3>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_compress_styles">Compress styles</label>
+                    </th>
+                    <td>
+                        <input name="am_compress_styles" type="checkbox" id="am_compress_styles" value="1" <?php checked(1, get_option('am_compress_styles', 1)); ?>>
+                        <span class="description">Use with care! Some background-images may not be displayed if running a WordPress unusual environment.</span>
+                    </td>
+                </tr>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_compress_external_styles">Compress external styles</label>
+                    </th>
+                    <td>
+                        <input name="am_compress_external_styles" type="checkbox" id="am_compress_external_styles" value="1" <?php checked(1, get_option('am_compress_external_styles', 1)); ?>>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_styles_to_include">Domains of styles to include</label>
+                    </th>
+                    <td>
+                        <textarea name="am_styles_to_include" id="am_styles_to_include" cols="60" rows="5"><?php echo get_option('am_styles_to_include') ?></textarea>
+                        <div>
+                            <span class="description">Fill in the domains of the styles you want to be managed from AssetsMinify, separated by comma. (eg. fonts.googleapis.com, minify.fr)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <h3>Scripts</h3>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_compress_scripts">Compress scripts</label>
+                    </th>
+                    <td>
+                        <input name="am_compress_scripts" type="checkbox" id="am_compress_scripts" value="1" <?php checked(1, get_option('am_compress_scripts', 1)); ?>>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_compress_external_scripts">Compress external scripts</label>
+                    </th>
+                    <td>
+                        <input name="am_compress_external_scripts" type="checkbox" id="am_compress_external_scripts" value="1" <?php checked(1, get_option('am_compress_external_scripts', 1)); ?>>
+                    </td>
+                </tr>
+                 <tr valign="top">
+                    <th scope="row">
+                        <label for="am_scripts_to_include">Domains of scripts to include</label>
+                    </th>
+                    <td>
+                        <textarea name="am_scripts_to_include" id="am_scripts_to_include" cols="60" rows="5"><?php echo get_option('am_scripts_to_include') ?></textarea>
+                        <div>
+                            <span class="description">Fill in the domains of the scripts you want to be managed from AssetsMinify, separated by comma. (eg. ajax.googleapis.com, minify.fr)</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <h3>Exclude ressources</h3>
+                    </th>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">
+                        <label for="am_files_to_exclude">Resources to exclude</label>
+                    </th>
+                    <td>
+                        <textarea name="am_files_to_exclude" id="am_files_to_exclude" cols="60" rows="5"><?php echo get_option('am_files_to_exclude') ?></textarea>
+                        <div>
+                            <span class="description">Fill in the filename of the resources you don't want to be managed from AssetsMinify, separated by comma. (eg. custom-carousel.js, slideshow.js)</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="submit">
+            <input type="submit" name="submit" id="submit" class="button button-primary" value="Save" style="margin-right:10px"> <a href="<?php echo admin_url( "options-general.php?page=assets-minify&empty_cache" ) ?>">Empty AssetsMinify's Cache</a>
+        </p>
+    </form>
+</div>

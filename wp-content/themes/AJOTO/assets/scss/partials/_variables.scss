@@ -1,6 +1,6 @@
 // Font Face
 @include fontface('Futura', 'assets/fonts/', '2330B7_0_0');
-
+@include web-font((Merriweather), $secure: true);
 // Structure
 $pageWidth: 910px;
 

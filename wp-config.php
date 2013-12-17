@@ -1,4 +1,6 @@
 <?php
+define('WP_CACHE', true);
+define('WP_POST_REVISIONS', false ); 
 /**
 * Define type of server
 *
