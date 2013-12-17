@@ -30,5 +30,5 @@
 </footer> <!-- end footer -->   
     <?php wp_footer(); // js scripts are inserted using this function ?>
 </body>
-
+<!--    <?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.  -->
 </html>
