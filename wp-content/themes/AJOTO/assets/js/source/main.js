@@ -324,6 +324,7 @@ function wrap( str ) {
             var text = slider.find('p');
             slider.find('br,p').remove();
             parent.find('footer a div.h2 span.serif').prepend(text).promise().done( function(){
+              if (slider.children().length > 0){
                  slider.royalSlider({
                    autoScaleSlider: true,
                    autoScaleSliderWidth: 850,
@@ -333,6 +334,9 @@ function wrap( str ) {
                    arrowsNavAutoHide: false,
                    arrowsNav: true
                 });
+              } else {
+                slider.parent().remove();
+              }
            });                
            });
          }
