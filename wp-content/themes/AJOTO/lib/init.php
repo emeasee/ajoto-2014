@@ -44,6 +44,7 @@ function mb_setup() {
 
 	// Add Image Sizes
 	// add_image_size( $name, $width = 0, $height = 0, $crop = false );
+	add_image_size('article', 850, 420);
 
 	// Enable Custom Headers
 	// add_theme_support( 'custom-header' );

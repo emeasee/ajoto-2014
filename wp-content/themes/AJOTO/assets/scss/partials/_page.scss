@@ -1445,6 +1445,39 @@ nav#page{
 
 #content.blog{
     padding-bottom:80px;
+    section.filter{
+        width: 850px;
+        overflow:auto;
+        margin:0 auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        border-top: 1px #efefef solid;
+        border-bottom: 1px #efefef solid;
+        div.links{
+            overflow: auto;
+            width: 560px;
+            margin: 0 auto;
+            a{
+                display: block;
+                float: left;
+                padding:20px 10px;
+                text-decoration: none;
+                font-family: $sans-serif;
+                text-transform: uppercase;
+            }
+            div{
+                display: block;
+                float: left;
+                padding:20px 5px;
+                &:last-child{
+                    display: none;
+                }
+            }
+            div:after{
+                content:'-';
+            }
+        }
+    }
     #inner-content{
         width:850px;
         margin-top: 30px;
@@ -1452,7 +1485,7 @@ nav#page{
             width: 100%;
         }
         #main{
-            width: 635px;
+            width: 100%;
             float: left;
             @include bp(phone){
                 width: 100%;

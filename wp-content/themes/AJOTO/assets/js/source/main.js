@@ -275,6 +275,17 @@ function nodeAddedAnim(event){
   }    
 }
 
+function wrap( str ) {
+     return '<a href="' + str + '">' + str + '<\/a>';
+ };
+
+ function replaceText() {
+     jQuery("section.tweet div.table").each( function(){
+       jQuery(this).html(jQuery(this).html().replace(/\bhttp[^ ]+/ig, wrap));
+     })
+
+ }
+
 (function( $, window, undefined ) {
     
     $(document).ready(function() {
@@ -301,6 +312,29 @@ function nodeAddedAnim(event){
                 player = vimeoPlayers[i];
                 Froogaloop(player).addEvent('ready', ready);
             }
+         }
+
+         //Initialise blog sliders
+         if ($my.blog_wrap.length){
+           fluidvids();
+           replaceText();
+           $("div.slide","article section.cover").each(function(index, el) {
+            var slider = $(el);
+            var parent = $(el).parents('article');
+            var text = slider.find('p');
+            slider.find('br,p').remove();
+            parent.find('footer a div.h2 span.serif').prepend(text).promise().done( function(){
+                 slider.royalSlider({
+                   autoScaleSlider: true,
+                   autoScaleSliderWidth: 850,
+                   autoScaleSliderHeight: 420,
+                   imageScaleMode: "fill",
+                   controlNavigation: 'none',
+                   arrowsNavAutoHide: false,
+                   arrowsNav: true
+                });
+           });                
+           });
          }
 
         //Initiate the shop
@@ -450,11 +484,11 @@ function nodeAddedAnim(event){
             $(this).stop().animate({'opacity': 0});
         });
 
-    $('a.add_to_cart_button').on('click touchend', function(){
-      if($('a.added_to_cart').length){
-        console.log('Notifing');
-      }
-    });
+        $('a.add_to_cart_button').on('click touchend', function(){
+          if($('a.added_to_cart').length){
+            console.log('Notifing');
+          }
+        });
 
         $('#footer-bar a.top').click(function(e){
             $('html,body').animate({ scrollTop: 0 },1000);
@@ -462,18 +496,6 @@ function nodeAddedAnim(event){
         });
         
         $('#gallery img').removeAttr('width height');
-        $('article.post').live({
-        mouseenter:
-            function(){
-            $(this).find('.post-title').css('display','block').animate({opacity:'0.85'},100);
-            },
-        mouseleave:
-           function(){
-            $(this).find('.post-title').animate({opacity:'0'},100,function(){
-                $(this).css('display','none');
-            });
-           }
-       });
 
         if(window.location.hash) {
             var hash = window.location.hash;
