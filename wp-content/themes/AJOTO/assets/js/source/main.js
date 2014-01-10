@@ -293,12 +293,13 @@ function wrap( str ) {
             setCurrency();
         }, 1);
         cookieBar();
-
+        
         if( navigator.userAgent.match(/iPad/i) != null ){
+         console.log('hello');
           viewport = document.querySelector("meta[name=viewport]");
           viewport.setAttribute('content', 'width=910px, user-scalable=0');
         }
-    
+
         //Initialise Masonry
         if (($my.about_wrap.length) || ($my.page_wrap.length)) {
             if(!jQuery.browser.mobile){
