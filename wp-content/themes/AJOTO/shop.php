@@ -21,7 +21,7 @@
 							</div>
 							
 						</section>
-						<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP,MYM001BP,MYM001BRP"]' ); ?></div>
+						<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP,MYM001BP,MYM001BRP,MYM001BRP2"]' ); ?></div>
 
 						<h3 id="refills">Refills</h3>
 						<section class="mid sans-serif">
@@ -33,7 +33,7 @@
 							</div>
 							
 						</section>
-						<div id="refills"><?php echo do_shortcode( '[products skus="MYM001BPB,MYM001RBB"]' ); ?></div>
+						<div id="refills"><?php echo do_shortcode( '[products skus="MYM001RBB,MYM001BPB"]' ); ?></div>
 
 						<h3 id="pouch">Pen Pouch</h3>
 						<section class="mid sans-serif">
@@ -55,7 +55,7 @@
 							</div>
 							
 						</section>
-						<div id="wallet"><?php echo do_shortcode( '[products skus="FTJ001WB,FTJ001WG,FTJ001WDB,FTJ001WLB"]' ); ?></div>
+						<div id="wallet"><?php echo do_shortcode( '[products skus="FTJ001WB,FTJ001WG,FTJ001WDB"]' ); ?></div>
 
 					</section> <!-- end article section -->												
 					<?php endwhile; ?>									
