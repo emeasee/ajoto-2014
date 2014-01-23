@@ -21,7 +21,7 @@
 							</div>
 							
 						</section>
-						<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP2,MYM001RAWP,MYM001BP2,MYM001BRP2"]' ); ?></div>
+						<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP2,MYM001RAWP,MYM001BP2,MYM001BRP2" orderby="date" order="desc"]' ); ?></div>
 
 						<h3 id="refills">Refills</h3>
 						<section class="mid sans-serif">
