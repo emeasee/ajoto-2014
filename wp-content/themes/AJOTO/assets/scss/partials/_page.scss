@@ -1411,7 +1411,7 @@ nav#page{
             .button{
                 width:150px;
                 height: 20px;
-                font-size: 1.2em;
+                font-size: 1em;
                 line-height: 23px;
                 background-color: #969696!important;
                 background-image: none!important;
@@ -1485,7 +1485,7 @@ nav#page{
             width: 100%;
         }
         #main{
-            width: 100%;
+            width: 635px;
             float: left;
             @include bp(phone){
                 width: 100%;
@@ -2344,7 +2344,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                         max-width: 175px;
                         height:20px;
                         margin-top: 10px;
-                        font-size: 0.8em;
+                        font-size: 0.7em;
                         line-height: 23px;
                         float: none;
                     }
@@ -2376,7 +2376,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
         #pen{
             ul{
                 li{
-                    margin-left: 80px;
+                    margin-left: 30px;
                     @include bp(phone){
                         margin-left: 67px;    
                     }
@@ -2386,7 +2386,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
         #refills{
             ul{
                 li{
-                    margin-left:170px;
+                    margin-left:165px;
                     @include bp(phone){
                         margin-left: 67px;    
                     }
@@ -2406,8 +2406,8 @@ input:-moz-placeholder, textarea:-moz-placeholder {
         #wallet{
             ul{
                 li{
-                    margin-left:50px;
-                    width:350px;
+                    margin-left:25px;
+                    width:250px;
                     @include bp(phone){
                         margin-left: -15px;    
                     }
