@@ -327,14 +327,14 @@ function wrap( str ) {
            $("div.slide","article section.cover").each(function(index, el) {
             var slider = $(el);
             var parent = $(el).parents('article');
-            var text = slider.find('p');
+            var text = slider.find('p').html();
             slider.find('br,p').remove();
             parent.find('footer a div.h2 span.serif').prepend(text).promise().done( function(){
               if (slider.children().length > 0){
                  slider.royalSlider({
                    autoScaleSlider: true,
                    autoScaleSliderWidth: 850,
-                   autoScaleSliderHeight: 420,
+                   autoScaleSliderHeight: 478,
                    imageScaleMode: "fill",
                    controlNavigation: 'none',
                    arrowsNavAutoHide: false,
