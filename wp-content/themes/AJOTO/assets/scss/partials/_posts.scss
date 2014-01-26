@@ -14,7 +14,7 @@ ul, ol { }
     //height:420px;
     float:left;
     max-height: none;
-    margin: 0 0 10px 0;
+    margin: 0 0 30px 0;
     @include bp(phone) {
         margin:0;
         width: 100%;
@@ -28,14 +28,14 @@ ul, ol { }
         }
     }
     .cover{
-        height: 420px;
+        height: 478px;
         overflow: hidden;
         img{
             height: auto;
         }
         .video-wrap{
             iframe{
-                height: 420px!important;
+                height: 478px!important;
             }
         }
         .rsSlide{
@@ -54,7 +54,7 @@ ul, ol { }
             }
             .tumblr_video_iframe{
                 width: 100%!important;
-                height: 420px!important;
+                height: 478px!important;
             }
         }
     }
@@ -126,7 +126,7 @@ ul, ol { }
         width:100%;
         background:none;
         bottom:0;
-        font-size: 11px;
+        font-size: 10px;
         @include bp(phone){
             a{  
                 div.h2{
@@ -146,30 +146,35 @@ ul, ol { }
                 height:100%;
                 position:absolute;
             }
-        a{
+        div.cell{
             text-decoration: none;
             display:block;
             width:100%;
             height:100%;
             display:table;
-            border-bottom: 1px #efefef solid;
+            border-bottom: 1px #333 solid;
             div.h2{
                 line-height: 1.333em; 
-                padding:6em 3em 3em 3em;
                 text-align:center;
                 height:100%;
                 width:100%;
                 color:#323333;
                 letter-spacing: 2px;
-                //margin-bottom: 6em;
-                //border-bottom: 1px #efefef solid;
+                height: 270px;
+                display: table-cell;
+                vertical-align: middle;
                 p{
-                    padding:20px;
                     letter-spacing: normal;
+                    width: 75%;
+                    margin: 0 auto;
+                    padding:25px;
                 }
                 .serif{
                     text-transform: none;
                     font-size: 0.7em;
+                    display: block;
+                    font-family: "Futura";
+                    text-transform: uppercase;
                     .excerpt{
                         display:block;
                         @include bp(phone){
@@ -177,8 +182,30 @@ ul, ol { }
                         }
                     }
                     .readmore{
-                        color:#612E59;
+                        color:#333;
+                        font-weight: bolder;
+                        padding:5px;
                     }
+                    .divide{
+                        width: 30px;
+                        display: block;
+                        height: 1px;
+                        margin: 0 auto;
+                        background: #333;
+                        margin-top: 5px;
+                        margin-bottom:10px;
+                    }
+                }
+                .category{
+                    display: block; 
+                    font-size: 0.6em;
+                    letter-spacing: 1px; 
+                    font-weight:bolder;
+                }
+                .date{
+                    display: block;
+                    font-size: 0.6em;
+                    letter-spacing: 1px;
                 }
                 .open{
                     font-size: 140%;
