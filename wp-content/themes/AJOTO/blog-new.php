@@ -9,7 +9,7 @@
 		<h2>JOURNAL</h2>
 		<section class="filter">
 			<div class="links">
-			<a class="current" href="../../journeys">ALL</a>
+			<a class="current" href="../../journal">ALL</a>
 				<?php
 					$args = array(
 				  		'orderby' => 'name',
