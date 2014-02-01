@@ -30,8 +30,6 @@
 				<iframe id="player_6" src='http://player.vimeo.com/video/68225024?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_6' width='850' height='479' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			</div>
 		</section>
-		
-	<div class="slideshow"><?php echo get_new_royalslider(21); ?></div>
 
 	<section class="screen sans-serif">
 		<div class="card cube quote">
@@ -44,13 +42,8 @@
 			</i></p>
 		</div>
 	</section>
-	
-	<div class="map">
-		<?php build_map('pen-pouch'); ?>
-	</div>
 
-	<div class="slideshow"><?php echo get_new_royalslider(25); ?></div>
-	
+	<div class="slideshow"><?php echo get_new_royalslider(21); ?></div>
 
 	<section class="screen sans-serif">
 		<div class="video small">
