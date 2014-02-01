@@ -5,11 +5,15 @@
 			<?php echo get_new_royalslider(1); ?>
 		</header> <!-- end top-header -->
 		
-		<section class="title">
-			<p class="serif">We Create Beautiful Tools For Everyday Journeys</br>
-			<span class="sans-serif">THOUGHTFULLY COMBINING THE PRECISION OF ADVANCED MANUFACTURE WITH THE SOUL OF CRAFT</span></p>
-		</section>
-		
+		<section class="snippets">
+			
+			<section class="buttons serif">
+				<span class="buttons studio"><a href="../studio" class="sans-serif"></a><a class="over" href="../studio"></a></span>
+				<span class="buttons blog"><a href="../journeys" class="sans-serif"></a><a class="over" href="../journeys"></a></span>
+			</section>		
+			
+		</section> <!-- end snippets -->
+
 		<!-- CHANGE CLASS TO shop-slide IF WE NEED TO CHANGE BACK TO DYNAMIC SLIDER -->
 		<section class="screen" style="max-width:850px;">
 			<?php echo get_new_royalslider(2); ?>
@@ -17,16 +21,6 @@
 				<?php get_template_part( 'shop-featured-slider' ); ?>
 			</div>-->
 		</section>
-		
-		<section class="snippets">
-			
-			<div id="product-slide"><?php echo get_new_royalslider(3); ?></div>
-			<section class="buttons serif">
-				<span class="buttons studio"><a href="../studio" class="sans-serif"></a><a class="over" href="../studio"></a></span>
-				<span class="buttons blog"><a href="../journeys" class="sans-serif"></a><a class="over" href="../journeys"></a></span>
-			</section>		
-			
-		</section> <!-- end snippets -->
 
 		<footer id="extra">
 			<?php twitterFeed(1); ?>
