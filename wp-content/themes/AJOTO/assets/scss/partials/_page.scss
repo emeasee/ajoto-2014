@@ -108,16 +108,30 @@ h5, .h5 {
     
     #inner-header{
         width:100%;
-        height:80px;
+        height:100px;
     }
 
     p#logo {
         margin: 0;
         padding: 0;
         height:100%;
-        img {
-            margin-top:1.2em;
-            height:25%;
+        a{
+            height: 100%;
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            font-size: 0.45em;
+            letter-spacing: 1px;
+            font-family: "Futura";
+            padding-top: 25px;
+            font-weight: 100;
+            color: #333;
+            text-decoration: none;
+            img {
+                height:25%;
+                display: block;
+                margin: 0 auto;
+            }
         }
     }
 
