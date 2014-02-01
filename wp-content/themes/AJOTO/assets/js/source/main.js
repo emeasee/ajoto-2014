@@ -321,7 +321,7 @@ function wrap( str ) {
          }
 
          //Initialise blog sliders
-         if ($my.blog_wrap.length){
+         /*if ($my.blog_wrap.length){
            fluidvids();
            replaceText();
            $("div.slide","article section.cover").each(function(index, el) {
@@ -345,8 +345,11 @@ function wrap( str ) {
               }
            });                
            });
-         }
-
+         }*/
+        if ($my.blog_wrap.length){
+          replaceText();
+        }
+        
         //Initiate the shop
         $('div#content div.choice:even').css({marginLeft: '18%'});
         $('div#content div.choice small.out-of-stock').siblings().css('opacity','0.2').find('div.add').remove();

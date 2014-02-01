@@ -31,8 +31,6 @@
 			</div>
 		</section>
 		
-	<div class="slideshow"><?php echo get_new_royalslider(30); ?></div>
-
 	<section class="screen sans-serif">
 		<div class="card cube quote">
 			<a class="serif" href="../../shop/the-wallet">Every Wallet £70
@@ -44,14 +42,9 @@
 			</i></p>
 		</div>
 	</section>
-	
-	<div class="map">
-		<?php build_map('wallet'); ?>
-	</div>
 
-	<div class="slideshow"><?php echo get_new_royalslider(31); ?></div>
+	<div class="slideshow"><?php echo get_new_royalslider(30); ?></div>
 	
-
 	<section class="screen sans-serif">
 		<div class="video small">
 			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Using-your-Wallet.jpg"></span>

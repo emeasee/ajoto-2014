@@ -9,7 +9,7 @@
 		<h2><?php single_cat_title(); ?></h2>
 		<section class="filter">
 			<div class="links">
-			<a href="../../journeys">ALL</a>
+			<a href="../../journal">ALL</a>
 				<?php
 					$args = array(
 				  		'orderby' => 'name',
@@ -28,24 +28,44 @@
 						 $temp = $wp_query;
 						 $wp_query= null;
 						 $wp_query = new WP_Query(); 
-						 $wp_query->query('posts_per_page=10&cat='.$cat.'&author=-1&paged='.$paged); 
+						 $wp_query->query('posts_per_page=51&cat='.$cat.'&author=-1&paged='.$paged); 
 						 while( $wp_query->have_posts() ) : $wp_query->the_post();
 						 $category = get_the_category();
 					?>
-						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix, threecol, transition'); ?> role="article">
 							<?php if (in_category(array("news","stories","news","events"))){?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix, transition'); ?> role="article">
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<?php echo get_the_content(); ?>		
+									<a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('article'); ?></a>	
 								</section>	
 								<footer class="post-title" style="cursor:pointer;">
 									<div class="cell" href="<?php the_permalink() ?>">
 										<div class="h2">
-											<?php the_title(); ?>
-											<span class="serif"><p><?php echo get_the_date(); ?></p></span>
+											<?php if (strlen($post->post_title) > 70) {
+											echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
+											the_title();
+											} ?>
+											<span class="category"><?php echo $category[0]->cat_name; ?></span>
+											<span class="date"><?php echo get_the_date(); ?></span>
 										</div>
 									</div>
 								</footer>
-							<?php } else { ?>
+							</article>
+							<?php } elseif (in_category("social")) { 
+								if(has_tag('twitter')){?>
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
+									<section class="clearfix cover tweet" data-chrome="transparent" rel="<//?php the_permalink() ?>">
+										<?php echo get_the_content(); ?>
+										<a href="http://twitter.com/ajoto" class="twitterdatelink">@AJOTO</a>
+									</section>
+								</article>
+								<?php } elseif(has_tag('instagram')){?>
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
+									<section class="clearfix cover ig" rel="<//?php the_permalink() ?>">
+										<?php echo get_the_content(); ?>		
+									</section>
+								</article>
+							<?php } } else { ?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix, transition'); ?> role="article">
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
 									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'article' ); ?></a>						
 								</section> <!-- end article section -->
@@ -59,14 +79,13 @@
 									echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
 									the_title();
 									} ?>
-										<span class="serif"><p class="excerpt"><?php echo get_the_excerpt(); ?></p><p class="readmore">Click to read the full journey...</p><span class="divide"></span></span>
 										<span class="category"><?php echo $category[0]->cat_name; ?></span>
 										<span class="date"><?php echo get_the_date(); ?></span>
 									</div>
 								</div>
 								</footer> <!-- end article header -->
+							</article> <!-- end article -->
 						<?php } ?>
-						</article> <!-- end article -->
 						
 						<?php endwhile; ?>	
 						</div> <!-- end #main -->

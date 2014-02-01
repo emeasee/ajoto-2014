@@ -1,6 +1,6 @@
 /* POSTS */
 
-article { clear: both; margin: 0 0 35px 0; }
+article { margin: 0 0 35px 0; }
 
 blockquote { background: url(assets/images/icons/blockquote.png) no-repeat 0 12px; padding: 10px 20px 10px 50px; font-style: italic; }
 blockquote p { }
@@ -10,11 +10,10 @@ ul, ol { }
 .post { 
     overflow: hidden;
     position:relative;
-    width:100%;
-    //height:420px;
+    width:32.5%;
     float:left;
     max-height: none;
-    margin: 0 0 30px 0;
+    margin: 0 10px 30px 0;
     @include bp(phone) {
         margin:0;
         width: 100%;
@@ -27,46 +26,26 @@ ul, ol { }
             height:auto;
         }
     }
+    &:nth-child(3n){
+        margin-right: 0;
+    }
     .cover{
-        height: 478px;
+        height: 145px;
         overflow: hidden;
+        background:#f9f9f9;
         img{
             height: auto;
         }
-        .video-wrap{
-            iframe{
-                height: 478px!important;
-            }
-        }
-        .rsSlide{
-            display: table;
-            p{
-                color: black;
-                display: table-cell;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                vertical-align: middle;
-                background:#f9f9f9;
-                padding: 100px;
-                font-family: $serif;
-                font-size: 1.1em;
-            }
-            .tumblr_video_iframe{
-                width: 100%!important;
-                height: 478px!important;
-            }
-        }
     }
+
     .ig{
         background:#f9f9f9;
         display: table;
         margin-bottom: 4em!important;
+        width:205px;
         img{
-            width: auto;
-            height: 400px;
-            float: left;
-            margin: 10px;
+            width: 100%;;
+            height: auto;
         }
         .info{
             display: table-cell;
@@ -103,6 +82,10 @@ ul, ol { }
                 height: 100%;
                 text-align: center;
                 vertical-align: middle;
+                font-family: $serif;
+                font-style: italic;
+                font-size: 0.8em;
+                padding:0 20px;
             }
         }
         a.twitterdatelink{
@@ -131,7 +114,7 @@ ul, ol { }
             a{  
                 div.h2{
                     padding:0;
-                    height:220px;
+                    height:145px;
                     .serif{
                         .excerpt{
                             display:none;
@@ -152,7 +135,6 @@ ul, ol { }
             width:100%;
             height:100%;
             display:table;
-            border-bottom: 1px #333 solid;
             div.h2{
                 line-height: 1.333em; 
                 text-align:center;
@@ -160,7 +142,7 @@ ul, ol { }
                 width:100%;
                 color:#323333;
                 letter-spacing: 2px;
-                height: 270px;
+                height: 145px;
                 display: table-cell;
                 vertical-align: middle;
                 p{
@@ -186,15 +168,14 @@ ul, ol { }
                         font-weight: bolder;
                         padding:5px;
                     }
-                    .divide{
-                        width: 30px;
-                        display: block;
-                        height: 1px;
-                        margin: 0 auto;
-                        background: #333;
-                        margin-top: 5px;
-                        margin-bottom:10px;
-                    }
+                }
+                .divide{
+                    width: 30px;
+                    display: block;
+                    height: 1px;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                    margin-bottom:10px;
                 }
                 .category{
                     display: block; 
@@ -246,6 +227,10 @@ ul, ol { }
             }
         }
     }
+}
+
+article.fourcol{
+    width:25%;
 }
 
 .sticky { }
