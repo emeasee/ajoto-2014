@@ -367,7 +367,6 @@ nav#page{
             max-width:850px;
             width:95%;
             margin: 0 auto;
-            margin-bottom:30px;
             background: none;
         }
         section{
@@ -402,7 +401,7 @@ nav#page{
                 }
             }
             section.buttons{
-                width:215px;
+                width:100%;
                 display:block;
                 float:left;
                 margin-top:0px;
@@ -411,9 +410,9 @@ nav#page{
                     margin-top: 10px;
                 }
                 span.buttons{
-                    width:205px;
+                    width:32.5%;
                     height:205px;
-                    margin:0px 0px 10px 10px;
+                    margin:0px 10px 10px 0px;
                     padding:0;
                     position: relative;
                     text-align: center;
@@ -425,39 +424,59 @@ nav#page{
                     }
                 }
                 span.studio{
+                    margin-right:0;
                     a{
-                        background: url(assets/images/studio@2x.png) no-repeat;
-                        background-size: 205px 205px;
-                        background-position: 50% 50%;
+                        background: #f9f9f9 url(assets/images/studio@2x.png) no-repeat;
+                        background-size: 105px 105px;
+                        background-position: 50% -10px;
                     }
-                    a.over{
-                        background: url(assets/images/studio_over@2x.png) no-repeat;
-                        background-size: 205px 205px;
-                        background-position: 50% 50%;
+                    &:hover{
+                        
                     }
                 }
                 span.blog{
-                    margin-left: 10px;
                     a{
-                        background: url(assets/images/journeys@2x.png) no-repeat;
-                        background-size: 205px 205px;
-                        background-position: 50% 50%;
+                        background: #f9f9f9 url(assets/images/journeys@2x.png) no-repeat;
+                        background-size: 105px 105px;
+                        background-position: 50% -10px;
                     }
-                    a.over{
-                        background: url(assets/images/journeys_over@2x.png) no-repeat;
-                        background-size: 205px 205px;
-                        background-position: 50% 50%;
+                    &:hover{
+ 
+                    }   
+                }
+                span.shop{
+                    a{
+                        background: #f9f9f9 url(assets/images/journeys@2x.png) no-repeat;
+                        background-size: 105px 105px;
+                        background-position: 50% -10px;
+                    }
+                    &:hover{
+                        //background-color: #333;
                     }   
                 }
                 a{
                     height: 100%;
                     width:100%;
                     display: block;
-                }
-                a.over{
-                    position: absolute;
-                    top:0;
-                    opacity:0;
+                    padding-top: 80px;
+                    color: #333;
+                    text-decoration: none;
+                    font-size:1.7em;
+                    div{
+                        height: 1px;
+                        width:60px;
+                        background: #333;
+                        margin: 0 auto;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                    small{
+                        display: block;
+                        clear: both;
+                        font-size: 0.4em;
+                        width: 70%;
+                        margin:0 auto;
+                    }
                 }
             }
         }
@@ -467,6 +486,7 @@ nav#page{
             width:850px;
             margin-left:30px;
             margin-bottom:30px;
+            margin-top: 10px;
             float:left;
             @include bp(phone){
                 margin-bottom:10px;
