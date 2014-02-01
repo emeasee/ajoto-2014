@@ -19,7 +19,7 @@
 
 		<header role="banner" class="header">
 			<div id="inner-header" class="wrap clearfix">			
-				<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajoto-logo.png" alt=""/></a></p>			
+				<p id="logo" class="h1"><a href="<?php echo home_url(); ?>" rel="external"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajoto-logo.png" alt=""/>BEAUTIFUL TOOLS FOR YOUR JOURNEY</a></p>			
 			</div> <!-- end #inner-header -->
 			<nav class="menu">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'wrap' ) ); ?>
