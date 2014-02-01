@@ -1,15 +1,16 @@
 <?php get_header(); ?>
 <div id="container">
 	<div id="content" class="home">	
-		<header style="margin-bottom:30px;">
+		<header>
 			<?php echo get_new_royalslider(1); ?>
 		</header> <!-- end top-header -->
 		
 		<section class="snippets">
 			
 			<section class="buttons serif">
-				<span class="buttons studio"><a href="../studio" class="sans-serif"></a><a class="over" href="../studio"></a></span>
-				<span class="buttons blog"><a href="../journeys" class="sans-serif"></a><a class="over" href="../journeys"></a></span>
+				<span class="buttons blog"><a href="../journeys" class="sans-serif">THE JOURNAL<div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
+				<span class="buttons shop"><a href="../shop" class="sans-serif">THE SHOP<div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
+				<span class="buttons studio"><a href="../studio" class="sans-serif">THE STUDIO<div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
 			</section>		
 			
 		</section> <!-- end snippets -->
