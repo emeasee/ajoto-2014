@@ -41,7 +41,7 @@ ul, ol { }
     .ig{
         background:#f9f9f9;
         display: table;
-        margin-bottom: 4em!important;
+        margin-bottom: 10px!important;
         width:205px;
         img{
             width: 100%;;
@@ -68,14 +68,14 @@ ul, ol { }
     .tweet{
         height: 205px;
         width: 100%;
-        margin-bottom: 4em!important;
+        margin-bottom: 10px!important;
         .table{
             display: table;
             height: 100%;
             width: 100%;
             background: #f9f9f9 url(assets/images/twitter@2x.png) no-repeat;
             background-size: 25px 21px;
-            background-position: 50% 20%;
+            background-position: 50% 10%;
             p{
                 display: table-cell;
                 width: 100%;
@@ -84,7 +84,7 @@ ul, ol { }
                 vertical-align: middle;
                 font-family: $serif;
                 font-style: italic;
-                font-size: 0.8em;
+                font-size: 0.7em;
                 padding:0 20px;
             }
         }
@@ -230,7 +230,14 @@ ul, ol { }
 }
 
 article.fourcol{
-    width:25%;
+    width:24%;
+    margin-bottom:0;
+    &:nth-child(3n){
+        margin-right: 10px;
+    }
+    &:nth-child(4n){
+        margin-right: 0;
+    }
 }
 
 .sticky { }

@@ -54,7 +54,7 @@
 								if(has_tag('twitter')){?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
 									<section class="clearfix cover tweet" data-chrome="transparent" rel="<//?php the_permalink() ?>">
-										<?php echo get_the_content(); ?>
+										<div class="table"><p><?php echo get_the_content(); ?></p></div>
 										<a href="http://twitter.com/ajoto" class="twitterdatelink">@AJOTO</a>
 									</section>
 								</article>
