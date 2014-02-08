@@ -35,7 +35,7 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix transition'); ?> role="article">
 							<?php if (in_category(array('news','stories','events'))){?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('article'); ?></a>		
+									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium'); ?></a>		
 								</section>	
 								<footer class="post-title">
 									<div class="cell" href="<?php the_permalink() ?>">
@@ -52,7 +52,7 @@
 								</footer>
 							<?php } else { ?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'article' ); ?></a>						
+									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'medium' ); ?></a>						
 								</section> <!-- end article section -->
 								
 								<footer class="post-title">
