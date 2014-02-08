@@ -35,7 +35,7 @@
 							<?php if (in_category(array("news","stories","news","events"))){?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix, transition'); ?> role="article">
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('article'); ?></a>	
+									<a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('medium'); ?></a>	
 								</section>	
 								<footer class="post-title" style="cursor:pointer;">
 									<div class="cell" href="<?php the_permalink() ?>">
@@ -61,13 +61,13 @@
 								<?php } elseif(has_tag('instagram')){?>
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
 									<section class="clearfix cover ig" rel="<//?php the_permalink() ?>">
-										<?php echo get_the_content(); ?>		
+										<a href="<?php echo get_the_content(); ?>"><?php echo the_post_thumbnail('medium'); ?></a>
 									</section>
 								</article>
 							<?php } } else { ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix, transition'); ?> role="article">
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'article' ); ?></a>						
+									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'medium' ); ?></a>						
 								</section> <!-- end article section -->
 								
 								<footer class="post-title" style="cursor:pointer;">
