@@ -280,7 +280,7 @@ function wrap( str ) {
  };
 
  function replaceText() {
-     jQuery("section.tweet div.table").each( function(){
+     jQuery("section.tweet div.table p").each( function(){
        jQuery(this).html(jQuery(this).html().replace(/\bhttp[^ ]+/ig, wrap));
      })
 
