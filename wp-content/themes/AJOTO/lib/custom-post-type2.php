@@ -1,33 +1,33 @@
 <?php
-/* Refining the factory database custom post type in Wordpress*/
+/* Refining the shop database custom post type in Wordpress*/
 
 // let's create the function for the custom type
-function custom_post_example() { 
+function custom_post2_example() { 
 	// creating (registering) the custom type 
-	register_post_type( 'factories', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'shops', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
 		array('labels' => array(
-			'name' => __('Factories', 'post type general name'), /* This is the Title of the Group */
+			'name' => __('Shops', 'post type general name'), /* This is the Title of the Group */
 			'singular_name' => __('Entry', 'post type singular name'), /* This is the individual type */
 			'add_new' => __('Add New', 'custom post type item'), /* The add new menu item */
-			'add_new_item' => __('Add New Factory'), /* Add New Display Title */
+			'add_new_item' => __('Add New Shop'), /* Add New Display Title */
 			'edit' => __( 'Edit' ), /* Edit Dialog */
-			'edit_item' => __('Edit Factory Entry'), /* Edit Display Title */
-			'new_item' => __('New Factory'), /* New Display Title */
-			'view_item' => __('View Factory'), /* View Display Title */
-			'search_items' => __('Search Factory'), /* Search Custom Type Title */ 
+			'edit_item' => __('Edit Shop Entry'), /* Edit Display Title */
+			'new_item' => __('New Shop'), /* New Display Title */
+			'view_item' => __('View Shop'), /* View Display Title */
+			'search_items' => __('Search Shop'), /* Search Custom Type Title */ 
 			'not_found' =>  __('Nothing found in the Database.'), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __('Nothing found in Trash'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'Holds our Factory list' ), /* Custom Type Description */
+			'description' => __( 'Holds our Shop list' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/assets/images/custom_2.png', /* the icon for the custom post type menu */
+			'menu_icon' => get_stylesheet_directory_uri() . '/assets/images/custom_1.png', /* the icon for the custom post type menu */
 			'rewrite' => true,
 			'capability_type' => 'post',
 			'hierarchical' => false,
@@ -39,23 +39,23 @@ function custom_post_example() {
 } 
 
 	// adding the function to the Wordpress init
-	add_action( 'init', 'custom_post_example');
+	add_action( 'init', 'custom_post2_example');
 	
 	// now let's add custom categories (these act like categories)
-    register_taxonomy( 'custom_tag', 
-    	array('factories'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    register_taxonomy( 'custom_tag_s', 
+    	array('shops'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true it acts like categories  */             
     		'labels' => array(
-    			'name' => __( 'Process' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Process' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Processes' ), /* search title for taxomony */
-    			'all_items' => __( 'All Processes' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Process' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Process:' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Process' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Process' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Process' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Process Name' ) /* name title for taxonomy */
+    			'name' => __( 'Country' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Country' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Countries' ), /* search title for taxomony */
+    			'all_items' => __( 'All Countries' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Country' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Country:' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Country' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Country' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Country' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Country Name' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,
@@ -63,68 +63,68 @@ function custom_post_example() {
     );   
     
 	// now let's add custom tags (these act like categories)
-    register_taxonomy( 'custom_cat', 
-    	array('factories'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    register_taxonomy( 'custom_cat_s', 
+    	array('shops'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => false,    /* if this is false, it acts like tags */                
     		'labels' => array(
-    			'name' => __( 'Places' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Place' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Places' ), /* search title for taxomony */
-    			'all_items' => __( 'All Places' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Place' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Place:' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Place' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Place' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Place' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Place Name' ) /* name title for taxonomy */
+    			'name' => __( 'City' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'City' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Cities' ), /* search title for taxomony */
+    			'all_items' => __( 'All Cities' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent City' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent City:' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit City' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update City' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New City' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New City Name' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,
     	)
     ); 
 
-    add_action( 'add_meta_boxes', 'factory_box' );
-    function factory_box() {
+    add_action( 'add_meta_boxes', 'shop_box' );
+    function shop_box() {
         add_meta_box( 
-            'factory_details',
-            __( 'Enter details below for the Factory contact', 'factory-details' ),
-            'factory_box_content',
-            'factories',
+            'shop_details',
+            __( 'Enter details below for the Shop contact', 'shop-details' ),
+            'shop_box_content',
+            'shops',
             'normal',
             'high'
         );
     }
 
-    add_action( 'add_meta_boxes', 'info_box' );
-    function info_box() {
+    add_action( 'add_meta_boxes', 's_info_box' );
+    function s_info_box() {
         add_meta_box( 
-            'factory_info',
-            __( 'Enter text for the Factory info page', 'factory-info' ),
-            'factory_info_content',
-            'factories',
+            'shop_info',
+            __( 'Enter text for the Shop info page', 'shop-info' ),
+            'shop_info_content',
+            'shops',
             'normal',
             'high'
         );
     }
 
-    add_action( 'add_meta_boxes', 'position_box' );
-    function position_box() {
+    add_action( 'add_meta_boxes', 's_position_box' );
+    function s_position_box() {
         add_meta_box( 
             'pin_details',
             __( 'Enter the x-y coordinates for the map', 'pin-details' ),
-            'pin_position',
-            'factories',
+            's_pin_position',
+            'shops',
             'side',
             'high'
         );
     }
 
 /* Display the post meta box. */
-function factory_box_content( $object, $box ) { ?>
+function shop_box_content( $object, $box ) { ?>
 
-    <?php wp_nonce_field( basename( __FILE__ ), 'factories_nonce' ); ?> 
+    <?php wp_nonce_field( basename( __FILE__ ), 'shops_nonce' ); ?> 
     <p>
-        <h2>Factory Address</h2>
+        <h2>Shop Address</h2>
         <label for="address-1"><?php _e( "Address Line 1", 'example' ); ?></label>
         <input class="widefat" type="text" name="address-1" id="address-1" value="<?php echo esc_attr( get_post_meta( $object->ID, 'address-1', true ) ); ?>" size="30" />
         <br/><br/>
@@ -157,7 +157,7 @@ function factory_box_content( $object, $box ) { ?>
 <?php }
 
 /* Display the post meta box. */
-function factory_info_content( $object, $box ) { ?>
+function shop_info_content( $object, $box ) { ?>
 
     <?php wp_nonce_field( basename( __FILE__ ), 'info_nonce' ); ?> 
     <p>
@@ -181,7 +181,7 @@ function factory_info_content( $object, $box ) { ?>
 
 <?php }
 
-function pin_position( $object, $box ) { ?>
+function s_pin_position( $object, $box ) { ?>
     <?php wp_nonce_field( basename( __FILE__ ), 'pin_nonce' ); ?> 
     <p>
         <h2>Pin Position</h2>
@@ -193,12 +193,12 @@ function pin_position( $object, $box ) { ?>
     </p>
 <?php }
 
-function factory_meta_save( $post_id ) {
+function shop_meta_save( $post_id ) {
  
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'factories_nonce' ] ) && wp_verify_nonce( $_POST[ 'factories_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'shops_nonce' ] ) && wp_verify_nonce( $_POST[ 'shops_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
  
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
@@ -236,9 +236,9 @@ function factory_meta_save( $post_id ) {
 
  
 } // end example_meta_save()
-add_action( 'save_post', 'factory_meta_save' );
+add_action( 'save_post', 'shop_meta_save' );
 
-function position_meta_save( $post_id ) {
+function s_position_meta_save( $post_id ) {
  
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
@@ -256,10 +256,10 @@ function position_meta_save( $post_id ) {
         update_post_meta( $post_id, 'posy', sanitize_text_field( $_POST[ 'posy' ] ) );
     }
 }
-add_action( 'save_post', 'position_meta_save' );
+add_action( 'save_post', 's_position_meta_save' );
 
 
-function info_meta_save( $post_id ) {
+function s_info_meta_save( $post_id ) {
  
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
@@ -286,19 +286,19 @@ function info_meta_save( $post_id ) {
         update_post_meta( $post_id, 'slides', sanitize_text_field( $_POST[ 'slides' ] ) );
     }
 }
-add_action( 'save_post', 'info_meta_save' );
+add_action( 'save_post', 's_info_meta_save' );
 
 
-function add_factory_columns($columns) {
+function add_shop_columns($columns) {
     return array_merge($columns, 
               array('website' => __('Website'),
                     'contact' =>__( 'Contact'),
                     'phone' =>__( 'Phone Number'),
                     'email' =>__( 'Email')));
 }
-add_filter( 'manage_factories_posts_columns', 'add_factory_columns');
+add_filter( 'manage_shops_posts_columns', 'add_shop_columns');
 
-function custom_factories_columns( $column ) {
+function custom_shops_columns( $column ) {
     global $post;
     switch ( $column ) {
         case 'website':
@@ -318,7 +318,7 @@ function custom_factories_columns( $column ) {
         break;  
     }
 }
-add_action( 'manage_factories_posts_custom_column' , 'custom_factories_columns' );
+add_action( 'manage_shops_posts_custom_column' , 'custom_shops_columns' );
 
 
 	
