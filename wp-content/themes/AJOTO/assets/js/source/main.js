@@ -356,6 +356,10 @@ function wrap( str ) {
         $('div#content div.choice small.out-of-stock').siblings('div.quantity').css('visibility','hidden');
         $('div.woocommerce_message:not(:first)').remove();
         
+        //Fix strange bug on Checkout page
+        $('#checkout .login #username').attr('placeholder', '* Username/Email');
+        $('#checkout .login #password').attr('placeholder', '* Password');
+
         $('input:text, textarea').each(function(){
             var $this = $(this);
             $this.data('placeholder', $this.attr('placeholder'))
