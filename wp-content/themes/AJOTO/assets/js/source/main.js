@@ -426,7 +426,7 @@ function wrap( str ) {
         }
         });
 
-        if ($('.woocommerce-message, ul.woocommerce-error').length) {
+        if ($('.woocommerce-message').length) {
             setTimeout(function() {
                 $('.woocommerce-message, ul.woocommerce-error').animate({
                     bottom:"-50px"

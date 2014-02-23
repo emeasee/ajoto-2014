@@ -4,20 +4,22 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce;
-?>
 
-<?php $woocommerce->show_messages(); ?>
+wc_print_notices();
+
+do_action( 'woocommerce_before_cart' ); ?>
+
 <h3>PLEASE CHOOSE YOUR SHIPPING COUNTRY</h3>
 
 <?php woocommerce_shipping_calculator(); ?>
 
-<form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post" class="cart">
+<form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post" class="cart">
 
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -36,12 +38,13 @@ global $woocommerce;
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 		<?php
-		if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) {
-			foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
-				$_product = $values['data'];
-				if ( $_product->exists() && $values['quantity'] > 0 ) {
-					?>
-					<tr class = "<?php echo esc_attr( apply_filters('woocommerce_cart_table_item_class', 'cart_table_item', $values, $cart_item_key ) ); ?>">
+		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+			$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+			$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+
+			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+				?>
+				<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_table_item', $cart_item, $cart_item_key ) ); ?>">
 
 						<!-- Product Name -->
 						<td class="product-name">
@@ -51,9 +54,12 @@ global $woocommerce;
 								else
 									echo apply_filters( 'woocommerce_in_cart_product_title', $_product->post->post_title );																
 
-                   				// Backorder notification
-                   				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) )
-                   					echo '<p class="backorder_notification">' . __('Available on backorder', 'woocommerce') . '</p>';
+							// Meta data
+							echo WC()->cart->get_item_data( $cart_item );
+
+               				// Backorder notification
+               				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) )
+               					echo '<p class="backorder_notification">' . __( 'Available on backorder', 'woocommerce' ) . '</p>';
 							?>
 						</td>
 
@@ -63,7 +69,7 @@ global $woocommerce;
 								if( $_product->get_parent() ){
 									echo apply_filters( 'woocommerce_in_cart_product_title', $_product->post->post_title );	
 								} else {
-									echo $woocommerce->cart->get_item_data( $values );
+									echo $woocommerce->cart->get_item_data( $cart_item );
 								}
 							?>
 
@@ -79,7 +85,7 @@ global $woocommerce;
 									$data_max = ( $_product->backorders_allowed() ) ? '' : $_product->get_stock_quantity();
 									$data_max = apply_filters( 'woocommerce_cart_item_data_max', $data_max, $_product );
 
-									$product_quantity = sprintf( '<div class="quantity"><input name="cart[%s][qty]" data-min="%s" data-max="%s" value="%s" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $data_min, $data_max, esc_attr( $values['quantity'] ) );
+									$product_quantity = sprintf( '<div class="quantity"><input name="cart[%s][qty]" data-min="%s" data-max="%s" value="%s" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $data_min, $data_max, esc_attr( $cart_item['quantity'] ) );
 								}
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
 							?>
@@ -90,7 +96,7 @@ global $woocommerce;
 						<!-- Product subtotal -->
 						<td class="product-subtotal">
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', $woocommerce->cart->get_product_subtotal( $_product, $values['quantity'] ), $values, $cart_item_key ); ?>
+								echo apply_filters( 'woocommerce_cart_item_subtotal', $woocommerce->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
 						</td>
 
 						<!-- Remove from cart link -->
@@ -101,7 +107,6 @@ global $woocommerce;
 						</td>
 					</tr>
 					<?php
-				}
 			}
 		}
 
@@ -122,55 +127,17 @@ global $woocommerce;
 					</tr>
 
 
-					<?php 
-						// Show the tax row if showing prices exclusive of tax only
-						//if ( $woocommerce->cart->tax_display_cart == 'excl' ) {
-							$taxes = $woocommerce->cart->get_formatted_taxes();
-
-							if ( sizeof( $taxes ) > 0 ) {
-
-								$has_compound_tax = false;
-
-								foreach ( $taxes as $key => $tax ) {
-									if ( $woocommerce->cart->tax->is_compound( $key ) ) {
-										$has_compound_tax = true;
-										continue;
-									}
-
-									echo '<tr class="col tax-rate tax-rate-' . $key . '">
-										<td>' . $woocommerce->cart->tax->get_rate_label( $key ) . $tax . '</td>
-									</tr>';
-								}
-
-								if ( $has_compound_tax ) {
-
-									echo '<td class="order-subtotal">
-										<td><strong>' . __( 'Subtotal', 'woocommerce' ) . '</strong>
-										<strong>' . $woocommerce->cart->get_cart_subtotal( true ) . '</strong></td>
-									</tr>';
-								}
-
-								foreach ( $taxes as  $key => $tax ) {
-									if ( ! $woocommerce->cart->tax->is_compound( $key ) )
-										continue;
-
-									echo '<tr class="col tax-rate tax-rate-' . $key . '">
-										<td>' . $woocommerce->cart->tax->get_rate_label( $key ) . $tax . '</td>
-									</tr>';
-								}
-
-							} elseif ( $woocommerce->cart->get_cart_tax() > 0 ) {
-
-								echo '<tr class="col tax">
-									<td>' . __( 'Tax', 'woocommerce' ) . $woocommerce->cart->get_cart_tax() . '</td>
-								</tr>';
-							} else {
-								echo '<tr class="col tax">
-									<td>' . __( 'Tax', 'woocommerce' ) . '<span class="amount">£0</span></td>
-								</tr>';
-							}
-						//}
-					?>
+						<?php if ( get_option( 'woocommerce_tax_total_display' ) === 'itemized' ) : ?>
+							<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+								<tr class="col tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
+									<td><?php echo esc_html( $tax->label ); ?><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+								</tr>
+							<?php endforeach; ?>
+						<?php else : ?>
+							<tr class="col tax-total">
+								<td><?php echo esc_html( WC()->countries->tax_or_vat() ); ?><?php echo wc_price( WC()->cart->get_taxes_total() ); ?></td>
+							</tr>
+						<?php endif; ?>
 					
 						<?php if ( $woocommerce->cart->get_discounts_before_tax() ) {?>
 						<tr class="col discount">
@@ -198,7 +165,7 @@ global $woocommerce;
 							</tr>
 					<?php } ?>
 
-					<?php $woocommerce->nonce_field('cart') ?>
+					<?php wp_nonce_field('woocommerce-cart') ?>
 
 
 				<?php foreach ( $woocommerce->cart->get_fees() as $fee ) : ?>
@@ -235,7 +202,7 @@ global $woocommerce;
 							// If prices are tax inclusive, show taxes here
 							if (  $woocommerce->cart->tax_display_cart == 'incl' ) {
 								$tax_string_array = array();
-								$taxes = $woocommerce->cart->get_formatted_taxes();
+								$taxes = $woocommerce->cart->get_taxes();
 
 								if ( sizeof( $taxes ) > 0 )
 									foreach ( $taxes as $key => $tax )
