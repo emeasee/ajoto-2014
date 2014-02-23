@@ -1,8 +1,11 @@
 Cart page:
-  ✔ Fix tax display .\cart.php:130:0 @done (14-02-23 15:22)
+ ✔ Fix tax display .\cart.php:130:0 @done (14-02-23 15:22)
 
 Checkout:
  ✔ Fix review order section @done (14-02-23 14:29)
  ✔ Fix tax display from cart solution @started(14-02-23 14:29) @done (14-02-23 14:56)
- ☐ CSS for the order totals info etc.
- ☐ padding on sign up form top
+ ✔ CSS for the order totals info etc. @done (14-02-23 17:33)
+ ✔ padding on sign up form top @done (14-02-23 17:33)
+ ✔ placeholder text in login form disappeared @started(14-02-23 17:34) @done (14-02-23 19:10) @lasted(1:36:00)
+
+   

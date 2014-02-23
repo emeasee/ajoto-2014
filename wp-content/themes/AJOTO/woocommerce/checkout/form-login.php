@@ -20,7 +20,7 @@ $info_message = apply_filters( 'woocommerce_checkout_login_message', __( 'Return
 <?php
     woocommerce_login_form(
         array(
-            'message'  => __( 'ALready registered? Sign in below', 'woocommerce' ),
+            'message'  => __( 'Already registered? Sign in below', 'woocommerce' ),
             'redirect' => get_permalink( wc_get_page_id( 'checkout' ) ),
             'hidden'   => true
         )
