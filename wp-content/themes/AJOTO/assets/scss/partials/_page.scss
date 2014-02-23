@@ -1972,19 +1972,29 @@ p.demo_store{
     margin: 0;
 }
 
+.woocommerce-info{
+    width: 100%;
+    height:38px;
+    background-color: #94d8b9;
+    color:white;
+    font-size: 0.9em!important;
+    padding:9px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
 ul.woocommerce-error{
     list-style: none;
     margin: 0;
-    position: fixed;
-    bottom: 0;
+    padding: 0;
+
     width: 100%;
-    left: 0;
-    z-index: 9999;
     li{
         background-color: #f76280;
         color:white;
         text-transform: uppercase;
         padding:9px;
+        margin-top: 1px;
     }
 }
 div.validation_error{
@@ -2494,17 +2504,28 @@ input:-moz-placeholder, textarea:-moz-placeholder {
     padding: 0;
 }
 .woocommerce-account{
+    .woocommerce-message{
+        display: none;
+    }
     .woocommerce{
         max-width: 850px;
         margin: 0 auto;
+        .login{
+            width:50%;
+            float:none;
+            margin:0 auto;
+            .button{
+                width: 315px;
+            }
+            @include bp(phone){
+                width: 100%;
+            }
+        }
         label{
             display:block;
             text-align: left;
-            width:315px;
+            width:305px;
             margin:0 auto;
-            @include bp(phone){
-                width: 255px;   
-            }
         }
         form{
             padding-bottom: 60px;
@@ -2517,12 +2538,6 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                 }
             }
         }
-        input{
-            width:300px ;
-            @include bp(phone){
-                width: 240px;
-            }
-        }
         select{
             width:300px;
         }
@@ -2531,6 +2546,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             border:none;
             height:30px;
             padding:0 5px;
+            width:315px;
         }
         input:-webkit-autofill {
             -webkit-box-shadow: 0 0 0px 1000px #efefef inset;
@@ -2949,6 +2965,7 @@ div.addresses.order{
             }
             tr.actions{
                 float: left;
+                margin-right:10px;
                 td{
                     width:100%;
                     text-align: left!important;
@@ -2999,7 +3016,7 @@ div.addresses.order{
                     }               
                 }
                 tr.col{
-                    width: 422px!important;
+                    width: 420px!important;
                     margin-bottom: 10px;
                     line-height: 34px;
                     @include bp(phone){
@@ -3128,7 +3145,7 @@ form.shipping_calculator{
 .create-account{
     display: block!important;
     float:right;
-    margin-top: -262px;
+    margin-top: -274px;
     width: 48%;
     @include bp(phone){
         float: left;
@@ -3148,7 +3165,6 @@ form.shipping_calculator{
 #checkout{
     float: left;
     letter-spacing: 0px;
-    margin-top: 30px;
     p{
             font-size: 0.9em;
             letter-spacing: 1px;
@@ -3211,7 +3227,7 @@ form.shipping_calculator{
     }
     div.wooms{
         text-align: right;
-        margin-top: -62px!important;
+        margin-top: -74px!important;
         float:right!important;
         width:30%!important;
         margin-left:300px!important; 
@@ -3352,6 +3368,7 @@ form.shipping_calculator{
         tfoot{
             width:48%;
             text-transform: uppercase;
+            font-size:1.2em;
             tr{
                 margin: 10px 0;
                 background-color: #f1f1f1;
@@ -3362,11 +3379,12 @@ form.shipping_calculator{
                     width:auto;
                 }
                 th{
-                    width:300px;
+                    width:420px;
                     padding: 5px 10px;
+                    text-align:left;
                 }
                 td{
-                    width:100%;
+                    width:50%;
                     text-align: right;
                     padding: 5px 10px;
                 }

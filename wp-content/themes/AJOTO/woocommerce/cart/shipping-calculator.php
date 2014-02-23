@@ -4,14 +4,15 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     2.0.8
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce;
 
-if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->cart->needs_shipping() ) return;
+if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->needs_shipping() )
+	return;
 ?>
 
 <?php do_action( 'woocommerce_before_shipping_calculator' ); ?>
@@ -23,8 +24,8 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 			<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state" rel="calc_shipping_state">
 				<option value=""><?php _e( 'Select a country&hellip;', 'woocommerce' ); ?></option>
 				<?php
-					foreach( $woocommerce->countries->get_allowed_countries() as $key => $value )
-						echo '<option value="' . $key . '"' . selected( $woocommerce->customer->get_shipping_country(), esc_attr( $key ), false ) . '>' . esc_html( $value ) . '</option>';
+					foreach( WC()->countries->get_shipping_countries() as $key => $value )
+						echo '<option value="' . esc_attr( $key ) . '"' . selected( WC()->customer->get_shipping_country(), esc_attr( $key ), false ) . '>' . esc_html( $value ) . '</option>';
 				?>
 			</select>
 		</td>
@@ -32,7 +33,7 @@ if ( get_option('woocommerce_enable_shipping_calc')=='no' || ! $woocommerce->car
 		<td>
 			<button type="submit" name="calc_shipping" value="1" class="button"><?php _e( 'Update', 'woocommerce' ); ?></button>
 		</td>
-		<?php $woocommerce->nonce_field('cart') ?>
+		<?php wp_nonce_field('woocommerce-cart') ?>
 	</tr>
 </form>
 

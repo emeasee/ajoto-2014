@@ -7,12 +7,12 @@ function mb_register_required_plugins() {
 
 	$plugins = array(
 
-		array(
+	/*	array(
 			'name' 				=> 'WordPress SEO by Yoast',
 			'slug' 				=> 'wordpress-seo',
 			'required' 			=> true,
 			'force_activation'	=> true
-		),
+		), */
 
 	);
 
