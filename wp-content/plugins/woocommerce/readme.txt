@@ -4,7 +4,7 @@ Tags: ecommerce, e-commerce, commerce, woothemes, wordpress ecommerce, affiliate
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@woothemes.com&item_name=Donation+for+WooCommerce
 Requires at least: 3.8
 Tested up to: 3.8.1
-Stable tag: 2.1.2
+Stable tag: 2.1.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -125,6 +125,97 @@ Yes you can! Join in on our [GitHub repository](http://github.com/woothemes/wooc
 6. A product archive (grid).
 
 == Changelog ==
+
+= 2.1.5 - 06/03/2014 =
+* Fix - Prevent notices on new plain text email parameter for BACS and Cheque gateways
+* Fix - Fixed issue where variation prices were hidden when variation stock management wasn't set
+* Fix - Discounts fixed_product are now properly multiplied by quantity
+* Fix - Fixed bulk edit % increase and decrease
+* Fix - Extra check for access_expires when getting downloadable files
+* Fix - get_related method fixed tags OR query not excluding product ID
+* Tweak - Fallback for when add ons page is not loading
+* Tweak - Hide price suffix in admin panel lists
+
+= 2.1.4 - 05/03/2014 =
+* Fix - Prevent duplicate loading of functions files
+* Fix - Fixed breaking timeline for reports
+* Fix - Category widget ordering
+* Fix - BACS and Cheque gateway emails now have a plain text flag
+* Fix - wc_get_product_ids_on_sale will never return 0
+* Fix - Prevent errors upon comments when order is in trash
+* Fix - Reviews widget now links to proper review anchor
+* Fix - Added support for permalinks containing a query string in wc_get_endpoint_url
+* Fix - Variable product add file button works after adding a new variation
+* Fix - Resolved issue where styles didn't get compiled properly
+* Fix - Changed the save order so email data is correct for manual orders
+* Fix - Later hooking in for template redirect
+* Fix - Reverted load order change for language files and provided proper context
+* Fix - Made woocommerce_update_cart_action_cart_updated a filter which can return true or false to recalc totals
+* Fix - Updated sync logic to exclude hidden and out of stock variations from the price display
+* Fix - Changed set_stock to only make a variable product out of stock if all variations are stock managed to resync prices after stock changes
+* Fix - Use woocommerce_notify_no_stock_amount not 0 in variable class sync method
+* Fix - Suppress errors in download handler by silencing ob_flush and flush calls
+* Fix - load_textdomain first from WP_LANG_DIR before load_plugin_textdomain
+* Tweak - get_states method now returning false instead of array for countries without states
+* Tweak - Improved shipping language strings
+* Tweak - Remove admin check around global po translation file loading
+* Tweak - Improved styles for tab views
+* Refactor - Hardened code base and fixed strict standards notices
+
+= 2.1.3 - 27/02/2014 =
+* Fix - Use correct thresholds to calculate out of stock number in dashboard widget 
+* Fix - Admin screen strings sanitised to work with Chinese characters
+* Fix - REST API OAuth signature fixed when using filter params
+* Fix - Ensure shipping address data for customers is updated if only shipping to billing address
+* Fix - Fixed sprintf missing parameter in customer-new-account.php template
+* Fix - Ampersand character properly outputted in plain text emails
+* Fix - Stack the password reset fields on smaller screens
+* Fix - Bulk edit options now reflect on all variations
+* Fix - Prevent notices when country has states but no states are specified in cart
+* Fix - Make my-account/view-order use the correct template file
+* Fix - Prevent session warnings when WordPress logs out
+* Fix - Prevent spaces in file names from breaking product thumbnails
+* Fix - Resolved issue where download permissions where not granted in some cases upon order complete
+* Fix - Prevent IE cursor from being stuck in loading animation
+* Fix - Ensure wc_get_product_ids_on_sale returns array of ints, not strings
+* Fix - Prevent rating stars from wrapping in IE
+* Fix - Rating stars properly aligned in small screens
+* Fix - Handle get_rate_code when no matching rate is found
+* Fix - Cleaned noticed that might show when tax rates left empty
+* Fix - Prevented warning when you have hide shipping methods until address entered selected in CoD
+* Fix - Better URL detection for subdirectory installs in get_woocommerce_api_url
+* Fix - Transient names are now md5 hashed so they don't exceed max length
+* Fix - Fixed searching for orders and speed improvements there
+* Fix - "Show children of current category only" option working again in Product Category widget
+* Fix - Order search by SKU can now return multiple results again
+* Fix - Fixed alignment of radio button in settings API
+* Fix - Layered nav widget now shows terms again when using list OR
+* Fix - Prevent multiple attempts at cancelling actions on orders
+* Fix - Fixes in reporting for variations
+* Fix - My Accounts downloads section now shows files names
+* Fix - Improved code to log in via email address
+* Fix - When guest checkout is enabled, manual made admin orders can be paid without logging in
+* Fix - Fix product counts when subcategories are displayed
+* Fix - Fixed Relevanssi conflicts
+* Fix - Fixed issue with Mijireh incorrectly rounding shipping totals
+* Fix - Shipping class selection will be hidden for virtual variations
+* Fix - Prevent product percentage based coupons to stack discounts
+* Tweak - Added United Arab Emirates Dirham currency
+* Tweak - Enforce a static base for product permalink structures to prevent 404 issues
+* Tweak - Introducing woocommerce_get_username_from_email filter in login processing method
+* Tweak - Trash pages swapped for endpoints instead of force delete
+* Tweak - Flip default status of price_trim_zeros (defaults to true now)
+* Tweak - Performance improvements for My Account view with a lot of available downloads
+* Tweak - Introduces woocommerce_return_to_shop_redirect filter
+* Tweak - Improved tax rounding, to calculate an accurate tax total
+* Tweak - Introduced failsafes to prevent actions trying to take place on removed products
+* Tweak - Permalinks enabled data in REST API
+* Tweak - Filters to restrict granting/revoking access to files
+* Tweak - Added Canadian address format
+* Refactor - Multiple docblock updates
+* Refactor - Multiple code standards improvements
+* Refactor - Changed all text strings without explicit domain, to use the 'woocommerce' text domain
+* Refactor - Speed improvements in various places
 
 = 2.1.2 - 13/02/2014 =
 * Fix - Removed nl2br function from plain text email-order-items email template

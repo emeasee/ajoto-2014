@@ -1,6 +1,6 @@
 /* =Mixins
 -------------------------------------------------------------- */
-@import "mixins";
+@import "mixins.less";
 
 
 /* =Custom Font
@@ -1268,6 +1268,11 @@ table.wp-list-table {
 	.manage-column.column-featured img, .manage-column.column-product_type img {
 		padding-left: 2px;
 	}
+	.column-price {
+		.woocommerce-price-suffix {
+			display: none;
+		}
+	}
 	img {
 		margin: 1px 2px;
 	}
@@ -1895,7 +1900,6 @@ img.help_tip {
 				padding: 0;
 				li.image, li.add, li.wc-metabox-sortable-placeholder {
 					width: 80px;
-					height: 80px;
 					float: left;
 					cursor: move;
 					border: 1px solid #d5d5d5;
@@ -2407,6 +2411,11 @@ img.help_tip {
 					float: none;
 					margin-right: 4px;
 				}
+			}
+		}
+		ul.wc-radios {
+			label {
+				margin-left: 0;
 			}
 		}
 	}

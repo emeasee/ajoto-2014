@@ -228,7 +228,7 @@
 
 						if ( strstr( $dirname, 'woocommerce' ) ) {
 
-							if ( false === ( $version_data = get_transient( $plugin . '_version_data' ) ) ) {
+							if ( false === ( $version_data = get_transient( md5( $plugin ) . '_version_data' ) ) ) {
 								$changelog = wp_remote_get( 'http://dzv365zjfbd8v.cloudfront.net/changelogs/' . $dirname . '/changelog.txt' );
 								$cl_lines  = explode( "\n", wp_remote_retrieve_body( $changelog ) );
 								if ( ! empty( $cl_lines ) ) {
@@ -239,14 +239,14 @@
 											$version      = preg_replace( '~[^0-9,.]~' , '' ,stristr( $cl_line , "version" ) );
 											$update       = trim( str_replace( "*" , "" , $cl_lines[ $line_num + 1 ] ) );
 											$version_data = array( 'date' => $date , 'version' => $version , 'update' => $update , 'changelog' => $changelog );
-											set_transient( $plugin . '_version_data', $version_data , 60*60*12 );
+											set_transient( md5( $plugin ) . '_version_data', $version_data, 60*60*12 );
 											break;
 										}
 									}
 								}
 							}
 
-							if ( ! empty( $version_data['version'] ) && version_compare( $version_data['version'], $plugin_data['Version'], '!=' ) )
+							if ( ! empty( $version_data['version'] ) && version_compare( $version_data['version'], $plugin_data['Version'], '>' ) )
 								$version_string = ' &ndash; <strong style="color:red;">' . $version_data['version'] . ' ' . __( 'is available', 'woocommerce' ) . '</strong>';
 						}
 
@@ -286,19 +286,19 @@
 	<tbody>
 		<?php
 			$check_pages = array(
-				__( 'Shop Base', 'woocommerce' ) => array(
+				_x( 'Shop Base', 'Page setting', 'woocommerce' ) => array(
 						'option' => 'woocommerce_shop_page_id',
 						'shortcode' => ''
 					),
-				__( 'Cart', 'woocommerce' ) => array(
+				_x( 'Cart', 'Page setting', 'woocommerce' ) => array(
 						'option' => 'woocommerce_cart_page_id',
 						'shortcode' => '[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']'
 					),
-				__( 'Checkout', 'woocommerce' ) => array(
+				_x( 'Checkout', 'Page setting', 'woocommerce' ) => array(
 						'option' => 'woocommerce_checkout_page_id',
 						'shortcode' => '[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']'
 					),
-				__( 'My Account', 'woocommerce' ) => array(
+				_x( 'My Account', 'Page setting', 'woocommerce' ) => array(
 						'option' => 'woocommerce_myaccount_page_id',
 						'shortcode' => '[' . apply_filters( 'woocommerce_my_account_shortcode_tag', 'woocommerce_my_account' ) . ']'
 					)
@@ -389,7 +389,7 @@
         $active_theme = wp_get_theme();
         if ( $active_theme->{'Author URI'} == 'http://www.woothemes.com' ) :
 
-			$theme_dir = strtolower( str_replace( ' ','', $active_theme->Name ) );
+			$theme_dir = substr( strtolower( str_replace( ' ','', $active_theme->Name ) ), 0, 45 );
 
 			if ( false === ( $theme_version_data = get_transient( $theme_dir . '_version_data' ) ) ) :
 
