@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @return array
  */
 function wc_get_screen_ids() {
-	$wc_screen_id = strtolower( __( 'WooCommerce', 'woocommerce' ) );
+	$wc_screen_id = sanitize_title( __( 'WooCommerce', 'woocommerce' ) );
 
     return apply_filters( 'woocommerce_screen_ids', array(
     	'toplevel_page_' . $wc_screen_id,
@@ -181,9 +181,8 @@ function woocommerce_compile_less_styles() {
 
             file_put_contents( $base_file, $color_rules );
 
-            $less           = new lessc( $less_file );
-            $compiled_css   = $less->parse();
-
+            $less         = new lessc;
+            $compiled_css = $less->compileFile( $less_file );
             $compiled_css = CssMin::minify( $compiled_css );
 
             if ( $compiled_css )
