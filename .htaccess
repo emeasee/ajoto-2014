@@ -9,6 +9,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{HTTP_REFERER} !^http://(.*)?ajoto\.com [NC]
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
+    RewriteRule ^(.*)$ - [F]
+</IfModule>
+
 # END WordPress
 
 <ifModule mod_deflate.c>
