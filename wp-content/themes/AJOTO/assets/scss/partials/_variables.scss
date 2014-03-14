@@ -4,12 +4,27 @@
 // Structure
 $pageWidth: 910px;
 
+//Colors
+$grey1: #222222;
+$grey2: #333333;
+$grey3: #444444;
+$grey4: #666666;
+$grey5: #888888;
+$grey6: #AAAAAA;
+$grey7: #CCCCCC;
+$grey8: #DDDDDD;
+$grey9: #EEEEEE;
+
+$gold1: #B49650;
+$gold2: #C8B482;
+$gold3: #E6DCBE;
+
 // Text Selection
 $selectionColor: #b79749;
 
 // Links
-$linkColor: #c0974a;
-$linkHoverColor: #c0974a;
+$linkColor: $gold1;
+$linkHoverColor: $gold2;
 
 // Font styles
 $sans-serif: "Futura","Helvetica Neue", Helvetica, Arial, sans-serif;

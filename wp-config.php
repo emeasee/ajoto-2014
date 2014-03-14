@@ -1,6 +1,7 @@
 <?php
 define('WP_CACHE', true);
 define('WP_POST_REVISIONS', false ); 
+define( 'WP_MEMORY_LIMIT', '64M' );
 /**
 * Define type of server
 *

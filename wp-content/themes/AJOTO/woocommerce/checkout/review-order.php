@@ -185,4 +185,6 @@ global $woocommerce;
 
 	</div>
 
+	<?php do_action( 'woocommerce_review_order_after_payment' ); ?>
+
 </div>
