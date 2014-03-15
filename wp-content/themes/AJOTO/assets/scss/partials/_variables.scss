@@ -1,5 +1,8 @@
 // Font Face
-@include fontface('Futura', 'assets/fonts/', '2330B7_0_0');
+@include fontface('BT', 'assets/fonts/', 'brandontext-regular-webfont');
+@include fontface('BT-Bold', 'assets/fonts/', 'brandontext-bold-webfont');
+@include fontface('BT-Light', 'assets/fonts/', 'brandontext-light-webfont');
+
 @include web-font((Merriweather), $secure: true);
 // Structure
 $pageWidth: 910px;
@@ -27,7 +30,10 @@ $linkColor: $gold1;
 $linkHoverColor: $gold2;
 
 // Font styles
-$sans-serif: "Futura","Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif: "BT","Helvetica Neue", Helvetica, Arial, sans-serif;
+$ssbold: "BT-Bold","Helvetica Neue", Helvetica, Arial, sans-serif;
+$sslight: "BT-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+
 $serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;
 
 .sans-serif{
