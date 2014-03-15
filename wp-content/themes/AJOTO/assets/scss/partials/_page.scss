@@ -123,7 +123,7 @@ h5, .h5 {
             margin: 0 auto;
             font-size: 0.45em;
             letter-spacing: 1px;
-            font-family: "Futura";
+            font-family: $sans-serif;
             padding-top: 40px;
             font-weight: 100;
             color: $grey2;
@@ -224,7 +224,6 @@ nav { }
             float:right;
         }
         .shop{
-            font-family: "Merriweather";
             letter-spacing: normal;
             font-size: 0.9em;
             font-style: italic;
@@ -292,17 +291,16 @@ nav#page{
 
     .wp-prev-next {
         margin-top:30px!important;
-        border-top: 1px solid $grey2;
-        border-bottom: 1px solid $grey2;
+        background: $grey9;
         font-size:0.8em;
         width:95%;
         max-width:850px;
         display:block!important;
         height:auto!important;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         ul {
             margin:0 auto;
-            padding: 15px 0 15px 0;
+            padding: 0.6em 0;
             li{
                 text-transform: uppercase;
                 a{
@@ -317,31 +315,43 @@ nav#page{
         }
 
         .latest{
-            display:inline-block;
-            font-size:0.8em;
+            display:block;
+            font-size:1em;
             a,span{
-                padding:3px 15px 0 15px;
+                padding:0 0.5em;
                 line-height:1.2em;
                 color:$grey2;
+                float: right;
+                &:after{
+                    font-family: $icons;
+                    content: "\e612";
+                }
+            }
+            a:hover{
+                color:$gold1;
             }
             span{
-                opacity:0.6;
-                background: url(assets/images/arrows_sprite.png) no-repeat;
-                background-position: right 53%;
-                background-size: 12px;
-            }
-            a{
-                background: url(assets/images/arrows_sprite.png) no-repeat;
-                background-position: right 53%;
-                background-size: 12px;
+                opacity:0.4;
             }
             a:first-child{
-                background: url(assets/images/arrows_sprite.png) no-repeat top left;
-                background-size: 12px;
+                float: left;
+                &:before{
+                    font-family: $icons;
+                    content: "\e611";
+                }
+                &:after{
+                    content:'';
+                }
             }
             span:first-child{
-                background: url(assets/images/arrows_sprite.png) no-repeat top left;
-                background-size: 12px;
+                float: left;
+                &:before{
+                    font-family: $icons;
+                    content: "\e611";
+                }
+                &:after{
+                    content:'';
+                }
             }
         }
 
@@ -588,7 +598,6 @@ nav#page{
                         }
                         input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
                           color: $grey2;
-                          font-family: "Merriweather";
                           font-size: 0.7em;
                           font-weight: normal;
                           font-style: italic;
@@ -596,7 +605,6 @@ nav#page{
                         }
                         input:-moz-placeholder, textarea:-moz-placeholder {
                           color: $grey2;
-                          font-family: "Merriweather";
                           font-size: 0.7em;
                           font-weight: normal;
                           font-style: italic;
@@ -618,7 +626,7 @@ nav#page{
                     #mc-embedded-subscribe{
                         -webkit-appearance: none;
                         border-radius: 0;
-                        font-family: "Futura", sans-serif;
+                        font-family: $sans-serif, sans-serif;
                         padding:5px 17px 3px 17px;
                         letter-spacing: 1px;
                         margin: 0 auto;
@@ -828,7 +836,7 @@ nav#page{
                 }
                 p{
                     display: table;
-                    font: 0.7em "Merriweather";
+                    font-size: 0.7em;
                     letter-spacing: normal;
                     line-height: 20px;
                     padding: 0;
@@ -847,7 +855,7 @@ nav#page{
                             line-height: 110px;
                             font-style: normal;
                             text-decoration: none;
-                            font-family: "Futura";
+                            font-family: $sans-serif;
                             letter-spacing: 1px;
                         }
                         span{
@@ -1105,15 +1113,21 @@ nav#page{
                 }
             }
             p{
-                font-size: 1.6em;
+                font-size: 1.4em;
                 line-height: 1.2em;
-                font-style: italic;
+                font-family: $ssbold;
                 padding:41px;
+                color: $gold1;
+                margin:0;
+                text-transform: uppercase;
                 span{
                     font-style: normal;
-                    font-size: 0.4em;
+                    font-size: 0.5em;
                     padding-top:10px;
                     letter-spacing: 1px;
+                    font-family: $sans-serif;
+                    color: $grey1;
+                    @include microclearfix;
                 }
                 border-top: 1px solid $grey2;
                 border-bottom: 1px solid $grey2;
@@ -1147,14 +1161,13 @@ nav#page{
         }
         section.title.small{
             p{
-                font-size: 1.14em;
                 font-style: normal;
-                line-height: 2.8em;
+                max-height: 120px;
                 padding:0;
-                text-transform: uppercase;
                 border: none;
-                background-color: $grey9;
-                margin: 20px 0 10px 0;
+                span{
+
+                }
             }
         }
 
@@ -1221,7 +1234,6 @@ nav#page{
             min-height: 100px;
             display:block;
             float:left;
-            font-family: 'Merriweather', sans-serif;
             @include bp(phone){
                 display: none;
             }
@@ -1362,7 +1374,6 @@ nav#page{
                 width: auto!important;
                 border: none!important;
                 font-size: 1em;
-                font-family: $serif;
             }
         }
 
@@ -1375,7 +1386,7 @@ nav#page{
                 width:94%;
             }
             p{
-                font: 0.7em "Merriweather";
+                font-size: 0.7em;
                 margin: 0 auto;
                 line-height: 20px;
                 letter-spacing: normal;
@@ -1496,7 +1507,7 @@ nav#page{
         margin:0 auto;
         margin-top: 2em;
         margin-bottom: 2em;
-        background: $grey2;
+        background: $grey9;
         div.links{
             overflow: auto;
             width: 90%;
@@ -1506,14 +1517,14 @@ nav#page{
                 display: block;
                 font-size: 0.75em;
                 line-height: 2.5em;
-                color: white;
+                color: $grey1;
                 float: left;
                 width: 16.6%;
                 text-decoration: none;
                 font-family: $sans-serif;
                 text-transform: uppercase;
                 &:hover{
-                    background: #393939;
+                    background: $grey8;
                 }
             }
             a.current{
@@ -1858,7 +1869,6 @@ section#blogtop{
             width:100%;
             padding:30px 0 30px 0;
             font-size:13px;
-            font-family: 'Merriweather', sans-serif;
             letter-spacing: normal;
             margin: 0;
             span{
@@ -2047,14 +2057,11 @@ div.validation_error{
     font-size: 0.7em;
     letter-spacing: 0px;
     z-index: 999;
-    font-family: "Merriweather";
     .widget_shopping_cart{
         margin: 0 auto;
         height:40px;
         max-width:850px;
-        padding: 13px 20px 0 20px;
         @include bp(phone){
-            padding:13px 5px 0 5px;
             max-width: none;
         }
     }
@@ -2066,18 +2073,18 @@ div.validation_error{
         width:100%;
         #currselect{
             float:left;
-            margin-left: 5px;
-            margin-top: -2px;
         }
         a{
-            margin:2px 10px;
+            margin:0px 1em;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
             color:$grey2;
+            padding: 1em 0;
+            font-family: $ssbold;
         }
         a:last-of-type{
-            margin:2px 0px 2px 10px;
+            margin-right:0;
         }
         li{
             float:left;
@@ -2098,60 +2105,55 @@ div.validation_error{
         #quick-convert{
             float:left;
             display: block;
-            width:33%;
-            font-family: "Futura";
+            width:32%;
+            font-family: $sans-serif;
             letter-spacing: 1px;
+            padding: 1em 0;
             @include bp(phone){
                 display: none;
             }
-
-                        float:left;
-                        display: block;
-                        width:33%;
-                        font-family: "Futura";
-                        letter-spacing: 1px;
-                        p.sans-serif{
-                            margin-top:1px;
-                            letter-spacing: 1px;
-                            display: none;
-                        }
-                        p.c-info{
-                            display: block;
-                            width:15px;
-                            height:15px;
-                            padding: 0 10px;
-                            background: url('assets/images/c_info.png')
-                            50% 50%
-                            no-repeat;
-                            cursor: pointer;
-                        }
-                        #cdis{
-                            display: none;
-                            position: relative;
-                            bottom: 232px;
-                            width: 200px;
-                            height:205px;
-                            background-color: white;
-                            margin: 0 auto;
-                            text-align: center;
-                            float: left;
-                            background: url('assets/images/c_notice_bg.png')
-                            50% 50%
-                            no-repeat;
-                            cursor: pointer;
-                            h4{
-                                color: white;
-                                margin: 0.9em 0;
-                                font-family: "Futura";
-                                font-size: 1.4em;
-                                border: none;
-                            }
-                            p{
-                                height:auto;
-                                padding: 10px;
-                                color:white;
-                            }
-                        }
+                p.sans-serif{
+                    margin-top:1px;
+                    letter-spacing: 1px;
+                    display: none;
+                }
+                p.c-info{
+                    display: block;
+                    width:15px;
+                    height:15px;
+                    padding: 0 10px;
+                    background: url('assets/images/c_info.png')
+                    50% 50%
+                    no-repeat;
+                    cursor: pointer;
+                }
+                #cdis{
+                    display: none;
+                    position: relative;
+                    bottom: 232px;
+                    width: 200px;
+                    height:205px;
+                    background-color: white;
+                    margin: 0 auto;
+                    text-align: center;
+                    float: left;
+                    background: url('assets/images/c_notice_bg.png')
+                    50% 50%
+                    no-repeat;
+                    cursor: pointer;
+                    h4{
+                        color: white;
+                    margin: 0.9em 0;
+                    font-family: $sans-serif;
+                    font-size: 1.4em;
+                    border: none;
+                }
+                p{
+                    height:auto;
+                    padding: 10px;
+                    color:white;
+                }
+            }
         }
         #quick-convert.loading{
             background: url('assets/images/load-small.gif')
@@ -2164,22 +2166,21 @@ div.validation_error{
             @include bp(phone){
                 display: none;
             }
+            span{
+                padding: 1em 0;
+            }
             span.amount{
-                font-size: 2.5em;
-                font-family: "Futura";
-                line-height: 20px;
+                font-size: 2.2em;
+                line-height: 1.4em;
                 width: auto;
                 text-align: center;
-                margin-top: -3px;
-            }
-            span.serif{
-                display: block;
             }
             strong{
-                font-weight: normal;
+                color:$grey2;
+                font-family: $sans-serif;
+                padding: 0.5em 0;
             }
-            span.serif{
-            }
+
         }
         p.buttons{
             float: right;
@@ -2328,11 +2329,9 @@ input{
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #777777;
-  font-family: "Merriweather";
 }
 input:-moz-placeholder, textarea:-moz-placeholder {
   color: #777777;
-  font-family: "Merriweather";
 }
 
 #content.products{
@@ -2801,7 +2800,7 @@ div.addresses.order{
         text-transform: uppercase;
         border:none;
         padding: 0;
-        font-family: "Futura";
+        font-family: $sans-serif;
         letter-spacing: 1px;
     }
     button.button{
@@ -2942,7 +2941,7 @@ div.addresses.order{
                 .quantity{
                     padding: 15px;
                     .qty{
-                        font-family: "Futura";
+                        font-family: $sans-serif;
                     }
                 }
             }
@@ -3074,9 +3073,9 @@ div.addresses.order{
                     }
                     td.total{
                         width: 49%;
-                        color: white;
                         float: right;
                         background-color: $grey9;
+                        font-family: $ssbold;
                     }
                     td.subtotal{
                         width: 48%;
@@ -3264,7 +3263,7 @@ form.shipping_calculator{
         width:100%;
         padding:0;
         float:left;
-        font-family: "Futura";
+        font-family: $sans-serif;
         @include bp(phone){
             padding:2%;
             width: 97%;
@@ -3304,7 +3303,6 @@ form.shipping_calculator{
         }
         .chzn-container{
             margin-bottom: 20px;
-            font-family: "Merriweather";
             text-align: left!important;
         }
         textarea{

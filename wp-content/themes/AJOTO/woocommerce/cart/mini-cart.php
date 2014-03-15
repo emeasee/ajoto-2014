@@ -29,7 +29,7 @@ global $woocommerce, $current_user;
 </div>
 <?php if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) : ?>
 
-    <p class="total"><span style="float:left;" class="serif"><?php _e('Current Total', 'woocommerce'); ?>:</span><strong id="<?php echo $woocommerce->cart->subtotal; ?>"><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong><span style="float:right;" class="serif">(Including VAT)</span></p>
+    <p class="total"><span style="float:left;"><?php _e('CURRENT TOTAL', 'woocommerce'); ?>:</span><strong id="<?php echo $woocommerce->cart->subtotal; ?>"><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong><span style="float:right;">INCLUDING VAT</span></p>
     <?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 <p class="buttons">
 

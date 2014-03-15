@@ -8,7 +8,7 @@
 					</header> <!-- end article section -->
 					<section class="title">
 						<span class="number"><?php echo get_post_meta( $post->ID, 'post-number', true ); ?></span>
-						<p class="serif"><?php the_title(); ?></br>
+						<p><?php the_title(); ?></br>
 						<span class="sans-serif">SHARE THIS JOURNEY WITH YOUR FRIENDS</span></p>
 						<a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>" class="arrow left"></a><a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>" class="arrow right"></a>
 					</section>
@@ -23,7 +23,7 @@
 						<a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this post"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/email_s.png"/></a>
 					</div>
 				</section>
-				<section class="screen serif" style="height:auto;">
+				<section class="screen" style="height:auto;">
 						<div class="more-less">
 							<div class="more-block">
 								<p><?php echo get_the_content(); ?>	</p>
