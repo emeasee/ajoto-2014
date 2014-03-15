@@ -33,7 +33,7 @@
 		
 	<section class="screen sans-serif">
 		<div class="card cube quote">
-			<a class="serif" href="../../shop/the-wallet">Every Wallet £70
+			<a class="serif" href="../../shop/#wallet">Every Wallet £70
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -66,7 +66,7 @@
 		</div>
 
 		<div class="card cube quote">
-			<a class="serif" href="../../shop/the-wallet">Every Wallet £70
+			<a class="serif" href="../../shop/#wallet">Every Wallet £70
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>
