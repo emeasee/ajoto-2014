@@ -109,13 +109,13 @@ h5, .h5 {
 
     #inner-header{
         width:100%;
-        height:100px;
+        height:130px;
     }
 
     p#logo {
         margin: 0;
         padding: 0;
-        height:100%;
+        height:80%;
         a{
             height: 100%;
             display: block;
@@ -124,12 +124,12 @@ h5, .h5 {
             font-size: 0.45em;
             letter-spacing: 1px;
             font-family: "Futura";
-            padding-top: 25px;
+            padding-top: 40px;
             font-weight: 100;
             color: $grey2;
             text-decoration: none;
             img {
-                height:25%;
+                height:35%;
                 display: block;
                 margin: 0 auto;
             }
@@ -143,10 +143,10 @@ nav { }
 .menu {
     width:100%;
     height:30px;
-    background: $grey2;
-    letter-spacing: 2px;
+    background: $grey1;
+    letter-spacing: 1px;
     ul {
-        max-width: 850px;
+        max-width: 456px;
         height:100%;
         list-style-type: none;
         li {
@@ -159,10 +159,10 @@ nav { }
                 text-decoration: none;
                 height:100%;
                 padding:0px 1.3em;
-                font-size: 0.7em;
-                line-height: 3.2em;
+                font-size: 0.8em;
+                line-height: 2.4em;
                 color:#fff;
-                font-family: $sans-serif;
+                font-family: $ssbold;
                 @include bp(phone){
                     padding: 0px 0.9em;
                     font-size: 0.55em;
@@ -357,7 +357,8 @@ nav#page{
     background: #fff;
     padding-top:30px;
     padding-bottom: 40px;
-    border:1px solid #f9f9f9;
+    border-left:1px solid $grey8;
+    border-right:1px solid $grey8;
     overflow:hidden;
     width: 910px;
     @include bp(phone){
@@ -496,7 +497,7 @@ nav#page{
             }
             .twitter_div{
                 float:left;
-                width:420px;
+                width:205px;
                 height:205px;
                 margin-right: 10px;
                 background: #fff url('assets/images/load-small.gif') 50% 50% no-repeat;
@@ -518,7 +519,7 @@ nav#page{
                     position: relative;
                     background: #f9f9f9 url(assets/images/twitter@2x.png) no-repeat;
                     background-size: 25px 21px;
-                    background-position: 50% 20%;
+                    background-position: 50% 10%;
                     @include bp(phone){
                         height: 165px;
                     }
@@ -531,15 +532,15 @@ nav#page{
                         display:table-cell;
                         vertical-align: middle;
                         letter-spacing: 0px;
-                        padding-top:20px;
+                        padding-top:0px;
                         }
                     a{
                         color:#c0974a;
                     }
                     a.twitterdatelink{
                         position:absolute;
-                        bottom:40px;
-                        margin-left:-55%;
+                        bottom:20px;
+                        margin-left:-61%;
                         text-decoration: none;
                         text-transform: uppercase;
                         font-family: 'Futura';
@@ -3444,7 +3445,7 @@ form.shipping_calculator{
     .footer {
         z-index: 800;
         position:absolute;
-        background: $grey2;
+        background: $grey1;
         width: 100%;
         #footer-bar {
             width: 100%;
