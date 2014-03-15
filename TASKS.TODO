@@ -10,5 +10,5 @@ Checkout:
  ✔ CSS for the order totals info etc. @done (14-02-23 17:33)
  ✔ padding on sign up form top @done (14-02-23 17:33)
  ✔ placeholder text in login form disappeared @started(14-02-23 17:34) @done (14-02-23 19:10) @lasted(1:36:00)
- ☐ Fix on dev the checkout problem that is fixed on prod... weird.
+ ✔ Fix on dev the checkout problem that is fixed on prod... weird. @done (14-03-15 18:00)
    
