@@ -424,44 +424,18 @@ nav#page{
                         height:146px;
                         margin:0px 0px 10px 0px;
                     }
-                }
-                span.studio{
-                    margin-right:0;
-                    a{
-                        background: #f9f9f9 url(assets/images/studio@2x.png) no-repeat;
-                        background-size: 105px 105px;
-                        background-position: 50% -10px;
+                    &:last-child{
+                        margin-right:0;
                     }
-                    &:hover{
+                }
 
-                    }
-                }
-                span.blog{
-                    a{
-                        background: #f9f9f9 url(assets/images/journeys@2x.png) no-repeat;
-                        background-size: 105px 105px;
-                        background-position: 50% -10px;
-                    }
-                    &:hover{
-
-                    }
-                }
-                span.shop{
-                    a{
-                        background: #f9f9f9 url(assets/images/journeys@2x.png) no-repeat;
-                        background-size: 105px 105px;
-                        background-position: 50% -10px;
-                    }
-                    &:hover{
-                        //background-color: $grey2;
-                    }
-                }
                 a{
                     height: 100%;
                     width:100%;
                     display: block;
                     padding-top: 80px;
                     color: $grey2;
+                    background: $grey9;
                     text-decoration: none;
                     font-size:1.7em;
                     div{
@@ -478,6 +452,18 @@ nav#page{
                         font-size: 0.4em;
                         width: 70%;
                         margin:0 auto;
+                    }
+                    &:before{
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        font-size: 1.5em;
+                        padding-top: 0.6em;
+                    }
+                    &:hover{
+                        background: $grey7;
+                        color: $grey3;
                     }
                 }
             }
@@ -513,7 +499,6 @@ nav#page{
                 float:left;
                 li{
                     text-align: center;
-                    font-family: 'Merriweather', sans-serif;
                     height:205px;
                     display:table;
                     position: relative;
@@ -521,9 +506,10 @@ nav#page{
                     &:before{
                         font-family: $icons;
                         content: "\e614";
-                        font-size: 1.8em;
+                        font-size: 1.5em;
                         width: 100%;
                         position: absolute;
+                        padding-top: 10px;
                     }
                     @include bp(phone){
                         height: 165px;
@@ -571,7 +557,7 @@ nav#page{
                 width:420px;
                 height:205px;
                 letter-spacing: 2px;
-                background:#f9f9f9;
+                background:$grey9;
                 float:right;
                 text-align: center;
                 margin-top: 0px;
@@ -895,7 +881,7 @@ nav#page{
 
                 }
                 div.card.three{
-                    background: #f9f9f9 url(assets/images/HeaderSmallGold@2x.png) no-repeat;
+                    background: $grey9 url(assets/images/HeaderSmallGold@2x.png) no-repeat;
                     background-size:205px 30px;
                     width: 635px;
                     background-position: 50% 90%;
@@ -932,11 +918,11 @@ nav#page{
                     }
                 }
             .grey{
-                background-color: rgb(249,249,249);
+                background-color: $grey9;
 
             }
             .black{
-                background-color: rgb(60, 60, 60);
+                background-color: $grey2;
                 color:white;
                 span{
                     margin-top: 0!important;
@@ -1167,7 +1153,7 @@ nav#page{
                 padding:0;
                 text-transform: uppercase;
                 border: none;
-                background-color: rgb(249,249,249);
+                background-color: $grey9;
                 margin: 20px 0 10px 0;
             }
         }
@@ -1251,7 +1237,7 @@ nav#page{
                     height:205px;
                     margin:0px 0px 10px 10px;
                     display:table;
-                    background: #f9f9f9 url(assets/images/twitter@2x.png) no-repeat;
+                    background: $grey9 url(assets/images/twitter@2x.png) no-repeat;
                     background-size: 25px 21px;
                     background-position: 50% 10%;
                     background-repeat: no-repeat;
@@ -1439,7 +1425,7 @@ nav#page{
             display:table-cell;
             vertical-align:middle;
             height: 205px;
-            background: #f9f9f9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
+            background: $grey9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
             background-size: 205px 30px;
             background-position: 50% 85%;
             @include bp(phone){
@@ -1697,7 +1683,7 @@ section.divide{
     margin: 0 auto;
     position:relative;
     color:#323232;
-    background:#F9F9F9;
+    background:$grey9;
     font-size:15px;
     z-index:200;
     p{
@@ -1732,7 +1718,7 @@ section#blogtop{
         right:auto;
         left:0;
         .rsThumbsContainer{
-            background:#f9f9f9;
+            background:$grey9;
             .rsThumb{
                 display: table;
                 border-bottom: 1px solid #d5d5d5;
@@ -1941,7 +1927,7 @@ section#blogtop{
 /* SHOP */
 
 .woocommerce h3{
-    background: #f9f9f9;
+    background: $grey9;
 }
 
 p.demo_store{
@@ -2056,7 +2042,7 @@ div.validation_error{
     position: absolute;
     width: 100%;
     height:40px;
-    background-color: #f9f9f9;
+    background-color: $grey9;
     border-top: 1px #b3b3b3 solid;
     font-size: 0.7em;
     letter-spacing: 0px;
@@ -2594,7 +2580,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             text-transform: uppercase;
             color: $grey2;
             margin-bottom: 1.5em;
-            background:#f9f9f9;
+            background:$grey9;
         }
         table.my_account_orders{
             border-spacing: 0 10px;
@@ -2605,7 +2591,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             tbody{
                 tr{
                     margin: 10px 0;
-                    background: #f9f9f9;
+                    background: $grey9;
                     td{
                         width:22%;
                         .button{
@@ -2652,7 +2638,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             }
         }
         address{
-            background:#f9f9f9;
+            background:$grey9;
             padding: 7%;
             a.edit{
                 width:100%;
@@ -2710,7 +2696,7 @@ table.order_details{
         width:35%;
         float:right;
         tr{
-            background: #f9f9f9;
+            background: $grey9;
             width: 98%;
             display: block;
             float: left;
@@ -2735,7 +2721,7 @@ table.order_details{
     tbody{
         width:57.8%;
         float:left;
-        background: #f9f9f9;
+        background: $grey9;
         padding: 3%;
         tr{
             text-align: left;
@@ -2778,11 +2764,11 @@ dl.customer_details{
         text-align: center;
     }
     dt{
-        background: #f9f9f9;
+        background: $grey9;
         padding: 20px 20px 0 20px;
     }
     dd{
-        background: #f9f9f9;
+        background: $grey9;
         margin-bottom: 0;
         padding: 0px 20px 0 20px;
         }
@@ -2828,7 +2814,7 @@ div.addresses.order{
             display:none;
         }
         h3{
-            background-color: #f9f9f9;
+            background-color: $grey9;
         }
 
         div.info{
@@ -2894,7 +2880,7 @@ div.addresses.order{
                 }
             }
             tr.cart_table_item{
-                background-color: #f9f9f9;
+                background-color: $grey9;
                 margin-top: 10px;
             }
             tr.cart_table_item:last-child{
@@ -2907,7 +2893,7 @@ div.addresses.order{
             }
             tr.discount{
                 height:30px;
-                background-color: #f9f9f9;
+                background-color: $grey9;
                 th{
                     width:350px;
                     text-align: left;
@@ -2985,7 +2971,7 @@ div.addresses.order{
                 td{
                     width:100%;
                     text-align: left!important;
-                    background-color: #f9f9f9;
+                    background-color: $grey9;
                 }
                 td.coupon{
                     label{
@@ -3040,7 +3026,7 @@ div.addresses.order{
                     }
                     td{
                         font-size: 1em;
-                        background-color: #f9f9f9;
+                        background-color: $grey9;
                         text-align: left!important;
                         span{
                             float: right;
@@ -3090,7 +3076,7 @@ div.addresses.order{
                         width: 49%;
                         color: white;
                         float: right;
-                        background-color: rgb(50,50,50);
+                        background-color: $grey9;
                     }
                     td.subtotal{
                         width: 48%;
@@ -3188,7 +3174,7 @@ form.shipping_calculator{
     h3{
         float: left;
         width: 100%;
-        background: #f1f1f1;
+        background: $grey9;
     }
 
     div.left{
@@ -3231,7 +3217,7 @@ form.shipping_calculator{
     p.disclaimer{
         width:100%;
         height: 130px;
-        background: #f1f1f1;
+        background: $grey9;
         padding: 4%;
     }
     #order_comments_field{
@@ -3264,7 +3250,7 @@ form.shipping_calculator{
         margin-bottom: 2.5em;
         p:first-child{
             text-align: center;
-            background: #f9f9f9;
+            background: $grey9;
             padding: 10px 0;
             text-transform: uppercase;
             color:$grey2;
@@ -3387,7 +3373,7 @@ form.shipping_calculator{
             font-size:1.2em;
             tr{
                 margin: 10px 0;
-                background-color: #f1f1f1;
+                background-color: $grey9;
                 display: block;
                 float: left;
                 width:430px;

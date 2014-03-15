@@ -32,14 +32,14 @@ ul, ol { }
     .cover{
         height: 145px;
         overflow: hidden;
-        background:#f9f9f9;
+        background:$grey9;
         img{
             height: auto;
         }
     }
 
     .ig{
-        background:#f9f9f9;
+        background:$grey9;
         display: table;
         margin-bottom: 10px!important;
         width:205px;
@@ -51,7 +51,7 @@ ul, ol { }
             display: table-cell;
             vertical-align: middle;
             font-family: $serif;
-            background: #f9f9f9 url(assets/images/instagram@2x.png) no-repeat;
+            background: $grey9 url(assets/images/instagram@2x.png) no-repeat;
             background-size: 25px 20px;
             background-position: 50% 20%;
             .date{
@@ -73,7 +73,7 @@ ul, ol { }
             display: table;
             height: 100%;
             width: 100%;
-            background: #f9f9f9 url(assets/images/twitter@2x.png) no-repeat;
+            background: $grey9 url(assets/images/twitter@2x.png) no-repeat;
             background-size: 25px 21px;
             background-position: 50% 10%;
             p{
