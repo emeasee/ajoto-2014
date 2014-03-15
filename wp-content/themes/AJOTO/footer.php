@@ -11,7 +11,7 @@
         <div class="nav-box">               
                 <a class="top icon-arrow_up" href="">TOP</a>
                 <ul class="share">
-                    <li><a href="http://www.facebook.com/ajotostudio" target="_blank"><i class="icon-social_fb"></i></a></li>
+                    <li><a href="http://www.facebook.com/ajoto" target="_blank"><i class="icon-social_fb"></i></a></li>
                     <li><a href="http://www.flickr.com/ajoto" target="_blank"><i class="icon-social_flkr"></i></a></li>
                     <li><a href="http://instagram.com/ajoto" target="_blank"><i class="icon-social_inst"></i></a></li>
                     <li><a href="http://www.pinterest.com/ajoto" target="_blank"><i class="icon-social_pin"></i></a></li>
