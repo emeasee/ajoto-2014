@@ -12,11 +12,11 @@
 		</header>
 	
 		<section class="title">
-			<p class="serif">The Studio</br>
+			<p>The Studio
 			<span class="sans-serif">WHO WE ARE AND HOW WE WORK</span></p>
 		</section>
 		
-	<section class="mid serif frame">
+	<section class="mid frame">
 					<div class="pickout"><h1>Through a careful balance of functionality, aesthetic and longevity we take our time to create elegant products which enrich your 
 daily life.</h1></div>	
 				<div class="titles threecol">
@@ -27,7 +27,7 @@ daily life.</h1></div>
 	</section>
 	
 	<section class="title small">
-		<p class="sans-serif">Name and Mark</br>
+		<p class="sans-serif">Name and Mark
 	</section>
 	
 	<section class="screen sans-serif">
@@ -44,7 +44,7 @@ daily life.</h1></div>
 	</section>
 
 	<section class="title small">
-		<p class="sans-serif">How We Work</br>
+		<p class="sans-serif">How We Work
 	</section>
 
 	<section class="mid sans-serif">
@@ -54,7 +54,7 @@ daily life.</h1></div>
 	<div class="slideshow"><?php echo get_new_royalslider(9); ?></div>
 	
 	<section class="title small">
-		<p class="sans-serif">Philosophy and Process</br>
+		<p class="sans-serif">Philosophy and Process
 	</section>
 		
 	<section class="screen">
@@ -77,7 +77,7 @@ daily life.</h1></div>
 	</section>
 
 	<section class="title small">
-		<p class="sans-serif">Our Team</br>
+		<p class="sans-serif">Our Team
 	</section>
 
 	<section class="mid sans-serif">

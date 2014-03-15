@@ -6,7 +6,9 @@
 <?php get_header(); ?>
 	<div id="container">
 		<div id="content" class="blog">
-		<h2>JOURNAL</h2>
+		<section class="title small">
+			<p>JOURNEY<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
 		<section class="filter">
 			<div class="links">
 			<a class="current" href="../../journal">ALL</a>

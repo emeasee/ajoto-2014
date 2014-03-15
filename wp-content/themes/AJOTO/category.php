@@ -6,7 +6,9 @@
 <?php get_header(); ?>
 	<div id="container">
 		<div id="content" class="blog">
-		<h2><?php single_cat_title(); ?></h2>
+		<section class="title small">
+			<p><?php single_cat_title(); ?></p>
+		</section>
 		<section class="filter">
 			<div class="links">
 			<a href="../../journal">ALL</a>
@@ -52,14 +54,14 @@
 							</article>
 							<?php } elseif (in_category("social")) { 
 								if(has_tag('twitter')){?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix transition'); ?> role="article">
 									<section class="clearfix cover tweet" data-chrome="transparent" rel="<//?php the_permalink() ?>">
-										<div class="table"><p><?php echo get_the_content(); ?></p></div>
+										<div class="table icon-bird"><p><?php echo get_the_content(); ?></p></div>
 										<a href="http://twitter.com/ajoto" class="twitterdatelink">@AJOTO</a>
 									</section>
 								</article>
 								<?php } elseif(has_tag('instagram')){?>
-								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix fourcol transition'); ?> role="article">
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix transition'); ?> role="article">
 									<section class="clearfix cover ig" rel="<//?php the_permalink() ?>">
 										<a href="<?php echo get_the_content(); ?>"><?php echo the_post_thumbnail('medium'); ?></a>
 									</section>

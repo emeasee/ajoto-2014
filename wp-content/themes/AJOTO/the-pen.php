@@ -12,7 +12,7 @@
 		</header>
 	
 		<section class="title">
-			<p class="serif">The Pen</br>
+			<p>The Pen
 			<span class="sans-serif">DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
@@ -33,7 +33,7 @@
 	
 	<section class="screen sans-serif">
 		<div class="card cube quote">
-			<a class="serif" href="../../shop/#pen">Starting from £126
+			<a href="../../shop/#pen">Starting from £126
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -67,7 +67,7 @@
 			</i></p>
 		</div>
 		<div class="card cube quote">
-			<a class="serif" href="../../shop/#pen">Starting from £126
+			<a href="../../shop/#pen">Starting from £126
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>
