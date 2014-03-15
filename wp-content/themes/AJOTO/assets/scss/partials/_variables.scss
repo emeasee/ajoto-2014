@@ -2,6 +2,7 @@
 @include fontface('BT', 'assets/fonts/', 'brandontext-regular-webfont');
 @include fontface('BT-Bold', 'assets/fonts/', 'brandontext-bold-webfont');
 @include fontface('BT-Light', 'assets/fonts/', 'brandontext-light-webfont');
+@include fontface('ajoto', 'assets/fonts/', 'ajoto');
 
 @include web-font((Merriweather), $secure: true);
 // Structure
@@ -33,6 +34,7 @@ $linkHoverColor: $gold2;
 $sans-serif: "BT","Helvetica Neue", Helvetica, Arial, sans-serif;
 $ssbold: "BT-Bold","Helvetica Neue", Helvetica, Arial, sans-serif;
 $sslight: "BT-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+$icons: "ajoto";
 
 $serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;
 
@@ -41,4 +43,93 @@ $serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;
 }
 .serif{
     font-family: $serif;
+}
+
+
+// AJOTO FONT ICONS
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'ajoto';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-thumbs_up:before {
+    content: "\e600";
+}
+.icon-thumbs_down:before {
+    content: "\e601";
+}
+.icon-social_vimeo:before {
+    content: "\e602";
+}
+.icon-social_twitter:before {
+    content: "\e603";
+}
+.icon-social_pin:before {
+    content: "\e604";
+}
+.icon-social_flkr:before {
+    content: "\e605";
+}
+.icon-social_inst:before {
+    content: "\e606";
+}
+.icon-social_fb:before {
+    content: "\e607";
+}
+.icon-slide_right:before {
+    content: "\e608";
+}
+.icon-slide_left:before {
+    content: "\e609";
+}
+.icon-diamond_blank:before {
+    content: "\e60a";
+}
+.icon-eye:before {
+    content: "\e60b";
+}
+.icon-d_target:before {
+    content: "\e60c";
+}
+.icon-d_man:before {
+    content: "\e60d";
+}
+.icon-d_clover:before {
+    content: "\e60e";
+}
+.icon-d_basket:before {
+    content: "\e60f";
+}
+.icon-ajoto:before {
+    content: "\e610";
+}
+.icon-arrow_left:before {
+    content: "\e611";
+}
+.icon-arrow_right:before {
+    content: "\e612";
+}
+.icon-arrow_up:before {
+    content: "\e613";
+}
+.icon-bird:before {
+    content: "\e614";
+}
+.icon-d_001:before {
+    content: "\e615";
+}
+.icon-d_ajoto:before {
+    content: "\e616";
+}
+.icon-d_arrows:before {
+    content: "\e617";
 }

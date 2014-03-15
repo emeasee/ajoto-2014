@@ -25,6 +25,20 @@
 
 		<footer id="extra">
 			<?php twitterFeed(1); ?>
+			<div class="insta_div">
+				<?php
+						 $temp = $wp_query;
+						 $wp_query= null;
+						 $wp_query = new WP_Query();
+						 $tag = 'instagram';
+						 $wp_query->query('posts_per_page=1&tag=-'.$tag.'&author=-1');
+						 while( $wp_query->have_posts() ) : $wp_query->the_post();
+					?>
+					<a href="<?php echo get_the_content(); ?>"><?php echo the_post_thumbnail('medium'); ?></a>
+				<?php endwhile; ?>
+				<?php $wp_query = null; $wp_query = $temp;?>
+
+			</div>
 			<div id="subscribe">
 				<!-- Begin MailChimp Signup Form -->
 					<div id="mc_embed_signup">
