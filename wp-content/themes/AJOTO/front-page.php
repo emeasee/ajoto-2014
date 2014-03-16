@@ -8,9 +8,9 @@
 		<section class="snippets">
 			
 			<section class="buttons">
-				<span class="buttons blog"><a href="../journey" class="icon-d_arrows">THE JOURNEY<div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
-				<span class="buttons shop"><a href="../shop" class="icon-d_basket">THE SHOP<div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
-				<span class="buttons studio"><a href="../studio" class="icon-d_man">THE STUDIO<div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
+				<span class="buttons blog"><a href="../journey" class="icon-d_arrows"><p>THE JOURNEY</p><div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
+				<span class="buttons shop"><a href="../shop" class="icon-d_basket"><p>THE SHOP</p><div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
+				<span class="buttons studio"><a href="../studio" class="icon-d_man"><p>THE STUDIO</p><div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
 			</section>		
 			
 		</section> <!-- end snippets -->
