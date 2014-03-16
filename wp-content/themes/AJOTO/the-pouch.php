@@ -7,13 +7,17 @@
 <div id="container">
 
 <div id="content" class="page">
-		<header>
-			<?php echo get_new_royalslider(20); ?>
-		</header>
-	
-		<section class="title">
-			<p>The Pen Pouch
-			<span class="sans-serif">DETAILS, SPECIFICATION & FEATURES</span></p>
+		<section class="title small">
+			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
+		<section class="filter">
+			<div class="links">
+				<a class="current" href="../../journal">ALL</a>
+			</div>
+		</section>
+
+		<section class="title small">
+			<p>THE PEN POUCH<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
 		<section class="mid sans-serif">

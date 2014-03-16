@@ -48,8 +48,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-			<span class="title serif"><?php the_title(); ?></span><br/>
-			<span class="shipping serif">Free Shipping</span>
+			<span class="title"><?php the_title(); ?></span><br/>
+			<span class="psubtitle"><?php echo get_post_meta( $product->id, 'psubtitle', true); ?></span>
 		
 		<?php
 			/**

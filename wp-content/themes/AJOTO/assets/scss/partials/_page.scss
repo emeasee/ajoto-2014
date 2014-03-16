@@ -1121,7 +1121,7 @@ nav#page{
             }
             p{
                 font-size: 1.4em;
-                line-height: 1.2em;
+                line-height: 0.9em;
                 font-family: $ssbold;
                 padding:41px;
                 color: $gold1;
@@ -1130,7 +1130,8 @@ nav#page{
                 span{
                     font-style: normal;
                     font-size: 0.5em;
-                    padding-top:10px;
+                    padding-top:20px;
+                    display: block;
                     letter-spacing: 1px;
                     font-family: $sans-serif;
                     color: $grey1;
@@ -1138,6 +1139,11 @@ nav#page{
                 }
                 border-top: 1px solid $grey2;
                 border-bottom: 1px solid $grey2;
+                .button{
+                    margin-top: 20px;
+                    background: $grey9;
+                    color: $grey1;
+                }
             }
             a.arrow{
                 width: 35px;
@@ -1497,16 +1503,7 @@ nav#page{
                 color:$grey2;
             }
         }
-}
-
-#content.blog{
-    padding-bottom:80px;
-    h2{
-        width:850px;
-        margin:0 auto;
-        text-align: center;
-        font-size: 1.3em;
-    }
+        
     section.filter{
         width: 850px;
         height:30px;
@@ -1538,6 +1535,16 @@ nav#page{
                 color:#c0974a;
             }
         }
+    }
+}
+
+#content.blog{
+    padding-bottom:80px;
+    h2{
+        width:850px;
+        margin:0 auto;
+        text-align: center;
+        font-size: 1.3em;
     }
     #inner-content{
         width:850px;
@@ -2344,17 +2351,8 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 #content.products{
     section.listings{
         margin-top: 30px;
-        h3{
-            clear:both;
-            background-color: #f0f0f0;
-            max-width: 850px;
-            margin: 0 auto;
-        }
         section.mid{
             margin-bottom: 40px;
-        }
-        div.titles{
-            background: none!important;
         }
         ul{
             max-width: 850px;
@@ -2374,6 +2372,10 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                     }
                     span{
                         font-size: 0.7em;
+                        &.title,&.psubtitle{
+                            text-transform: uppercase;
+                            color: $grey1;
+                        }
                     }
                     a.added_to_cart{
                         position: fixed;
@@ -2402,20 +2404,10 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                             -webkit-animation-name: nodeInserted;
                     }
                     .button{
-                        width: 100%;
-                        max-width: 175px;
-                        height:20px;
                         margin-top: 10px;
-                        font-size: 0.7em;
-                        line-height: 23px;
-                        float: none;
-                    }
-                    .button:hover{
-                        color:white;
-
                     }
                     .no-stock{
-                        background: #969696;
+                        background: $grey9;
                         cursor: default;
                     }
                 }
@@ -2424,6 +2416,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                         display:block;
                         font-size:2em;
                         color: #C59741;
+                        font-family: $ssbold;
                     }
                     small{
                         display: block;
@@ -2799,16 +2792,13 @@ div.addresses.order{
 
 .products, .page{
     .button{
-        width: 315px;
-        height: 30px;
-        background-color: #c59741;
-        font-size: 16px;
-        line-height: 34px;
+        min-width: 100px;
+        background-color: $gold1;
         text-transform: uppercase;
         border:none;
         padding: 0;
-        font-family: $sans-serif;
         letter-spacing: 1px;
+        padding: 0 0.5em;
     }
     button.button{
         font-size: 16px;
