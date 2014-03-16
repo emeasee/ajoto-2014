@@ -7,59 +7,41 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div id="container">
 		<div id="content" class="<?php echo $post->post_name; ?> products">
-				<header>
-					 <div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>
-					</header>
+		<section class="title small">
+			<p>SHOP<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
+			<header>
+				<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>
+			</header>
 					
-					<section class="listings" style="margin-bottom:70px;">
-						<h3 id="pen">The Pen</h3>
-						<section class="mid sans-serif">
-							<div class="titles center product">
-								<p class="icns penicn">We wanted to do justice to the most important tool we use everyday. That's why we created a pen that not only has a great story but marks the beginning of a journey that will last a lifetime.<br/><br/>Each Pen comes wrapped in an anodised aluminium box with a molded cork tray.
-									<br/><br/><a href="../products/the-pen" class="button more">Find out more</a>
-								</p>
-							</div>
-							
-						</section>
-						<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP2,MYM001RAWP,MYM001BP2,MYM001BRP2" orderby="date" order="desc"]' ); ?></div>
+			<section class="listings" style="margin-bottom:70px;">
+				<section class="title mid" id="pen">
+					<p>THE PEN<span>WE WANTED TO DO JUSTICE TO THE MOST IMPORTANT TOOL WE USE EVERYDAY. THAT’S WHY WE CREATED A PEN THAT NOT ONLY HAS A GREAT STORY BUT MARkS THE BEGINNING OF A JOURNEY THAT WILL LAST A LIFETIME.<br><br>EACH PEN COMES WRAPPED IN AN ANODISED ALUMINIUM BOX WITH A MOULDED CORk TRAY.</span><a href="" class="button">FIND OUT MORE</a></p>
+				</section>
 
-						<h3 id="refills">Refills</h3>
-						<section class="mid sans-serif">
-							<div class="titles center product">
-								<p class="icns penicn">A Pen is only as good as the quality of the ink it uses. We work with one of the world's finest refill manufacturers based in Germany to ensure our ink is of the highest standards.
-<br/><br/>We offer the liquid ink Rollerball refill which is smooth, rich and arguably the best refill in the world.
-									<br/><br/><a href="../products/the-pen" class="button more">Find out more</a>
-								</p>
-							</div>
-							
-						</section>
-						<div id="refills"><?php echo do_shortcode( '[products skus="MYM001RBB,3MYM001RBB"]' ); ?></div>
+				<div id="pen"><?php echo do_shortcode( '[products skus="MYM001SP2,MYM001RAWP,MYM001BP2,MYM001BRP2" orderby="date" order="desc"]' ); ?></div>
 
-						<h3 id="pouch">Pen Pouch</h3>
-						<section class="mid sans-serif">
-							<div class="titles center product">
-								<p class="icns penicn">The Pouch is a beautifully simple way to store and protect your Pen. A combination of expert crafttmanship and the finest Tuscan vegetable tanned leather, it will be your Pen's perfect companion for a lifetime.
-									<br/><br/><a href="../products/the-pen-pouch" class="button more">Find out more</a>
-								</p>
-							</div>
-							
-						</section>
-						<div id="pouch"><?php echo do_shortcode( '[products skus="MYM001PPLB2,MYM001PPB,MYM001PPDB,MYM001PPLB"]' ); ?></div>
+				<section class="title mid" id="refills">
+					<p>INK REFILLS<span>A PEN IS ONLY AS GOOD AS THE qUALITY OF THE INk IT USES. WE WORk WITH ONE OF THE WORLD’S FINEST REFILL MANUFACTURERS IN THE WORLD TO ENSURE OUR INk IS OF THE HIGHEST STANDARD.</span><a href="" class="button">FIND OUT MORE</a></p>
+				</section>
+				
+				<div id="refills"><?php echo do_shortcode( '[products skus="MYM001RBB,3MYM001RBB"]' ); ?></div>
+				
+				<section class="title mid" id="pouch">
+					<p>THE POUCH<span>THE POUCH IS A BEAUTIFULLY SIMPLE WAY TO STORE AND PROTECT YOUR PEN. A COMBINATION OF EXPERT CRAFTMANSHIP AND THE FINEST TUSCAN VEGETABLE TANNED LEATHER, IT WILL BE YOUR PEN’S PERFECT COMPANION FOR A LIFETIME.</span><a href="" class="button">FIND OUT MORE</a></p>
+				</section>
 
-						<h3 id="wallet">Wallet</h3>
-						<section class="mid sans-serif">
-							<div class="titles center product">
-								<p class="icns penicn">Your Wallet is an essential tool which not only represents your values but holds the keys to your world. Re-imagining the bi-fold wallet, we've reduced fuss and focused on producing a slim modern wallet using the finest Tuscan leather which will become a trustworthy companion to carry with you everyday.
-									<br/><br/><a href="../products/the-wallet" class="button more">Find out more</a>
-								</p>
-							</div>
-							
-						</section>
-						<div id="wallet"><?php echo do_shortcode( '[products skus="FTJ001WB2,FTJ001WLB2,FTJ001WDB2"]' ); ?></div>
+				<div id="pouch"><?php echo do_shortcode( '[products skus="MYM001PPLB2,MYM001PPB,MYM001PPDB,MYM001PPLB"]' ); ?></div>
 
-					</section> <!-- end article section -->												
-					<?php endwhile; ?>									
+				<section class="title mid" id="wallet">
+					<p>THE WALLET<span>THE WALLET IS A SIMPLE, TRUSTWORTHY COMPANION THAT CONTAINS THE kEYS TO YOUR WORLD. HANDMADE IN THE Uk FROM TUSCAN LEATHER, WHICH IS VEGETABLE TANNED USING TRADITIONAL PROCESSES DATING BACk 3000 YEARS.</span><a href="" class="button">FIND OUT MORE</a></p>
+				</section>
+			
+				<div id="wallet"><?php echo do_shortcode( '[products skus="FTJ001WB2,FTJ001WLB2,FTJ001WDB2"]' ); ?></div>
+
+			</section> <!-- end listings section -->												
+		<?php endwhile; ?>									
 	</div>
-		<?php endif; ?>
+<?php endif; ?>
 </div>
 <?php get_footer(); ?>

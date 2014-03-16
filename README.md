@@ -15,14 +15,6 @@ Chris Holden
 
 This is a completely re-written / re-adapted Wordpress install for AJOTO.com. Including E-commerce implementation with Woocommerce, and basic reponsiveness. 
 
-## Todo
-
-- [x] Home page 
-- [ ] Journeys page 
-- [ ] About pages
-- [ ] Shop page
-- [ ] Single blog page
-
 ### Changelog
 
 #### Version 2.0
