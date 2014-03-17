@@ -425,6 +425,9 @@ add_action( 'wp_ajax_get_exchange_rate', 'get_exchange_rate' );
  * Woocommerce Hooks and Filters
  */
 
+// Remove Woocommerce styles
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
 function my_filer_function( $message )
 {
     
@@ -543,3 +546,4 @@ function custom_override_get_availability( $availability, $_product ) {
 if ( $_product->is_in_stock() ) $availability['availability'] = __('', 'woocommerce');
 return $availability;
 }
+

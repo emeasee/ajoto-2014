@@ -7,13 +7,17 @@
 <div id="container">
 
 <div id="content" class="page">
-		<header>
-			<?php echo get_new_royalslider(20); ?>
-		</header>
-	
-		<section class="title">
-			<p class="serif">The Pen Pouch</br>
-			<span class="sans-serif">DETAILS, SPECIFICATION & FEATURES</span></p>
+		<section class="title small">
+			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
+		<section class="filter">
+			<div class="links">
+				<a class="current" href="../../journal">ALL</a>
+			</div>
+		</section>
+
+		<section class="title small">
+			<p>THE PEN POUCH<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
 		<section class="mid sans-serif">
@@ -30,12 +34,14 @@
 				<iframe id="player_6" src='http://player.vimeo.com/video/68225024?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_6' width='850' height='479' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			</div>
 		</section>
-		
-	<div class="slideshow"><?php echo get_new_royalslider(21); ?></div>
 
 	<section class="screen sans-serif">
 		<div class="card cube quote">
+<<<<<<< HEAD
 			<a class="serif" href="../../shop/#pouch">Every Pouch £35
+=======
+			<a href="../../shop/#pouch">Every Pouch £35
+>>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -44,13 +50,8 @@
 			</i></p>
 		</div>
 	</section>
-	
-	<div class="map">
-		<?php build_map('pen-pouch'); ?>
-	</div>
 
-	<div class="slideshow"><?php echo get_new_royalslider(25); ?></div>
-	
+	<div class="slideshow"><?php echo get_new_royalslider(21); ?></div>
 
 	<section class="screen sans-serif">
 		<div class="video small">
@@ -73,7 +74,11 @@
 		</div>
 
 		<div class="card cube quote">
+<<<<<<< HEAD
 			<a class="serif" href="../../shop/#pouch">Every Pouch £35
+=======
+			<a href="../../shop/#pouch">Every Pouch £35
+>>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>

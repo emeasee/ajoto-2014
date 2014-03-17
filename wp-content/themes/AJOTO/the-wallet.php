@@ -7,13 +7,17 @@
 <div id="container">
 
 <div id="content" class="page">
-		<header>
-			<?php echo get_new_royalslider(29); ?>
-		</header>
-	
-		<section class="title">
-			<p class="serif">The Wallet</br>
-			<span class="sans-serif">DETAILS, SPECIFICATION & FEATURES</span></p>
+		<section class="title small">
+			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
+		<section class="filter">
+			<div class="links">
+				<a class="current" href="../../journal">ALL</a>
+			</div>
+		</section>
+
+		<section class="title small">
+			<p>THE WALLET<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
 		<section class="mid sans-serif">
@@ -31,11 +35,13 @@
 			</div>
 		</section>
 		
-	<div class="slideshow"><?php echo get_new_royalslider(30); ?></div>
-
 	<section class="screen sans-serif">
 		<div class="card cube quote">
+<<<<<<< HEAD
 			<a class="serif" href="../../shop/#wallet">Every Wallet £70
+=======
+			<a href="../../shop/#wallet">Every Wallet £70
+>>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -44,14 +50,9 @@
 			</i></p>
 		</div>
 	</section>
-	
-	<div class="map">
-		<?php build_map('wallet'); ?>
-	</div>
 
-	<div class="slideshow"><?php echo get_new_royalslider(31); ?></div>
+	<div class="slideshow"><?php echo get_new_royalslider(30); ?></div>
 	
-
 	<section class="screen sans-serif">
 		<div class="video small">
 			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Using-your-Wallet.jpg"></span>
@@ -73,7 +74,11 @@
 		</div>
 
 		<div class="card cube quote">
+<<<<<<< HEAD
 			<a class="serif" href="../../shop/#wallet">Every Wallet £70
+=======
+			<a href="../../shop/#wallet">Every Wallet £70
+>>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>

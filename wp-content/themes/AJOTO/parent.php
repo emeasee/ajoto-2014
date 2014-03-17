@@ -12,7 +12,7 @@
 		</header>
 
         <section class="title">
-            <p class="serif"><?php the_title(); ?></br>
+            <p><?php the_title(); ?></br>
             <span class="sans-serif"><?php echo get_post_meta($post->ID, 'sub', true); ?></span></p>
         </section>  -->
 	

@@ -15,10 +15,9 @@ Chris Holden
 
 This is a completely re-written / re-adapted Wordpress install for AJOTO.com. Including E-commerce implementation with Woocommerce, and basic reponsiveness. 
 
-
 ### Changelog
 
-#### Version 1.0
+#### Version 2.0
 
 * initial version for 2014
 
@@ -28,7 +27,7 @@ This is a completely re-written / re-adapted Wordpress install for AJOTO.com. In
 
 ### Credits
 
-Without these projects, this project wouldn't be nothing. Period.
+Without these projects, this project would be nothing.
 
 * [Yeoman](http://yeoman.io/)
 * [Yeopress Generator](https://github.com/wesleytodd/YeoPress)

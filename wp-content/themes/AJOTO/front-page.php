@@ -1,15 +1,20 @@
 <?php get_header(); ?>
 <div id="container">
 	<div id="content" class="home">	
-		<header style="margin-bottom:30px;">
+		<header>
 			<?php echo get_new_royalslider(1); ?>
 		</header> <!-- end top-header -->
 		
-		<section class="title">
-			<p class="serif">We Create Beautiful Tools For Everyday Journeys</br>
-			<span class="sans-serif">THOUGHTFULLY COMBINING THE PRECISION OF ADVANCED MANUFACTURE WITH THE SOUL OF CRAFT</span></p>
-		</section>
-		
+		<section class="snippets">
+			
+			<section class="buttons">
+				<span class="buttons blog"><a href="../journey" class="icon-d_arrows"><p>THE JOURNEY</p><div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
+				<span class="buttons shop"><a href="../shop" class="icon-d_basket"><p>THE SHOP</p><div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
+				<span class="buttons studio"><a href="../studio" class="icon-d_man"><p>THE STUDIO</p><div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
+			</section>		
+			
+		</section> <!-- end snippets -->
+
 		<!-- CHANGE CLASS TO shop-slide IF WE NEED TO CHANGE BACK TO DYNAMIC SLIDER -->
 		<section class="screen" style="max-width:850px;">
 			<?php echo get_new_royalslider(2); ?>
@@ -17,19 +22,23 @@
 				<?php get_template_part( 'shop-featured-slider' ); ?>
 			</div>-->
 		</section>
-		
-		<section class="snippets">
-			
-			<div id="product-slide"><?php echo get_new_royalslider(3); ?></div>
-			<section class="buttons serif">
-				<span class="buttons studio"><a href="../studio" class="sans-serif"></a><a class="over" href="../studio"></a></span>
-				<span class="buttons blog"><a href="../journeys" class="sans-serif"></a><a class="over" href="../journeys"></a></span>
-			</section>		
-			
-		</section> <!-- end snippets -->
 
 		<footer id="extra">
 			<?php twitterFeed(1); ?>
+			<div class="insta_div">
+				<?php
+						 $temp = $wp_query;
+						 $wp_query= null;
+						 $wp_query = new WP_Query();
+						 $tag = 'instagram';
+						 $wp_query->query('posts_per_page=1&tag=-'.$tag.'&author=-1');
+						 while( $wp_query->have_posts() ) : $wp_query->the_post();
+					?>
+					<a href="<?php echo get_the_content(); ?>"><?php echo the_post_thumbnail('medium'); ?></a>
+				<?php endwhile; ?>
+				<?php $wp_query = null; $wp_query = $temp;?>
+
+			</div>
 			<div id="subscribe">
 				<!-- Begin MailChimp Signup Form -->
 					<div id="mc_embed_signup">
