@@ -37,11 +37,7 @@
 	
 	<section class="screen sans-serif">
 		<div class="card cube quote">
-<<<<<<< HEAD
-			<a class="serif" href="../../shop/#pen">Starting from £126
-=======
 			<a href="../../shop/#pen">Starting from £126
->>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">

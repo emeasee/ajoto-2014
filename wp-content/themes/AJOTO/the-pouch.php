@@ -37,11 +37,7 @@
 
 	<section class="screen sans-serif">
 		<div class="card cube quote">
-<<<<<<< HEAD
-			<a class="serif" href="../../shop/#pouch">Every Pouch £35
-=======
 			<a href="../../shop/#pouch">Every Pouch £35
->>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -74,11 +70,7 @@
 		</div>
 
 		<div class="card cube quote">
-<<<<<<< HEAD
-			<a class="serif" href="../../shop/#pouch">Every Pouch £35
-=======
 			<a href="../../shop/#pouch">Every Pouch £35
->>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>
