@@ -86,29 +86,22 @@ small{
   font-size: 65%;
 }
 
-   .button, .button:visited {
-    font-family: $sans-serif;
+  .button{
+    font-family: $ssbold;
+    background: $gold1;
     border: none;
-    padding: 4px 12px;
+    padding: 6px 12px;
     color: #fff;
     display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 13px;
     text-decoration: none;
     cursor: pointer;
     margin-bottom: 20px;
-    line-height: 21px;
-    //border-radius: 4px;
-    @include css-gradient($linkColor, darken($linkColor, 5%));
 
-
-    &:hover, &:focus {
+    &:hover {
       color: #fff;
-      @include css-gradient(darken($linkColor, 5%), darken($linkColor, 10%));
-    }
-
-    &:active {
-      @include css-gradient(darken($linkColor, 5%), $linkColor);
+      background: $gold3;
+      
     }
    }
 

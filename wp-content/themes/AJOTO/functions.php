@@ -9,6 +9,8 @@ require_once( get_template_directory() . '/lib/theme-helpers.php' );
 require_once( get_template_directory() . '/lib/theme-functions.php' );
 require_once( get_template_directory() . '/lib/theme-comments.php' );
 require_once( get_template_directory() . '/lib/custom-post-type.php');
+require_once( get_template_directory() . '/lib/custom-post-type2.php');
+
 
 /****************************************
 Require Plugins

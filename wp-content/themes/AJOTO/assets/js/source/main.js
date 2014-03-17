@@ -280,7 +280,7 @@ function wrap( str ) {
  };
 
  function replaceText() {
-     jQuery("section.tweet div.table").each( function(){
+     jQuery("section.tweet div.table p").each( function(){
        jQuery(this).html(jQuery(this).html().replace(/\bhttp[^ ]+/ig, wrap));
      })
 
@@ -319,40 +319,20 @@ function wrap( str ) {
                 Froogaloop(player).addEvent('ready', ready);
             }
          }
-
-         //Initialise blog sliders
-         if ($my.blog_wrap.length){
-           fluidvids();
-           replaceText();
-           $("div.slide","article section.cover").each(function(index, el) {
-            var slider = $(el);
-            var parent = $(el).parents('article');
-            var text = slider.find('p').html();
-            slider.find('br,p').remove();
-            parent.find('footer a div.h2 span.serif').prepend(text).promise().done( function(){
-              if (slider.children().length > 0){
-                 slider.royalSlider({
-                   autoScaleSlider: true,
-                   autoScaleSliderWidth: 850,
-                   autoScaleSliderHeight: 478,
-                   imageScaleMode: "fill",
-                   controlNavigation: 'none',
-                   arrowsNavAutoHide: false,
-                   arrowsNav: true
-                });
-              } else {
-                slider.parent().remove();
-              }
-           });                
-           });
-         }
-
+        if ($my.blog_wrap.length){
+          replaceText();
+        }
+        
         //Initiate the shop
         $('div#content div.choice:even').css({marginLeft: '18%'});
         $('div#content div.choice small.out-of-stock').siblings().css('opacity','0.2').find('div.add').remove();
         $('div#content div.choice small.out-of-stock').siblings('div.quantity').css('visibility','hidden');
         $('div.woocommerce_message:not(:first)').remove();
         
+        //Fix strange bug on Checkout page
+        $('#checkout .login #username').attr('placeholder', '* Username/Email');
+        $('#checkout .login #password').attr('placeholder', '* Password');
+
         $('input:text, textarea').each(function(){
             var $this = $(this);
             $this.data('placeholder', $this.attr('placeholder'))
@@ -423,7 +403,7 @@ function wrap( str ) {
         }
         });
 
-        if ($('.woocommerce-message, ul.woocommerce-error').length) {
+        if ($('.woocommerce-message').length) {
             setTimeout(function() {
                 $('.woocommerce-message, ul.woocommerce-error').animate({
                     bottom:"-50px"

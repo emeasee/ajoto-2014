@@ -1,33 +1,33 @@
 <?php
-/* Refining the Supplier database custom post type in Wordpress*/
+/* Refining the factory database custom post type in Wordpress*/
 
 // let's create the function for the custom type
 function custom_post_example() { 
 	// creating (registering) the custom type 
-	register_post_type( 'suppliers', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'factories', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
 		array('labels' => array(
-			'name' => __('Suppliers', 'post type general name'), /* This is the Title of the Group */
+			'name' => __('Factories', 'post type general name'), /* This is the Title of the Group */
 			'singular_name' => __('Entry', 'post type singular name'), /* This is the individual type */
 			'add_new' => __('Add New', 'custom post type item'), /* The add new menu item */
-			'add_new_item' => __('Add New Supplier'), /* Add New Display Title */
+			'add_new_item' => __('Add New Factory'), /* Add New Display Title */
 			'edit' => __( 'Edit' ), /* Edit Dialog */
-			'edit_item' => __('Edit Supplier Entry'), /* Edit Display Title */
-			'new_item' => __('New Supplier'), /* New Display Title */
-			'view_item' => __('View Supplier'), /* View Display Title */
-			'search_items' => __('Search Supplier'), /* Search Custom Type Title */ 
+			'edit_item' => __('Edit Factory Entry'), /* Edit Display Title */
+			'new_item' => __('New Factory'), /* New Display Title */
+			'view_item' => __('View Factory'), /* View Display Title */
+			'search_items' => __('Search Factory'), /* Search Custom Type Title */ 
 			'not_found' =>  __('Nothing found in the Database.'), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __('Nothing found in Trash'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'Holds our Supplier list' ), /* Custom Type Description */
+			'description' => __( 'Holds our Factory list' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
+			'menu_icon' => get_stylesheet_directory_uri() . '/assets/images/custom_2.png', /* the icon for the custom post type menu */
 			'rewrite' => true,
 			'capability_type' => 'post',
 			'hierarchical' => false,
@@ -42,32 +42,11 @@ function custom_post_example() {
 	add_action( 'init', 'custom_post_example');
 	
 	// now let's add custom categories (these act like categories)
-    register_taxonomy( 'custom_cat', 
-    	array('suppliers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    register_taxonomy( 'custom_tag', 
+    	array('factories'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true it acts like categories  */             
     		'labels' => array(
-    			'name' => __( 'Parts' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Part' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Parts' ), /* search title for taxomony */
-    			'all_items' => __( 'All Parts' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Part' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Part:' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Part' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Part' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Part' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Part Name' ) /* name title for taxonomy */
-    		),
-    		'show_ui' => true,
-    		'query_var' => true,
-    	)
-    );   
-    
-	// now let's add custom tags (these act like categories)
-    register_taxonomy( 'custom_tag', 
-    	array('suppliers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-    	array('hierarchical' => false,    /* if this is false, it acts like tags */                
-    		'labels' => array(
-    			'name' => __( 'Processes' ), /* name of the custom taxonomy */
+    			'name' => __( 'Process' ), /* name of the custom taxonomy */
     			'singular_name' => __( 'Process' ), /* single taxonomy name */
     			'search_items' =>  __( 'Search Processes' ), /* search title for taxomony */
     			'all_items' => __( 'All Processes' ), /* all title for taxonomies */
@@ -81,36 +60,48 @@ function custom_post_example() {
     		'show_ui' => true,
     		'query_var' => true,
     	)
+    );   
+    
+	// now let's add custom tags (these act like categories)
+    register_taxonomy( 'custom_cat', 
+    	array('factories'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('hierarchical' => false,    /* if this is false, it acts like tags */                
+    		'labels' => array(
+    			'name' => __( 'Places' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Place' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Places' ), /* search title for taxomony */
+    			'all_items' => __( 'All Places' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Place' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Place:' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Place' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Place' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Place' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Place Name' ) /* name title for taxonomy */
+    		),
+    		'show_ui' => true,
+    		'query_var' => true,
+    	)
     ); 
 
-    // now let's add custom tags (these act like categories)
-     register_taxonomy( 'custom_cat2', 
-        array('suppliers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-        array('hierarchical' => false,    /* if this is false, it acts like tags */                
-            'labels' => array(
-                'name' => __( 'Products' ), /* name of the custom taxonomy */
-                'singular_name' => __( 'Product' ), /* single taxonomy name */
-                'search_items' =>  __( 'Search Products' ), /* search title for taxomony */
-                'all_items' => __( 'All Products' ), /* all title for taxonomies */
-                'parent_item' => __( 'Parent Product' ), /* parent title for taxonomy */
-                'parent_item_colon' => __( 'Parent Product:' ), /* parent taxonomy title */
-                'edit_item' => __( 'Edit Product' ), /* edit custom taxonomy title */
-                'update_item' => __( 'Update Product' ), /* update title for taxonomy */
-                'add_new_item' => __( 'Add New Product' ), /* add new title for taxonomy */
-                'new_item_name' => __( 'New Product Name' ) /* name title for taxonomy */
-            ),
-            'show_ui' => true,
-            'query_var' => true,
-        )
-     );    
-
-    add_action( 'add_meta_boxes', 'supplier_box' );
-    function supplier_box() {
+    add_action( 'add_meta_boxes', 'factory_box' );
+    function factory_box() {
         add_meta_box( 
-            'supplier_details',
-            __( 'Enter details below for the Supplier contact', 'supplier-details' ),
-            'supplier_box_content',
-            'suppliers',
+            'factory_details',
+            __( 'Enter details below for the Factory contact', 'factory-details' ),
+            'factory_box_content',
+            'factories',
+            'normal',
+            'high'
+        );
+    }
+
+    add_action( 'add_meta_boxes', 'info_box' );
+    function info_box() {
+        add_meta_box( 
+            'factory_info',
+            __( 'Enter text for the Factory info page', 'factory-info' ),
+            'factory_info_content',
+            'factories',
             'normal',
             'high'
         );
@@ -122,18 +113,18 @@ function custom_post_example() {
             'pin_details',
             __( 'Enter the x-y coordinates for the map', 'pin-details' ),
             'pin_position',
-            'suppliers',
+            'factories',
             'side',
             'high'
         );
     }
 
 /* Display the post meta box. */
-function supplier_box_content( $object, $box ) { ?>
+function factory_box_content( $object, $box ) { ?>
 
-    <?php wp_nonce_field( basename( __FILE__ ), 'suppliers_nonce' ); ?> 
+    <?php wp_nonce_field( basename( __FILE__ ), 'factories_nonce' ); ?> 
     <p>
-        <h2>Supplier Address</h2>
+        <h2>Factory Address</h2>
         <label for="address-1"><?php _e( "Address Line 1", 'example' ); ?></label>
         <input class="widefat" type="text" name="address-1" id="address-1" value="<?php echo esc_attr( get_post_meta( $object->ID, 'address-1', true ) ); ?>" size="30" />
         <br/><br/>
@@ -165,6 +156,31 @@ function supplier_box_content( $object, $box ) { ?>
     </p>
 <?php }
 
+/* Display the post meta box. */
+function factory_info_content( $object, $box ) { ?>
+
+    <?php wp_nonce_field( basename( __FILE__ ), 'info_nonce' ); ?> 
+    <p>
+        <h2>Enter text</h2>
+        <label for="history"><?php _e( "History", 'example' ); ?></label>
+        <textarea class="widefat" type="text" name="history" id="history" value="<?php echo esc_attr( get_post_meta( $object->ID, 'history', true ) ); ?>" rows="5"></textarea>
+        <br/><br/>
+        <label for="what"><?php _e( "What They Do", 'example' ); ?></label>
+        <textarea class="widefat" type="text" name="what" id="what" value="<?php echo esc_attr( get_post_meta( $object->ID, 'what', true ) ); ?>" rows="5"></textarea>
+        <br/><br/>
+        <label for="why"><?php _e( "Why", 'example' ); ?></label>
+        <textarea class="widefat" type="text" name="why" id="why" value="<?php echo esc_attr( get_post_meta( $object->ID, 'why', true ) ); ?>" rows="5"></textarea>
+        <br/><br/>
+        <label for="vision"><?php _e( "Vision", 'example' ); ?></label>
+        <textarea class="widefat" type="text" name="vision" id="vision" value="<?php echo esc_attr( get_post_meta( $object->ID, 'vision', true ) ); ?>" rows="5"></textarea>
+        <br/><br/>
+        <label for="slides"><?php _e( "Royalslider ID number", 'example' ); ?></label>
+        <input class="widefat" type="text" name="slides" id="slides" value="<?php echo esc_attr( get_post_meta( $object->ID, 'slides', true ) ); ?>" size="30" />
+    </p>
+
+
+<?php }
+
 function pin_position( $object, $box ) { ?>
     <?php wp_nonce_field( basename( __FILE__ ), 'pin_nonce' ); ?> 
     <p>
@@ -177,12 +193,12 @@ function pin_position( $object, $box ) { ?>
     </p>
 <?php }
 
-function supplier_meta_save( $post_id ) {
+function factory_meta_save( $post_id ) {
  
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'suppliers_nonce' ] ) && wp_verify_nonce( $_POST[ 'suppliers_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'factories_nonce' ] ) && wp_verify_nonce( $_POST[ 'factories_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
  
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
@@ -220,14 +236,14 @@ function supplier_meta_save( $post_id ) {
 
  
 } // end example_meta_save()
-add_action( 'save_post', 'supplier_meta_save' );
+add_action( 'save_post', 'factory_meta_save' );
 
 function position_meta_save( $post_id ) {
  
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'suppliers_nonce' ] ) && wp_verify_nonce( $_POST[ 'suppliers_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'pin_nonce' ] ) && wp_verify_nonce( $_POST[ 'pin_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
  
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
@@ -243,16 +259,46 @@ function position_meta_save( $post_id ) {
 add_action( 'save_post', 'position_meta_save' );
 
 
-function add_supplier_columns($columns) {
+function info_meta_save( $post_id ) {
+ 
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'info_nonce' ] ) && wp_verify_nonce( $_POST[ 'info_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+ 
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
+    if( isset( $_POST[ 'history' ] ) ) {
+        update_post_meta( $post_id, 'history', sanitize_text_field( $_POST[ 'history' ] ) );
+    }
+    if( isset( $_POST[ 'what' ] ) ) {
+        update_post_meta( $post_id, 'what', sanitize_text_field( $_POST[ 'what' ] ) );
+    }
+    if( isset( $_POST[ 'why' ] ) ) {
+        update_post_meta( $post_id, 'why', sanitize_text_field( $_POST[ 'why' ] ) );
+    }
+    if( isset( $_POST[ 'vision' ] ) ) {
+        update_post_meta( $post_id, 'vision', sanitize_text_field( $_POST[ 'vision' ] ) );
+    }
+    if( isset( $_POST[ 'slides' ] ) ) {
+        update_post_meta( $post_id, 'slides', sanitize_text_field( $_POST[ 'slides' ] ) );
+    }
+}
+add_action( 'save_post', 'info_meta_save' );
+
+
+function add_factory_columns($columns) {
     return array_merge($columns, 
               array('website' => __('Website'),
                     'contact' =>__( 'Contact'),
                     'phone' =>__( 'Phone Number'),
                     'email' =>__( 'Email')));
 }
-add_filter( 'manage_suppliers_posts_columns', 'add_supplier_columns');
+add_filter( 'manage_factories_posts_columns', 'add_factory_columns');
 
-function custom_suppliers_columns( $column ) {
+function custom_factories_columns( $column ) {
     global $post;
     switch ( $column ) {
         case 'website':
@@ -272,7 +318,7 @@ function custom_suppliers_columns( $column ) {
         break;  
     }
 }
-add_action( 'manage_suppliers_posts_custom_column' , 'custom_suppliers_columns' );
+add_action( 'manage_factories_posts_custom_column' , 'custom_factories_columns' );
 
 
 	

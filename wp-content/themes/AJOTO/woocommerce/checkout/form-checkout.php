@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce;
 
-$woocommerce->show_messages();
+wc_print_notices();
 
 do_action( 'woocommerce_before_checkout_form', $checkout ); 
 
@@ -29,6 +29,8 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 <form name="checkout" method="post" class="checkout" action="<?php echo esc_url( $get_checkout_url ); ?>">
 
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
+
+		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 
 		<div class="col2-set" id="customer_details">
 

@@ -17,7 +17,7 @@
 			<span class="sans-serif">SPREAD THE WORD ABOUT AJOTO</span></p>
 		</section>
 		
-	<section class="mid serif">	
+	<section class="mid">	
 		<div class="titles">
 			<p>We keep all of our press content on Flickr and Vimeo, feel free to follow the links below. If you need any further information don’t hesitate to say hello, we’d love to hear who you are and where you’re using our press material. Get in touch through: <a href="mailto:press@ajoto.com">press@ajoto.com</a></p>
 		</div>	

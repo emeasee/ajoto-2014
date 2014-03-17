@@ -7,16 +7,20 @@
 <div id="container">
 
 <div id="content" class="about">
-		<header>
-			<?php echo get_new_royalslider(7); ?>
-		</header>
-	
+		<section class="title small">
+			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		</section>
+		<section class="filter">
+			<div class="links">
+				<a class="current" href="../../journal">ALL</a>
+			</div>
+		</section>
+
 		<section class="title">
-			<p class="serif">The Studio</br>
-			<span class="sans-serif">WHO WE ARE AND HOW WE WORK</span></p>
+			<p>STUDIO<span>THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
 		</section>
 		
-	<section class="mid serif frame">
+	<section class="mid frame">
 					<div class="pickout"><h1>Through a careful balance of functionality, aesthetic and longevity we take our time to create elegant products which enrich your 
 daily life.</h1></div>	
 				<div class="titles threecol">
@@ -24,10 +28,6 @@ daily life.</h1></div>
 					<br/><br/>Established in 2011 by designers Chris Holden and Tim Higgins, AJOTO 	was founded upon a vision where the journey of production was just as important as the destination. Based	 in the heart of London we take time to develop our ideas and seek out manufacturing specialists who share our values. By collaborating closely with them, we develop elegant and affordable products which can be used everyday and treasured for a lifetime.
 					<br/><br/>We firmly believe that the items we produce encourage and enhance a creatively curious lifestyle. This is why we share each of our product’s unique stories; revealing the people, processes and places involved in their manufacture.</h4>
 				</div>	
-	</section>
-	
-	<section class="title small">
-		<p class="sans-serif">Name and Mark</br>
 	</section>
 	
 	<section class="screen sans-serif">
@@ -43,19 +43,11 @@ daily life.</h1></div>
 		</div>
 	</section>
 
-	<section class="title small">
-		<p class="sans-serif">How We Work</br>
-	</section>
-
 	<section class="mid sans-serif">
 		<div class="titles center"><p>As professional designers we have worked internationally for some of the worlds biggest brands. From our experience we know how important it is to have control over every element of a product in order to ensure its quality. From rough idea to final production we have overseen every part of the Pen’s development, sharing our journey with you every step of the way.</p></div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(9); ?></div>
-	
-	<section class="title small">
-		<p class="sans-serif">Philosophy and Process</br>
-	</section>
 		
 	<section class="screen">
 		<div class="video small">
@@ -74,10 +66,6 @@ daily life.</h1></div>
 			</i></p>
 		</div>
 		<div class="card half image tall"><?php echo get_new_royalslider(46); ?></div>
-	</section>
-
-	<section class="title small">
-		<p class="sans-serif">Our Team</br>
 	</section>
 
 	<section class="mid sans-serif">
