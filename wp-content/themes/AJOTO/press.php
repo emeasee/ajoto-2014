@@ -4,8 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
-
 <div id="content" class="press">
 		<header>
 			<!--TO CHANGE THE SLIDESHOW. CHANGE THE NUMBER BELOW TO THE ID-->
@@ -30,5 +28,4 @@
 	<footer></footer>
 
 	</div>
-</div>
 <?php get_footer(); ?>

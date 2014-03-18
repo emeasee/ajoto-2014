@@ -4,7 +4,6 @@
 	*/
 	?>
 <?php get_header(); ?>
-	<div id="container">
 		<div id="content" class="blog">
 		<section class="title small">
 			<p><?php single_cat_title(); ?></p>
@@ -104,7 +103,5 @@
 						<?php //} ?>		
 						<?php $wp_query = null; $wp_query = $temp;?>						
 					
-			</div> <!-- end #content -->
-	</div> <!-- end #blog-container -->
-						
+			</div> <!-- end #content -->						
 <?php get_footer(); ?>

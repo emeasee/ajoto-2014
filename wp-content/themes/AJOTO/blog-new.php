@@ -4,7 +4,6 @@
 	*/
 	?>
 <?php get_header(); ?>
-	<div id="container">
 		<div id="content" class="blog">
 		<section class="title small">
 			<p>JOURNEY<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
@@ -91,6 +90,4 @@
 						<?php $wp_query = null; $wp_query = $temp;?>
 
 			</div> <!-- end #content -->
-	</div> <!-- end #blog-container -->
-
 <?php get_footer(); ?>

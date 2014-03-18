@@ -4,8 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
-
 <div id="content" class="about">
 		<section class="title small">
 			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
@@ -76,6 +74,5 @@ daily life.</h1></div>
 	
 	<footer class="break"></footer>
 
-	</div>
 </div>
 <?php get_footer(); ?>

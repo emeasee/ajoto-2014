@@ -4,8 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
-
 <div id="content" class="page">
 		<section class="title small">
 			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
@@ -71,11 +69,7 @@
 			</i></p>
 		</div>
 		<div class="card cube quote">
-<<<<<<< HEAD
-			<a class="serif" href="../../shop/#pen">Starting from £126
-=======
 			<a href="../../shop/#pen">Starting from £126
->>>>>>> HOMEPAGEv2
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>
@@ -101,6 +95,5 @@
 	
 	<footer class="break"></footer>
 
-	</div>
 </div>
 <?php get_footer(); ?>

@@ -391,14 +391,14 @@ function wrap( str ) {
          $('#cart-bar').scrollToFixed( {
             bottom: 0,
             limit: function() {
-            var limit = $('.footer').offset().top - 40;
-            return limit;
+              var limit = $('#container').height() - 300;
+              return limit;
         }
         });
         $('#cookiebar, div.validation_error, .page-template-build-php .woocommerce-message, a.added_to_cart').scrollToFixed( {
             bottom: 14,
             limit: function() {
-            var limit = $('.footer').offset().top - 80;
+            var limit = $('#container').height() - 340;
             return limit;
         }
         });

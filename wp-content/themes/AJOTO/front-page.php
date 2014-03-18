@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<div id="container">
 	<div id="content" class="home">	
 		<header>
 			<?php echo get_new_royalslider(1); ?>
@@ -58,6 +57,5 @@
 			</div>
 		</footer>
 	</div>
-</div>
 
 <?php get_footer(); ?>
