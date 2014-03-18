@@ -1,42 +1,63 @@
 <?php get_header(); ?>
 <div id="container">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 			<div id="content" class="single" itemprop="articleBody">	
-					<header>
-						<?php echo do_shortcode('[gallery size="full" royalslider="43"]'); ?>						
-					</header> <!-- end article section -->
-					<section class="title">
-						<span class="number"><?php echo get_post_meta( $post->ID, 'post-number', true ); ?></span>
-						<p><?php the_title(); ?></br>
-						<span class="sans-serif">SHARE THIS JOURNEY WITH YOUR FRIENDS</span></p>
-						<a href="<?php echo get_permalink(get_adjacent_post(false,'',false)); ?>" class="arrow left"></a><a href="<?php echo get_permalink(get_adjacent_post(false,'',true)); ?>" class="arrow right"></a>
-					</section>
-					<section class='mid' style="height:30px;display:block;width:100%;margin-top:-70px;padding:0;">	
-					<div class="share">
-						<div id="facebook_like_button_holder">
-							<fb:like layout="button_count" show_faces="false" width="450" action="recommend"></fb:like>
-							<div id="fake_facebook_button"></div>
-						</div>						
-						<a href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;http://assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pinterest_s.png"/></a>
-						<a onClick="MyWindow=window.open('http://twitter.com/home?status=Currently Reading <?php the_title(); ?> (<?php the_permalink(); ?>) @ajoto','MyWindow','width=600,height=400'); return false;" title="Share on Twitter" target="_blank" id="twitter-share"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter_s.png"/></a>
-						<a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this post"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/email_s.png"/></a>
+				<section class="title small">
+					<p><?php $category = get_the_category(); echo $category[0]->cat_name; ?><span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+				</section>
+				<section class="filter">
+					<div class="links">
+					<a href="../../journal">ALL</a>
+						<?php
+							$args = array(
+					  		'orderby' => 'name',
+					  		'parent' => 0
+					  	);
+						$categories = get_categories( $args );
+						foreach ( $categories as $category ) {
+							if(in_category( $category->term_id )){ $current = 'current';} else {$current = $category->slug;};
+							echo '<a class="'.$current.'" href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a><div></div>';
+						}?>
 					</div>
 				</section>
-				<section class="screen" style="height:auto;">
+
+					<section class="title">
+						<p><?php the_title(); ?></br>
+						<span class="sans-serif">THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
+						<a href="<?php echo get_permalink(get_adjacent_post(true,'',true)); ?>" class="arrow left"></a>
+						<a href="<?php echo get_permalink(get_adjacent_post(true,'',false)); ?>" class="arrow right"></a>
+					</section>
+				</section>
+				<section class="gallery">
+					<?php echo do_shortcode('[gallery size="full" royalslider="43"]'); ?>				
+				</section> <!-- end article section -->
+				<section class="screen">
 						<div class="more-less">
 							<div class="more-block">
 								<p><?php echo get_the_content(); ?>	</p>
 							</div>
 						</div>				
 					<div id="break"></div>
-					<p class="sans-serif" style="text-transform:uppercase;">Posted by <?php the_author(); ?></p>
+					<p class="by">Posted by <?php echo the_author_meta("nickname"); ?></p>
 					<p style="font-size: 0.9em;"><?php the_date('jS F Y'); ?></p>
 				</section>				
 				
-				<section class='mid' style="height:30px;padding:0;"></section>
-					<nav id="page">				
-						<p><?php if(get_adjacent_post(false, '', true)){ ?><span class="prev"><?php previous_post('%','OLDER ENTRY', 'no'); } else { ?><span class="prev light">OLDER ENTRY</span> <?php } ?></span><span class="back"><a href="../journeys" onclick="goBack(event)">BACK</a></span><?php if(get_adjacent_post(false, '', false)){ ?><span class="next"><?php next_post('%','NEWER ENTRY', 'no'); } else { ?><span class="next light">NEWER ENTRY</span><?php } ?></span></p>
+					<nav class="wp-prev-next">				
+						<p>
+							<?php if(get_adjacent_post(true, '', true)){ ?>
+								<span class="next-link"><?php previous_post_link('%link','PREVIOUS', 'TRUE'); 
+							} else { ?>
+								<span class="next-link light">PREVIOUS</span> 
+							<?php } ?></span>
+							<span class="back">
+								<a href="../journeys" onclick="goBack(event)">BACK</a>
+							</span>
+							<?php if(get_adjacent_post(true, '', false)){ ?>
+								<span class="prev-link"><?php next_post_link('%link','NEXT', 'TRUE'); 
+							} else { ?>
+								<span class="prev-link light">NEXT</span>
+							<?php } ?></span>
+						</p>
 					</nav>
 			</div> <!-- end #content -->
 	<?php endwhile; ?>			

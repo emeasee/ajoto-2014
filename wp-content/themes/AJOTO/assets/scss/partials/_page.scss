@@ -1,7 +1,6 @@
 /* GENERAL */
 body {
-    //background: url('assets/images/main_bg.gif') repeat;
-    background: $grey9; 
+    background: url('assets/images/main_bg.gif') repeat;
     width:100%;
     overflow: visible;
     -webkit-font-smoothing: antialiased;
@@ -305,6 +304,38 @@ nav#page{
                 text-transform: uppercase;
                 a{
                     text-decoration: none;
+                }
+            }
+        }
+        p{
+            padding: 0.6em 0;
+            span{
+                padding:0 0.5em;
+                width: 15%;
+                a{
+                    color:$grey2;
+                    text-decoration: none;
+                    &:hover{
+                        color: $gold1;
+                    }
+                }
+                &.light{
+                    opacity: 0.4;
+                }
+                &.back{
+                    width: 65%;
+                }
+            }
+            .next-link{
+                &:before{
+                    font-family: $icons;
+                    content: "\e611";
+                }
+            }
+            .prev-link{
+                &:after{
+                    font-family: $icons;
+                    content: "\e612";
                 }
             }
         }
@@ -1177,7 +1208,6 @@ nav#page{
                 max-height: 120px;
                 padding:0;
                 border: none;
-                padding-bottom: 30px;
                 span{
 
                 }
@@ -1654,14 +1684,24 @@ nav#page{
             }
         }
     }
+    section.gallery{
+        max-width:850px;
+        width:95%;
+        margin: 0 auto;
+        background: none;
+        margin-top: 30px;
+    }
     section.mid{
         margin:0;
     }
     section.screen{
-        p:first-child{
-            padding-top: 45px;
-            font-size: 0.9em;
-            line-height: 1.95em;
+        border-top: 1px solid $grey1; 
+        border-bottom: 1px solid $grey1; 
+        margin-top: 30px;
+        .by{
+            text-transform: uppercase;
+            font-family: $ssbold;
+            color: $gold1;
         }
     }
     #facebook_like_button_holder {
@@ -1864,7 +1904,7 @@ section#blogtop{
 .slideshow{
     max-width: 850px;
     margin:0 auto;
-    margin-top: 10px;
+    margin-top: 30px;
     @include bp(phone){
         width: 95%;
     }
@@ -3449,7 +3489,7 @@ form.shipping_calculator{
             position:relative;
             text-align: center;
             margin: 0 auto;
-            //background: url('assets/images/menu_bg.gif') repeat;
+            background: url('assets/images/menu_bg.gif') repeat;
             -moz-box-shadow: inset 0px 4px 10px 1px rgba(0,0,0,0.3);
             -webkit-box-shadow: inset 0px 4px 10px 1px rgba(0,0,0,0.3);
             box-shadow: inset 0px 4px 10px 1px rgba(0,0,0,0.3);

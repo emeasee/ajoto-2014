@@ -37,7 +37,7 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix transition'); ?> role="article">
 							<?php if (in_category(array('news','stories','events'))){?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium'); ?></a>
+									<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta( $post->ID, 'cover', true ); ?>" alt=""></a>
 								</section>
 								<footer class="post-title">
 									<div class="cell" href="<?php the_permalink() ?>">
@@ -54,7 +54,7 @@
 								</footer>
 							<?php } else { ?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
+									<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta( $post->ID, 'cover', true ); ?>" alt=""></a>
 								</section> <!-- end article section -->
 
 								<footer class="post-title">
@@ -64,7 +64,7 @@
 
 									<?php if (strlen($post->post_title) > 70) {
 									echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
-									the_title();
+									the_title(); 
 									} ?>
 										<div class="divide"></div>
 										<span class="category"><?php echo $category[0]->cat_name; ?></span>
