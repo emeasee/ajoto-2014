@@ -4,8 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
-
 <div id="content" class="parent">
 		<!--<header>
 			<?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?>
@@ -22,6 +20,5 @@
 
         <div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'third', true)); ?></div>
 
-	</div>
 </div>
 <?php get_footer(); ?>

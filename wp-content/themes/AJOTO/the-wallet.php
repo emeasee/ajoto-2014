@@ -4,7 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
 
 <div id="content" class="page">
 		<section class="title small">
@@ -97,6 +96,5 @@
 	
 	<footer class="break"></footer>
 
-	</div>
 </div>
 <?php get_footer(); ?>

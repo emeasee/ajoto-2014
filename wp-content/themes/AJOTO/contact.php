@@ -5,9 +5,7 @@ Template Name: Contact Page
 ?>
 
 <?php get_header(); ?>
-			
-		<div id="container">
-			<div id="content" class="page contact">
+				<div id="content" class="page contact">
 						<section class="mid" style="height:500px;width:850px;margin-top:0px;">
 							<div id="map_canvas" style="width:100%; height:100%;"></div>
 						</section>		
@@ -25,5 +23,4 @@ Template Name: Contact Page
 						</section> <!-- end article section -->												
     
 			</div> <!-- end #content -->
-		</div>
 <?php get_footer(); ?>

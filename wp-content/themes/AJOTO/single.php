@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<div id="container">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="content" class="single" itemprop="articleBody">	
 				<section class="title small">
@@ -62,5 +61,4 @@
 			</div> <!-- end #content -->
 	<?php endwhile; ?>			
 	<?php endif; ?>
-</div>
 <?php get_footer(); ?>

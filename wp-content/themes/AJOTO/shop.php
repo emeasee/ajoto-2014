@@ -5,8 +5,7 @@
  ?>
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-<div id="container">
-		<div id="content" class="<?php echo $post->post_name; ?> products">
+<div id="content" class="<?php echo $post->post_name; ?> products">
 		<section class="title small">
 			<p>SHOP<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
 		</section>
@@ -42,7 +41,6 @@
 
 			</section> <!-- end listings section -->												
 		<?php endwhile; ?>									
-	</div>
-<?php endif; ?>
 </div>
+<?php endif; ?>
 <?php get_footer(); ?>

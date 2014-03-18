@@ -4,8 +4,6 @@
 	*/
  ?>
 <?php get_header(); ?>
-<div id="container">
-
 <div id="content" class="page">
 		<section class="title small">
 			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
@@ -97,6 +95,5 @@
 	
 	<footer class="break"></footer>
 
-	</div>
 </div>
 <?php get_footer(); ?>
