@@ -10,7 +10,7 @@
 		</section>
 		<section class="filter">
 			<div class="links">
-			<a class="current" href="../../journal">ALL</a>
+			<a class="current" href="../../journeys">ALL</a>
 				<?php
 					$args = array(
 				  		'orderby' => 'name',
@@ -36,7 +36,7 @@
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix transition'); ?> role="article">
 							<?php if (in_category(array('news','stories','events'))){?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta( $post->ID, 'cover', true ); ?>" alt=""></a>
+									<a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('medium'); ?></a>
 								</section>
 								<footer class="post-title">
 									<div class="cell" href="<?php the_permalink() ?>">
@@ -53,7 +53,7 @@
 								</footer>
 							<?php } else { ?>
 								<section class="clearfix cover" rel="<?php the_permalink() ?>">
-									<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta( $post->ID, 'cover', true ); ?>" alt=""></a>
+									<a href="<?php the_permalink() ?>"><?php echo the_post_thumbnail('medium'); ?></a>
 								</section> <!-- end article section -->
 
 								<footer class="post-title">

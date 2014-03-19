@@ -21,8 +21,21 @@ html {
 	left: 0;
 	top: 0;
 }
+#titlediv #title {
+	padding-top: 9px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.royalslider_page_new_royalslider_settings h3 {
+	margin-bottom: 0;
+}
 #new-royalslider-edit-page .sortable-slides-container {
 	margin-right: 330px;
+}
+#newrs-preview {
+	overflow: visible;
 }
 #new-royalslider-edit-page .sortable-slides-body {
 	float: left;
@@ -43,6 +56,7 @@ html {
 }
 .rs-type-label {
 	word-wrap: normal !important;
+	line-height: 15px;
 }
 .rs-button-glow {
 	background-color: rgba(212, 252, 216, 0.39) !important;
@@ -245,7 +259,7 @@ font-weight: normal;
 .rs-body-options {
 	width: 300px;
 	padding: 20px 25px;
-	background: #eee;
+	background: #fff;
 	border-radius: 2px;
 	margin-top: 20px;
 }
@@ -258,6 +272,10 @@ font-weight: normal;
 .rs-body-options .rs-opt {
 	margin-bottom: 0;
 	height: 27px;
+	margin-bottom: 4px;
+height: 27px;
+float: left;
+width: 100%;
 }
 .rs-body-options hr {
 	border: 0;
@@ -280,7 +298,8 @@ width: 140px;
 margin-top: 1px
 }
 #template-editor {
-	height: 300px
+	height: 300px;
+	background: #262626;
 }
 #template-editor textarea {
 	width: 100%;
@@ -335,6 +354,7 @@ margin-top: 1px
 #new-royalslider-options .rs-opt {
 	width: 100%;
 	clear: both;
+
 }
 #new-royalslider-options textarea {
 	float:left;
@@ -346,7 +366,7 @@ margin-top: 1px
 	max-width: 150px;
 	
 }
-.wp-admin.rschrome .rs-opt select {
+/*.wp-admin.rschrome .rs-opt select {
 	height: 16px;
 	font-size: 12px;
 	border: 1px solid;
@@ -356,7 +376,7 @@ margin-top: 1px
 -webkit-appearance: menulist;
 -moz-appearance: menulist;
 }
-
+*/
 #new-royalslider-options .inside {
 	margin-top: 12px;
 }
@@ -419,9 +439,17 @@ a:focus {
 	border-radius: 2px;
 	cursor: move;
 }
+.rs-blocks-editor h3,
+#newrs-preview h3 {
+	color: #FFF;
+}
+#rs-be-buttons {
+	line-height: 28px;
+}
 .rs-add-slides-wrap {
 	padding: 6px 0 6px;
 	margin-bottom: 7px;
+	line-height: 28px;
 }
 .rs-add-slides-wrap a {
 	text-decoration: none;
@@ -672,6 +700,7 @@ box-sizing: border-box;
 }
 .rs-anim-blocks-inputs label {
 	width: 20px;
+	font-size: 11px;
 
 }
 .rs-anim-blocks-inputs .size-fields {
@@ -966,6 +995,7 @@ padding-left: 25px;
 cursor: pointer;
 font-weight: bold;
 margin-top: 14px;
+line-height: 17px;
 }
 .help-video a {
 	font-size: 14px;

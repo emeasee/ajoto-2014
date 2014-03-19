@@ -27,7 +27,7 @@ class NewRoyalSliderInstagramRenderer {
         return $this->slide_data['image'];
     }
     public function title() {
-        return $this->slide_data['title'];
+        return htmlentities($this->slide_data['title']);
     }
 
     public function url() {
