@@ -1,0 +1,858 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Paymill\n"
+"POT-Creation-Date: 2013-11-12 15:21+0100\n"
+"PO-Revision-Date: 2013-11-12 15:23+0100\n"
+"Last-Translator: Matthias Reuter <info@straightvisions.com>\n"
+"Language-Team: Matthias Reuter <reuter@elbnetz.com>\n"
+"Language: DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: esc_attr__;__;_e\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: paymill.php:153
+msgid "Invalid Credit Card Number"
+msgstr "Ungültige Kreditkartennummer"
+
+#: paymill.php:154
+msgid "Invalid Expiration Date"
+msgstr "Ungültiges Ablaufdatum"
+
+#: paymill.php:155
+msgid "Invalid CVC"
+msgstr "Ungültige Prüfziffer"
+
+#: paymill.php:156
+msgid "Invalid Account Number"
+msgstr "Ungültige Kontonummer"
+
+#: paymill.php:157
+msgid "Invalid Bank Code"
+msgstr "Ungültige Bankleitzahl"
+
+#: paymill.php:166
+msgid "Must be {is} characters long!"
+msgstr "Muss genau {is} Zeichen lang sein!"
+
+#: paymill.php:167
+msgid "Must not be less than {minimum} characters long!"
+msgstr "Muss länger als {minimum} sein!"
+
+#: paymill.php:168
+msgid "Must not be more than {maximum} characters long!"
+msgstr "Müssen weniger als {maximum} Zeichen sein!"
+
+#: paymill.php:169
+msgid "Must be a number!"
+msgstr "Muss eine Nummer sein!"
+
+#: paymill.php:170
+msgid "Must be an integer!"
+msgstr "Muss ein Integer sein!"
+
+#: paymill.php:171
+msgid "Must be {is}!"
+msgstr "Muss {is} sein!"
+
+#: paymill.php:172
+msgid "Must not be less than {minimum}!"
+msgstr "Darf nicht kleiner als {minimum} sein!"
+
+#: paymill.php:173
+msgid "Must not be more than {maximum}!"
+msgstr "Darf nicht größer als {maximum} sein!"
+
+#: paymill.php:174
+msgid "Supply a value!"
+msgstr "Darf nicht leer sein!"
+
+#: lib/config.inc.php:64
+msgid "DAY"
+msgstr "Tag"
+
+#: lib/config.inc.php:65
+msgid "WEEK"
+msgstr "Woche"
+
+#: lib/config.inc.php:66
+msgid "MONTH"
+msgstr "Monat"
+
+#: lib/config.inc.php:67
+msgid "YEAR"
+msgstr "Jahr"
+
+#: lib/config.inc.php:68
+msgid "DAYS"
+msgstr "Tage"
+
+#: lib/config.inc.php:69
+msgid "WEEKS"
+msgstr "Wochen"
+
+#: lib/config.inc.php:70
+msgid "MONTHS"
+msgstr "Monate"
+
+#: lib/config.inc.php:71
+msgid "YEARS"
+msgstr "Jahre"
+
+#: lib/config.inc.php:73
+msgid "50501"
+msgstr ""
+"Die Schnittstelle zum Acquirer reagiert nicht, daher bekommen wir keine "
+"Antwort ob die Transaktion erfolgreich durchgelaufen ist"
+
+#: lib/config.inc.php:74
+msgid "50001"
+msgstr "Die Kreditkarte ist auf einer Schwarzen Liste"
+
+#: lib/config.inc.php:75
+msgid "50201"
+msgstr "Dieser Kundenaccount ist auf einer Schwarzen Liste"
+
+#: lib/config.inc.php:76
+msgid "40103"
+msgstr ""
+"Das Umsatzimit der Kreditkarte wurde mit dieser Transaktion überschritten "
+"oder ist bereits überschritten"
+
+#: lib/config.inc.php:77
+msgid "50102"
+msgstr "Diese Karte wurde ohne weitere Gründe abgelehnt"
+
+#: lib/config.inc.php:78
+msgid "50103"
+msgstr "Die Kreditkarte wurde vermutlich manipuliert oder gestohlen"
+
+#: lib/config.inc.php:79
+msgid "40105"
+msgstr "Das Kreditkartenablaufdatum ist nicht korrekt"
+
+#: lib/config.inc.php:80
+msgid "40101"
+msgstr "Der CVV ist nicht korrekt"
+
+#: lib/config.inc.php:81
+msgid "40100"
+msgstr ""
+"Es existieren Probleme mit der Kreditkarte. Nähere Details können nicht "
+"übergeben werden"
+
+#: lib/config.inc.php:82
+msgid "40104"
+msgstr "Die Kreditkarte ist ungültig"
+
+#: lib/config.inc.php:83
+msgid "40001"
+msgstr "Es gibt ein Problem mit den Payment Daten"
+
+#: lib/config.inc.php:84
+msgid "40102"
+msgstr "Die Kreditkarte ist abgelaufen oder noch gültig"
+
+#: lib/config.inc.php:85
+msgid "40106"
+msgstr "Kreditkarten-Anbieter ist erforderlich"
+
+#: lib/config.inc.php:86
+msgid "40201"
+msgstr "Daten stimmen nicht mit dem Bank-Account überein"
+
+#: lib/config.inc.php:87
+msgid "50300"
+msgstr "Es gibt einen teschnischen Fehler mit 3-D Secure"
+
+#: lib/config.inc.php:88
+msgid "40202"
+msgstr "Die Benutzer-Authentifizierung ist fehlgeschlagen"
+
+#: lib/config.inc.php:89
+msgid "50502"
+msgstr "Es gibt eine Zeitüberschreitung bei der Risiko-Management Transaktion"
+
+#: lib/config.inc.php:90
+msgid "40301"
+msgstr "Währung oder Betrag stimmen nicht überein"
+
+#: lib/config.inc.php:91
+msgid "40401"
+msgstr "Der Betrag ist zu niedrig oder null"
+
+#: lib/config.inc.php:92
+msgid "40402"
+msgstr "Der Verwendungszweck ist zu lang"
+
+#: lib/config.inc.php:93
+msgid "40403"
+msgstr "Die Währung ist nicht für den Kunden konfigurierten"
+
+#: lib/config.inc.php:94
+msgid "50104"
+msgstr ""
+"Die Transaktion wurde vom Authorisierungs-System abgelehnt (Karte durch Bank "
+"eingeschränkt)"
+
+#: lib/config.inc.php:95
+msgid "50105"
+msgstr "Die Konfiguration ist ungültig"
+
+#: lib/config.inc.php:96
+msgid "50600"
+msgstr "Doppelte Transaktion"
+
+#: lib/config.inc.php:98
+msgid "shipping"
+msgstr "Lieferung"
+
+#: lib/config.inc.php:99
+msgid "company_name"
+msgstr "Firmenname"
+
+#: lib/config.inc.php:100
+msgid "forename"
+msgstr "Vorname"
+
+#: lib/config.inc.php:101
+msgid "surname"
+msgstr "Nachname"
+
+#: lib/config.inc.php:102
+msgid "street"
+msgstr "Straße"
+
+#: lib/config.inc.php:103
+msgid "number"
+msgstr "Nummer"
+
+#: lib/config.inc.php:104
+msgid "zip"
+msgstr "PLZ"
+
+#: lib/config.inc.php:105
+msgid "city"
+msgstr "Stadt"
+
+#: lib/config.inc.php:106
+msgid "email"
+msgstr "Email"
+
+#: lib/config.inc.php:107
+msgid "phone"
+msgstr "Telefon"
+
+#: lib/config.inc.php:110
+msgid "Token or Payment required"
+msgstr ""
+"Es wurde kein Bezahlschlüssel generiert oder der vorhandene wurde bereits "
+"genutzt."
+
+#: lib/config.inc.php:111
+msgid "Subscription already connected"
+msgstr "Abonnement bereits abgeschlossen"
+
+#: lib/config.inc.php:124
+msgid "General Plugin Settings"
+msgstr "Generelle Plugin Einstellungen"
+
+#: lib/config.inc.php:126
+msgid "Paymill PRIVATE API key"
+msgstr "Paymill PRIVATE API Key"
+
+#: lib/config.inc.php:127
+msgid "Paymill PUBLIC API key"
+msgstr "Paymill PUBLIC API Key"
+
+#: lib/config.inc.php:128
+msgid "Paymill API endpoint URL"
+msgstr "Paymill API Endpoint URL"
+
+#: lib/config.inc.php:129
+msgid "Currency"
+msgstr "Währung"
+
+#: lib/config.inc.php:130
+msgid "Display Payment Types"
+msgstr "Zeige Bezahlmöglichkeiten"
+
+#: lib/config.inc.php:143
+msgid "Number Format: Decimal Point"
+msgstr "Nummern Formatierung: Dezimalpunkt"
+
+#: lib/config.inc.php:144
+msgid "Number Format: Thousands Seperator"
+msgstr "Nummern Formatierung: Tausender-Trenner"
+
+#: lib/config.inc.php:145
+msgid "Outgoing Email"
+msgstr "Ausgehende Emailadresse"
+
+#: lib/config.inc.php:146
+msgid "Incoming Email"
+msgstr "Eingehende Emailadresse"
+
+#: lib/config.inc.php:147
+msgid "Thank You URL"
+msgstr "Danke-Seite"
+
+#: lib/config.inc.php:148
+msgid "Hide Fields"
+msgstr "Verstecke Felder"
+
+#: lib/config.inc.php:149
+msgid "Do not load default CSS"
+msgstr "Standard-CSS nicht laden"
+
+#: lib/config.inc.php:163
+msgid "Product"
+msgstr "Produkt"
+
+#: lib/config.inc.php:164
+msgid "Description"
+msgstr "Beschreibung"
+
+#: lib/config.inc.php:165
+msgid "VAT"
+msgstr "Umsatzsteuer"
+
+#: lib/config.inc.php:167
+msgid "Subscription Offer"
+msgstr "Abonnement Angebot"
+
+#: lib/config.inc.php:169
+msgid "Price"
+msgstr "Preis"
+
+#: lib/config.inc.php:170
+msgid "Hide Quantity"
+msgstr "Verstecke Volumenauswahl"
+
+#: lib/config.inc.php:172
+msgid "Delivery Time"
+msgstr "Lieferzeit"
+
+#: lib/config.inc.php:187
+msgid "Shipping Country"
+msgstr "Lieferland"
+
+#: lib/config.inc.php:188
+msgid "Shipping Costs"
+msgstr "Lieferkosten"
+
+#: lib/config.inc.php:189
+msgid "Shipping VAT"
+msgstr "Liefer Umsatzsteuer"
+
+#: lib/config.inc.php:199
+msgid "Please insert your API settings here."
+msgstr "Bitte fügen Sie Ihre API Einstellungen hier ein."
+
+#: lib/config.inc.php:200
+msgid "Common Settings"
+msgstr "Gemeinsame Einstellungen"
+
+#: lib/config.inc.php:200
+msgid "The Paymill Pay Buton is a simple, independent payment solution."
+msgstr ""
+"Der Paymill Pay Button ist eine einfache, unabhängige Bezahlmöglichkeit."
+
+#: lib/config.inc.php:200
+msgid "Configure common settings"
+msgstr "Gemeinsame Einstellungen"
+
+#: lib/config.inc.php:200 lib/config.inc.php:201 lib/config.inc.php:202
+msgid "Toggle View"
+msgstr "Ansicht umschalten"
+
+#: lib/config.inc.php:201
+msgid "Products"
+msgstr "Produkte"
+
+#: lib/config.inc.php:201
+msgid ""
+"Configure products for the Pay Button. This list has a dynamic length and "
+"extends for 5 extra slots when last slot is filled and saved."
+msgstr ""
+"Konfigurieren Sie die Produkte für den Pay Button. Diese Liste hat eine "
+"dynamische Länge und erweitert sich jedesmal um 5 extra Einträge, wenn der "
+"letzte Eintrag gefüllt und abgespeichert wurde."
+
+#: lib/config.inc.php:202
+msgid "Shipping"
+msgstr "Lieferung"
+
+#: lib/config.inc.php:202
+msgid ""
+"Set delivery countries and shipping costs. This list has a dynamic length "
+"and extends for 5 extra slots when last slot is filled and saved."
+msgstr ""
+"Legen Sie Lieferländer und Lieferkosten fest. Diese Liste hat eine "
+"dynamische Länge und erweitert sich jedesmal um 5 extra Einträge, wenn der "
+"letzte Eintrag gefüllt und abgespeichert wurde."
+
+#: lib/config.inc.php:211
+msgid ""
+"Currency, <a href=\"http://en.wikipedia.org/wiki/ISO_4217#Active_codes\" "
+"target=\"_blank\">ISO 4217</a> e.g. \"EUR\" or \"GBP\""
+msgstr ""
+"Währung, <a href=\"http://en.wikipedia.org/wiki/ISO_4217#Active_codes\" "
+"target=\"_blank\">ISO 4217</a> z.B. \"EUR\" or \"GBP\""
+
+#: lib/config.inc.php:212
+msgid "Check the boxes which payment types should be announced on payment form"
+msgstr ""
+"Wähle hier aus, welche Bezahlmöglichkeiten im Bezahlformular angezeigt "
+"werden sollen"
+
+#: lib/config.inc.php:213
+msgid "Insert your Paymill <strong>PRIVATE</strong> API key."
+msgstr "Fügen Sie Ihren <strong>PRIVATEN</strong> Paymill API Schlüssel ein."
+
+#: lib/config.inc.php:214
+msgid "Insert your Paymill <strong>PUBLIC</strong> API key."
+msgstr ""
+"Fügen Sie Ihren <strong>ÖFFENTLICHEN</strong> Paymill API Schlüssel ein."
+
+#: lib/config.inc.php:215
+msgid "Insert your Paymill endpoint URL."
+msgstr "Fügen Sie Ihre Paymill Endpoint Adresse ein."
+
+#: lib/config.inc.php:267
+msgid "Set a symbol used for decimal point. Default: ."
+msgstr "Lege ein Symbol für den Dezimalpunkt fest. Standard: ."
+
+#: lib/config.inc.php:268
+msgid "Set a symbol used for thousands seperator. Default: ,"
+msgstr "Lege ein Symbol für das Tausender-Trennzeichen fest. Standard: ,"
+
+#: lib/config.inc.php:269
+msgid "Outgoing Emailaddress for customer order confirmation mail."
+msgstr "Ausgehende Emailadresse für die Kundenbestellbestätigung."
+
+#: lib/config.inc.php:270
+msgid "Incoming Emailaddress for Copy of customer order confirmation mail."
+msgstr "Eingehende Emailadresse für eine Kopie der Kundenbestellbestätigung."
+
+#: lib/config.inc.php:271
+msgid "Redirect URL for custom thank your page."
+msgstr "Weiterleitungs-URL für eigene Dankeseiten."
+
+#: lib/config.inc.php:273
+msgid "You may want to hide certain fields. Select them here:"
+msgstr ""
+"Du möchtest möglicherweise manche Felder verstecken. Wähle sie hier aus:"
+
+#: lib/config.inc.php:274
+msgid ""
+"Advanced users want to fully customize the payment button. Disabling default "
+"CSS from Pay Button will make that much easier."
+msgstr ""
+"Fortgeschrittene Benutzer möchten möglicherweise den Pay Button vollständig "
+"personalisieren. Das Deaktivieren der mit dem Plugin geladenen Standard-CSS-"
+"Datei macht dies viel einfacher."
+
+#: lib/config.inc.php:276
+msgid "Name of the available delivery country, e.g. \"England\""
+msgstr "Name des verfügbaren Lieferlandes, z.B. \"England\""
+
+#: lib/config.inc.php:277
+msgid "Gross fee for the flat shipping costs., e.g. \"7\" or \"4.90\""
+msgstr ""
+"Brutto Gebühr für die pauschalen Versandkosten, z.B. \"7\" oder \"4.90\""
+
+#: lib/config.inc.php:278
+#, php-format
+msgid ""
+"Value-Added-Tax Rate in % for the flat shipping costs., e.g. \"19\" or \"7\""
+msgstr ""
+"Umsatzsteuerrate in % für die pauschalen Versandkosten, z.B. \"19\" oder "
+"\"7\""
+
+#: lib/config.inc.php:280
+msgid "Name of the product"
+msgstr "Name des Produkts"
+
+#: lib/config.inc.php:281
+msgid "Detailed description of the product"
+msgstr "Detaillierte Beschreibung des Produkts"
+
+#: lib/config.inc.php:282
+msgid "Gross Price of the product, e.g. \"40\" or \"6.99\""
+msgstr "Brutto Preis des Produkts, z.B. \"40\" oder \"6.99\""
+
+#: lib/config.inc.php:283
+msgid ""
+"If you have created a subscription in your Paymill Cockpit, can select it "
+"here. If selected, it will overwrite the following settings for this "
+"product. <strong>Important: For Performance purposes, subscription plans "
+"will be cached. Open this page to recache it.</strong>"
+msgstr ""
+"Wenn du ein Abonnement in deinem Paymill Cockpit erstellt hast, kannst du es "
+"hier auswählen. Sobald es ausgewählt ist, wird es die folgenden "
+"Einstellungen dieses Produktes überschreiben. <strong>Wichtig: Aus "
+"Performancegründen werden Abonnements gecached (zwischengespeichert). Rufe "
+"diese Seite auf, um die Abonnements zu aktualisieren.</strong>"
+
+#: lib/config.inc.php:284
+#, php-format
+msgid "Value-Added-Tax Rate in % for the product, e.g. \"19\" or \"7\""
+msgstr "Umsatzsteuerrate in % für das Produkt, z.B. \"19\" oder \"7\""
+
+#: lib/config.inc.php:285
+msgid "Delivery Time of the product, e.g. \"2 Days\" or \"1 Week\""
+msgstr "Lieferzeit des Produkts, z.B. \"2 Tage\" oder \"1 Woche\""
+
+#: lib/config.inc.php:286
+msgid "Hide quantity select field, quantity will be set to 1"
+msgstr ""
+"Verstecke die Auswahlliste für die Anzahl der Produkte, setzt Anzahl auf 1"
+
+#: lib/config.inc.php:287
+msgid "Allow free amounts (donation feature)"
+msgstr "Erlaube freie Beträge (Spenden-Funktion)"
+
+#: lib/config.inc.php:323
+msgid "Optional: Select Subscription Plan"
+msgstr "Optional: Wähle ein Abonnement"
+
+#: lib/integration/magicmembers.inc.php:64
+msgid "Paymill - Online payments made easy"
+msgstr "Paymill - Online Payments made easy"
+
+#: lib/integration/magicmembers.inc.php:188
+#, php-format
+msgid "%s logo updated"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:222
+#, php-format
+msgid "%s module has been %s"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:312
+#, php-format
+msgid "%s settings updated"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:584
+msgid "Error while cancelling subscription"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:610
+#: lib/integration/magicmembers.inc.php:894
+msgid "Transaction Id invalid"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:620
+#: lib/integration/magicmembers.inc.php:904
+msgid "Transaction invalid"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:632
+#: lib/integration/magicmembers.inc.php:914
+msgid "Transaction invalid . User id field is empty"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:985
+#: lib/integration/pay_button.inc.php:217
+msgid "Pay now"
+msgstr "Jetzt bezahlen"
+
+#: lib/integration/magicmembers.inc.php:1019
+#: lib/integration/magicmembers.inc.php:1050
+msgid "You can pay with:"
+msgstr "Bezahle mit:"
+
+#: lib/integration/magicmembers.inc.php:1086
+#, php-format
+msgid ""
+"You have subscribed to <b>%s</b> via <b>%s</b>, if you wish to unsubscribe, "
+"please click the following link. <br>"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1092
+#: lib/integration/magicmembers.inc.php:1104
+msgid "Unsubscribe"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1138
+msgid "SimpleXML PHP extension must be loaded for Paymill ARB"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1144
+msgid ""
+"Transaction Details API in Paymill must be enabled for Rebill Status Query"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1170
+msgid "N/A"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1182
+msgid "AUTHORIZE.NET INFO"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1182
+msgid "SUBSCRIPTION ID"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1184
+msgid "TRANSACTION ID"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1218
+msgid "Subscription ID"
+msgstr "Abonnement ID"
+
+#: lib/integration/magicmembers.inc.php:1218
+msgid "Transaction ID"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1500
+#: lib/integration/magicmembers.inc.php:1964
+msgid "Last payment was successful"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1548
+#: lib/integration/magicmembers.inc.php:2188
+msgid "Last payment was refunded or denied"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1570
+#: lib/integration/magicmembers.inc.php:2206
+#, php-format
+msgid "Last payment is pending. Reason: %s"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1590
+#: lib/integration/magicmembers.inc.php:2220
+#, php-format
+msgid "Last payment status: %s"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1618
+msgid "Failed join"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:1668
+msgid "The post was purchased successfully"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:2516
+msgid "Subscription cancelled"
+msgstr "Abonnement abgebrochen"
+
+#: lib/integration/magicmembers.inc.php:2542
+#: lib/integration/magicmembers.inc.php:3028
+#, php-format
+msgid "Subscription awaiting cancellation on %s"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:2622
+#, php-format
+msgid ""
+"You have successfully unsubscribed. Your account has been marked for "
+"cancellation on %s"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:2918
+msgid "Last payment cycle processed successfully"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:3048
+msgid "Last payment cycle cancelled"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:3082
+msgid "Last payment cycle expired"
+msgstr ""
+
+#: lib/integration/magicmembers.inc.php:3771
+msgid "Error occured"
+msgstr ""
+
+#: lib/integration/pay_button.inc.php:63
+#: lib/integration/shopplugin.inc.php:126
+msgid "Order"
+msgstr "Bestellung"
+
+#: lib/integration/pay_button.inc.php:94
+msgid "There was an issue with adding you as client for the payment process."
+msgstr ""
+"Es gab ein Problem dabei, Sie als neuen Kunden im Bezahlprozess hinzuzufügen."
+
+#: lib/integration/pay_button.inc.php:107 lib/tpl/pay_button.php:114
+msgid "Company Name"
+msgstr "Firmenname"
+
+#: lib/integration/pay_button.inc.php:108
+#: lib/integration/shopplugin.inc.php:126 lib/tpl/pay_button.php:120
+msgid "Forename"
+msgstr "Vorname"
+
+#: lib/integration/pay_button.inc.php:109
+#: lib/integration/shopplugin.inc.php:126 lib/tpl/pay_button.php:126
+msgid "Surname"
+msgstr "Nachname"
+
+#: lib/integration/pay_button.inc.php:110 lib/tpl/pay_button.php:132
+msgid "Street"
+msgstr "Straße"
+
+#: lib/integration/pay_button.inc.php:111 lib/tpl/pay_button.php:138
+msgid "Number"
+msgstr "Nummer"
+
+#: lib/integration/pay_button.inc.php:112 lib/tpl/pay_button.php:144
+msgid "ZIP"
+msgstr "PLZ"
+
+#: lib/integration/pay_button.inc.php:113 lib/tpl/pay_button.php:150
+msgid "City"
+msgstr "Ort"
+
+#: lib/integration/pay_button.inc.php:114
+msgid "Country"
+msgstr "Land"
+
+#: lib/integration/pay_button.inc.php:115 lib/tpl/pay_button.php:156
+msgid "Email"
+msgstr "Email"
+
+#: lib/integration/pay_button.inc.php:116 lib/tpl/pay_button.php:162
+msgid "Phone"
+msgstr "Telefon"
+
+#: lib/integration/pay_button.inc.php:133
+msgid "Confirmation of your Order"
+msgstr "Bestellbestätigung"
+
+#: lib/integration/pay_button.inc.php:139
+msgid "New Order received"
+msgstr "Neue Bestellung erhalten"
+
+#: lib/integration/pay_button.inc.php:162
+msgid "Shows a Paymill Payment Button."
+msgstr "Zeigt einen Paymill Payment Button."
+
+#: lib/integration/pay_button.inc.php:180
+msgid "Thank you for your order."
+msgstr "Vielen Dank für Ihre Bestellung."
+
+#: lib/integration/pay_button.inc.php:215
+msgid "Payment"
+msgstr "Bezahlung"
+
+#: lib/integration/pay_button.inc.php:240
+msgid "Title:"
+msgstr "Titel:"
+
+#: lib/integration/pay_button.inc.php:247
+msgid "Show these products only:"
+msgstr "Zeige nur diese Produkte:"
+
+#: lib/integration/pay_button.inc.php:250
+msgid "All Products"
+msgstr "Alle Produkte"
+
+#: lib/integration/woocommerce.inc.php:113
+msgid "Enable/Disable"
+msgstr "Aktivieren/Deaktivieren"
+
+#: lib/integration/woocommerce.inc.php:115
+msgid "Enable PAYMILL Payment"
+msgstr "Aktiviere Paymill Bezahlung"
+
+#: lib/integration/woocommerce.inc.php:119
+msgid "Title"
+msgstr "Titel"
+
+#: lib/integration/woocommerce.inc.php:121
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+"Dies legt den Titel fest, den ein Benutzer während des Bezahlprozesses sieht."
+
+#: lib/integration/woocommerce.inc.php:122
+msgid "PAYMILL Payment"
+msgstr "Bezahlung"
+
+#: lib/integration/woocommerce.inc.php:126
+msgid "Customer Message"
+msgstr "Kundennachricht"
+
+#: lib/integration/woocommerce.inc.php:272
+msgid "Subscription already ordered and cannot be purchased twice."
+msgstr ""
+"Das Abonnement wurde bereits bestellt und kann nicht ein zweites mal gekauft "
+"werden."
+
+#: lib/tpl/checkout_form.php:26
+msgid "Credit Card"
+msgstr "Kreditkarte"
+
+#: lib/tpl/checkout_form.php:27
+msgid "Debit Payment"
+msgstr "ELV"
+
+#: lib/tpl/checkout_form.php:32
+msgid "Name"
+msgstr "Name"
+
+#: lib/tpl/checkout_form.php:37
+msgid "Credit Card Number"
+msgstr "Kreditkarten Nummer"
+
+#: lib/tpl/checkout_form.php:41
+msgid "Expire Date (MM/YYYY)"
+msgstr "Gültigkeitsdatum"
+
+#: lib/tpl/checkout_form.php:45
+msgid "CVC"
+msgstr "CVC"
+
+#: lib/tpl/checkout_form.php:50
+msgid "Account #"
+msgstr "Kontonummer"
+
+#: lib/tpl/checkout_form.php:54
+msgid "Bank code"
+msgstr "Bankleitzahl"
+
+#: lib/tpl/pay_button.php:35
+msgid "S"
+msgstr ""
+
+#: lib/tpl/pay_button.php:38 lib/tpl/pay_button.php:63
+msgid "% VAT included."
+msgstr "% USt. inbegriffen."
+
+#: lib/tpl/pay_button.php:39 lib/tpl/pay_button.php:64
+msgid "Delivery Time: "
+msgstr "Lieferzeit:"
+
+#: lib/tpl/pay_button.php:81
+msgid "Choose Country"
+msgstr "Wähle ein Land"
+
+#: lib/tpl/pay_button.php:93
+msgid "Total Price:"
+msgstr "Gesamtsumme:"
+
+#: lib/tpl/pay_button.php:111
+msgid "Address"
+msgstr "Adresse"
+
+#~ msgid "Free Amount"
+#~ msgstr "Freier Betrag"
+
+#~ msgid "Paymill Payment"
+#~ msgstr "Paymill Payment"
+
+#~ msgid "%s DAY"
+#~ msgstr "%s Tage"

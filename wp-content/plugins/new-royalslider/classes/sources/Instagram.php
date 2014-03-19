@@ -58,7 +58,7 @@ class NewRoyalSliderInstagramSource {
                 'ignore' => true
 			),
 			array(
-            	'desc' => __( 'Maximum number of items to fetch from Instagram and include in slider.', 'new_royalslider' )
+            	'desc' => __( 'Maximum number of images to fetch from Instagram and include in slider. Max 250.', 'new_royalslider' )
             )
 		);
 
@@ -85,8 +85,9 @@ class NewRoyalSliderInstagramSource {
 
 	    $username = strtolower($username);
 	    $url = "https://api.instagram.com/v1/users/search?q=".$username."&access_token=".self::$access_token;
-	    $get = file_get_contents($url);
-	    $json = json_decode($get);
+	    $get = wp_remote_get( $url );
+	   	$get_body = wp_remote_retrieve_body( $get );
+	    $json = json_decode($get_body);
 
 	    foreach($json->data as $user)
 	    {
@@ -118,10 +119,17 @@ class NewRoyalSliderInstagramSource {
 		    		return __('Enter Instagram username or tag.', 'new_royalslider');
 		    	}
 
+		    	$max_images = (int)$options['limit'];
+		    	if( !($max_images > 0) ) {
+		    		return  __('Incorrect value in "Limit" option, set it to integer.', 'new_royalslider');
+		    	}
+		    	if($max_images > 300) {
+		    		$max_images = 300;
+		    	}
 
 			    $data = array(
 			    	'access_token' => self::$access_token,
-			    	'count' => $options['limit']
+			    	'count' => $max_images
 			    );
 		        
 			    $is_tag = strpos($options['usernameortag'], '#') > -1 ? true : false;
@@ -139,33 +147,61 @@ class NewRoyalSliderInstagramSource {
 			    $url = apply_filters( 'new_rs_instagram_api_url', $url, $options);
 				
 
-				
-				$response = wp_remote_get($url, array(
-					'timeout' => 30,
-					'redirection' => 5,
-					'sslverify' => false
-				));
 
-				if (is_wp_error($response)) {
-					return print_r($response, true) . ' Request URL: '.$url;;
-				}
-				
-				$response = $response['body'];
-				$response = json_decode($response, ARRAY_A);
+			    $images = array();
+			    $gotAllResults = false;
+			    $numPages = 1;
+			    $imageCount = 0;
+			    while(!$gotAllResults) {
+			    	$response = wp_remote_get($url, array(
+						'timeout' => 30,
+						'redirection' => 5,
+						'sslverify' => false
+					));
 
-				$images = array();
-				if (isset($response['data'])) {
-					$response_items = $response['data'];
-					foreach ($response_items as $key => $item) {
-						$image = &$images[$key];
-
-						$image['image'] = $item['images']['standard_resolution']['url'];
-						$image['thumbnail'] = $item['images']['thumbnail']['url'];
-						$image['title'] = isset($item['caption']) ? $item['caption']['text'] : '';
-						$image['original_obj'] = $item;
-
+					if (is_wp_error($response)) {
+						$gotAllResults = true;
+						if(count($images) > 0) {
+							break;
+						} else {
+							return print_r($response, true) . ' Request URL: '.$url;
+						}
 					}
-				}
+
+					$response = $response['body'];
+					$response = json_decode($response, ARRAY_A);
+					if(isset($response['pagination']) && isset($response['pagination']['next_url']) ) {
+						$url = $response['pagination']['next_url'];
+					} else {
+						$gotAllResults = true;
+					}
+
+					if (isset($response['data'])) {
+						$response_items = $response['data'];
+						foreach ($response_items as $key => $item) {
+							$imageCount++;
+
+							if($imageCount > $max_images) {
+								$gotAllResults = true;
+								break;
+							}
+
+							$image = &$images[$imageCount];
+
+							$image['image'] = $item['images']['standard_resolution']['url'];
+							$image['thumbnail'] = $item['images']['thumbnail']['url'];
+							$image['title'] = isset($item['caption']) ? $item['caption']['text'] : '';
+							$image['original_obj'] = $item;
+							
+						}
+					}
+					if($imageCount > 300 || $numPages > 20) {
+						$gotAllResults = true;
+						break;
+					}
+
+					$numPages++;
+			    }
 
 				if( count($images) > 0) {
 					return $images;

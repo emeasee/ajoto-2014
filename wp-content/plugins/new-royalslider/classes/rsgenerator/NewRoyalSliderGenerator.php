@@ -388,13 +388,8 @@ class NewRoyalSliderGenerator {
 
 	static function get_image_data($self, $isThumb = false) {
      
-		$sizes = array(
-			'full' => 'full',
-			'large' => 'large',
-			'thumbnail' => 'thumbnail'
-		);
-
-		$sizes = apply_filters( 'new_rs_image_sizes', $sizes);
+		$sizes = NewRoyalSliderMain::$image_sizes; 
+		
 
         $s;
         $image_data;
@@ -403,22 +398,29 @@ class NewRoyalSliderGenerator {
         } else {
             $s = 'i';
         }
+
+
         if( (!$isThumb && !$self->image_data) || ($isThumb && !$self->thumb_image_data) ) {
             if( isset($self->options['image_generation']) 
                 && isset($self->options['image_generation'][$s.'mageWidth'])
                 && isset($self->options['image_generation'][$s.'mageHeight']) ) {
 
-            	 $img_width = (int)$self->options['image_generation'][$s.'mageWidth'];
+
+            	$img_width = (int)$self->options['image_generation'][$s.'mageWidth'];
                 $img_height = (int)$self->options['image_generation'][$s.'mageHeight'];
 
             	if($img_width == 0 || $img_height == 0) {
             		$image_data = wp_get_attachment_image_src(  $self->attachment_id, !$isThumb ? $sizes['large'] : $sizes['thumbnail'] );
             	} else {
+            
 	                if(!$self->full_img_url) {
-	                    $self->full_img_url = wp_get_attachment_url( $self->attachment_id, $sizes['full'] );
+	                	$self->full_img_url = wp_get_attachment_image_src($self->attachment_id, NewRoyalSliderMain::$image_sizes['full'] );
+			            if( is_array($self->full_img_url) > 0 ) {
+			                $self->full_img_url = $self->full_img_url[0];
+			            }
 	                }
 	                
-	                $image_data = NewRoyalSliderMain::aq_resize(  $self->full_img_url, $img_width, $img_height, true, false );
+	                $image_data = NewRoyalSliderMain::aq_resize(  wp_get_attachment_url($self->attachment_id), $img_width, $img_height, true, false );
             	}
             } else {
                 $image_data = wp_get_attachment_image_src(  $self->attachment_id, !$isThumb ? $sizes['large'] : $sizes['thumbnail'] );
@@ -477,7 +479,7 @@ class NewRoyalSliderGenerator {
             if($self->slider_opts['lazy_loading']) {
                 $out = sprintf( '<a class="rsImg" href="%1$s"%2$s%3$s%4$s>%5$s</a>', $url, $video_attr, $thumb ,$big_img, $alt);
             } else {
-                $out = sprintf( '<img class="rsImg" src="%1$s"%2$s%3$s%4$s alt="%5$s"/>', $url, $video_attr, $thumb ,$big_img, $alt);
+                $out = sprintf( '<img class="rsImg" src="%1$s"%2$s%3$s%4$s alt="%5$s"/>', $url, $video_attr, $thumb ,$big_img, esc_attr($alt) );
             }
             return $out;
         }

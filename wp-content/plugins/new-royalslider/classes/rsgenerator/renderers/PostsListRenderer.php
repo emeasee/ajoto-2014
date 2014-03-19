@@ -23,8 +23,9 @@ class NewRoyalSliderPostsRenderer {
         $this->attachment_id = get_post_thumbnail_id( $this->id );
 	}
     public function large_image_url() {
-        if(!$this->full_img_url) {
-            $this->full_img_url = wp_get_attachment_url( $this->attachment_id, 'full' );
+        $this->full_img_url = wp_get_attachment_image_src($this->attachment_id, NewRoyalSliderMain::$image_sizes['full'] );
+        if( is_array($this->full_img_url) > 0 ) {
+            $this->full_img_url = $this->full_img_url[0];
         }
         return $this->full_img_url;
     }

@@ -23,3 +23,8 @@
 		null,
 		true
 	);
+
+	NewRoyalSliderMain::custom_footer_scripts( array(
+		$displayed_gallery_id => NewRoyalSliderMain::$sliders_init_code[$displayed_gallery_id]
+	) );
+	unset(NewRoyalSliderMain::$sliders_init_code[$displayed_gallery_id]);

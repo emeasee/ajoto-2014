@@ -110,7 +110,7 @@ if ( $action == 'duplicated' )  {
                 title: "<?php _e('Choose the type of slider to create', 'new_royalslider'); ?>",
                 zIndex: 80,
                 width: 494,
-                height: 450,
+                height: 484,
                 resizable: false,
                 beforeClose: function() {
 
@@ -181,11 +181,11 @@ if ( $action == 'duplicated' )  {
     <table id="new-royalslider-manage-table" class='royalsliders-table  wp-list-table widefat fixed'>
         <thead>
             <tr>
-                <th width='5%'><?php _e('ID','new_royalslider'); ?></th>
+                <th width='4%'><?php _e('ID','new_royalslider'); ?></th>
                 <th width='40%'><?php _e('Title','new_royalslider'); ?></th>
                 <th width='10%'><?php _e('Type','new_royalslider'); ?></th>    
                 <th width='20%'><?php _e('Shortcode','new_royalslider'); ?></th>    
-                <th width='10%'><?php _e('Active','new_royalslider'); ?><i class="help-ico rs-help-el" data-help="<?php _e('Always mark sliders that you don\'t use as inactive. It\'ll  prevent including unwanted JS and CSS files of skins and templates.' , 'new_royalslider'); ?>"></i></th>   
+                <th width='11%'><?php _e('Active','new_royalslider'); ?><i class="help-ico rs-help-el" data-help="<?php _e('Always mark sliders that you don\'t use as inactive. It\'ll  prevent including unwanted JS and CSS files of skins and templates.' , 'new_royalslider'); ?>"></i></th>   
             </tr>
         </thead>
         <tbody>
@@ -199,7 +199,10 @@ if ( $action == 'duplicated' )  {
                     <?php
                 } else {
                     $slider_display_name;
+                    $count = 0;
                     foreach ($sliders as $slider) {
+
+                        ++ $count;
                         
                         $slider_display_name = $slider->name;
                         if(!$slider_display_name) {
@@ -214,7 +217,12 @@ if ( $action == 'duplicated' )  {
                         $duplicate_url = wp_nonce_url( admin_url('admin.php?page=new_royalslider&action=duplicate&id='  . $slider->id), 'new_royalslider_magage_sliders');
                         $delete_url = wp_nonce_url( admin_url('admin.php?page=new_royalslider&action=delete&id='  . $slider->id), 'new_royalslider_magage_sliders');
                         ?>
-                        <tr class="<?php echo $slider->active ? '' : 'disabled'; ?>" data-id="<?php echo $slider->id; ?>">
+                        <tr class="<?php 
+
+                        echo $slider->active ? '' : ' disabled ';
+                        echo ($count % 2) ? ' alternate ' : '';
+
+                        ?>" data-id="<?php echo $slider->id; ?>">
                             <td><?php echo $slider->id; ?></td>
                             
                             <td>
@@ -254,11 +262,11 @@ if ( $action == 'duplicated' )  {
         <div class="create-popup">
             <a class="create-custom"  href='<?php echo admin_url( "admin.php?page=new_royalslider&action=add&rstype=custom" ); ?>'>
                 <h4><span class='in-page-action'><?php _e('Custom slider', 'new_royalslider') ?></span></h4>
-                <p><?php  _e('For completely custom slideshows where each slide is different.', 'new_royalslider'); ?></p>
+                <p><?php  _e('For slideshows where each slide has different structure.', 'new_royalslider'); ?></p>
             </a>
             <a class="create-from-posts"  href='<?php echo admin_url( "admin.php?page=new_royalslider&action=add&rstype=posts" ); ?>'>
                 <h4><span class='in-page-action'><?php _e('Posts slider', 'new_royalslider') ?></span></h4>
-                <p><?php  _e('For slideshows that should grab data from contents of your posts.', 'new_royalslider'); ?></p>
+                <p><?php  _e('For slideshows that grab data from contents of posts.', 'new_royalslider'); ?></p>
             </a>
             <a class="replace-default" href='<?php echo admin_url( "admin.php?page=new_royalslider&action=add&rstype=gallery" ); ?>'>
                 <h4><span class='in-page-action'><?php _e('Default WordPress [gallery]', 'new_royalslider') ?></span></h4>

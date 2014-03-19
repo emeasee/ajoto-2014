@@ -6,6 +6,11 @@ class NewRoyalSliderMain {
 	public static $override_all_default_galleries;
 	public static $include_style_tag = true;
 	public static $sliders_init_code = array();
+	public static $image_sizes = array(
+			'full' => 'full',
+			'large' => 'large',
+			'thumbnail' => 'thumbnail'
+		);
 
 	private $scripts = array();
 	private $styles = array();
@@ -68,6 +73,9 @@ class NewRoyalSliderMain {
 			self::$override_all_default_galleries = false;
 		}
 
+
+
+
 		if( isset($this->global_options) ) {
 			if( isset($this->global_options['embed']) ) {
 				$e = $this->global_options['embed'];
@@ -126,6 +134,10 @@ class NewRoyalSliderMain {
 	function init() {
 		$this->activate_db();
 		$this->get_translation();
+
+
+		self::$image_sizes = apply_filters( 'new_rs_image_sizes', self::$image_sizes);
+
 
 		require_once('NewRoyalSliderOptions.php');
 		if( !is_admin() ) {
@@ -275,8 +287,11 @@ class NewRoyalSliderMain {
 		$this->sliders_to_enqueue[] = $id;
 	}
 
-	function custom_footer_scripts() {
-		$init_codes = NewRoyalSliderMain::$sliders_init_code;
+	function custom_footer_scripts($init_codes = null) {
+		if(!$init_codes) {
+			$init_codes = NewRoyalSliderMain::$sliders_init_code;
+		}
+		
 		if(count($init_codes) > 0 ) {
 			echo "<script id=\"new-royalslider-init-code\" type=\"text/javascript\">\n";
 			echo "jQuery(document).ready(function($) {\n";

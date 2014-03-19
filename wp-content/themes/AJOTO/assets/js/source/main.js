@@ -492,11 +492,22 @@ function wrap( str ) {
             console.log(hash);
             $(hash + ' h4').click();
         }
+
+        if ($my.single_wrap.length) {
+          $(".gallery").royalSlider({
+            keyboardNavEnabled: true,
+            controlNavigation:'none',
+            arrowsNavAutoHide: false,
+            imgWidth: 850,
+            imgHeight: 470
+          });
+        }
+
         
     });
     $(window).load(function(){
         if ($my.single_wrap.length) {
-            facebookSetup();
+            //facebookSetup();
         }
     });
     

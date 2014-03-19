@@ -24,6 +24,8 @@ class NewRoyalSliderBackend {
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
 			add_action( 'admin_init', array( &$this, 'build_config_page_options' ) );
 
+			add_action( 'admin_enqueue_scripts', array( &$this, 'add_icon_style' ) );
+
 			if( $this->is_royalslider_page() ) {
 				
 
@@ -281,6 +283,18 @@ class NewRoyalSliderBackend {
     	}	
     }
 
+    function add_icon_style() {
+    	// update icon for new MP6 theme
+        include( ABSPATH . WPINC . '/version.php' );
+        if (version_compare( $wp_version, '3.8-alpha', '>=' ) ) {
+                $css = "#toplevel_page_new_royalslider .wp-menu-image:before { content: \"\\f233\"; }
+                        #toplevel_page_new_royalslider .wp-menu-image { background-repeat: no-repeat; }
+                        #toplevel_page_new_royalslider .wp-menu-image img { display: none; }";
+                wp_add_inline_style( 'wp-admin', $css );
+        }
+        
+    }
+
 	function admin_print_styles( ) {
 		wp_enqueue_style('wp-jquery-ui-dialog');
 		wp_enqueue_style('rs-codemirror');
@@ -512,12 +526,7 @@ class NewRoyalSliderBackend {
 
 		$curr_page_url = get_admin_url() . "admin.php?page=new_royalslider_settings";
 
-
-		if(isset($_GET['code'])) {
-			echo 'THE CODE IS PRESENT:' . $_GET['code'];
-
-			
-
+		if(isset($_GET['code']) && strpos( strtolower($_SERVER["REQUEST_URI"]), 'royalslider') > -1 ) {
 			?>
 			<script type="text/javascript">
 			window.opener.processInstagramAuthCode("<?php echo $_GET['code'];  ?>");
@@ -588,7 +597,7 @@ class NewRoyalSliderBackend {
 
 	            array(
 	            	 'name' => 'instagram_settings_title',
-	                'label' => __( '<h2>Instagram Settings</h2>', 'new_royalslider' ),
+	                'label' => __( '<h3>Instagram Settings</h3>', 'new_royalslider' ),
 	                'desc' => '',
 	                'type' => 'html',
 	                'default' => '123',
@@ -621,13 +630,6 @@ class NewRoyalSliderBackend {
 		$login_url = '';
 		require_once('third-party/instagram.class.php');
 
-		
-	    //$instagram = new RS_Instagram(array(
-	    //   'apiKey'      => 'b9c6e59fd5f245bcac01bb698fc38162',
-	    //   'apiSecret'   => '59bfc78f34424c6695ed2b5802a6832d',
-	    //   'apiCallback' => $curr_page_url
-	    // ));
-	    //$tmp =$instagram->getLoginUrl();
 
 
 

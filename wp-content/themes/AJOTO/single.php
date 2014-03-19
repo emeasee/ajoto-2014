@@ -27,8 +27,23 @@
 						<a href="<?php echo get_permalink(get_adjacent_post(true,'',false)); ?>" class="arrow right"></a>
 					</section>
 				</section>
-				<section class="gallery">
-					<?php echo do_shortcode('[gallery size="full" royalslider="43"]'); ?>				
+				<section class="gallery rsDefaultBlack">
+					<?php 
+							$attachments = get_posts( array(
+								'post_type' => 'attachment',
+								'posts_per_page' => -1,
+								'post_parent' => $post->ID,
+								'exclude'     => get_post_thumbnail_id()
+							) );
+
+							if ( $attachments ) {
+								foreach ( $attachments as $attachment ) {
+									$thumbimg = wp_get_attachment_image( $attachment->ID, 'full', false );
+									echo '<span class="img">' . $thumbimg . '</span>';
+								}
+								
+							}
+					?>				
 				</section> <!-- end article section -->
 				<section class="screen">
 						<div class="more-less">
