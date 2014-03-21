@@ -62,7 +62,7 @@
 								<span class="next-link light">PREVIOUS</span> 
 							<?php } ?></span>
 							<span class="back">
-								<a href="../journeys" onclick="goBack(event)">BACK</a>
+								<a href="../journey" onclick="goBack(event)">BACK</a>
 							</span>
 							<?php if(get_adjacent_post(true, '', false)){ ?>
 								<span class="prev-link"><?php next_post_link('%link','NEXT', 'TRUE'); 

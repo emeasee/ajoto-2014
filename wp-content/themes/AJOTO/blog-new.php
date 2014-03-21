@@ -10,7 +10,7 @@
 		</section>
 		<section class="filter">
 			<div class="links">
-			<a class="current" href="../../journeys">ALL</a>
+			<a class="current" href="../../journey">ALL</a>
 				<?php
 					$args = array(
 				  		'orderby' => 'name',
