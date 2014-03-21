@@ -10,11 +10,13 @@
 		</section>
 		<section class="filter">
 			<div class="links">
-				<a class="current" href="../../journal">ALL</a>
+				<a class="current" href="../pen">THE PEN</a>
+				<a href="../pen-pouch">THE PEN POUCH</a>
+				<a href="../wallet">THE WALLET</a>
 			</div>
 		</section>
 
-		<section class="title">
+		<section class="title mid">
 			<p>THE PEN<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
