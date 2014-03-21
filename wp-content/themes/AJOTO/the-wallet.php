@@ -4,18 +4,19 @@
 	*/
  ?>
 <?php get_header(); ?>
-
 <div id="content" class="page">
 		<section class="title small">
 			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
 		</section>
 		<section class="filter">
 			<div class="links">
-				<a class="current" href="../../journal">ALL</a>
+				<a href="../pen">THE PEN</a>
+				<a href="../pen-pouch">THE PEN POUCH</a>
+				<a class="current" href="../wallet">THE WALLET</a>
 			</div>
 		</section>
 
-		<section class="title small">
+		<section class="title mid">
 			<p>THE WALLET<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 

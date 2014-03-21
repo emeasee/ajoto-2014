@@ -701,7 +701,6 @@ nav#page{
                 margin:10px;
             }
             div{
-                float: left;
                 @include bp(phone){
                     float:none;
                 }
@@ -1625,6 +1624,14 @@ nav#page{
 }
 
 #content.page{
+    section.filter{
+        .links{
+            width:400px;
+            a{
+                width:33.3%;
+            }
+        }
+    }
     ul#faq{
         padding:0;
         @include bp(phone){
@@ -1675,6 +1682,74 @@ nav#page{
         }
         #press{
             margin-bottom: 70px;
+        }
+    }
+}
+
+#content.about{
+    section.screen{
+        margin-top: 30px;
+        overflow: auto;
+        .g{
+            float: left;
+            margin-right: 10px;
+            span{
+                font-family: $ssbold;
+                color: $gold1;
+                display: block;
+                @include microclearfix;
+            }
+            &.two{
+                width:420px;
+                height: 420px;
+                margin-right: 0;
+                display: table;
+                &:first-child{
+                    margin-right:10px;
+                }
+                p{
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding: 2em;
+                }
+            }
+            &.three{
+                width:276px;
+                height: 276px;
+                margin-top: 10px;
+                position: relative;
+                p{
+                    margin:0 auto;
+                    width: 100%;
+                    padding: 0 20px;
+                    font-size: 0.9em;
+                    padding-top: 20px;
+                }
+                &:before{
+                    font-family: $icons;
+                    content: "\e60a";
+                    font-size: 2em;
+                    color: $gold1;
+                    display: block;
+                    margin-top: 30px;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+            &.grey{
+                background: $grey9;
+            }
+        }
+    }
+    section.mid{
+        p{
+            span{
+                text-transform: none;
+                letter-spacing: 0px;
+                font-size:0.7em;
+                line-height: normal;
+            }
         }
     }
 }

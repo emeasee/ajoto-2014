@@ -22,18 +22,16 @@
 
 					<section class="title">
 						<p><?php the_title(); ?></br>
-						<span class="sans-serif">THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
+						<span class="sans-serif"><?php echo get_the_excerpt();?></span></p>
 						<a href="<?php echo get_permalink(get_adjacent_post(true,'',true)); ?>" class="arrow left"></a>
 						<a href="<?php echo get_permalink(get_adjacent_post(true,'',false)); ?>" class="arrow right"></a>
 					</section>
 				</section>
 				<section class="gallery rsDefaultBlack">
 					<?php 
-							$attachments = get_posts( array(
-								'post_type' => 'attachment',
-								'posts_per_page' => -1,
-								'post_parent' => $post->ID,
-								'exclude'     => get_post_thumbnail_id()
+							$attachments = wpba_get_attachments(array(
+								'post_id' => $post->ID,
+								'show_post_thumbnail'  => false
 							) );
 
 							if ( $attachments ) {
@@ -64,7 +62,7 @@
 								<span class="next-link light">PREVIOUS</span> 
 							<?php } ?></span>
 							<span class="back">
-								<a href="../journeys" onclick="goBack(event)">BACK</a>
+								<a href="../journey" onclick="goBack(event)">BACK</a>
 							</span>
 							<?php if(get_adjacent_post(true, '', false)){ ?>
 								<span class="prev-link"><?php next_post_link('%link','NEXT', 'TRUE'); 
