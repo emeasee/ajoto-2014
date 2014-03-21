@@ -301,11 +301,11 @@ function wrap( str ) {
         }
 
         //Initialise Masonry
-        if (($my.about_wrap.length) || ($my.page_wrap.length)) {
+        if ($my.page_wrap.length) {
             if(!jQuery.browser.mobile){
                 $('section.screen').masonry({
                     itemSelector : 'div.card, div.slideshow, div.video',
-                    columnWidth: 205,
+                    columnWidth: 420,
                     gutter: 10
                 });
             }
