@@ -701,7 +701,6 @@ nav#page{
                 margin:10px;
             }
             div{
-                float: left;
                 @include bp(phone){
                     float:none;
                 }
