@@ -1624,6 +1624,14 @@ nav#page{
 }
 
 #content.page{
+    section.filter{
+        .links{
+            width:400px;
+            a{
+                width:33.3%;
+            }
+        }
+    }
     ul#faq{
         padding:0;
         @include bp(phone){
