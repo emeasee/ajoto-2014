@@ -18,7 +18,7 @@
 		</section>-->
 
 		<section class="title">
-			<p>TEAM<span>THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
+			<p>TEAM<span>WHO WE ARE AND THE PEOPLE WE WORK WITH</span></p>
 		</section>
 		
 		<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>
