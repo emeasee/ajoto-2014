@@ -52,5 +52,3 @@
 # END Cache-Control Headers
 
 Redirect /dropbox https://www.dropbox.com/sh/qd20doocvazxic4/bpLGgTM9rf
-
-Redirect /products http://dev.ajoto.com/products
