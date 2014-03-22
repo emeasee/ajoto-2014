@@ -2,7 +2,7 @@
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<div id="content" class="single" itemprop="articleBody">	
 				<section class="title small">
-					<p><?php $category = get_the_category(); echo $category[0]->cat_name; ?><span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+					<p><?php $category = get_the_category(); echo $category[0]->cat_name; ?></p>
 				</section>
 				<section class="filter">
 					<div class="links">
