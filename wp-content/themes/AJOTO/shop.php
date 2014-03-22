@@ -7,7 +7,7 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div id="content" class="<?php echo $post->post_name; ?> products">
 		<section class="title small">
-			<p>SHOP<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+			<p>SHOP<span>PURCHASE BEAUTIFUL TOOLS FOR YOUR JOURNEY</span></p>
 		</section>
 			<header>
 				<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>

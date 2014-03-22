@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div id="content" class="page">
 		<section class="title small">
-			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+			<p>PRODUCTS<span>ESSENTIAL DETAILS ABOUT EACH OF OUR BEAUTIFUL TOOLS</span></p>
 		</section>
 		<section class="filter">
 			<div class="links">
