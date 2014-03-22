@@ -5,7 +5,7 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<section class="title small">
+		<!--<section class="title small">
 			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
 		</section>
 		<section class="filter">
@@ -15,7 +15,7 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>
+		</section>-->
 
 		<section class="title">
 			<p>TEAM<span>THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>

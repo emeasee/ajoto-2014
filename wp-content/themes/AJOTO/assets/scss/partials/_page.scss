@@ -3459,7 +3459,8 @@ form.shipping_calculator{
         text-align: center;
         padding-bottom: 60px;
         .button{
-            float:none;
+            font-size: 1em;
+            width: 200px;
         }
         ul{
             list-style: none;
@@ -3467,31 +3468,21 @@ form.shipping_calculator{
                 .payment_method_paypal{
                     display: none!important;
                 }
+                label[for=payment_method_paymill]{
+                    a{
+                        display: none;
+                    }
+                }
                 .payment_method_paymill{
-                    fieldset{
-                        border:none;
+                    width: 60%;
+                    margin: 0 auto;
+                    padding: 2em;
+                    #paymill_payment_form{
                         label{
                             display: block;
                         }
-                        .paymill_new_card{
-                            .form-row{
-                                float: none;
-                                max-width: 320px;
-                                padding: 20px 0;
-                                input{
-                                    padding: 0;
-                                    margin: 0;
-                                }
-                                select{
-                                    width:auto;
-                                }
-                            }
-                        }
-                        p{
-                            max-width: 600px;
-                            letter-spacing: 1px;
-                            text-transform: uppercase;
-                            padding: 20px 0;
+                        .LV_invalid{
+                            @include microclearfix;
                         }
                     }
                 }

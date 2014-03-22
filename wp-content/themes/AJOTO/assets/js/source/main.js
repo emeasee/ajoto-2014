@@ -328,7 +328,7 @@ function wrap( str ) {
         $('div#content div.choice small.out-of-stock').siblings().css('opacity','0.2').find('div.add').remove();
         $('div#content div.choice small.out-of-stock').siblings('div.quantity').css('visibility','hidden');
         $('div.woocommerce_message:not(:first)').remove();
-        
+
         //Fix strange bug on Checkout page
         $('#checkout .login #username').attr('placeholder', '* Username/Email');
         $('#checkout .login #password').attr('placeholder', '* Password');
