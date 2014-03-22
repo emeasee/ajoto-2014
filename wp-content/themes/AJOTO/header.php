@@ -46,7 +46,7 @@
 				<li id="menu-item-4472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4472"><a href="http://dev.ajoto.com/team/">Team</a></li>
 			</ul>
 			</li>
-			<li id="menu-item-2792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2792"><a href="http://dev.ajoto.com/customer-service/">Service</a></li>
+			<li id="menu-item-2792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2792"><a href="http://www.ajoto.com/customer-service/">Service</a></li>
 			</ul>
 			</nav>
 		</header> <!-- end header -->
