@@ -9,11 +9,6 @@
     RewriteRule . /index.php [L]
 </IfModule>
 
-RewriteCond %{HTTP_HOST} ajoto\.com [NC]
-RewriteCond %{REQUEST_URI} ^/$
-Rewriterule ^(.*)$ http://dev.ajoto.com/ [L,R=301]
-
-
 # END WordPress
 
 <ifModule mod_deflate.c>
