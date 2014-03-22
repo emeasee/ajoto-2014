@@ -7,9 +7,9 @@
 		<section class="snippets">
 			
 			<section class="buttons">
-				<span class="buttons blog"><a href="../journey" class="icon-d_arrows"><p>THE JOURNEY</p><div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
-				<span class="buttons shop"><a href="../shop" class="icon-d_basket"><p>THE SHOP</p><div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
-				<span class="buttons studio"><a href="../studio" class="icon-d_man"><p>THE STUDIO</p><div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
+				<span class="buttons blog"><a href="../journey"><p>JOURNEY</p><small>BEHIND THE SCENES OF AJOTO</small></a></span>
+				<span class="buttons shop"><a href="../shop"><p>SHOP</p><small>PURCHASE YOUR OWN BEAUTIFUL TOOL</small></a></span>
+				<span class="buttons products"><a href="../studio"><p>PRODUCTS</p><small>WHAT MAKES OUR PRODUCTS UNIQUE</small></a></span>
 			</section>		
 			
 		</section> <!-- end snippets -->
