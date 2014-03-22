@@ -12,7 +12,7 @@
 			<div class="links">
 				<a href="../pen">THE PEN</a>
 				<a class="current" href="../the-pen-pouch">THE PEN POUCH</a>
-				<a href="../wallet">THE WALLET</a>
+				<a href="../the-wallet">THE WALLET</a>
 			</div>
 		</section>
 
