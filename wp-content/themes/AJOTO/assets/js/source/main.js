@@ -305,7 +305,7 @@ function wrap( str ) {
             if(!jQuery.browser.mobile){
                 $('section.screen').masonry({
                     itemSelector : 'div.card, div.slideshow, div.video',
-                    columnWidth: 420,
+                    columnWidth: 205,
                     gutter: 10
                 });
             }
