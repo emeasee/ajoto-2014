@@ -4,6 +4,8 @@
 			<?php echo get_new_royalslider(1); ?>
 		</header> <!-- end top-header -->
 		
+		<div class="hr"><span style="margin-left: -50px;padding: 0 20px;">NAVIGATE</span></div>
+
 		<section class="snippets">
 			
 			<section class="buttons">
@@ -14,6 +16,8 @@
 			
 		</section> <!-- end snippets -->
 
+		<div style="margin-bottom:30px;" class="hr"><span style="margin-left: -70px;padding: 0 20px;">NEWS & STORIES</span></div>
+
 		<!-- CHANGE CLASS TO shop-slide IF WE NEED TO CHANGE BACK TO DYNAMIC SLIDER -->
 		<section class="screen" style="max-width:850px;">
 			<?php echo get_new_royalslider(2); ?>
@@ -21,6 +25,7 @@
 				<?php get_template_part( 'shop-featured-slider' ); ?>
 			</div>-->
 		</section>
+		
 
 		<footer id="extra">
 			<?php twitterFeed(1); ?>
