@@ -1,12 +1,12 @@
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
@@ -52,3 +52,5 @@ RewriteRule . /index.php [L]
 # END Cache-Control Headers
 
 Redirect /dropbox https://www.dropbox.com/sh/qd20doocvazxic4/bpLGgTM9rf
+
+Redirect /products http://dev.ajoto.com/products
