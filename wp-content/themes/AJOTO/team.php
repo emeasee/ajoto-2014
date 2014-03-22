@@ -31,7 +31,7 @@
 	
 	<section class="screen sans-serif">
 		<div class="g two grey image">
-
+			<img src="http://dev.ajoto.com/wp-content/uploads/2014/03/2014-03-22-studio-mac-2-low.jpg" />
 		</div>
 		<div class="g two grey">
 			<p><span>MAC OOSTHUIZEN</span><br>Mac studied with founders Chris and Tim at Northumbria University, also travelling to Hong Kong and London to pursue various internships. His path lead him to the Copenhagen Institute of Interaction Design, during which time he was able to indulge in a passion for user experience and a fascination with new cultures.<br>

@@ -29,12 +29,12 @@
 		</section>
 	
 	<section class="screen sans-serif">
-		<div class="g two grey image">
+		<!--<div class="g two grey image">
 			
 		</div>
 		<div class="g two grey image">
 			
-		</div>
+		</div>-->
 		<div class="g three grey">
 			<span>BRAND JOURNEY</span><p>AJOTO believe in great design. From the hidden patterns and symbols inside the packaging to the patina of materials, each of the ‘Beautiful Tools’ AJOTO create reveal more depth the more they are used.</p>
 		</div>
