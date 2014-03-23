@@ -1,11 +1,11 @@
         <div id="cookiebar" <?php body_class(); ?>>Our website uses cookies so that you can place orders and we can provide a more convenient service.   <a href="../customer-service/#cookies">Find out more</a> | <a id="confirm" href="#">CLOSE</a></div>
-        <!--<div id="cart-bar" <?php body_class(); ?>>
+        <div id="cart-bar" <?php body_class(); ?>>
             <div id="shopping_cart" class="widget woocommerce widget_shopping_cart">
                 <div class="widget_shopping_cart_content">
                     <?php woocommerce_get_template( 'cart/mini-cart.php' ); ?>
                 </div>
             </div>
-        </div>-->
+        </div>
 <footer class="footer">
     <div id="footer-bar">
         <div class="nav-box">               
