@@ -11,7 +11,7 @@
 			<section class="buttons">
 				<span class="buttons blog"><a href="../journey"><p>JOURNEY</p><small>BEHIND THE SCENES OF AJOTO</small></a></span>
 				<span class="buttons shop"><a href="../shop"><p>SHOP</p><small>PURCHASE YOUR OWN BEAUTIFUL TOOL</small></a></span>
-				<span class="buttons products"><a href="../studio"><p>PRODUCTS</p><small>WHAT MAKES OUR PRODUCTS UNIQUE</small></a></span>
+				<span class="buttons products"><a href="../products/the-pen/"><p>PRODUCTS</p><small>WHAT MAKES OUR PRODUCTS UNIQUE</small></a></span>
 			</section>		
 			
 		</section> <!-- end snippets -->
