@@ -1,16 +1,24 @@
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.php$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.php [L]
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
 
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_METHOD} POST
+    RewriteCond %{HTTP_REFERER} !^http://(.*)?ajoto\.com [NC]
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
+    RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
+    RewriteRule ^(.*)$ - [F]
+</IfModule>
 
 <ifModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
