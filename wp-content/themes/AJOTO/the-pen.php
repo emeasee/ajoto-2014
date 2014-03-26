@@ -6,13 +6,13 @@
 <?php get_header(); ?>
 <div id="content" class="page">
 		<section class="title small">
-			<p>PRODUCTS<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+			<p>PRODUCTS<span>ESSENTIAL DETAILS ABOUT EACH OF OUR BEAUTIFUL TOOLS</span></p>
 		</section>
 		<section class="filter">
 			<div class="links">
 				<a class="current" href="../pen">THE PEN</a>
-				<a href="../pen-pouch">THE PEN POUCH</a>
-				<a href="../wallet">THE WALLET</a>
+				<a href="../the-pen-pouch">THE PEN POUCH</a>
+				<a href="../the-wallet">THE WALLET</a>
 			</div>
 		</section>
 
@@ -37,7 +37,7 @@
 	
 	<section class="screen sans-serif">
 		<div class="card cube quote">
-			<a href="../../shop/#pen">Starting from £126
+			<a href="../shop/#pen">Starting from £126
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 		<div class="card three grey">
@@ -71,7 +71,7 @@
 			</i></p>
 		</div>
 		<div class="card cube quote">
-			<a href="../../shop/#pen">Starting from £126
+			<a href="../shop/#pen">Starting from £126
 			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>

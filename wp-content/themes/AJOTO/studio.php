@@ -5,7 +5,7 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<section class="title small">
+		<!--<section class="title small">
 			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
 		</section>
 		<section class="filter">
@@ -15,10 +15,10 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>
+		</section>-->
 
 		<section class="title">
-			<p>STUDIO<span>THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
+			<p>STUDIO<span>WHAT WE DO AS A COMPANY AND WHY WE DO IT</span></p>
 		</section>
 		
 		<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>
@@ -29,12 +29,12 @@
 		</section>
 	
 	<section class="screen sans-serif">
-		<div class="g two grey image">
+		<!--<div class="g two grey image">
 			
 		</div>
 		<div class="g two grey image">
 			
-		</div>
+		</div>-->
 		<div class="g three grey">
 			<span>BRAND JOURNEY</span><p>AJOTO believe in great design. From the hidden patterns and symbols inside the packaging to the patina of materials, each of the ‘Beautiful Tools’ AJOTO create reveal more depth the more they are used.</p>
 		</div>

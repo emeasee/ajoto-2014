@@ -5,7 +5,7 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<section class="title small">
+		<!--<section class="title small">
 			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
 		</section>
 		<section class="filter">
@@ -15,10 +15,10 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>
+		</section>-->
 
 		<section class="title">
-			<p>TEAM<span>THIS IS WHERE THE 140 CHARACTER EXCERPT FROM THE POST APPEARS.</span></p>
+			<p>TEAM<span>WHO WE ARE AND THE PEOPLE WE WORK WITH</span></p>
 		</section>
 		
 		<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'first', true)); ?></div>
@@ -31,7 +31,7 @@
 	
 	<section class="screen sans-serif">
 		<div class="g two grey image">
-
+			<img src="http://dev.ajoto.com/wp-content/uploads/2014/03/2014-03-22-studio-mac-2-low.jpg" />
 		</div>
 		<div class="g two grey">
 			<p><span>MAC OOSTHUIZEN</span><br>Mac studied with founders Chris and Tim at Northumbria University, also travelling to Hong Kong and London to pursue various internships. His path lead him to the Copenhagen Institute of Interaction Design, during which time he was able to indulge in a passion for user experience and a fascination with new cultures.<br>

@@ -4,15 +4,19 @@
 			<?php echo get_new_royalslider(1); ?>
 		</header> <!-- end top-header -->
 		
+		<div class="hr"><span style="margin-left: -50px;padding: 0 20px;">NAVIGATE</span></div>
+
 		<section class="snippets">
 			
 			<section class="buttons">
-				<span class="buttons blog"><a href="../journey" class="icon-d_arrows"><p>THE JOURNEY</p><div></div><small>OUR JOURNAL, STORIES, NEWS AND EVENTS</small></a></span>
-				<span class="buttons shop"><a href="../shop" class="icon-d_basket"><p>THE SHOP</p><div></div><small>PURCHASE A BEAUTIFUL TOOL FOR YOUR JOURNEY</small></a></span>
-				<span class="buttons studio"><a href="../studio" class="icon-d_man"><p>THE STUDIO</p><div></div><small>AN INSIGHT INTO WHO WE ARE AND HOW WE WORK</small></a></span>
+				<span class="buttons blog"><a href="../journey"><p>JOURNEY</p><small>BEHIND THE SCENES OF AJOTO</small></a></span>
+				<span class="buttons shop"><a href="../shop"><p>SHOP</p><small>PURCHASE YOUR OWN BEAUTIFUL TOOL</small></a></span>
+				<span class="buttons products"><a href="../products/the-pen/"><p>PRODUCTS</p><small>WHAT MAKES OUR PRODUCTS UNIQUE</small></a></span>
 			</section>		
 			
 		</section> <!-- end snippets -->
+
+		<div style="margin-bottom:30px;" class="hr"><span style="margin-left: -70px;padding: 0 20px;">NEWS & STORIES</span></div>
 
 		<!-- CHANGE CLASS TO shop-slide IF WE NEED TO CHANGE BACK TO DYNAMIC SLIDER -->
 		<section class="screen" style="max-width:850px;">
@@ -21,6 +25,7 @@
 				<?php get_template_part( 'shop-featured-slider' ); ?>
 			</div>-->
 		</section>
+		
 
 		<footer id="extra">
 			<?php twitterFeed(1); ?>
