@@ -2661,6 +2661,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             margin:0 auto;
             .button{
                 width: 315px;
+                min-height: 30px;
             }
             @include bp(phone){
                 width: 100%;
@@ -2728,6 +2729,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
         table.my_account_orders{
             border-spacing: 0 10px;
             border-collapse: separate;
+            margin-bottom: 30px;
             thead{
 
             }
@@ -2741,7 +2743,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                             width: 100px;
                             height: 20px;
                             margin: 9px;
-                            line-height: 24px;
+                            color: white;
                             font-size: 0.8em;
                         }
                         strong{
@@ -3456,15 +3458,11 @@ form.shipping_calculator{
 
     }
     div#payment{
-        position: relative;
-        text-align: center;
-        padding-bottom: 60px;
         .button{
             font-size: 1em;
             width: 200px;
         }
         ul{
-            list-style: none;
             li{
                 .payment_method_paypal{
                     display: none!important;
@@ -3472,19 +3470,6 @@ form.shipping_calculator{
                 label[for=payment_method_paymill]{
                     a{
                         display: none;
-                    }
-                }
-                .payment_method_paymill{
-                    width: 60%;
-                    margin: 0 auto;
-                    padding: 2em;
-                    #paymill_payment_form{
-                        label{
-                            display: block;
-                        }
-                        .LV_invalid{
-                            @include microclearfix;
-                        }
                     }
                 }
             }
@@ -3497,10 +3482,39 @@ form.shipping_calculator{
     float:left;
     table.shop_table{
         width:100%;
+        thead{
+            float: left;
+            width: 48%;
+            margin-top: 10px;
+            tr{
+                width: 100%;
+                float: left;
+                th{
+                    width: 33%;
+                    float: left;
+                }
+            }
+        }
+        tbody{
+            width: 48%;
+            //padding-right: 2%;
+            float: left;
+            text-align: center;
+            tr{
+                td{
+                    float: left;
+                    width: 33%;
+                }
+            }
+        }
         tfoot{
             width:48%;
             text-transform: uppercase;
             font-size:1.2em;
+            &.pay{
+                float: right;
+                width: 50%;
+            }
             tr{
                 margin: 10px 0;
                 background-color: $grey9;
@@ -3541,31 +3555,123 @@ form.shipping_calculator{
             }
         }
     }
-    #payment{
+    /* Payment box - appears on checkout and page page */
+    #payment {
+        border: 1px solid $grey9;
+        border-radius: 5px;
+        width:48%;
+        margin:0 auto;
+        display: block;
         margin-top: 30px;
-        width:850px;
-        @include bp(phone){
-            width:auto;
-        }
-        p{
-            max-width: 320px;
-            margin:0 auto;
-        }
-        ul.payment_methods{
-            margin-bottom: 40px;
-            input[type="radio"]{
-                height:25px;
-            }
-            li{
-                display: inline;
-                padding: 0 20px;
-            }
-        }
-        #place-order{
-            @include bp(phone){
-              width:100%;
-            }
 
+        ul.payment_methods {
+            @include microclearfix;
+            text-align:left;
+            padding: 1em;
+            border-bottom: 1px solid $grey8;
+            margin: 0;
+            list-style:none outside;
+            li {
+                line-height: 2em;
+                text-align:left;
+                margin: 0;
+                font-weight:normal;
+                padding: 0.1em;
+                a{
+                    display: none;
+                }
+                input {
+                    margin: 0 1em 0 0;
+                }
+
+                img {
+                    vertical-align: middle;
+                    margin: -2px 0 0 .5em;
+                    position: relative;
+                }
+            }
+        }
+
+        div.form-row {
+            padding: 1em;
+            text-align: center;
+            label{
+                display: block;
+            }
+            .LV_invalid{
+                position: absolute;
+                width: 92%;
+                margin: 0 auto;
+                text-align: center;
+                display: block;
+                background: white;
+            }
+        }
+        div.payment_box {
+            position: relative;
+            width: 96%;
+            padding: 1em 2%;
+            margin: 1em 0 1em 0;
+            font-size: 0.92em;
+            border-radius: 2px;
+            line-height: 1.5em;
+ 
+            .wc-credit-card-form-card-number,
+            .wc-credit-card-form-card-expiry,
+            .wc-credit-card-form-card-cvc {
+                font-size: 1.5em;
+                padding: 8px;
+                background-repeat: no-repeat;
+                background-position: right;
+
+                &.visa {
+                    background-image: url(../images/icons/credit-cards/visa.png);
+                }
+                &.mastercard {
+                    background-image: url(../images/icons/credit-cards/mastercard.png);
+                }
+                &.laser {
+                    background-image: url(../images/icons/credit-cards/laser.png);
+                }
+                &.dinersclub {
+                    background-image: url(../images/icons/credit-cards/diners.png);
+                }
+                &.maestro {
+                    background-image: url(../images/icons/credit-cards/maestro.png);
+                }
+                &.jcb {
+                    background-image: url(../images/icons/credit-cards/jcb.png);
+                }
+                &.amex {
+                    background-image: url(../images/icons/credit-cards/amex.png);
+                }
+                &.discover {
+                    background-image: url(../images/icons/credit-cards/discover.png);
+                }
+            }
+            span.help {
+                font-size: 11px;
+                line-height: 13px;
+                font-weight:normal;
+            }
+            .form-row {
+                margin: 0 0 1em;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+            &:after {
+                content: "";
+                display:block;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-top-color: transparent;
+                position:absolute;
+                top: -3px;
+                left: 0;
+                margin: -1em 0 0 2em;
+
+            }
         }
     }
 }
