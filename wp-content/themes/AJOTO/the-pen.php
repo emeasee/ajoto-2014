@@ -84,7 +84,7 @@
 			<p class="with-images"><i>However you use your Pen we know you will enjoy every moment and we hope you share your story with us.</i></p>
 			<span>#AJOTOPEN</span>
 			<span class="share">
-				<a href="http://www.facebook.com/ajotostudio" class="fb"></a>
+				<a href="http://www.facebook.com/ajoto" class="fb"></a>
 				<a href="http://www.twitter.com/ajoto" class="tw"></a>
 				<a href="http://www.pinterest.com/ajoto" class="pn"></a>
 			</span>
