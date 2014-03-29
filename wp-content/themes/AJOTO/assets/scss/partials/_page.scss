@@ -3083,6 +3083,9 @@ div.addresses.order{
                 }
                 .quantity{
                     padding: 15px;
+                    input{
+                        background: none;
+                    }
                     .qty{
                         font-family: $sans-serif;
                     }
@@ -3267,6 +3270,8 @@ form.shipping_calculator{
 
 .checkout-button{
     float:none;
+    height: 30px;
+    font-size: 1em;
 }
 
 .login{
@@ -3461,6 +3466,7 @@ form.shipping_calculator{
         .button{
             font-size: 1em;
             width: 200px;
+            height: 30px;
         }
         ul{
             li{
