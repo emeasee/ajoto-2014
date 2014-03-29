@@ -5,8 +5,8 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<!--<section class="title small">
-			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		<section class="title small">
+			<p>ABOUT<span>REVEALING THE INNER WORKINGS OF AJOTO</span></p>
 		</section>
 		<section class="filter">
 			<div class="links">
@@ -15,7 +15,7 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>-->
+		</section>
 
 		<section class="title">
 			<p>TEAM<span>WHO WE ARE AND THE PEOPLE WE WORK WITH</span></p>
@@ -45,6 +45,6 @@
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'last', true)); ?></div>
-	
+	<div class="end"></div>
 </div>
 <?php get_footer(); ?>

@@ -5,8 +5,8 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<!--<section class="title small">
-			<p>ABOUT<span>A SHORT 140 CHARACTER BLURB TO INTRODUCE THE PAGE BEING VIEWED</span></p>
+		<section class="title small">
+			<p>ABOUT<span>REVEALING THE INNER WORKINGS OF AJOTO</span></p>
 		</section>
 		<section class="filter">
 			<div class="links">
@@ -15,7 +15,7 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>-->
+		</section>
 
 		<section class="title">
 			<p>STUDIO<span>WHAT WE DO AS A COMPANY AND WHY WE DO IT</span></p>
@@ -29,19 +29,22 @@
 		</section>
 	
 	<section class="screen sans-serif">
-		<!--<div class="g two grey image">
-			
+		<div class="g three grey a-j-to">
+			<span>A JOURNEY TO</span><p>AJOTO is an abbreviation of ‘A Journey To...’ an open-ended phrase that represents our belief that ‘The Journey is the Reward’.</p>
 		</div>
-		<div class="g two grey image">
-			
-		</div>-->
-		<div class="g three grey">
-			<span>BRAND JOURNEY</span><p>AJOTO believe in great design. From the hidden patterns and symbols inside the packaging to the patina of materials, each of the ‘Beautiful Tools’ AJOTO create reveal more depth the more they are used.</p>
+		<div class="g three grey north">
+			<span>THE NORTH STAR</span><p>Our star has three key interpretations. Exploration of the known and unknown, Guidance when we stray off the beaten track and ultimately the pursuit of Quality in everything we do.</p>
 		</div>
-		<div class="g three grey">
-			<span>PRODUCTION JOURNEY</span><p>Working closely with the finest manufacturers in the UK and Europe, we celebrate the people, places and processes involved in the making of every product.</p>
+		<div class="g three grey mark">
+			<span>MAKERS MARK</span><p>Inspired by the traditional craftsperson’s hallmark, the makers marks are our seal of approval and help catalogue our products.</p>
 		</div>
-		<div class="g three grey">
+		<div class="g three grey prod">
+			<span>TRANSPARENT PRODUCTION</span><p>Working closely with the finest manufacturers in the UK and Europe, we celebrate the people, places and processes involved in the making of every product.</p>
+		</div>
+		<div class="g three grey epoch">
+			<span>AJOTO EPOCH</span><p>A nine digit number stamped on every ‘Beautiful Tool’ represents the number of seconds since we founded the company. It marks the end of a product’s journey with us and the start of its life with you.</p>
+		</div>
+		<div class="g three grey journey">
 			<span>YOUR JOURNEY</span><p>AJOTO products are tools designed to be used and enjoyed on ‘Your Journey’. Whether it’s a daily commute or an adventure into the unknown, the world is full of opportunities waiting to be discovered.</p>
 		</div>
 
@@ -53,6 +56,6 @@
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(get_post_meta($post->ID, 'last', true)); ?></div>
-	
+	<div class="end"></div>
 </div>
 <?php get_footer(); ?>
