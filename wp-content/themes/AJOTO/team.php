@@ -5,7 +5,7 @@
  ?>
 <?php get_header(); ?>
 <div id="content" class="about">
-		<section class="title small">
+		<!--<section class="title small">
 			<p>ABOUT<span>REVEALING THE INNER WORKINGS OF AJOTO</span></p>
 		</section>
 		<section class="filter">
@@ -15,7 +15,7 @@
 				<a href="../suppliers">SUPPLIERS</a>
 				<a href="../stockists">STOCKISTS</a>
 			</div>
-		</section>
+		</section>-->
 
 		<section class="title">
 			<p>TEAM<span>WHO WE ARE AND THE PEOPLE WE WORK WITH</span></p>
