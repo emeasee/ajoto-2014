@@ -330,9 +330,17 @@ function wrap( str ) {
         $('div.woocommerce_message:not(:first)').remove();
 
         //Fix strange bug on Checkout page
-        $('#checkout .login #username').attr('placeholder', '* Username/Email');
-        $('#checkout .login #password').attr('placeholder', '* Password');
-
+        if ($('body.woocommerce-checkout').length){
+          $('div.login #username').attr('placeholder', '* Username/Email');
+          $('div.login #password').attr('placeholder', '* Password');
+          //$('input#createaccount').attr('checked','checked');
+            $(document).ajaxComplete(function(event, xhr, settings) {
+                if(settings.url == "/wp-admin/admin-ajax.php?action=woocommerce_checkout"){
+                  $('ul.woocommerce-error').prependTo('div.woocommerce');
+                }
+            });
+          }
+  
         $('input:text, textarea').each(function(){
             var $this = $(this);
             $this.data('placeholder', $this.attr('placeholder'))
