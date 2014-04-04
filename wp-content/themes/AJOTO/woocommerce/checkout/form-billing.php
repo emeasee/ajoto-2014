@@ -8,51 +8,53 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-global $woocommerce;
 ?>
-
+<div class="woocommerce-billing-fields">
 <?php if ( ! is_user_logged_in() && $checkout->enable_signup ) : ?>
-	<div class="create-account">
-		<p><?php _e( "Don't have an account yet? You can register below", 'woocommerce' ); ?></p>
 
-		<?php do_action( 'woocommerce_before_checkout_registration_form', $checkout ); ?>
+	<?php if ( $checkout->enable_guest_checkout ) : ?>
 
-
-		<?php foreach ($checkout->checkout_fields['account'] as $key => $field) : ?>
-
-			<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
-
-		<?php endforeach; ?>
-
-		<div class="clear"></div>
-			<?php if ( $checkout->enable_guest_checkout ) : ?>
-
-		<p class="form-row">
-			<input class="input-checkbox" id="createaccount" <?php checked($checkout->get_value('createaccount'), true) ?> type="checkbox" name="createaccount" value="1" /> <label for="createaccount" class="checkbox"><?php _e( 'CREATE AN ACCOUNT?', 'woocommerce' ); ?></label>
+		<p class="form-row form-row-wide create-account">
+			<input class="input-checkbox" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true) ?> type="checkbox" name="createaccount" value="1" /> <label for="createaccount" class="checkbox"><?php _e( 'CREATE A NEW ACCOUNT', 'woocommerce' ); ?></label>
 		</p>
 
 	<?php endif; ?>
 
-	</div>
+	<?php do_action( 'woocommerce_before_checkout_registration_form', $checkout ); ?>
+
+	<?php if ( ! empty( $checkout->checkout_fields['account'] ) ) : ?>
+
+		<div class="create-account">
+
+
+			<?php foreach ( $checkout->checkout_fields['account'] as $key => $field ) : ?>
+
+				<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+
+			<?php endforeach; ?>
+
+			<div class="clear"></div>
+
+		</div>
+
+	<?php endif; ?>
 
 	<?php do_action( 'woocommerce_after_checkout_registration_form', $checkout ); ?>
 
 <?php endif; ?>
+	<?php if ( WC()->cart->ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-<?php if ( $woocommerce->cart->ship_to_billing_address_only() && $woocommerce->cart->needs_shipping() ) : ?>
+		<h3><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
 
-	<h3><?php _e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+	<?php else : ?>
 
-<?php else : ?>
+		<h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>
 
-	<h3><?php _e( 'Billing Details', 'woocommerce' ); ?></h3>
+	<?php endif; ?>
 
-<?php endif; ?>
+	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
-<?php do_action('woocommerce_before_checkout_billing_form', $checkout ); ?>
-
-<div class="left">
+	<div class="left">
 
 <?php 
 	$mybillingfields=array(
@@ -90,7 +92,6 @@ foreach ($mybillingfields as $key) : ?>
 <?php endforeach; ?>
 </div>
 
-<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
+	<?php do_action('woocommerce_after_checkout_billing_form', $checkout ); ?>
 
-
-
+</div>

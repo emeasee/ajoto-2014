@@ -337,13 +337,13 @@ nav#page{
             .next-link{
                 &:before{
                     font-family: $icons;
-                    content: "\e611";
+                    content: "\e61a";
                 }
             }
             .prev-link{
                 &:after{
                     font-family: $icons;
-                    content: "\e612";
+                    content: "\e619";
                 }
             }
         }
@@ -363,7 +363,7 @@ nav#page{
                 float: right;
                 &:after{
                     font-family: $icons;
-                    content: "\e612";
+                    content: "\e619";
                 }
             }
             a:hover{
@@ -376,7 +376,7 @@ nav#page{
                 float: left;
                 &:before{
                     font-family: $icons;
-                    content: "\e611";
+                    content: "\e61a";
                 }
                 &:after{
                     content:'';
@@ -580,7 +580,7 @@ nav#page{
                     background: $grey9;
                     &:before{
                         font-family: $icons;
-                        content: "\e614";
+                        content: "\e617";
                         font-size: 1.5em;
                         width: 100%;
                         position: absolute;
@@ -1711,6 +1711,14 @@ nav#page{
 }
 
 #content.about{
+    section.filter{
+        div.links{
+            width: 500px;
+            a{
+                width:25%;
+            }
+        }
+    }
     section.screen{
         margin-top: 30px;
         overflow: auto;
@@ -1743,6 +1751,42 @@ nav#page{
                 height: 276px;
                 margin-top: 10px;
                 position: relative;
+                &.a-j-to{
+                    background: $grey9 url(assets/images/a_journey_to@2x.png) no-repeat;
+                    background-size: 103px 19px;
+                    background-position: 50% 18%;
+                    span{
+                        margin-top: 80px;
+                    }
+                }
+                &.north{
+                    &:before{
+                        content: "\e61b";
+                    }
+                }
+                &.mark{
+                    background: $grey9 url(assets/images/mk_mark@2x.png) no-repeat;
+                    background-size: 65px 19px;
+                    background-position: 50% 18%;
+                    span{
+                        margin-top: 80px;
+                    }
+                }
+                &.prod{
+                    &:before{
+                        content: "\e60b";
+                    }
+                }
+                &.epoch{
+                    &:before{
+                        content: "\e616";
+                    }
+                }
+                &.journey{
+                    &:before{
+                        content: "\e60a";
+                    }
+                }
                 p{
                     margin:0 auto;
                     width: 100%;
@@ -1752,13 +1796,12 @@ nav#page{
                 }
                 &:before{
                     font-family: $icons;
-                    content: "\e60a";
                     font-size: 2em;
-                    color: $gold1;
+                    color: $grey2;
                     display: block;
                     margin-top: 30px;
                 }
-                &:last-child{
+                &:nth-child(3n){
                     margin-right: 0;
                 }
             }
@@ -1776,6 +1819,10 @@ nav#page{
                 line-height: normal;
             }
         }
+    }
+    .end{
+        display: block;
+        height: 30px;
     }
 }
 
@@ -2553,6 +2600,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                     }
                     .no-stock{
                         background: $grey9;
+                        color: $gold1!important;
                         cursor: default;
                     }
                 }
@@ -3084,6 +3132,9 @@ div.addresses.order{
                 }
                 .quantity{
                     padding: 15px;
+                    input{
+                        background: none;
+                    }
                     .qty{
                         font-family: $sans-serif;
                     }
@@ -3268,6 +3319,8 @@ form.shipping_calculator{
 
 .checkout-button{
     float:none;
+    height: 30px;
+    font-size: 1em;
 }
 
 .login{
@@ -3282,6 +3335,7 @@ form.shipping_calculator{
     }
     .button{
         width: 50%;
+        min-height: 30px;
     }
     a.lost_password{
         width:50%;
@@ -3289,9 +3343,10 @@ form.shipping_calculator{
 }
 .create-account{
     display: block!important;
-    float:right;
-    margin-top: -274px;
+    margin-top: -184px;
     width: 48%;
+    position: absolute;
+    right:0;
     @include bp(phone){
         float: left;
         margin-top: 0;
@@ -3302,13 +3357,9 @@ form.shipping_calculator{
         float:none;
         text-align: left;
     }
-    .form-row:first-child{
-        margin-bottom: 20px;
-    }
 }
 
-#checkout{
-    float: left;
+section.items{
     letter-spacing: 0px;
     p{
             font-size: 0.9em;
@@ -3331,6 +3382,13 @@ form.shipping_calculator{
         width: 100%;
         margin: 0;
         float: left;
+        &.create-account{
+            width:25%;
+            position: absolute;
+            margin-right: 200px;
+            margin-top:-248px;
+            text-align: left;
+        }
         @include bp(phone){
           text-align: center;
         }
@@ -3348,9 +3406,7 @@ form.shipping_calculator{
     }
     [class*='col-']{
         padding:0;
-    }
-    div.shipping_address{
-        display: block!important;
+        min-width: 850px;
     }
     #shiptobilling{
         width:100%;
@@ -3372,10 +3428,9 @@ form.shipping_calculator{
     }
     div.wooms{
         text-align: right;
-        margin-top: -74px!important;
         float:right!important;
         width:30%!important;
-        margin-left:300px!important;
+        margin-top: 40px;
         font-family:$sans-serif;
         font-size: 0.9em;
         text-transform: uppercase;
@@ -3390,7 +3445,7 @@ form.shipping_calculator{
     }
     form.login{
         display:block!important;
-        margin-bottom: 2.5em;
+        margin-top: 1em;
         p:first-child{
             text-align: center;
             background: $grey9;
@@ -3407,6 +3462,7 @@ form.shipping_calculator{
         width:100%;
         padding:0;
         float:left;
+        position: relative!important;
         font-family: $sans-serif;
         @include bp(phone){
             padding:2%;
@@ -3442,9 +3498,6 @@ form.shipping_calculator{
             border:0;
             background-color: #f0f0f0;
         }
-        select{
-            width:98%;
-        }
         .chzn-container{
             margin-bottom: 20px;
             text-align: left!important;
@@ -3462,9 +3515,17 @@ form.shipping_calculator{
         .button{
             font-size: 1em;
             width: 200px;
+            height: 30px;
         }
         ul{
             li{
+                .paymill_payment_errors{
+                    width: 100%;
+                    text-align: center;
+                    display: block;
+                    background: #f76280;
+                    color: white;
+                }
                 .payment_method_paypal{
                     display: none!important;
                 }
