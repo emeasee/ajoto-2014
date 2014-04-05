@@ -2,6 +2,10 @@
 @include fontface('BT', 'assets/fonts/', 'brandontext-regular-webfont');
 @include fontface('BT-Bold', 'assets/fonts/', 'brandontext-bold-webfont');
 @include fontface('BT-Light', 'assets/fonts/', 'brandontext-light-webfont');
+@include fontface('BT-Medium', 'assets/fonts/', 'brandontext-medium-webfont');
+@include fontface('BT-Italic', 'assets/fonts/', 'brandontext-regularitalic-webfont');
+@include fontface('BT-Bold-Italic', 'assets/fonts/', 'brandontext-bolditalic-webfont');
+@include fontface('BT-Medium-Italic', 'assets/fonts/', 'brandontext-mediumitalic-webfont');
 @include fontface('ajoto', 'assets/fonts/', 'ajoto');
 
 @include web-font((Merriweather), $secure: true);
@@ -24,7 +28,7 @@ $gold2: #C8B482;
 $gold3: #E6DCBE;
 
 // Text Selection
-$selectionColor: #B79749;
+$selectionColor: $gold2;
 
 // Links
 $linkColor: $gold1;
@@ -34,6 +38,10 @@ $linkHoverColor: $gold2;
 $sans-serif: "BT","Helvetica Neue", Helvetica, Arial, sans-serif;
 $ssbold: "BT-Bold","Helvetica Neue", Helvetica, Arial, sans-serif;
 $sslight: "BT-Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+$ssmedium: "BT-Medium","Helvetica Neue", Helvetica, Arial, sans-serif;
+$ssitalic: "BT-Italic","Helvetica Neue", Helvetica, Arial, sans-serif;
+$ssbold-italic: "BT-Bold-Italic","Helvetica Neue", Helvetica, Arial, sans-serif;
+$ssmedium-italic: "BT-Medium_Italic","Helvetica Neue", Helvetica, Arial, sans-serif;
 $icons: "ajoto";
 
 $serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;

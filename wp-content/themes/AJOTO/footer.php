@@ -19,7 +19,7 @@
                     <li><a href="http://www.vimeo.com/ajotostudio" target="_blank"><i class="icon-social_vimeo"></i></a></li>
                 </ul>
 
-                <p class="sg">BE CREATIVE <i class="icon-eye"></i> STAY CURIOUS</p>
+                <p class="sg"><span>BE CREATIVE</span> <i class="icon-eye"></i> <span>STAY CURIOUS</span></p>
                 
                 <ul class="meta">
                     <li><a href="../customer-service/#contact" id="other" style="padding-left:0;">Contact Us</a></li>

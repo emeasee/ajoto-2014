@@ -399,7 +399,7 @@ function wrap( str ) {
          $('#cart-bar').scrollToFixed( {
             bottom: 0,
             limit: function() {
-              var limit = $('#container').height() - 300;
+              var limit = $('#container').height() - 320;
               return limit;
         }
         });
