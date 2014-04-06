@@ -10,14 +10,14 @@
 		</section>
 		<section class="filter">
 			<div class="links">
-				<a href="../pen">THE PEN</a>
+				<a href="../the-pen">THE PEN</a>
 				<a class="current" href="../the-pen-pouch">THE PEN POUCH</a>
 				<a href="../the-wallet">THE WALLET</a>
 			</div>
 		</section>
 
-		<section class="title mid">
-			<p>THE PEN POUCH<span>DETAILS, SPECIFICATION & FEATURES</span></p>
+		<section class="title mid subhead">
+			<p>THE PEN POUCH<span>Making a mark represents the first step on the journey from good idea to great endeavour</span></p>
 		</section>
 
 		<!--<section class="mid sans-serif">
@@ -35,50 +35,49 @@
 			</div>
 		</section>
 
-	<section class="screen sans-serif">
+	<section class="screen">
 		<div class="card cube shop">
 			<i class="icon-basket"></i>
-			<a href="../shop/#pen">Starting from £126</a>
-			<span class="sans-serif">CLICK HERE TO SHOP</span>
+			<a href="../shop/#pouch">The Pen Pouch £35</a>
+			<span>CLICK HERE TO SHOP</span>
 		</div>
 		<div class="card three grey">
-			<p><i>Every pouch is handmade in Manchester using the finest vegetable tanned Italian leather. Over time the rich colours of the leather will increase in depth and naturally soften, molding perfectly around your Pen.
-				<span class="sans-serif">USE THE MAP BELOW TO FIND OUT MORE ABOUT WHO WE WORK WITH</span>
+			<span class="top">MAKE YOUR MARK</span>
+			<p><i>The Pouch is a beautifully simple way to store and protect your Pen. A combination of expert craftsmanship and the finest Italian leather it will be your Pen’s perfect companion for a lifetime.
 			</i></p>
 		</div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(21); ?></div>
 
-	<section class="screen sans-serif">
+	<section class="screen">
 		<div class="video small">
 			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Using-your-Pouch.jpg"></span>
 			<iframe id="player_7" src='http://player.vimeo.com/video/73523946?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
-		<div class="card quart grey tall">
-			<span class="grey top"></span>
-			<p class="no-images"><i>It was important to us that the pouch was as beautifully considered as the pen itself.
-			<br/><br/>The leather’s strength is increased through a splitting process, edges are then sealed with the natural oil of Indian Teak wood before being hand painted.</i></p>
-			<span class="grey bottom"></span>
-		</div>
-	</section>
-		
-	<section class="screen">
-		<div class="card cube shop">
-			<i class="icon-basket"></i>
-			<a href="../shop/#pen">Starting from £126</a>
-			<span class="sans-serif">CLICK HERE TO SHOP</span>
-		</div>
-		<div class="card three grey">
-			<p><i>Celebrating the purity and quality of the naturally tanned leather we carefully split each hide to the perfect thickness then expertly stitch each piece together to create a strong yet supple Pen Pouch.
-				<span class="sans-serif">CLICK THROUGH THE IMAGES BELOW TO SEE THE PEN</span>
-			</i></p>
+		<div class="card quart grey mid">
+			<span class="top">SOUL OF CRAFT</span>
+			<p><i>Every pouch is handmade in the UK using the finest vegetable tanned Italian leather.
+			<br/><br/>Over time the rich colours of the leather will increase in depth and naturally soften, molding perfectly around your Pen.</i></p>
+			<span class="bottom"></span>
 		</div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(26); ?></div>
+		
+	<section class="screen">
+		<div class="card cube shop">
+			<i class="icon-basket"></i>
+			<a href="../shop/#pouch">The Pen Pouch £35</a>
+			<span>CLICK HERE TO SHOP</span>
+		</div>
+		<div class="card three grey">
+			<p><i><span class="top">PRECISION MANUFACTURE</span>Celebrating the purity and quality of the naturally tanned leather each hide is split to the perfect thickness then expertly stitched together to create a strong yet supple Pen Pouch.
+			</i></p>
+		</div>
+	</section>
 
-	<section class="screen sans-serif">
+	<section class="screen">
 		<div class="slideshow small" id="name">
 			<?php echo get_new_royalslider(27); ?>
 		</div>

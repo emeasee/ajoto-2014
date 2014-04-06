@@ -17,7 +17,7 @@
 			</div>
 		</section>-->
 
-		<section class="title">
+		<section class="title subhead">
 			<p>TEAM<span>WHO WE ARE AND THE PEOPLE WE WORK WITH</span></p>
 		</section>
 		
@@ -35,7 +35,7 @@
 		</div>
 		<div class="g two grey">
 			<p><span>MAC OOSTHUIZEN</span><br>Mac studied with founders Chris and Tim at Northumbria University, also travelling to Hong Kong and London to pursue various internships. His path lead him to the Copenhagen Institute of Interaction Design, during which time he was able to indulge in a passion for user experience and a fascination with new cultures.<br>
-			In 2012 Mac joined the AJOTO team to run the digital side of the company. He currently splits his time between Paris and London.
+			<br/>In 2012 Mac joined the AJOTO team to run the digital side of the company. He currently splits his time between Paris and London.
 			</p>	
 		</div>
 	</section>

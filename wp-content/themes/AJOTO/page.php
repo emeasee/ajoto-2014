@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 			<div id="content" class="page">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<section class="title">
+						<section class="title subhead">
 							<p><?php the_title(); ?></p>
 						</section>				
 						<section class="post-content">

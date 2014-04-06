@@ -20,7 +20,7 @@
 					</div>
 				</section>
 
-					<section class="title">
+					<section class="title subhead">
 						<p><?php the_title(); ?></br>
 						<span class="sans-serif"><?php echo get_the_excerpt();?></span></p>
 						<a href="<?php echo get_permalink(get_adjacent_post(true,'',true)); ?>" class="arrow left"></a>
@@ -49,9 +49,8 @@
 								<p><?php echo get_the_content(); ?>	</p>
 							</div>
 						</div>				
-					<div id="break"></div>
 					<p class="by">Posted by <?php echo the_author_meta("nickname"); ?></p>
-					<p style="font-size: 0.9em;"><?php the_date('jS F Y'); ?></p>
+					<p style="font-size: 0.9em;margin-top:0;margin-bottom:0;"><?php the_date('jS F Y'); ?></p>
 				</section>				
 				
 					<nav class="wp-prev-next">				

@@ -406,7 +406,7 @@ function wrap( str ) {
         $('#cookiebar, div.validation_error, .page-template-build-php .woocommerce-message, a.added_to_cart').scrollToFixed( {
             bottom: 14,
             limit: function() {
-            var limit = $('#container').height() - 340;
+            var limit = $('#container').height() - 360;
             return limit;
         }
         });

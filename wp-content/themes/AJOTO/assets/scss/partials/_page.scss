@@ -821,23 +821,20 @@ nav#page{
                         font-size: 0.7em;
                     }
                 }
-                span{
-                    height:30px;
-                    display: block;
-                    margin: 0px 20px 0 20px;
-                    font-size: 0.7em;
-                }
                 span.top{
-                    background-position: 50% 50%!important;
-                    background-repeat: no-repeat;
-                }
-                span.top.grey{
-                    background: url(assets/images/HeaderLargeGrey@2x.png) no-repeat;
-                    background-size: 420px 30px;
-                }
-                span.top.gold{
-                    background: url(assets/images/HeaderLargeGold@2x.png) no-repeat;
-                    background-size: 420px 30px;
+                    text-transform: uppercase;
+                    color: $gold1;
+                    font-size: 12px!important;
+                    padding: 1em;
+                    font-family: $ssmedium;
+                    letter-spacing: 1px;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    margin-top: 30px;
                 }
                 span.middle{
                     text-align: center;
@@ -853,21 +850,14 @@ nav#page{
                     }
                 }
                 span.bottom{
-                    background-position: 50% 50%!important;
-                    background-repeat: no-repeat;
-                }
-                span.grey.bottom{
-                    background: url(assets/images/FooterLargeGrey@2x.png) no-repeat;
-                    background-size: 420px 30px;
-                }
-                span.gold.bottom{
-                    background: url(assets/images/FooterLargeGold@2x.png) no-repeat;
-                    background-size: 420px 30px;
+                    
                 }
                 span.share{
                     margin: 0 auto;
                     width: 65%;
                     font-size: 0.9em;
+                    overflow: auto;
+                    display: block;
                     a{
                         width:25%;
                         float:left;
@@ -878,19 +868,19 @@ nav#page{
                 }
                 p{
                     display: table;
-                    font-size: 0.8em;
-                    letter-spacing: normal;
-                    line-height: 20px;
+                    font-size: 0.9em;
+                    letter-spacing: 0.5px;
+                    line-height: normal;
                     padding: 0;
                     margin: 0 auto;
                     height: 100%;
-                    width:80%;
                     @include bp(phone){
                         width:90%;
                     }
                     i{
                         display: table-cell;
                         vertical-align: middle;
+                        font-style: normal;
                         a{
                             height:105px;
                             display: block;
@@ -901,12 +891,6 @@ nav#page{
                             letter-spacing: 1px;
                         }
                         span{
-                            font-style: normal;
-                            letter-spacing: 1px;
-                            font-weight: bold;
-                            font-size: 0.8em;
-                            display: block;
-                            margin-top:20px;
                             @include bp(phone){
                                 margin-top: 0px;
                                 display: none;
@@ -914,32 +898,22 @@ nav#page{
                         }
                     }
                 }
-                p.with-images{
-                    height:150px;
-                }
-                p.no-images{
-                    height:365px;
-                }
             }
             div.card.mid{
                 height: 356px;
-                p.no-images{
-                    height: 310px;
-                }
-            
             }
             div.card.tall{
                 height: 420px;
   
             }
-                div.card.full{
-
-                }
                 div.card.three{
-                    background: $grey9 url(assets/images/HeaderSmallGold@2x.png) no-repeat;
-                    background-size:205px 30px;
+                    background: $grey9 url(assets/images/footer_large_grey@2x.png) no-repeat;
+                    background-size:575px 11px;
                     width: 635px;
                     background-position: 50% 90%;
+                    p{
+                        width:575px;
+                    }
                     @include bp(phone){
                         width:94%;
                         background-position: 50% 490%;
@@ -956,6 +930,12 @@ nav#page{
                 }
                 div.card.quart{
                     width: 205px;
+                    background: $grey9 url(assets/images/footer_small_grey@2x.png) no-repeat;
+                    background-size:175px 11px;
+                    background-position: 50% 95%;
+                    p{
+                        width: 175px;
+                    }
                     @include bp(phone){
                         width: 94%;
                     }
@@ -977,7 +957,8 @@ nav#page{
 
             }
             .black{
-                background-color: $grey1;
+                background-color: $grey1!important;
+                background-image: none!important;
                 color:white;
                 i{
                     height: 95px;
@@ -1176,7 +1157,7 @@ nav#page{
             @include bp(phone){
                 max-width:none;
                 p{
-                    font-size: 1.1em;
+                    font-size: 0.9em;
                     padding:20px;
                     span{
                         font-size: 0.45em;
@@ -1186,21 +1167,23 @@ nav#page{
                 }
             }
             p{
-                font-size: 1.4em;
+                font-size: 0.9em;
                 line-height: 0.9em;
                 font-family: $ssbold;
-                padding:40px;
+                padding:30px;
                 color: $gold1;
                 margin:0;
                 text-transform: uppercase;
                 span{
                     font-style: normal;
-                    font-size: 0.5em;
+                    font-size: 1em;
                     padding-top:20px;
                     display: block;
                     letter-spacing: 1px;
-                    font-family: $sans-serif;
+                    font-family: $sslight;
                     color: $grey1;
+                    width: 700px;
+                    margin: 0 auto;
                     @include microclearfix;
                 }
                 border-top: 1px solid $grey2;
@@ -1210,6 +1193,15 @@ nav#page{
                     background: $grey9;
                     color: $grey1;
                     margin-bottom: 0;
+                }
+            }
+            &.subhead{
+                p{
+                    font-size: 1.2em;
+                    span{
+                        font-family: $sans-serif;
+                        font-size: 0.5em;
+                    }
                 }
             }
             &.mid{
@@ -1244,12 +1236,13 @@ nav#page{
         }
         section.title.small{
             p{
-                font-style: normal;
+                font-size: 1.2em;
                 max-height: 120px;
                 padding:0;
                 border: none;
                 span{
-
+                    font-family: $sans-serif;
+                    font-size: 0.5em;
                 }
             }
         }
@@ -1730,6 +1723,7 @@ nav#page{
                 font-family: $ssbold;
                 color: $gold1;
                 display: block;
+                font-size: 14px;
                 @include microclearfix;
             }
             &.two{
@@ -1744,20 +1738,20 @@ nav#page{
                 p{
                     display: table-cell;
                     vertical-align: middle;
-                    padding: 2em;
+                    padding: 2.4em 2.2em;
                 }
             }
             &.three{
                 width:276px;
                 height: 276px;
-                margin-top: 10px;
+                margin-bottom: 10px;
                 position: relative;
                 &.a-j-to{
                     background: $grey9 url(assets/images/a_journey_to@2x.png) no-repeat;
                     background-size: 103px 19px;
-                    background-position: 50% 18%;
+                    background-position: 50% 14%;
                     span{
-                        margin-top: 80px;
+                        margin-top: 85px;
                     }
                 }
                 &.north{
@@ -1768,9 +1762,9 @@ nav#page{
                 &.mark{
                     background: $grey9 url(assets/images/mk_mark@2x.png) no-repeat;
                     background-size: 65px 19px;
-                    background-position: 50% 18%;
+                    background-position: 50% 14%;
                     span{
-                        margin-top: 80px;
+                        margin-top: 85px;
                     }
                 }
                 &.prod{
@@ -1800,7 +1794,8 @@ nav#page{
                     font-size: 2em;
                     color: $grey2;
                     display: block;
-                    margin-top: 30px;
+                    height: 85px;
+                    line-height: 2.8em;
                 }
                 &:nth-child(3n){
                     margin-right: 0;
@@ -1816,7 +1811,6 @@ nav#page{
             span{
                 text-transform: none;
                 letter-spacing: 0px;
-                font-size:0.7em;
                 line-height: normal;
             }
         }
@@ -1851,10 +1845,16 @@ nav#page{
         border-top: 1px solid $grey1; 
         border-bottom: 1px solid $grey1; 
         margin-top: 30px;
+        font-size: 14px;
+        padding: 30px 0;
+        p{
+            margin-top: 0;
+        }
         .by{
             text-transform: uppercase;
             font-family: $ssbold;
             color: $gold1;
+            margin-bottom: 0;
         }
     }
     #facebook_like_button_holder {
@@ -2552,7 +2552,6 @@ input:-moz-placeholder, textarea:-moz-placeholder {
             margin: 0 auto;
             display: inline-block;
             width: 100%;
-            margin-bottom: 40px;
             padding:0;
             li{
                 list-style-type: none;

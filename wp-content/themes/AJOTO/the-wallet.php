@@ -10,14 +10,14 @@
 		</section>
 		<section class="filter">
 			<div class="links">
-				<a href="../pen">THE PEN</a>
+				<a href="../the-pen">THE PEN</a>
 				<a href="../the-pen-pouch">THE PEN POUCH</a>
 				<a class="current" href="../the-wallet">THE WALLET</a>
 			</div>
 		</section>
 
-		<section class="title mid">
-			<p>THE WALLET<span>DETAILS, SPECIFICATION & FEATURES</span></p>
+		<section class="title mid subhead">
+			<p>THE WALLET<span>A trustworthy companion FOR YOUR JOURNEY, The Wallet contains the keys to your world</span></p>
 		</section>
 
 		<!--<section class="mid sans-serif">
@@ -38,45 +38,43 @@
 	<section class="screen sans-serif">
 		<div class="card cube shop">
 			<i class="icon-basket"></i>
-			<a href="../shop/#pen">Starting from £126</a>
-			<span class="sans-serif">CLICK HERE TO SHOP</span>
+			<a href="../shop/#wallet">The Wallet £70</a>
+			<span>CLICK HERE TO SHOP</span>
 		</div>
 		<div class="card three grey">
-			<p><i>Every Wallet is handmade in Manchester using the finest vegetable tanned Italian leather. Over time the rich colours of the leather will increase in depth and tone.
-				<span class="sans-serif">USE THE MAP BELOW TO FIND OUT MORE ABOUT WHO WE WORK WITH</span>
+			<p><i><span class="top">FOR YOUR JOURNEY</span>We wanted to celebrate the humble wallet, a simple tool that holds the keys to your world. Hand crafted from the finest Italian leather, it’s a trustworthy companion to carry with you every day.
 			</i></p>
 		</div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(30); ?></div>
 	
-	<section class="screen sans-serif">
+	<section class="screen">
 		<div class="video small">
 			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Using-your-Wallet.jpg"></span>
 			<iframe id="player_7" src='http://player.vimeo.com/video/73522882?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
-		<div class="card quart grey tall">
-			<span class="grey top"></span>
-			<p class="no-images"><i>Everytime you remove your Wallet from a pocket or bag you want to know that not only are your contents safe but that you hold a beautiful product that reflects your values.
-<br/><br/>By carefully considering every detail we created a simple and honest wallet that's both versatile and slim.</i></p>
-			<span class="grey bottom"></span>
-		</div>
-	</section>
-		
-	<section class="screen">
-		<div class="card cube shop">
-			<i class="icon-basket"></i>
-			<a href="../shop/#pen">Starting from £126</a>
-			<span class="sans-serif">CLICK HERE TO SHOP</span>
-		</div>
-		<div class="card three grey">
-			<p><i>Material king, simple, minimal beautiful. Carefully split to give a contrast of grain and colour. Each Wallet is expertly stitched and edge painted with matching thread.
-				<span class="sans-serif">CLICK THROUGH THE IMAGES BELOW TO SEE THE PEN</span>
-			</i></p>
+		<div class="card quart grey mid">
+			<span class="top">SOUL OF CRAFT</span>
+			<p><i>By carefully considering every detail we created a simple and honest wallet that’s both versatile and slim.
+			<br/><br/>Over time the rich colours of the leather will increase in depth and tone, developing a unique patina.</i></p>
+			<span class="bottom"></span>
 		</div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(32); ?></div>
+		
+	<section class="screen">
+		<div class="card cube shop">
+			<i class="icon-basket"></i>
+			<a href="../shop/#wallet">The Wallet £70</a>
+			<span>CLICK HERE TO SHOP</span>
+		</div>
+		<div class="card three grey">
+			<p><i><span class="top">PRECISION MANUFACTURE</span>Simple, minimal and beautiful, each Wallet is carefully split to give a contrast of grain and colour before being expertly stitched and edge painted. Handmade in the UK using the finest vegetable tanned Italian leather.
+			</i></p>
+		</div>
+	</section>
 
 	<section class="screen">
 		<div class="slideshow small" id="name">

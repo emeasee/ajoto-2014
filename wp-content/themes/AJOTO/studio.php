@@ -17,7 +17,7 @@
 			</div>
 		</section>-->
 
-		<section class="title">
+		<section class="title subhead">
 			<p>STUDIO<span>WHAT WE DO AS A COMPANY AND WHY WE DO IT</span></p>
 		</section>
 		
