@@ -14,6 +14,7 @@ ul, ol { }
     float:left;
     max-height: none;
     margin: 0 10px 10px 0;
+    border: 1px solid $grey9;
     @include bp(phone) {
         margin:0;
         width: 100%;
@@ -54,7 +55,7 @@ ul, ol { }
             height: 100%;
             width: 100%;
             background: $grey9;
-            color: $grey1;
+            color: $grey4;
             &:before{
                 position: absolute;
                 width: 100%;
@@ -69,8 +70,8 @@ ul, ol { }
                 height: 100%;
                 text-align: center;
                 vertical-align: middle;
-                font-size: 1em;
-                padding:0 20px;
+                font-size: 0.95em;
+                padding:0 30px;
                 font-family: $sans-serif;
                 line-height: normal;
             }
@@ -84,7 +85,7 @@ ul, ol { }
             color:$gold1;
             letter-spacing: 1px;
             font-size: 0.9em!important;
-            font-family: $sans-serif;
+            font-family: $ssmedium;
         }
     }
     .post-content{
@@ -123,17 +124,17 @@ ul, ol { }
             height:100%;
             display:table;
             div.h2{
-                line-height: 1.333em; 
+                line-height: 1.333em;
+                padding: 0 1em;
                 text-align:center;
                 height:100%;
                 width:100%;
-                color:#323333;
+                color:$grey5;
                 letter-spacing: 1px;
                 height: 120px;
                 display: table-cell;
                 vertical-align: middle;
                 font-family: $ssbold;
-                border-bottom: 1px solid $grey2;
                 p{
                     letter-spacing: normal;
                     width: 75%;

@@ -78,15 +78,25 @@
 						</div> <!-- end #main -->
 						</div> <!-- end #inner-content -->
 
-						<?php //} else { // if it is disabled, display regular wp prev & next links ?>
 							<nav class="wp-prev-next">
 								<ul class="clearfix">
 								<?php $prev=get_previous_posts_link();
 									  $next=get_next_posts_link(); ?>
-									<li class="latest"><?php if($next){ next_posts_link('OLDER ENTRIES',0); } else { ?><span>OLDER ENTRIES</span><?php } ?><?php if($prev){ previous_posts_link('NEWER ENTRIES',0); } else { ?><span>NEWER ENTRIES</span><?php } ?></li>
+									<li class="latest">
+										<?php if($next){ ?> 
+											<span class="old link"><i class="icon-arrow_left"></i><?php next_posts_link('OLDER ENTRIES',0); ?></span> 
+										<?php } else { ?>
+											<span class="old empty"><i class="icon-arrow_left"></i> <p>OLDER ENTRIES</p></span>
+										<?php } ?>
+
+										<?php if($prev){ ?>
+											<span class="new link"><i class="icon-arrow_right"></i><?php previous_posts_link('NEWER ENTRIES',0); ?></span> 
+										<?php } else { ?>
+											<span class="new empty"><i class="icon-arrow_right"></i><p>NEWER ENTRIES</p></span>
+										<?php } ?>
+									</li>
 								</ul>
 							</nav>
-						<?php //} ?>
 						<?php $wp_query = null; $wp_query = $temp;?>
 
 			</div> <!-- end #content -->

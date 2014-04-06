@@ -299,17 +299,6 @@ function wrap( str ) {
           viewport = document.querySelector("meta[name=viewport]");
           viewport.setAttribute('content', 'width=910px, user-scalable=0');
         }
-
-        //Initialise Masonry
-        if ($my.page_wrap.length) {
-            if(!jQuery.browser.mobile){
-                $('section.screen').masonry({
-                    itemSelector : 'div.card, div.slideshow, div.video',
-                    columnWidth: 205,
-                    gutter: 10
-                });
-            }
-        }
         //Initialise Videos
         if ($('.video .loading').length){
             fluidvids();
@@ -319,6 +308,17 @@ function wrap( str ) {
                 Froogaloop(player).addEvent('ready', ready);
             }
          }
+
+        //Initialise Masonry
+        if ($my.page_wrap.length) {
+            if(!jQuery.browser.mobile){
+                $('section.screen,section.mid').masonry({
+                    itemSelector : 'div.card, div.slideshow, div.video',
+                    columnWidth: 205,
+                    gutter: 10
+                });
+            }
+        }
         if ($my.blog_wrap.length){
           replaceText();
         }
