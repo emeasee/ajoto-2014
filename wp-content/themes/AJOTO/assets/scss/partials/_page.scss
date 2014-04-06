@@ -323,7 +323,8 @@ nav#page{
             }
         }
         p{
-            padding: 0.6em 0;
+            padding: 0;
+            margin: 0;
             span{
                 padding:0 0.5em;
                 width: 15%;
@@ -342,16 +343,10 @@ nav#page{
                 }
             }
             .next-link{
-                &:before{
-                    font-family: $icons;
-                    content: "\e61a";
-                }
+                
             }
             .prev-link{
-                &:after{
-                    font-family: $icons;
-                    content: "\e619";
-                }
+                
             }
         }
 
@@ -363,40 +358,40 @@ nav#page{
         .latest{
             display:block;
             font-size:1em;
-            a,span{
-                padding:0 0.5em;
-                line-height:1.2em;
-                color:$grey2;
-                float: right;
-                &:after{
-                    font-family: $icons;
-                    content: "\e619";
-                }
-            }
-            a:hover{
-                color:$gold1;
-            }
+            padding: 0 1em;
             span{
-                opacity:0.4;
-            }
-            a:first-child{
-                float: left;
-                &:before{
-                    font-family: $icons;
-                    content: "\e61a";
-                }
-                &:after{
-                    content:'';
+                i{
+                    margin-top: 3px;
                 }
             }
-            span:first-child{
-                float: left;
-                &:before{
-                    font-family: $icons;
-                    content: "\e611";
+            .new{
+                float: right;
+                i{
+                    float: right;
                 }
-                &:after{
-                    content:'';
+            }
+            .old{
+                float: left;
+                i{
+                    float:left;
+                }
+            }
+            .link{
+                a{
+                   color:$grey2;
+                   text-decoration: none;
+                }
+                &:hover{
+                    color: $gold1;
+                    a{
+                        color: $gold1;
+                    }
+                }
+            }
+            .empty{
+                opacity: 0.4;
+                p{
+                    float: right;
                 }
             }
         }
@@ -754,7 +749,8 @@ nav#page{
                 overflow: hidden;
                 margin-top: 10px;
                 position:relative;
-                min-height: 420px;
+                max-height: 478px;
+                margin-left: 1px;
                 @include bp(phone){
                     width: 94%!important;
                     min-height: inherit;
@@ -762,8 +758,7 @@ nav#page{
                 img{
                     position: absolute;
                     left:0;
-                    height:100%;
-                    width:auto;
+                    width: 100%;
                     cursor: pointer;
                     @include bp(phone){
                         height:auto;
@@ -787,6 +782,8 @@ nav#page{
             }
             div.video.small{
                 width: 635px!important;
+                height: 357px;
+                margin-left: 0px;
                 @include bp(phone){
                   width:94%!important;
                 }
@@ -794,7 +791,6 @@ nav#page{
             div.slideshow{
                 margin-left:0;
                 margin-top: 10px;
-                min-height: 420px;
                 @include bp(phone){
                     min-height: inherit;
                 }
@@ -856,21 +852,6 @@ nav#page{
                         line-height: 6em;
                     }
                 }
-                span.middle.star{
-                    background: url(assets/images/StudioTitle@2x.png) no-repeat;
-                    background-size: 165px 105px;
-                    background-position: 50% 50%;
-                }
-                span.middle.pen{
-                    background: url(assets/images/journey_icn_white@2x.png) no-repeat;
-                    background-size: 28px 32px;
-                    background-position: 50% 50%;
-                }
-                span.middle.pouch{
-                    background: url(assets/images/PouchTitle@2x.png) no-repeat;
-                    background-size: 165px 105px;
-                    background-position: 50% 50%;
-                }
                 span.bottom{
                     background-position: 50% 50%!important;
                     background-repeat: no-repeat;
@@ -884,31 +865,20 @@ nav#page{
                     background-size: 420px 30px;
                 }
                 span.share{
-                    height:75px;
+                    margin: 0 auto;
+                    width: 65%;
+                    font-size: 0.9em;
                     a{
-                        width:33%;
-                        height: 45px;
+                        width:25%;
                         float:left;
-                    }
-                    a.fb{
-                        background: url(assets/images/facebook_w@2x.png) no-repeat;
-                        background-size: 30px 30px;
-                        background-position: 50% 50%;
-                    }
-                    a.pn{
-                        background: url(assets/images/pinterest_w@2x.png) no-repeat;
-                        background-size: 30px 30px;
-                        background-position: 50% 50%;
-                    }
-                    a.tw{
-                        background: url(assets/images/twitter_w@2x.png) no-repeat;
-                        background-size: 30px 30px;
-                        background-position: 50% 50%;
+                        text-decoration: none;
+                        font-size: 2em;
+                        color: $grey4;
                     }
                 }
                 p{
                     display: table;
-                    font-size: 0.7em;
+                    font-size: 0.8em;
                     letter-spacing: normal;
                     line-height: 20px;
                     padding: 0;
@@ -951,11 +921,16 @@ nav#page{
                     height:365px;
                 }
             }
+            div.card.mid{
+                height: 356px;
+                p.no-images{
+                    height: 310px;
+                }
+            
+            }
             div.card.tall{
                 height: 420px;
-                img{
-
-                }
+  
             }
                 div.card.full{
 
@@ -1002,15 +977,26 @@ nav#page{
 
             }
             .black{
-                background-color: $grey2;
+                background-color: $grey1;
                 color:white;
+                i{
+                    height: 95px;
+                    display: block;
+                    color: $gold1;
+                    font-size: 32px;
+                    line-height: 2.9em;
+                }
+                p{
+                    height:145px!important;
+                }
+                a.twitter{
+                    text-decoration: none;
+                    font-size: 0.9em;
+                    font-family: $ssmedium;
+                    display: block;
+                    height: 50px;
+                }
                 span{
-                    margin-top: 0!important;
-                }
-                span.top{
-
-                }
-                span.bottom{
 
                 }
             }
@@ -1020,23 +1006,40 @@ nav#page{
             .image{
                 background-color: rgb(249,249,249);
             }
-            .quote{
-                background-color: $grey2;
+            .shop{
+                background-color: $grey1;
                 display: table;
+                cursor: pointer;
+                &:hover{
+                    background-color: $grey2;
+                }
+                i{
+                    position: absolute;
+                    width: 100%;
+                    margin-top: 30px;
+                    font-size: 2em;
+                    color: $gold1;
+                }
                 a{
                     display: table-cell;
                     vertical-align: middle;
-                    padding:28px 18px 18px 18px;
                     font-size: 1.2em!important;
                     line-height:normal!important;
                     text-decoration: none;
-                    font-style: italic;
+                    font-family: $ssmedium;
                     color:white;
-                    span{
-                        font-size: 0.5em;
-                        font-style: normal;
-                        padding-top: 30px;
-                    }
+                }
+                span{
+                    position: absolute;
+                    bottom: 45px;
+                    left: 0;
+                    width: 100%;
+                    margin: 0!important;
+                    color: white;
+                    height: auto!important;
+                    color: $gold1;
+                    font-size: 0.6em;
+                    font-family: $ssmedium;
                 }
             }
 
@@ -1168,8 +1171,6 @@ nav#page{
         }
 
         section.title{
-            height:auto;
-            width:95%;
             position:relative;
             max-width:850px;
             @include bp(phone){
@@ -1188,7 +1189,7 @@ nav#page{
                 font-size: 1.4em;
                 line-height: 0.9em;
                 font-family: $ssbold;
-                padding:41px;
+                padding:40px;
                 color: $gold1;
                 margin:0;
                 text-transform: uppercase;
@@ -1208,7 +1209,11 @@ nav#page{
                     margin-top: 20px;
                     background: $grey9;
                     color: $grey1;
+                    margin-bottom: 0;
                 }
+            }
+            &.mid{
+                margin:30px;
             }
             a.arrow{
                 width: 35px;
@@ -1366,6 +1371,7 @@ nav#page{
 
         //Text & Single Structures
         section.mid {
+            min-width: 850px;
             display:table;
             position: relative;
             background:#fff;
@@ -1378,6 +1384,10 @@ nav#page{
                 width:100%;
                 height:51px;
                 max-width:inherit;
+            }
+            p{
+                display: table-cell;
+                vertical-align: middle;
             }
             .box{
                 float:left;
@@ -1458,7 +1468,7 @@ nav#page{
         div.titles{
             width:850px;
             margin:0 auto;
-            padding: 0 30px 0 30px;
+            padding: 0 100px;
             @include bp(phone){
                 padding:30px;
                 width:94%;
@@ -1468,7 +1478,7 @@ nav#page{
                 margin: 0 auto;
                 line-height: 20px;
                 letter-spacing: normal;
-                width: 600px;
+                width: 100%;
                 @include bp(phone){
                     width: auto;
                 }
@@ -1477,36 +1487,23 @@ nav#page{
                 width:500px;
                 margin: 0 auto;
             }
-            p.icns{
+            &.icns{
                 background-repeat: no-repeat;
                 height: 100%;
-                padding-top:50px;
-                background-position: 50% -55%!important;
                 @include bp(phone){
                     background-position: 50% -85%!important;
                 }
             }
-            p.studioicn{
-                background: url(assets/images/studio_icn_small@2x.png) no-repeat;
-                background-size: 22px 25px;
-                background-position: 50% 15%;
-                height: 100%;
-                padding-top:60px;
-                @include bp(phone){
-                    padding: 70px 0;
-                    background-position: 50% 5%;
-                }
-            }
-            p.penicn{
-                background: url(assets/images/PenTitle@2x.png) no-repeat 50% -70%;
+            &.penicn{  
+                background: url(assets/images/PenTitle@2x.png) no-repeat 50% 0%;
                 background-size: 165px 105px;
             }
-            p.pouchicn{
-                background: url(assets/images/PouchTitle@2x.png) no-repeat;
+            &.pouchicn{
+                background: url(assets/images/PouchTitle@2x.png) no-repeat 50% 0%;
                 background-size: 165px 105px;
             }
-            p.wallicn{
-                background: url(assets/images/WalletTitle@2x.png) no-repeat;
+            &.wallicn{
+                background: url(assets/images/WalletTitle@2x.png) no-repeat 50% 0%;
                 background-size: 165px 105px;
             }
         }
@@ -1514,16 +1511,12 @@ nav#page{
             display:table-cell;
             vertical-align:middle;
             height: 205px;
-            background: $grey9 url(assets/images/HeaderSmallGrey@2x.png) no-repeat;
-            background-size: 205px 30px;
-            background-position: 50% 85%;
+            background-color: $grey9;
             @include bp(phone){
-                background-position: 50% 95%;
                 height: auto;
             }
         }
         div.titles.product{
-            background-image: none;
             span{
                 position: absolute;
                 width: 100%;
@@ -2074,7 +2067,7 @@ section#blogtop{
     text-align: center;
     margin:0 auto;
     width:100%;
-    padding-top:40px;
+    padding-top:20px;
     .textblock{
         width:75%;
         margin:0 auto;
@@ -3065,10 +3058,9 @@ div.addresses.order{
             width:100%;
             .button{
                 width:80%;
-                height: 20px;
-                font-size: 0.7em;
+                height: 23px;
+                font-size: 0.8em;
                 letter-spacing: 1px;
-                opacity:0.7;
                 line-height: normal;
                 margin: 10px 10%;
             }
@@ -3133,12 +3125,11 @@ div.addresses.order{
             }
             td.product-quantity{
                 .button{
-                    height:20px;
+                    height:23px;
                     float: none;
                     margin-top: 10px;
-                    font-size: 0.7em;
+                    font-size: 0.8em;
                     letter-spacing: 1px;
-                    opacity:0.7;
                     line-height: normal;
                 }
                 .quantity{
@@ -3317,13 +3308,12 @@ form.shipping_calculator{
         margin: 24px;
     }
     .button{
-        height: 25px;
+        height: 23px;
         width:100px;
         float: none;
         margin-top: 10px;
         font-size: 0.7em;
         letter-spacing: 1px;
-        opacity: 0.7;
         line-height: normal;
     }
 }
@@ -3331,7 +3321,7 @@ form.shipping_calculator{
 .checkout-button{
     float:none;
     height: 30px;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .login{
@@ -3354,7 +3344,7 @@ form.shipping_calculator{
 }
 .create-account{
     display: block!important;
-    margin-top: -184px;
+    margin-top: -205px;
     width: 48%;
     position: absolute;
     right:0;
@@ -3393,11 +3383,12 @@ section.items{
         width: 100%;
         margin: 0;
         float: left;
+        margin-bottom: 20px;
         &.create-account{
             width:25%;
             position: absolute;
             margin-right: 200px;
-            margin-top:-248px;
+            margin-top:-258px;
             text-align: left;
         }
         @include bp(phone){
@@ -3441,7 +3432,7 @@ section.items{
         text-align: right;
         float:right!important;
         width:30%!important;
-        margin-top: 40px;
+        margin-top: 48px;
         font-family:$sans-serif;
         font-size: 0.9em;
         text-transform: uppercase;
@@ -3501,7 +3492,6 @@ section.items{
             letter-spacing: 0px;
             }
         input[type="text"],input[type="password"]{
-            margin-bottom: 20px;
             width:100%;
             height: 30px;
             padding:0;
@@ -3524,7 +3514,7 @@ section.items{
     }
     div#payment{
         .button{
-            font-size: 1em;
+            font-size: 0.8em;
             width: 200px;
             height: 30px;
         }
@@ -3603,7 +3593,7 @@ section.items{
                     text-align:left;
                 }
                 td{
-                    width:50%;
+                    width:40%;
                     text-align: right;
                     padding: 5px 10px;
                 }
@@ -3793,10 +3783,11 @@ section.items{
                 letter-spacing: 1px;
                 &.sg{
                     font-family: $ssbold;
-                    max-width: 211px;
+                    max-width: 212px;
                     margin: 0 auto;
                     overflow: auto;
                     padding: 15px 0;
+                    padding-left: 1px;
                     span{
                         font-size: 0.75em;
                         float: left;
@@ -3811,6 +3802,7 @@ section.items{
                 &.copyright{
                     font-size: 0.6em;
                     margin: 20px 0;
+                    font-family: $ssbold;
                 }
                 &.mark{
                     margin: 28px 0 10px 0;

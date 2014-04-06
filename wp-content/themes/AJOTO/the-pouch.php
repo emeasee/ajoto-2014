@@ -20,13 +20,13 @@
 			<p>THE PEN POUCH<span>DETAILS, SPECIFICATION & FEATURES</span></p>
 		</section>
 
-		<section class="mid sans-serif">
-			<div class="titles center product">
-				<p class="icns pouchicn">The Pouch is a beautifully simple way to store and protect your Pen. A combination of expert craftsmanship and the finest Italian leather it will be your Pen's perfect companion for a lifetime.</p>
+		<!--<section class="mid sans-serif">
+			<div class="titles center product icns pouchicn">
+				<p>The Pouch is a beautifully simple way to store and protect your Pen. A combination of expert craftsmanship and the finest Italian leather it will be your Pen's perfect companion for a lifetime.</p>
 				<span>MAKE YOUR MARK</span>
 			</div>
 			
-		</section>
+		</section>-->
 
 		<section class="screen">
 			<div class="video">
@@ -36,9 +36,10 @@
 		</section>
 
 	<section class="screen sans-serif">
-		<div class="card cube quote">
-			<a href="../shop/#pouch">Every Pouch £35
-			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
+		<div class="card cube shop">
+			<i class="icon-basket"></i>
+			<a href="../shop/#pen">Starting from £126</a>
+			<span class="sans-serif">CLICK HERE TO SHOP</span>
 		</div>
 		<div class="card three grey">
 			<p><i>Every pouch is handmade in Manchester using the finest vegetable tanned Italian leather. Over time the rich colours of the leather will increase in depth and naturally soften, molding perfectly around your Pen.
@@ -52,7 +53,7 @@
 	<section class="screen sans-serif">
 		<div class="video small">
 			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Using-your-Pouch.jpg"></span>
-			<iframe id="player_7" src='http://player.vimeo.com/video/73523946?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='420' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<iframe id="player_7" src='http://player.vimeo.com/video/73523946?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 		<div class="card quart grey tall">
 			<span class="grey top"></span>
@@ -63,35 +64,34 @@
 	</section>
 		
 	<section class="screen">
-				<div class="card three grey">
+		<div class="card cube shop">
+			<i class="icon-basket"></i>
+			<a href="../shop/#pen">Starting from £126</a>
+			<span class="sans-serif">CLICK HERE TO SHOP</span>
+		</div>
+		<div class="card three grey">
 			<p><i>Celebrating the purity and quality of the naturally tanned leather we carefully split each hide to the perfect thickness then expertly stitch each piece together to create a strong yet supple Pen Pouch.
 				<span class="sans-serif">CLICK THROUGH THE IMAGES BELOW TO SEE THE PEN</span>
 			</i></p>
-		</div>
-
-		<div class="card cube quote">
-			<a href="../shop/#pouch">Every Pouch £35
-			<span class="sans-serif">CLICK HERE TO SHOP</span></a>
 		</div>
 	</section>
 
 	<div class="slideshow"><?php echo get_new_royalslider(26); ?></div>
 
 	<section class="screen sans-serif">
-		<div class="card quart black tall">
-			<span class="top"></span>
-			<span class="middle pen"></span>
-			<p class="with-images"><i>However you use your Pouch we know you will enjoy every moment and we hope you share your story with us.</i></p>
-			<span>#AJOTOPOUCH</span>
-			<span class="share">
-				<a href="http://www.facebook.com/ajoto" class="fb"></a>
-				<a href="http://www.twitter.com/ajoto" class="tw"></a>
-				<a href="http://www.pinterest.com/ajoto" class="pn"></a>
-			</span>
-			<span class="bottom"></span>
-		</div>
 		<div class="slideshow small" id="name">
 			<?php echo get_new_royalslider(27); ?>
+		</div>
+		<div class="card quart black mid">
+			<i class="icon-clover"></i>
+			<p>However you use your #AJOTO products we know you will enjoy every moment. <br/><br/>Share your story with us.</p>
+			<a class="twitter" href="http://www.twitter.com/ajoto">@AJOTO</a>
+			<span class="share">
+				<a href="http://www.facebook.com/ajoto" class="icon-social_fb"></a>
+				<a href="http://www.instagram.com/ajoto" class="icon-social_inst"></a>
+				<a href="http://www.pinterest.com/ajoto" class="icon-social_pin"></a>
+				<a href="http://www.twitter.com/ajoto" class="icon-social_twitter"></a>
+			</span>
 		</div>
 	</section>
 	

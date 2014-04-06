@@ -69,6 +69,12 @@ $serif: "Merriweather","Georgia", Cambria, Times New Roman, Times, serif;
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-clover:before {
+    content: "\e61d";
+}
+.icon-basket:before {
+    content: "\e61c";
+}
 .icon-thumbs-up:before {
     content: "\e600";
 }

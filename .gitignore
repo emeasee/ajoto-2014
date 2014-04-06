@@ -10,6 +10,7 @@ node_modules
 
 # Ignore config
 local-config.php
+wp-config.php
 dploy.yaml
 
 #Ignore current theme
