@@ -325,34 +325,6 @@ nav#page{
         p{
             padding: 0;
             margin: 0;
-            span{
-                padding:0 0.5em;
-                width: 15%;
-                a{
-                    color:$grey2;
-                    text-decoration: none;
-                    &:hover{
-                        color: $gold1;
-                    }
-                }
-                &.light{
-                    opacity: 0.4;
-                }
-                &.back{
-                    width: 65%;
-                }
-            }
-            .next-link{
-                
-            }
-            .prev-link{
-                
-            }
-        }
-
-        .prev-link {
-            float: right;
-
         }
 
         .latest{
@@ -362,6 +334,14 @@ nav#page{
             span{
                 i{
                     margin-top: 3px;
+                }
+            }
+            .back{
+                a{
+                    color: $grey1;
+                    &:hover{
+                        color: $gold1;
+                    }                    
                 }
             }
             .new{
@@ -395,11 +375,11 @@ nav#page{
                 }
             }
         }
-
-        .next-link {
-            float: left;
+        .single{
+            span{
+                width: 12%;
+            }
         }
-
     } /* end .wp-prev-next */
 
 /* CONTENT MAIN */

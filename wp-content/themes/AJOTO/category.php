@@ -41,10 +41,10 @@
 								<footer class="post-title" style="cursor:pointer;">
 									<div class="cell" href="<?php the_permalink() ?>">
 										<div class="h2">
-											<?php if (strlen($post->post_title) > 70) {
+											<p class="title"><?php if (strlen($post->post_title) > 70) {
 											echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
 											the_title();
-											} ?>
+											} ?></p>
 											<span class="category"><?php echo $category[0]->cat_name; ?></span>
 											<span class="date"><?php echo get_the_date(); ?></span>
 										</div>
@@ -76,10 +76,10 @@
 								<div class="cell" href="<?php the_permalink() ?>">
 									<div class="h2">
 									
-									<?php if (strlen($post->post_title) > 70) {
+									<p class="title"><?php if (strlen($post->post_title) > 70) {
 									echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
 									the_title();
-									} ?>
+									} ?></p>
 										<span class="category"><?php echo $category[0]->cat_name; ?></span>
 										<span class="date"><?php echo get_the_date(); ?></span>
 									</div>
@@ -97,7 +97,19 @@
 								<ul class="clearfix">
 								<?php $prev=get_previous_posts_link();
 									  $next=get_next_posts_link(); ?>
-									<li class="latest"><?php if($next){ next_posts_link('OLDER ENTRIES',0); } else { ?><span>OLDER ENTRIES</span><?php } ?><?php if($prev){ previous_posts_link('NEWER ENTRIES',0); } else { ?><span>NEWER ENTRIES</span><?php } ?></li>
+									<li class="latest">
+										<?php if($next){ ?> 
+											<span class="old link"><i class="icon-arrow_left"></i><?php next_posts_link('OLDER ENTRIES',0); ?></span> 
+										<?php } else { ?>
+											<span class="old empty"><i class="icon-arrow_left"></i> <p>OLDER ENTRIES</p></span>
+										<?php } ?>
+
+										<?php if($prev){ ?>
+											<span class="new link"><i class="icon-arrow_right"></i><?php previous_posts_link('NEWER ENTRIES',0); ?></span> 
+										<?php } else { ?>
+											<span class="new empty"><i class="icon-arrow_right"></i><p>NEWER ENTRIES</p></span>
+										<?php } ?>
+									</li>
 								</ul>
 							</nav>
 						<?php //} ?>		

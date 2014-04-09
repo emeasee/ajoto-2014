@@ -41,11 +41,10 @@
 								<footer class="post-title">
 									<div class="cell" href="<?php the_permalink() ?>">
 										<div class="h2">
-											<?php if (strlen($post->post_title) > 70) {
+											<p class="title"><?php if (strlen($post->post_title) > 70) {
 											echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
 											the_title();
-										} ?>
-											<div class="divide"></div>
+										} ?></p>
 											<span class="category"><?php echo $category[0]->cat_name; ?></span>
 											<span class="date"><?php echo get_the_date(); ?></span>
 										</div>
@@ -61,11 +60,10 @@
 								<div class="cell" href="<?php the_permalink() ?>">
 									<div class="h2">
 
-									<?php if (strlen($post->post_title) > 70) {
+									<p class="title"><?php if (strlen($post->post_title) > 70) {
 									echo substr(the_title($before = '', $after = '', FALSE), 0, 70) . '...'; } else {
 									the_title(); 
-									} ?>
-										<div class="divide"></div>
+									} ?></p>
 										<span class="category"><?php echo $category[0]->cat_name; ?></span>
 										<span class="date"><?php echo get_the_date(); ?></span>
 									</div>

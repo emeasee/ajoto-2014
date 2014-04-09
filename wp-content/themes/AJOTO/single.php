@@ -6,7 +6,7 @@
 				</section>
 				<section class="filter">
 					<div class="links">
-					<a href="../../journal">ALL</a>
+					<a href="../../journey">ALL</a>
 						<?php
 							$args = array(
 					  		'orderby' => 'name',
@@ -54,21 +54,23 @@
 				</section>				
 				
 					<nav class="wp-prev-next">				
-						<p>
-							<?php if(get_adjacent_post(true, '', true)){ ?>
-								<span class="next-link"><?php previous_post_link('%link','PREVIOUS', 'TRUE'); 
-							} else { ?>
-								<span class="next-link light">PREVIOUS</span> 
-							<?php } ?></span>
-							<span class="back">
-								<a href="../journey" onclick="goBack(event)">BACK</a>
-							</span>
-							<?php if(get_adjacent_post(true, '', false)){ ?>
-								<span class="prev-link"><?php next_post_link('%link','NEXT', 'TRUE'); 
-							} else { ?>
-								<span class="prev-link light">NEXT</span>
-							<?php } ?></span>
-						</p>
+						<ul class="clearfix">
+							<li class="latest single">
+								<?php if(get_adjacent_post(true, '', true)){ ?>
+									<span class="old link"><i class="icon-arrow_left"></i><?php previous_post_link('%link','PREVIOUS', 'TRUE'); 
+								} else { ?>
+									<span class="old empty"><i class="icon-arrow_left"></i><p>PREVIOUS</p></span> 
+								<?php } ?></span>
+								<span class="back">
+									<a href="../journey" onclick="goBack(event)">BACK</a>
+								</span>
+								<?php if(get_adjacent_post(true, '', false)){ ?>
+									<span class="new link"><i class="icon-arrow_right"></i><?php next_post_link('%link','NEXT', 'TRUE'); 
+								} else { ?>
+									<span class="new empty"><i class="icon-arrow_right"></i><p>NEXT</p></span>
+								<?php } ?></span>
+							</li>
+						</ul>
 					</nav>
 			</div> <!-- end #content -->
 	<?php endwhile; ?>			
