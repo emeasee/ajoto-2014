@@ -44,8 +44,8 @@
 		
 	<section class="screen">
 		<div class="video small">
-			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-low-1.jpg" rel="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-low-2.jpg"></span>
-			
+			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-low-2.jpg"><img class="cover hover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-low-1.jpg"></span>
+
 			<iframe id="player_2" src='http://player.vimeo.com/video/53888931?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_2' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 		<div class="card quart grey mid">

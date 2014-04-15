@@ -221,7 +221,7 @@ function ready(player_id){
     var container = document.getElementById(player_id).parentNode.parentNode,
         froogaloop = $f(player_id);
 
-    var playBtn = container.querySelector('img.cover');
+    var playBtn = container.querySelector('img.hover');
     var loading = container.querySelector('span.loading');
 
     addEvent(playBtn, 'click', function() {
@@ -307,15 +307,6 @@ function wrap( str ) {
                 player = vimeoPlayers[i];
                 Froogaloop(player).addEvent('ready', ready);
             }
-            $('.video.small .cover').hover(function() {
-              var newurl = $(this).attr('rel');
-              var old = $(this).attr('src');
-              $(this).attr('src',newurl).attr('rel',old);
-            }, function(){
-              var newurl = $(this).attr('rel');
-              var old = $(this).attr('src');
-              $(this).attr('src',newurl).attr('rel',old);
-            });
          }
 
         //Initialise Masonry

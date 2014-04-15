@@ -755,6 +755,11 @@ nav#page{
                     width:100%;
                     z-index:50;
                     overflow:hidden;
+                    .hover{
+                        &:hover{
+                            opacity: 0;
+                        }
+                    }
                     @include bp(phone){
                         height: 200px;
                     }
