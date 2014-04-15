@@ -48,10 +48,6 @@ ul, ol { }
             height: auto;
         }
     }
-    .tag-instagram,.tag-twitter{
-        border: 0!important;
-    }
-
     .ig{
         background:$grey9;
         display: table;
@@ -230,6 +226,10 @@ ul, ol { }
             }
         }
     }
+}
+
+.tag-instagram,.tag-twitter{
+    border: 0!important;
 }
 
 article.fourcol{
