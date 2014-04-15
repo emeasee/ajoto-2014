@@ -307,6 +307,15 @@ function wrap( str ) {
                 player = vimeoPlayers[i];
                 Froogaloop(player).addEvent('ready', ready);
             }
+            $('.video.small .cover').hover(function() {
+              var newurl = $(this).attr('rel');
+              var old = $(this).attr('src');
+              $(this).attr('src',newurl).attr('rel',old);
+            }, function(){
+              var newurl = $(this).attr('rel');
+              var old = $(this).attr('src');
+              $(this).attr('src',newurl).attr('rel',old);
+            });
          }
 
         //Initialise Masonry
