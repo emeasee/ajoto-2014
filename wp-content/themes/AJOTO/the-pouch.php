@@ -30,7 +30,7 @@
 
 		<section class="screen">
 			<div class="video">
-				<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Making_Pouch.jpg"></span>
+				<span class="loading"><span class="cover"><img src="<?php echo home_url(); ?>/wp-content/uploads/2013/08/Making_Pouch.jpg"></span></span>
 				<iframe id="player_6" src='http://player.vimeo.com/video/68225024?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_6' width='850' height='479' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 			</div>
 		</section>
@@ -52,9 +52,9 @@
 
 	<section class="screen">
 		<div class="video small">
-			<span class="loading"><img class="cover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-pouch-low-2.jpg"><img class="cover hover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-pouch-low-1.jpg"></span>
+			<span class="loading"><span class="cover"><img src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-pouch-low-1.jpg"><img class="hover" src="<?php echo home_url(); ?>/wp-content/uploads/2014/04/how-to-use-the-pen-pouch-low-2.jpg"></span></span>
 
-			<iframe id="player_7" src='http://player.vimeo.com/video/73523946?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<iframe id="player_7" src='http://player.vimeo.com/video/74643701?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;color=ffffff&amp;api=1&amp;player_id=player_7' width='635' height='357' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</div>
 		<div class="card quart grey mid">
 			<span class="top">SOUL OF CRAFT</span>

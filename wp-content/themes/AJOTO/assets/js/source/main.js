@@ -221,7 +221,7 @@ function ready(player_id){
     var container = document.getElementById(player_id).parentNode.parentNode,
         froogaloop = $f(player_id);
 
-    var playBtn = container.querySelector('img.hover');
+    var playBtn = container.querySelector('.cover');
     var loading = container.querySelector('span.loading');
 
     addEvent(playBtn, 'click', function() {
