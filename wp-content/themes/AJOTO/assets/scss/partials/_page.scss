@@ -183,6 +183,9 @@ nav { }
 
             &:hover, &:focus {
                 background: $grey2;
+                a{
+                    color: $gold1;
+                }
             }
 
             &:first-child {}
@@ -206,14 +209,18 @@ nav { }
                         border-right: 0;
                         display: block;
                         width: 150px;
-                        color: white!important;
+                        color: white;
                         &:hover,
                         &:focus {
-                            background: #393939;
                         }
 
                         &:link {}
+                    }
 
+                    &:hover{
+                        a{
+                            color: $gold1;
+                        }
                     }
 
                     &:first-child {}
