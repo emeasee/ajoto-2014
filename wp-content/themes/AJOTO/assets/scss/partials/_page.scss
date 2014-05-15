@@ -3662,14 +3662,6 @@ section.items{
             label{
                 display: block;
             }
-            .LV_invalid{
-                position: absolute;
-                width: 92%;
-                margin: 0 auto;
-                text-align: center;
-                display: block;
-                background: white;
-            }
         }
         div.payment_box {
             position: relative;
@@ -3713,6 +3705,7 @@ section.items{
                     background-image: url(../images/icons/credit-cards/discover.png);
                 }
             }
+
             span.help {
                 font-size: 11px;
                 line-height: 13px;
@@ -3737,7 +3730,46 @@ section.items{
 
             }
         }
-    }
+        div.payment_method_paymill{
+            overflow: visible;
+            #paymill_payment_form{
+                input{
+                    font-size: 14px!important;
+                    text-align:center;
+                }
+                .paymill_holdername{
+                    height: 4em;
+                }
+                #paymill_form_credit{
+                    .paymill_card_number{
+                        height: 4em;
+                    }
+                    .paymill_card_data{
+                        width: 180px;
+                        margin: 0 auto;
+                        input{
+                            margin: 0 0.5em;
+                        }
+                        .paymill_expire_date{
+                            text-align: center;
+                        }
+                        .LV_invalid,.LV_valid{
+                            display: none;
+                        }
+                    }
+                }
+                .LV_invalid{
+                    text-align:center;
+                    display: block;
+                }
+                .LV_valid{
+                    position: absolute;
+                    right: -10px;
+                    margin-top: -25px;
+                }
+            }
+        }
+    }   
 }
 }
 
