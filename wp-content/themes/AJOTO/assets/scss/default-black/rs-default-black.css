@@ -389,7 +389,7 @@
 	-moz-transition: .3s;
 	transition: .3s;
 
-	background:url(rs-default.png) no-repeat 0 -32px;
+	background:url(rs-default-black.png) no-repeat 0 -32px;
 	background-color: #000;
 	background-color: rgba(0,0,0,0.75);
 	*background-color: #000;
