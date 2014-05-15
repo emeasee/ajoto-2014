@@ -11,13 +11,15 @@
 # ounos <ounos@live.com>, 2014
 # alichani <salichani75@gmail.com>, 2014
 # seriusb <seriusb@gmail.com>, 2014
+# theWeavers_ <the.weavers.are.weaving@gmail.com>, 2014
+# Psili <tsilimidoum@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2014-03-24 12:16:53+00:00\n"
-"PO-Revision-Date: 2014-03-25 08:51+0000\n"
-"Last-Translator: mikejolley <mike.jolley@me.com>\n"
+"PO-Revision-Date: 2014-05-14 08:51+0000\n"
+"Last-Translator: Psili <tsilimidoum@gmail.com>\n"
 "Language-Team: Greek (Greece) (http://www.transifex.com/projects/p/woocommerce/language/el_GR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,251 +108,251 @@ msgstr "Δυτική Αυστραλία"
 
 #: i18n/states/BD.php:13
 msgid "Bagerhat"
-msgstr ""
+msgstr "Μπαγκεράτ"
 
 #: i18n/states/BD.php:14
 msgid "Bandarban"
-msgstr ""
+msgstr "Μπανταρμπάν"
 
 #: i18n/states/BD.php:15
 msgid "Barguna"
-msgstr ""
+msgstr "Μπαργκουνα"
 
 #: i18n/states/BD.php:16
 msgid "Barisal"
-msgstr ""
+msgstr "Μπαρισάλ"
 
 #: i18n/states/BD.php:17
 msgid "Bhola"
-msgstr ""
+msgstr "Μπόλα"
 
 #: i18n/states/BD.php:18
 msgid "Bogra"
-msgstr ""
+msgstr "Μπογρα"
 
 #: i18n/states/BD.php:19
 msgid "Chandpur"
-msgstr ""
+msgstr "Τσαντπούρ"
 
 #: i18n/states/BD.php:20
 msgid "Chittagong"
-msgstr ""
+msgstr "Τσιταγκόνγκ"
 
 #: i18n/states/BD.php:21
 msgid "Chuadanga"
-msgstr ""
+msgstr "Τσουαντανα"
 
 #: i18n/states/BD.php:22
 msgid "Comilla"
-msgstr ""
+msgstr "Κομίλλα"
 
 #: i18n/states/BD.php:23
 msgid "Cox's Bazar"
-msgstr ""
+msgstr "Κοξ Μπαζάρ"
 
 #: i18n/states/BD.php:24
 msgid "Dhaka"
-msgstr ""
+msgstr "Ντάκα"
 
 #: i18n/states/BD.php:25
 msgid "Dinajpur"
-msgstr ""
+msgstr "Ντιναχπούρ"
 
 #: i18n/states/BD.php:26
 msgid "Faridpur "
-msgstr ""
+msgstr "Φαριδπούρ"
 
 #: i18n/states/BD.php:27
 msgid "Feni"
-msgstr ""
+msgstr "Φενί"
 
 #: i18n/states/BD.php:28
 msgid "Gaibandha"
-msgstr ""
+msgstr "Γκαϊμπαντχά"
 
 #: i18n/states/BD.php:29
 msgid "Gazipur"
-msgstr ""
+msgstr "Γκαζιπούρ"
 
 #: i18n/states/BD.php:30
 msgid "Gopalganj"
-msgstr ""
+msgstr "Γκοπαλγκάν"
 
 #: i18n/states/BD.php:31
 msgid "Jamalpur"
-msgstr ""
+msgstr "Τζαμαλπούρ"
 
 #: i18n/states/BD.php:32
 msgid "Jessore"
-msgstr ""
+msgstr "Τζεσόρ"
 
 #: i18n/states/BD.php:33
 msgid "Jhalokati"
-msgstr ""
+msgstr "Τζαλοκατί"
 
 #: i18n/states/BD.php:34
 msgid "Jhenaidah"
-msgstr ""
+msgstr "Τζεναϊδάχ"
 
 #: i18n/states/BD.php:35
 msgid "Joypurhat"
-msgstr ""
+msgstr "Τζοϋπουρχάτ"
 
 #: i18n/states/BD.php:36
 msgid "Khagrachhari"
-msgstr ""
+msgstr "Καγκραχαρί"
 
 #: i18n/states/BD.php:37
 msgid "Khulna"
-msgstr ""
+msgstr "Κουλνά"
 
 #: i18n/states/BD.php:38
 msgid "Kishoreganj"
-msgstr ""
+msgstr "Κισορεγκάν"
 
 #: i18n/states/BD.php:39
 msgid "Kurigram"
-msgstr ""
+msgstr "Κουριγκράμ"
 
 #: i18n/states/BD.php:40
 msgid "Kushtia"
-msgstr ""
+msgstr "Κουστια"
 
 #: i18n/states/BD.php:41
 msgid "Lakshmipur"
-msgstr ""
+msgstr "Λαξμιπούρ"
 
 #: i18n/states/BD.php:42
 msgid "Lalmonirhat"
-msgstr ""
+msgstr "Λαλμονιρχάτ"
 
 #: i18n/states/BD.php:43
 msgid "Madaripur"
-msgstr ""
+msgstr "Μανταριπούρ"
 
 #: i18n/states/BD.php:44
 msgid "Magura"
-msgstr ""
+msgstr "Μαγουρά"
 
 #: i18n/states/BD.php:45
 msgid "Manikganj "
-msgstr ""
+msgstr "Μανιγκάν"
 
 #: i18n/states/BD.php:46
 msgid "Meherpur"
-msgstr ""
+msgstr "Μεχερπούρ"
 
 #: i18n/states/BD.php:47
 msgid "Moulvibazar"
-msgstr ""
+msgstr "Μουλβιμπαζάρ"
 
 #: i18n/states/BD.php:48
 msgid "Munshiganj"
-msgstr ""
+msgstr "Μουνσιγκάν"
 
 #: i18n/states/BD.php:49
 msgid "Mymensingh"
-msgstr ""
+msgstr "Μιμενσίνγκ"
 
 #: i18n/states/BD.php:50
 msgid "Naogaon"
-msgstr ""
+msgstr "Ναογκαόν"
 
 #: i18n/states/BD.php:51
 msgid "Narail"
-msgstr ""
+msgstr "Ναραΐλ"
 
 #: i18n/states/BD.php:52
 msgid "Narayanganj"
-msgstr ""
+msgstr "Ναραγιανγκάν"
 
 #: i18n/states/BD.php:53
 msgid "Narsingdi"
-msgstr ""
+msgstr "Ναρσιγδί"
 
 #: i18n/states/BD.php:54
 msgid "Natore"
-msgstr ""
+msgstr "Νατορέ"
 
 #: i18n/states/BD.php:55
 msgid "Nawabganj"
-msgstr ""
+msgstr "Ναβαμπγκάν"
 
 #: i18n/states/BD.php:56
 msgid "Netrakona"
-msgstr ""
+msgstr "Νετρακονά"
 
 #: i18n/states/BD.php:57
 msgid "Nilphamari"
-msgstr ""
+msgstr "Νιλφαμαρί"
 
 #: i18n/states/BD.php:58
 msgid "Noakhali"
-msgstr ""
+msgstr "Νοακχαλί"
 
 #: i18n/states/BD.php:59
 msgid "Pabna"
-msgstr ""
+msgstr "Παμπνά"
 
 #: i18n/states/BD.php:60
 msgid "Panchagarh"
-msgstr ""
+msgstr "Πανχαγκάρ"
 
 #: i18n/states/BD.php:61
 msgid "Patuakhali"
-msgstr ""
+msgstr "Πατουακχαλί"
 
 #: i18n/states/BD.php:62
 msgid "Pirojpur"
-msgstr ""
+msgstr "Πιροχπούρ"
 
 #: i18n/states/BD.php:63
 msgid "Rajbari"
-msgstr ""
+msgstr "Ραχμπαρί"
 
 #: i18n/states/BD.php:64
 msgid "Rajshahi"
-msgstr ""
+msgstr "Ραχσαχί"
 
 #: i18n/states/BD.php:65
 msgid "Rangamati"
-msgstr ""
+msgstr "Ρανγκαματί"
 
 #: i18n/states/BD.php:66
 msgid "Rangpur"
-msgstr ""
+msgstr "Ρανγκπούρ"
 
 #: i18n/states/BD.php:67
 msgid "Satkhira"
-msgstr ""
+msgstr "Σατχιρά"
 
 #: i18n/states/BD.php:68
 msgid "Shariatpur"
-msgstr ""
+msgstr "Σαριατπούρ"
 
 #: i18n/states/BD.php:69
 msgid "Sherpur"
-msgstr ""
+msgstr "Σερπούρ"
 
 #: i18n/states/BD.php:70
 msgid "Sirajganj"
-msgstr ""
+msgstr "Σιραχγκάν"
 
 #: i18n/states/BD.php:71
 msgid "Sunamganj"
-msgstr ""
+msgstr "Σουναμγκάν"
 
 #: i18n/states/BD.php:72
 msgid "Sylhet"
-msgstr ""
+msgstr "Σιλχέτ"
 
 #: i18n/states/BD.php:73
 msgid "Tangail"
-msgstr ""
+msgstr "Τανγκαΐλ"
 
 #: i18n/states/BD.php:74
 msgid "Thakurgaon"
-msgstr ""
+msgstr "Τακουργκαόν"
 
 #: i18n/states/BG.php:13
 msgid "Blagoevgrad"
@@ -3311,7 +3313,7 @@ msgstr "Λήξη (ΜΜ/ΕΕ)"
 
 #: includes/abstracts/abstract-wc-payment-gateway.php:212
 msgid "MM / YY"
-msgstr ""
+msgstr "Μήνας / Έτος"
 
 #: includes/abstracts/abstract-wc-payment-gateway.php:215
 msgid "Card Code"
@@ -3319,7 +3321,7 @@ msgstr "Κωδικός Κάρτας"
 
 #: includes/abstracts/abstract-wc-payment-gateway.php:216
 msgid "CVC"
-msgstr ""
+msgstr "Κωδικός Επαλήθευσης Κάρτας (3-ψήφιο νούμερο στο πίσω μέρος της κάρτας σας)"
 
 #: includes/abstracts/abstract-wc-product.php:455
 #: includes/class-wc-product-simple.php:48
@@ -3421,11 +3423,11 @@ msgstr "Λάθος Υπογραφή - η παρεχόμενη υπογραφή �
 
 #: includes/api/class-wc-api-authentication.php:256
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "Μη έγκυρο χρονο-αποτύπωμα"
 
 #: includes/api/class-wc-api-authentication.php:264
 msgid "Invalid nonce - nonce has already been used"
-msgstr ""
+msgstr "Μη έγκυρος μοναδικός αριθμός  - Ο μοναδικός αριθμός της συνεδρίας σας έχει ξαναχρησιμοποιηθεί"
 
 #: includes/api/class-wc-api-authentication.php:293
 msgid "The API key provided does not have read permissions"
@@ -3486,7 +3488,7 @@ msgstr "Η υποστήριξη JSONP είναι απενεργοποιημέν�
 
 #: includes/api/class-wc-api-json-handler.php:64
 msgid "The JSONP callback function is invalid"
-msgstr ""
+msgstr "Η function επανάκλησης JSONP δεν είναι έγκυρη"
 
 #: includes/api/class-wc-api-orders.php:255
 msgid "You do not have permission to read the orders count"
@@ -3499,7 +3501,7 @@ msgstr "Δεν έχετε δικαίωμα να διαβάσετε τον αρι
 #: includes/api/class-wc-api-products.php:459
 #: includes/api/class-wc-api-products.php:460
 msgid "Placeholder"
-msgstr ""
+msgstr "Ενδεικτικό στοιχείο"
 
 #: includes/api/class-wc-api-reports.php:469
 msgid "You do not have permission to read this report"
@@ -3551,11 +3553,11 @@ msgstr "Μη έγκυρος τρόπος εξουσιοδότησης"
 
 #: includes/api/class-wc-api-server.php:316
 msgid "Unsupported request method"
-msgstr ""
+msgstr "Μη υποστηριζόμετνς τρόπος αιτήματος"
 
 #: includes/api/class-wc-api-server.php:333
 msgid "The handler for the route is invalid"
-msgstr ""
+msgstr "Ο χειριστής για αυτήν την διαδρομή δεν είναι έγκυρος"
 
 #: includes/api/class-wc-api-server.php:369
 msgid "No route was found matching the URL and request method"
@@ -4858,7 +4860,7 @@ msgstr "Ταχυδρομικός κώδικας"
 
 #: includes/class-wc-countries.php:827
 msgid "District"
-msgstr ""
+msgstr "Περιοχή"
 
 #: includes/class-wc-countries.php:834 includes/class-wc-countries.php:850
 #: includes/class-wc-countries.php:870 includes/class-wc-countries.php:931
@@ -5359,7 +5361,7 @@ msgstr "Όνομα Νέας Κατηγορίας Προϊόντων"
 #: includes/updates/woocommerce-update-2.0.php:44
 msgctxt "slug"
 msgid "product-category"
-msgstr "product-category"
+msgstr "κατηγορία-προϊόντος"
 
 #: includes/class-wc-post-types.php:90 includes/class-wc-post-types.php:92
 #: includes/widgets/class-wc-widget-product-tag-cloud.php:27
@@ -5411,7 +5413,7 @@ msgstr "Όνομα ετικέτας νέου προϊόντος"
 #: includes/updates/woocommerce-update-2.0.php:45
 msgctxt "slug"
 msgid "product-tag"
-msgstr "product-tag"
+msgstr "ετικέτα-προϊόντος"
 
 #: includes/class-wc-post-types.php:124 includes/class-wc-post-types.php:126
 msgid "Shipping Classes"
@@ -5692,7 +5694,7 @@ msgstr "Εμφάνιση Προϊόντων"
 #: includes/class-wc-product-variable.php:278
 msgctxt "Price range: from-to"
 msgid "%1$s&ndash;%2$s"
-msgstr ""
+msgstr "%1$s&ndash;%2$s "
 
 #: includes/class-wc-product-simple.php:48
 #: includes/class-wc-product-variation.php:211
@@ -6970,7 +6972,7 @@ msgstr "Australian Dollars"
 
 #: includes/wc-core-functions.php:169
 msgid "Bangladeshi Taka"
-msgstr ""
+msgstr "Τάκα Μπαγκλαντές"
 
 #: includes/wc-core-functions.php:170
 msgid "Brazilian Real"
@@ -7562,13 +7564,13 @@ msgstr "Αποστολή και Χειρισμός"
 
 #: templates/cart/cart-shipping.php:55
 msgid "Please use the shipping calculator to see available shipping methods."
-msgstr ""
+msgstr "Παρακαλώ χρησιμοποιήστε τον υπολογισμό αποστολής παραγγελίας για να δείτε τους διαθέσιμους τρόπους αποστολής."
 
 #: templates/cart/cart-shipping.php:59
 msgid ""
 "Please continue to the checkout and enter your full address to see if there "
 "are any available shipping methods."
-msgstr ""
+msgstr "Παρακαλώ προχωρήστε στην ολοκλήρωση της παραγγελίας και εισάγετε την πλήρη διεύθυνσή σας για να δείτε αν υπάρχουν διαθέσιμοι τρόποι αποστολής."
 
 #: templates/cart/cart-shipping.php:63
 msgid "Please fill in your details to see available shipping methods."
@@ -7794,7 +7796,7 @@ msgstr "Κάντε παραγγελία"
 msgid ""
 "I&rsquo;ve read and accept the <a href=\"%s\" target=\"_blank\">terms &amp; "
 "conditions</a>"
-msgstr ""
+msgstr "Έχω διαβάσει και αποδέχομαι τους  <a href=\"%s\" target=\"_blank\">όρους χρήσης</a>"
 
 #: templates/checkout/thankyou.php:18
 msgid ""
@@ -8159,7 +8161,7 @@ msgstr "Όνομα χρήστη"
 
 #: templates/myaccount/form-login.php:89
 msgid "Anti-spam"
-msgstr ""
+msgstr "Μπλοκάρισμα ανεπιθύμητης αλληλογραφίας"
 
 #: templates/myaccount/form-lost-password.php:22
 msgid ""
@@ -8259,7 +8261,7 @@ msgstr "Ενημερώσεις Παραγγελίας"
 
 #: templates/myaccount/view-order.php:22 templates/order/tracking.php:37
 msgid "l jS \\o\\f F Y, h:ia"
-msgstr ""
+msgstr "l jS \\o\\f F Y, h:ia"
 
 #: templates/order/form-tracking.php:17
 msgid ""

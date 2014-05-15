@@ -364,8 +364,9 @@ function wrap( str ) {
         $('.widget_shopping_cart select#currselect').live('change',function(){
             var currselect = $(this).val();
             $('.amount').each(function(){
-                var amount = $(this).parent().attr('id');
+                var amount = $(this).text().replace(/[^\d.-]/g, '');
                 var target = $(this);
+                //var parent = $(this).parent().prop("tagName");
                 jQuery.ajax({
                     type: 'POST',
                     url: 'http://'+document.location.hostname+'/wp-admin/admin-ajax.php',

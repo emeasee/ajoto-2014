@@ -83,7 +83,7 @@ class wfCache {
 			return false;
 		}
 		if($_SERVER['REQUEST_METHOD'] != 'GET'){ return false; } //Only cache GET's
-		if(strlen($_SERVER['QUERY_STRING']) > 0 && (! preg_match('/^\d+=\d+$/', $_SERVER['QUERY_STRING'])) ){ //Don't cache query strings unless they are /?123132423=123123234 DDoS style.
+		if(isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0 && (! preg_match('/^\d+=\d+$/', $_SERVER['QUERY_STRING'])) ){ //Don't cache query strings unless they are /?123132423=123123234 DDoS style.
 			return false; 
 		} 
 		//wordpress_logged_in_[hash] cookies indicates logged in
@@ -98,9 +98,19 @@ class wfCache {
 		if($ex){
 			$ex = unserialize($ex);
 			foreach($ex as $v){
-				if($v['pt'] == 's'){ if(strpos($uri, $v['p']) === 0){ return false; } }
-				if($v['pt'] == 'e'){ if(strpos($uri, $v['p']) === (strlen($uri) - strlen($v['p'])) ){ return false; } }
-				if($v['pt'] == 'c'){ if(strpos($uri, $v['p']) !== false){ return false; } }
+				if($v['pt'] == 'eq'){ if(strtolower($uri) == strtolower($v['p'])){ return false; } }
+				if($v['pt'] == 's'){ if(stripos($uri, $v['p']) === 0){ return false; } }
+				if($v['pt'] == 'e'){ if(stripos($uri, $v['p']) === (strlen($uri) - strlen($v['p'])) ){ return false; } }
+				if($v['pt'] == 'c'){ if(stripos($uri, $v['p']) !== false){ return false; } }
+				if($v['pt'] == 'uac'){ if(stripos($_SERVER['HTTP_USER_AGENT'], $v['p']) !== false){ return false; } } //User-agent contains
+				if($v['pt'] == 'uaeq'){ if(strtolower($_SERVER['HTTP_USER_AGENT']) == strtolower($v['p'])){ return false; } } //user-agent equals
+				if($v['pt'] == 'cc'){
+					foreach($_COOKIE as $cookieName){
+						if(stripos($cookieName, $v['p']) !== false){ //Cookie name contains pattern
+							return false;
+						}
+					}
+				}
 			}
 		}
 		return true;
@@ -150,7 +160,10 @@ class wfCache {
 		return $buffer;
 	}
 	public static function fileFromRequest($host, $URI){
-		$key = $host . $URI;
+		return self::fileFromURI($host, $URI, self::isHTTPSPage());
+	}
+	public static function fileFromURI($host, $URI, $isHTTPS){
+		$key = $host . $URI . ($isHTTPS ? '_HTTPS' : '');
 		if(isset(self::$fileCache[$key])){ return self::$fileCache[$key]; }
 		$host = preg_replace('/[^a-zA-Z0-9\-\.]+/', '', $host);
 		$URI = preg_replace('/(?:[^a-zA-Z0-9\-\_\.\~\/]+|\.{2,})/', '', $URI); //Strip out bad chars and multiple dots
@@ -161,7 +174,9 @@ class wfCache {
 				$URI .= $i < 6 ? '~' : '';
 			}
 		}
-		$file = WP_CONTENT_DIR . '/wfcache/' . $host . '_' . $URI . '_wfcache' . (self::isHTTPSPage() ? '_https' : '') . '.html';
+		$ext = '';
+		if($isHTTPS){ $ext = '_https'; }
+		$file = WP_CONTENT_DIR . '/wfcache/' . $host . '_' . $URI . '_wfcache' . $ext . '.html';
 		self::$fileCache[$key] = $file;
 		return $file;
 	}
@@ -353,14 +368,18 @@ class wfCache {
 		if($action != 'add' && $action != 'remove'){
 			die("Error: addHtaccessCode must be called with 'add' or 'remove' as param");
 		}
-		$htaccessPath = ABSPATH . '/.htaccess';
-		$fh = fopen($htaccessPath, 'r+');
+		$htaccessPath = self::getHtaccessPath();
+		if(! $htaccessPath){
+			return "Wordfence could not find your .htaccess file.";
+		}
+		$fh = @fopen($htaccessPath, 'r+');
 		if(! $fh){
 			$err = error_get_last();
 			return $err['message'];
 		}
 		flock($fh, LOCK_EX);
 		fseek($fh, 0, SEEK_SET); //start of file
+		clearstatcache();
 		$contents = fread($fh, filesize($htaccessPath));
 		if(! $contents){
 			fclose($fh);
@@ -378,19 +397,25 @@ class wfCache {
 		fclose($fh);
 		return false;
 	}
-	private static function getHtaccessCode(){
+	public static function getHtaccessCode(){
 		$siteURL = site_url();
+		$homeURL = home_url();
 		$pathPrefix = "";
-		$matchCaps = '$1/$2~$3~$4~$5~$6';
 		if(preg_match('/^https?:\/\/[^\/]+\/(.+)$/i', $siteURL, $matches)){
 			$path = $matches[1];
 			$path = preg_replace('/^\//', '', $path);
 			$path = preg_replace('/\/$/', '', $path);
-			$pieces = explode('/', $path);
 			$pathPrefix = '/' . $path; // Which is: /my/path
+		}
+		$matchCaps = '$1/$2~$3~$4~$5~$6';
+		if(preg_match('/^https?:\/\/[^\/]+\/(.+)$/i', $homeURL, $matches)){
+			$path = $matches[1];
+			$path = preg_replace('/^\//', '', $path);
+			$path = preg_replace('/\/$/', '', $path);
+			$pieces = explode('/', $path);
 			if(count($pieces) == 1){
-				# No path:       "/wp-content/wfcache/%{HTTP_HOST}_$1/$2~$3~$4~$5~$6_wfcache%{WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
-				# One path:  "/mdm/wp-content/wfcache/%{HTTP_HOST}_mdm/$1~$2~$3~$4~$5_wfcache%{WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
+				# No path:       "/wp-content/wfcache/%{HTTP_HOST}_$1/$2~$3~$4~$5~$6_wfcache%{ENV:WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
+				# One path:  "/mdm/wp-content/wfcache/%{HTTP_HOST}_mdm/$1~$2~$3~$4~$5_wfcache%{ENV:WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
 				$matchCaps = $pieces[0] . '/$1~$2~$3~$4~$5';
 			} else if(count($pieces) == 2){
 				$matchCaps = $pieces[0] . '/' . $pieces[1] . '/$1~$2~$3~$4';
@@ -402,6 +427,23 @@ class wfCache {
 		if(wfConfig::get('allowHTTPSCaching')){
 			$sslString = "";
 		}
+		$otherRewriteConds = "";
+		$ex = wfConfig::get('cacheExclusions', false);
+		if($ex){
+			$ex = unserialize($ex);
+			foreach($ex as $v){
+				if($v['pt'] == 'uac'){
+					$otherRewriteConds .= "\n\tRewriteCond %{HTTP_USER_AGENT} !" . self::regexSpaceFix(preg_quote($v['p'])) . " [NC]";
+				}
+				if($v['pt'] == 'uaeq'){
+					$otherRewriteConds .= "\n\tRewriteCond %{HTTP_USER_AGENT} !^" . self::regexSpaceFix(preg_quote($v['p'])) . "$ [NC]";
+				}
+				if($v['pt'] == 'cc'){
+					$otherRewriteConds .= "\n\tRewriteCond %{HTTP_COOKIE} !" . self::regexSpaceFix(preg_quote($v['p'])) . " [NC]";
+				}
+			}
+		}
+
 		$code = <<<EOT
 #WFCACHECODE - Do not remove this line. Disable Web Caching in Wordfence to remove this data.
 <IfModule mod_deflate.c>
@@ -438,37 +480,44 @@ class wfCache {
 	RewriteCond %{QUERY_STRING} ^(?:\d+=\d+)?$
 	RewriteCond %{REQUEST_URI} (?:\/|\.html)$ [NC]
 	RewriteCond %{HTTP_COOKIE} !(comment_author|wp\-postpass|wf_logout|wordpress_logged_in|wptouch_switch_toggle|wpmp_switcher) [NC]
-
+	{$otherRewriteConds}
 	RewriteCond %{REQUEST_URI} \/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)(.*)$
-	RewriteCond "%{DOCUMENT_ROOT}{$pathPrefix}/wp-content/wfcache/%{HTTP_HOST}_%1/%2~%3~%4~%5~%6_wfcache%{WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" -f
-	RewriteRule \/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)(.*)$ "{$pathPrefix}/wp-content/wfcache/%{HTTP_HOST}_{$matchCaps}_wfcache%{WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
+	RewriteCond "%{DOCUMENT_ROOT}{$pathPrefix}/wp-content/wfcache/%{HTTP_HOST}_%1/%2~%3~%4~%5~%6_wfcache%{ENV:WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" -f
+	RewriteRule \/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)\/*([^\/]*)(.*)$ "{$pathPrefix}/wp-content/wfcache/%{HTTP_HOST}_{$matchCaps}_wfcache%{ENV:WRDFNC_HTTPS}.html%{ENV:WRDFNC_ENC}" [L]
 </IfModule>
 #Do not remove this line. Disable Web caching in Wordfence to remove this data - WFCACHECODE
 EOT;
 		return $code;
 	}
+	private static function regexSpaceFix($str){
+		return str_replace(' ', '\\s', $str);
+	}
 	public static function scheduleUpdateBlockedIPs(){
 		wp_clear_scheduled_hook('wordfence_update_blocked_IPs');
 		if(wfConfig::get('cacheType') != 'falcon'){ 
-			self::updateBlockedIPs('remove');
+			self::updateBlockedIPs('remove'); //Fail silently if .htaccess is not readable. Will fall back to old blocking via WP
 			return; 
 		}
-		self::updateBlockedIPs('add');
+		self::updateBlockedIPs('add'); //Fail silently if .htaccess is not readable. Will fall back to old blocking via WP
 		wp_schedule_single_event(time() + 300, 'wordfence_update_blocked_IPs');
 	}
 	public static function updateBlockedIPs($action){ //'add' or 'remove'
 		if(wfConfig::get('cacheType') != 'falcon'){ return; }
 
-		$htaccessPath = ABSPATH . '/.htaccess';
+		$htaccessPath = self::getHtaccessPath();
+		if(! $htaccessPath){
+			return "Wordfence could not find your .htaccess file.";
+		}
 		if($action == 'remove'){
-			$fh = fopen($htaccessPath, 'r+');
+			$fh = @fopen($htaccessPath, 'r+');
 			if(! $fh){
 				$err = error_get_last();
 				return $err['message'];
 			}
 			flock($fh, LOCK_EX);
 			fseek($fh, 0, SEEK_SET); //start of file
-			$contents = fread($fh, filesize($htaccessPath));
+			clearstatcache();
+			$contents = @fread($fh, filesize($htaccessPath));
 			if(! $contents){
 				fclose($fh);
 				return "Could not read from $htaccessPath";
@@ -478,11 +527,17 @@ EOT;
 
 			ftruncate($fh, 0);
 			fseek($fh, 0, SEEK_SET);
-			fwrite($fh, $contents);
+			@fwrite($fh, $contents);
 			flock($fh, LOCK_UN);
 			fclose($fh);
 			return false;
 		} else if($action == 'add'){
+			$fh = @fopen($htaccessPath, 'r+');
+			if(! $fh){
+				$err = error_get_last();
+				return $err['message'];
+			}
+
 			$lines = array();
 			$wfLog = new wfLog(wfConfig::get('apiKey'), wfUtils::getWPVersion());
 			$IPs = $wfLog->getBlockedIPsAddrOnly();
@@ -535,16 +590,12 @@ EOT;
 		$blockCode .= implode('', $lines);
 		$blockCode .= "#Do not remove this line. Disable Web Caching in Wordfence to remove this data - WFIPBLOCKS\n";
 
-		$fh = fopen($htaccessPath, 'r+');
-		if(! $fh){
-			$err = error_get_last();
-			return $err['message'];
-		}
 
 		//Minimize time between lock/unlock
 		flock($fh, LOCK_EX);
 		fseek($fh, 0, SEEK_SET); //start of file
-		$contents = fread($fh, filesize($htaccessPath));
+		clearstatcache(); //Or we get the wrong size from a cached entry and corrupt the file
+		$contents = @fread($fh, filesize($htaccessPath));
 		if(! $contents){
 			fclose($fh);
 			return "Could not read from $htaccessPath";
@@ -553,9 +604,21 @@ EOT;
 		$contents = $blockCode . $contents;
 		ftruncate($fh, 0);
 		fseek($fh, 0, SEEK_SET);
-		fwrite($fh, $contents);
+		@fwrite($fh, $contents);
 		flock($fh, LOCK_UN);
 		fclose($fh);
+		return false;
+	}
+	public static function getHtaccessPath(){
+		if(file_exists(ABSPATH . '/.htaccess')){
+			return ABSPATH . '/.htaccess';
+		}
+		if(preg_match('/^https?:\/\/[^\/]+\/?$/i', home_url()) && preg_match('/^https?:\/\/[^\/]+\/.+/i', site_url())){
+			$path = realpath(ABSPATH . '/../.htaccess');
+			if(file_exists($path)){
+				return $path;
+			}
+		}
 		return false;
 	}
 }

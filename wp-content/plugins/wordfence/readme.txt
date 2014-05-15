@@ -1,15 +1,15 @@
 === Wordfence Security ===
 Contributors: mmaunder 
-Tags: wordpress, security, performance, speed, caching, cache, caching plugin, wordpress cache, wordpress caching, wordpress security, security plugin, secure, anti-virus, malware, firewall, antivirus, virus, google safe browsing, phishing, scrapers, hacking, wordfence, securty, secrity, secure, two factor, cellphone sign-in, cellphone signin, cellphone, twofactor, security, secure, htaccess, login, log, users, login alerts, lock, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, personal security, infrastructure security, firewall security, front-end security, web server security, proxy security, reverse proxy security, secure website, secure login, two factor security, maximum login security
+Tags: wordpress, security, performance, speed, caching, cache, caching plugin, wordpress cache, wordpress caching, wordpress security, security plugin, secure, anti-virus, malware, firewall, antivirus, virus, google safe browsing, phishing, scrapers, hacking, wordfence, securty, secrity, secure, two factor, cellphone sign-in, cellphone signin, cellphone, twofactor, security, secure, htaccess, login, log, users, login alerts, lock, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, personal security, infrastructure security, firewall security, front-end security, web server security, proxy security, reverse proxy security, secure website, secure login, two factor security, maximum login security, heartbleed, heart bleed, heartbleed vulnerability, openssl vulnerability, nginx, litespeed, php5-fpm
 Requires at least: 3.3.1
-Tested up to: 3.8.1
-Stable tag: 5.0.3
+Tested up to: 3.9.1
+Stable tag: 5.0.7
 
-Wordfence Security is a free enterprise class security plugin that makes your site up to 50 times faster and more secure. 
+Wordfence Security is a free enterprise class security and performance plugin that makes your site up to 50 times faster and more secure. 
 
 == Description ==
 
-Wordfence Security is a free enterprise class security and performance plugin that includes a very fast caching engine, firewall, anti-virus scanning, cellphone sign-in (two factor authentication), malicious URL scanning and live traffic including crawlers. Wordfence is the only WordPress security and performance plugin that can verify and repair your core, theme and plugin files, even if you don't have backups.
+Wordfence starts by checking if your site is already infected. We do a deep server-side scan of your source code comparing it to the Official WordPress repository for core, themes and plugins. Then Wordfence secures your site and makes it up to 50 times faster. 
 
 Wordfence Security is 100% free. We also offer a Premium API key that gives you access to our premium support ticketing system at [support.wordfence.com](http://support.wordfence.com/) along with two factor authentication via SMS, country blocking and the ability to schedule scans for specific times.
 
@@ -30,6 +30,7 @@ Wordfence Security:
 * Real-time blocking of known attackers. If another site using Wordfence is attacked and blocks the attacker, your site is automatically protected.
 * Sign-in using your password and your cellphone to vastly improve login security. This is called Two Factor Authentication and is used by banks, government agencies and military world-wide for highest security authentication. 
 * Includes two-factor authentication, also referred to as cellphone sign-in. 
+* Scans for the HeartBleed vulnerability - included in the free scan for all users. 
 * Wordfence includes two caching modes for compatability and has cache management features like the ability to clear the cache and monitor cache usage. 
 * Enforce strong passwords among your administrators, publishers and users. Improve login security.
 * Scans core files, themes and plugins against WordPress.org repository versions to check their integrity. Verify security of your source.
@@ -160,6 +161,44 @@ cause a security hole on your site.
 5. If you're technically minded, this is the under-the-hood view of Wordfence Security options where you can fine-tune your security settings.
 
 == Changelog ==
+
+= 5.0.7 =
+* Feature: Immediately block IP if hacker tries any of the following usernames. (Comma separated list that you can specify on the Wordfence options page)
+* Feature: Exclude exact URL's from caching. Specifically, this allows you to exclude the home page which was not possible before. 
+* Feature: Exclude browsers or partial browser matches and specific cookies from caching. 
+* Fix: Fixed issue where /.. dirs would be included in certain scandir operations. 
+* Fix: logHuman function was not analyzing user-agent strings correctly which would allow some crawlers that execute JS to be logged as humans. 
+* Fix: Removed ob_end_clean warnings about empty buffers when a human is being logged. 
+* Fix: Removed warning in lib/wfCache.php caused by unset $_SERVER['QUERY_STRING'] when we check it. 
+* Fix: Fixed "logged out as ''" blank username logout messages. 
+* Fix: Improved security of config cache by adding a PHP header to file that we strip. Already secure because we have a .htaccess denying access, but more is better. 
+* Fix: Falcon Engine option to clear Falcon cache when a post scheduled to be published in future is published.
+* Fix: Fixed Heartbleed scans hanging. 
+
+= 5.0.6 =
+* Feature: Prevent discovery of usernames through '?/author=N' scans. New option under login security which you can enable. 
+* Fix: Introduced new global hash whitelist on our servers that drastically reduces false positives in all scans especially theme and plugin scans.  
+* Fix: Fixed issue that corrupted .htaccess because stat cache would store file size and cause filesize() to report incorrect size when reading/writing .htaccess. 
+* Fix: Fixed LiteSpeed issue where Falcon Engine would not serve cached pages under LiteSpeed and LiteSpeed warned about unknown server variable in .htaccess.
+* Fix: Fixed issue where Wordfence Security Network won't block known bad IP after first login attempt if "Don't let WordPress reveal valid users in login errors" option is not enabled.
+* Fix: Sites installed under a directory would sometimes see Falcon not serving cached docs. 
+* Fix: If you are a premium customer and you have 2FA enabled and your key expires, fixed issue that may have caused you to get locked out.
+* Improvement: If your Premium API key now expires, we simply downgrade you to free scanning and continue rather than disabling Wordfence. 
+* Improvement: Email warnings a few days before your Premium key expires so you have a chance to upgrade for uninterrupted service. 
+
+= 5.0.5 =
+* Fix: Removed mysql_real_escape_string because it’s deprecated. Using WP’s internal escape.
+* Fix: Wordfence issues list would be deleted halfway through scan under certain conditions. 
+* Fix: Connection tester would generate php error under certain conditions. 
+
+= 5.0.4 =
+* Feature: We now scan for the infamous heartbleed openssl vulnerability using a non-intrusive scan method safe for production servers. 
+* Improvement: We now check if .htaccess is writable and if not we give you rules to manually enable Falcon.
+* Improvement: Once Falcon is enabled, if we can’t write to .htaccess, we fall back to PHP based IP blocking. 
+* Feature: You can now clear pages and posts from the cache on the list-posts page under each item or on their edit pages next to the Update button.
+* Fix: We now support sites who use a root URI but store their files and .htaccess in a subdirectory of the web root. 
+* Fix: Added an additional filter to prevent crawlers like Bing who execute javascript from being logged as humans. 
+* Fix: Changed the extension of the backup .htaccess to be .txt to avoid anti-virus software alerting on a download with .com extension. [Props to Scott N. for catching this]
 
 = 5.0.3 =
 * Removed ability to disable XML-RPC. The feature broke many mobile apps and other remote services. 

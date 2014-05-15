@@ -6,13 +6,13 @@ Description: Allows you to backup your instagram photos while allowing you to ha
 Author URI: http://dsgnwrks.pro
 Author: DsgnWrks
 Donate link: http://dsgnwrks.pro/give/
-Version: 1.2.8
+Version: 1.2.9
 */
 
 class DsgnWrksInstagram {
 
 	public $plugin_name      = 'DsgnWrks Instagram Importer';
-	public $plugin_version   = '1.2.7';
+	public $plugin_version   = '1.2.9';
 	public $plugin_id        = 'dsgnwrks-instagram-importer-settings';
 	protected $pre           = 'dsgnwrks_instagram_';
 	protected $instagram_api = 'https://api.instagram.com/v1/users/';
@@ -33,7 +33,7 @@ class DsgnWrksInstagram {
 		$this->defaults = array(
 			'tag-filter'   => false,
 			'feat_image'   => 'yes',
-			'auto_import'  => 'yes',
+			'auto_import'  => false,
 			'date-filter'  => 0,
 			'mm'           => date( 'm', strtotime( '-1 month' ) ),
 			'dd'           => date( 'd', strtotime( '-1 month' ) ),
@@ -165,10 +165,8 @@ class DsgnWrksInstagram {
 
 		if ( isset( $_REQUEST['next_url'] ) && $trans = get_option( 'dsgnwrks_next_url' ) ) {
 			$this->next_url = $trans;
-			trigger_error('transient used');
 		} elseif ( isset( $_REQUEST['next_url'] ) && $_REQUEST['next_url'] ) {
 			$this->next_url = $_REQUEST['next_url'];
-			trigger_error('$_REQUEST[\'next_url\'] used');
 		}
 
 		// Do not publicize these posts (Jetpack)
@@ -587,7 +585,6 @@ class DsgnWrksInstagram {
 		// 	wp_send_json_error( '<div id="message" class="updated"><pre>'. htmlentities( print_r( $this->next_url, true ) ) .'</pre></div>' );
 
 		$this->api_url = isset( $this->next_url ) && $this->next_url ? $this->next_url : $this->instagram_api . $opts[$this->userid]['id'] .'/media/recent?access_token='. $opts[$this->userid]['access_token'] .'&count=2';
-		// trigger_error( $this->api_url );
 
 		// ok, let's access instagram's api
 		$messages = $this->import_messages( $this->api_url, $opts[$this->userid] );
@@ -1041,10 +1038,12 @@ class DsgnWrksInstagram {
 			'instagram_users_in_photo'    => $this->pic->users_in_photo,
 			'instagram_link'              => esc_url( $this->pic->link ),
 			'instagram_embed_code'        => $this->instagram_embed(),
-			'instagram_type'              => esc_url( $this->pic->type ),
+			'instagram_type'              => $this->pic->type,
 			'instagram_user'              => $this->pic->user,
-		) as $key => $value )
+			'instagram_username'          => $this->pic->user->username,
+		) as $key => $value ) {
 			update_post_meta( $this->import['post_id'], $key, $value );
+		}
 
 	}
 

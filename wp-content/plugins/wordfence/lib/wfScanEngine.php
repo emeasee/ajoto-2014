@@ -42,7 +42,6 @@ class wfScanEngine {
 		$this->startTime = time();
 		$this->maxExecTime = self::getMaxExecutionTime();
 		$this->i = new wfIssues();
-		$this->i->deleteNew();
 		$this->cycleStartTime = time();
 		$this->wp_version = wfUtils::getWPVersion();
 		$this->apiKey = wfConfig::get('apiKey');
@@ -50,6 +49,7 @@ class wfScanEngine {
 		include('wfDict.php'); //$dictWords
 		$this->dictWords = $dictWords;
 		$this->jobList[] = 'publicSite';
+		$this->jobList[] = 'heartbleed';
 		$this->jobList[] = 'knownFiles_init';
 		$this->jobList[] = 'knownFiles_main';
 		$this->jobList[] = 'knownFiles_finish';
@@ -62,6 +62,9 @@ class wfScanEngine {
 				}
 			}
 		}
+	}
+	public function deleteNewIssues(){
+		$this->i->deleteNew();
 	}
 	public function __wakeup(){
 		$this->cycleStartTime = time();
@@ -121,12 +124,30 @@ class wfScanEngine {
 		if($this->i->totalIssues  > 0){
 			$this->status(10, 'info', "SUM_FINAL:Scan complete. You have " . $this->i->totalIssues . " new issues to fix. See below.");
 		} else {
-			$this->status(10, 'info', "SUM_FINAL:Scan complete. Congratulations, there were no problems found.");
+			$this->status(10, 'info', "SUM_FINAL:Scan complete. Congratulations, no problems found.");
 		}
 		return;
 	}
 	public function getCurrentJob(){
 		return $this->jobList[0];
+	}
+	private function scan_heartbleed(){
+		if(wfConfig::get('scansEnabled_heartbleed')){
+			$this->statusIDX['heartbleed'] = wordfence::statusStart("Scanning your site for the HeartBleed vulnerability");
+			$result = $this->api->call('scan_heartbleed', array(), array(
+				'siteURL' => site_url()
+				));
+			$haveIssues = false;
+			if($result['haveIssues'] && is_array($result['issues']) ){
+				foreach($result['issues'] as $issue){
+					$this->addIssue($issue['type'], $issue['level'], $issue['ignoreP'], $issue['ignoreC'], $issue['shortMsg'], $issue['longMsg'], $issue['data']);
+					$haveIssues = true;
+				}
+			}
+			wordfence::statusEnd($this->statusIDX['heartbleed'], $haveIssues);
+		} else {
+			wordfence::statusDisabled("Skipping HeartBleed scan");
+		}
 	}
 	private function scan_publicSite(){
 		if(wfConfig::get('isPaid')){
@@ -166,6 +187,7 @@ class wfScanEngine {
 		}
 		$includeInKnownFilesScan = array();
 		foreach($baseContents as $file){ //Only include base files less than a meg that are files.
+			if($file == '.' || $file == '..'){ continue; }
 			$fullFile = rtrim(ABSPATH, '/') . '/' . $file;
 			if($scanOutside){
 				$includeInKnownFilesScan[] = $file;

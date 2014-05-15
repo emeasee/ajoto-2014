@@ -1219,16 +1219,25 @@ window['wordfenceAdmin'] = {
 			});
 	},
 	switchToFalcon: function(){		
-		this.colorbox('400px', "Enabling Falcon Engine", 'First read this <a href="http://www.wordfence.com/introduction-to-wordfence-falcon-engine/" target="_blank">Introduction to Falcon Engine</a>. Falcon modifies your website configuration file which is called your .htaccess file. To enable Falcon we ask that you make a backup of this file. This is a safety precaution in case for some reason Falcon is not compatible with your site.<br /><br /><a href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + this.nonce + '" onclick="jQuery(\'#wfNextBut\').prop(\'disabled\', false); return true;">Click here to download a backup copy of your .htaccess file now</a><br /><br /><input type="button" name="but1" id="wfNextBut" value="Click to Enable Falcon Engine" disabled="disabled" onclick="WFAD.confirmSwitchToFalcon();" />');
+		var self = this;
+		this.ajax('wordfence_checkFalconHtaccess', {
+			}, function(res){
+				if(res.ok){
+					self.colorbox('400px', "Enabling Falcon Engine", 'First read this <a href="http://www.wordfence.com/introduction-to-wordfence-falcon-engine/" target="_blank">Introduction to Falcon Engine</a>. Falcon modifies your website configuration file which is called your .htaccess file. To enable Falcon we ask that you make a backup of this file. This is a safety precaution in case for some reason Falcon is not compatible with your site.<br /><br /><a href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + self.nonce + '" onclick="jQuery(\'#wfNextBut\').prop(\'disabled\', false); return true;">Click here to download a backup copy of your .htaccess file now</a><br /><br /><input type="button" name="but1" id="wfNextBut" value="Click to Enable Falcon Engine" disabled="disabled" onclick="WFAD.confirmSwitchToFalcon(0);" />');
+				} else if(res.nginx){
+					self.colorbox('400px', "Enabling Falcon Engine", 'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. To use Falcon you will need to manually modify your nginx.conf configuration file and reload your Nginx server for the changes to take effect. You can find the <a href="http://www.wordfence.com/blog/2014/05/nginx-wordfence-falcon-engine-php-fpm-fastcgi-fast-cgi/" target="_blank">rules you need to make these changes to nginx.conf on this page on wordfence.com</a>. Once you have made these changes, compressed cached files will be served to your visitors directly from Nginx making your site extremely fast. When you have made the changes and reloaded your Nginx server, you can click the button below to enable Falcon.<br /><br /><input type="button" name="but1" id="wfNextBut" value="Click to Enable Falcon Engine" onclick="WFAD.confirmSwitchToFalcon(0);" />');
+				} else if(res.err){
+					self.colorbox('400px', "We encountered a problem", "We can't modify your .htaccess file for you because: " + res.err + "<br /><br />Advanced users: If you would like to manually enable Falcon yourself by editing your .htaccess, you can add the rules below to the beginning of your .htaccess file. Then click the button below to enable Falcon. Don't do this unless you understand website configuration.<br /><textarea style='width: 300px; height:100px;' readonly>" + jQuery('<div/>').text(res.code).html() + "</textarea><br /><input type='button' value='Enable Falcon after manually editing .htaccess' onclick='WFAD.confirmSwitchToFalcon(1);' />");
+				}
+			});
 	},
-	switchToFalconTwo: function(){
-	},
-	confirmSwitchToFalcon: function(){
+	confirmSwitchToFalcon: function(noEditHtaccess){
 		jQuery.colorbox.close();	
 		var cacheType = 'falcon';
 		var self = this;
 		this.ajax('wordfence_saveCacheConfig', {
-			cacheType: cacheType
+			cacheType: cacheType,
+			noEditHtaccess: noEditHtaccess
 			}, function(res){
 				if(res.ok){
 					self.colorbox('400px', res.heading, res.body);
@@ -1252,13 +1261,15 @@ window['wordfenceAdmin'] = {
 		);
 	},
 	saveCacheOptions: function(){
+		var self = this;
 		this.ajax('wordfence_saveCacheOptions', {
 			allowHTTPSCaching: (jQuery('#wfallowHTTPSCaching').is(':checked') ? 1 : 0),
-			addCacheComment: (jQuery('#wfaddCacheComment').is(':checked') ? 1 : 0)
+			addCacheComment: (jQuery('#wfaddCacheComment').is(':checked') ? 1 : 0),
+			clearCacheSched: (jQuery('#wfclearCacheSched').is(':checked') ? 1 : 0)
 			}, function(res){
-				//if(res.ok){
-				//	self.colorbox('400px', res.heading, res.body);
-				//}
+				if(res.updateErr){
+					self.colorbox('400px', "You need to manually update your .htaccess", res.updateErr + "<br />Your option was updated but you need to change the Wordfence code in your .htaccess to the following:<br /><textarea style='width: 300px; height: 120px;'>" + jQuery('<div/>').text(res.code).html() + '</textarea>');
+				}
 			}
 		);
 	},
@@ -1572,7 +1583,9 @@ window['wordfenceAdmin'] = {
 			patternType: patternType,
 			pattern: pattern
 			}, function(res){
-				window.location.reload(true);
+				if(res.ok){ //Otherwise errorMsg will get caught
+					window.location.reload(true);
+				}
 			});
 	},
 	loadCacheExclusions: function(){
