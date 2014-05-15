@@ -2608,6 +2608,13 @@ input:-moz-placeholder, textarea:-moz-placeholder {
                         font-size:2em;
                         color: $gold1;
                         font-family: $sans-serif;
+                        del{
+                            font-size: 0.7em;
+                            color: $grey4;
+                        }
+                        ins{
+                            text-decoration: none;
+                        }
                     }
                     small{
                         display: block;
